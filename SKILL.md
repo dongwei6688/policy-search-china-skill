@@ -70,7 +70,7 @@ python3 {skill_dir}/scripts/init.py
 |------|--------|-------------|---------------|
 | 国务院 | gov.cn | www.gov.cn/zhengce/ | `site:gov.cn 政策` |
 | 工信部 | miit.gov.cn | www.miit.gov.cn/zwgk/zcwj/ | `site:miit.gov.cn` |
-| 国家数据局 | ndrc.gov.cn | — | `site:ndrc.gov.cn` |
+| 国家数据局 | nda.gov.cn | www.nda.gov.cn/sjj/zwgk/list/ | `site:nda.gov.cn` |
 | 国资委 | sasac.gov.cn | www.sasac.gov.cn/n2588035/ | `site:sasac.gov.cn` |
 | 国家能源局 | nea.gov.cn | www.nea.gov.cn/xxgk/ | `site:nea.gov.cn` |
 | 发改委 | ndrc.gov.cn | www.ndrc.gov.cn/xxgk/zcfb/ | `site:ndrc.gov.cn 政策` |
@@ -224,7 +224,8 @@ python3 {skill_dir}/scripts/init.py
 | `nea.json` | 国家能源局（nea.gov.cn） |
 | `miit.json` | 工信部（miit.gov.cn） |
 | `gov.json` | 国务院、中国政府网（gov.cn） |
-| `ndrc.json` | 发改委、国家数据局（ndrc.gov.cn） |
+| `ndrc.json` | 发改委（ndrc.gov.cn） |
+| `nda.json` | 国家数据局（nda.gov.cn） |
 | `sasac.json` | 国资委（sasac.gov.cn） |
 | `cac.json` | 网信办（cac.gov.cn） |
 
@@ -262,7 +263,7 @@ python3 {skill_dir}/scripts/init.py
 在每个 Phase 2 搜索步骤之前，先执行以下缓存查找（**用户空间优先于系统空间**）：
 
 1. **确定主缓存文件** — 根据待查文件所属部门，确定对应的缓存文件名
-   （部委→对应文件，跨部委联合发文→`gov.json`）
+   （部委→对应文件，跨部委联合发文→`gov.json`；国家数据局→`nda.json`）
 2. **先查用户空间** — 读取 `~/.hermes/data/policy-search-china/cache/{文件名}`，如存在则用文号或文件名匹配
 3. **未命中 → 查系统空间** — 读取 `{skill_dir}/cache/{文件名}`，做二次匹配
 4. **命中** → 直接从缓存读取 `summary` 和元信息，跳过 `web_search` 和 `curl`
@@ -280,13 +281,14 @@ python3 {skill_dir}/scripts/init.py
 | 优先级 | 判断依据 | 命中则写入 |
 |-------|---------|-----------|
 | 1 | `source_url` 包含 `nea.gov.cn` | → `nea.json` |
-| 2 | `source_url` 包含 `miit.gov.cn` | → `miit.json` |
-| 3 | `source_url` 包含 `sasac.gov.cn` | → `sasac.json` |
-| 4 | `source_url` 包含 `cac.gov.cn` | → `cac.json` |
-| 5 | `source_url` 包含 `ndrc.gov.cn` | → `ndrc.json` |
-| 6 | `source_url` 包含 `gov.cn` | → `gov.json` |
-| 7 | 以上都不匹配，按 `doc_number` 前缀判断：`国能发`→`nea`、`工信部`→`miit`、`发改`→`ndrc`、`国资`→`sasac` | 对应文件 |
-| 8 | 以上均无法判断 | → `gov.json`（兜底） |
+| 2 | `source_url` 包含 `nda.gov.cn` | → `nda.json` |
+| 3 | `source_url` 包含 `miit.gov.cn` | → `miit.json` |
+| 4 | `source_url` 包含 `sasac.gov.cn` | → `sasac.json` |
+| 5 | `source_url` 包含 `cac.gov.cn` | → `cac.json` |
+| 6 | `source_url` 包含 `ndrc.gov.cn` | → `ndrc.json` |
+| 7 | `source_url` 包含 `gov.cn` | → `gov.json` |
+| 8 | 以上都不匹配，按 `doc_number` 前缀判断：`国能发`→`nea`、`国数`→`nda`、`工信部`→`miit`、`发改`→`ndrc`、`国资`→`sasac` | 对应文件 |
+| 9 | 以上均无法判断 | → `gov.json`（兜底） |
 
 写入步骤：
 
@@ -496,7 +498,7 @@ intitle:[政策关键词] site:gov.cn
 
 5. **国资委网站搜索结果时效性差。** `site:sasac.gov.cn` 的搜索结果返回大量 2018-2020 年的内容，2023 年后的政策较少。解决方案：国资委的新政策经常被 gov.cn 同步收录，改用 `site:gov.cn 国资委 数字化转型`。
 
-6. **国家数据局网站搜索结果少。** 国家数据局 2023 年成立，历史内容少。解决方案：数据的相关政策分散在国务院、发改委网站上，搜索结果以 `site:gov.cn 数据要素` 为主，辅以 `site:ndrc.gov.cn`。
+6. **国家数据局官网原文不易获取。** 国家数据局 2023 年成立，官网 nda.gov.cn 以新闻资讯为主，政策文件多通过国务院、发改委渠道发布。解决方案：搜索以 `site:gov.cn 数据要素` 为主，辅以 `site:nda.gov.cn`。
 
 7. **网信办文件适用性。** CAC 的文件多以"办法""规定"形式发布（如生成式人工智能管理办法），通常为监管性而非鼓励性政策。引用时注意区分"政策依据"与"合规要求"的引用意图。
 
