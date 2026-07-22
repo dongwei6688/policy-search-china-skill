@@ -72,7 +72,7 @@ python3 {skill_dir}/scripts/init.py
 | 工信部 | miit.gov.cn | www.miit.gov.cn/zwgk/zcwj/ | `site:miit.gov.cn` |
 | 国家数据局 | nda.gov.cn | www.nda.gov.cn/sjj/zwgk/list/ | `site:nda.gov.cn` |
 | 国资委 | sasac.gov.cn | www.sasac.gov.cn/n2588035/ | `site:sasac.gov.cn` |
-| 国家能源局 | nea.gov.cn | www.nea.gov.cn/xxgk/ | `site:nea.gov.cn` |
+| 国家能源局 | nea.gov.cn | www.nea.gov.cn/policy/zxwj.htm | `site:nea.gov.cn` |
 | 发改委 | ndrc.gov.cn | www.ndrc.gov.cn/xxgk/zcfb/ | `site:ndrc.gov.cn 政策` |
 | 网信办 | cac.gov.cn | www.cac.gov.cn/zhengce/ | `site:cac.gov.cn` |
 
