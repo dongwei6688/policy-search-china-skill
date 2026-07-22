@@ -1,0 +1,34 @@
+[
+  {
+    "doc_number": "工信厅通装函〔2024〕361号",
+    "title": "《智能制造典型场景参考指引（2024年版）》",
+    "issuer": "工业和信息化部办公厅",
+    "date": "2024-09-30",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202409/content_6977718.htm",
+    "tags": [
+      "智能制造",
+      "典型场景",
+      "智能工厂"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "根据我国制造企业数字化网络化智能化探索实践，从工厂建设、计划调度、生产作业等15个重点环节，凝练出40个智能制造典型场景。",
+    "local_path": "cache/miit/content_6977718.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "工信厅联通装函〔2024〕399号",
+    "title": "《关于开展2024年度智能工厂梯度培育行动的通知》",
+    "issuer": "工业和信息化部办公厅 国家发展改革委办公厅 财政部办公厅 国务院国资委办公厅 市场监管总局办公厅 国家数据局综合司",
+    "date": "2024-10-28",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202410/content_6983678.htm",
+    "tags": [
+      "智能制造",
+      "智能工厂",
+      "梯度培育"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "贯彻落实国务院办公厅印发的《制造业数字化转型行动方案》，构建智能工厂、解决方案、标准体系三位一体工作体系。",
+    "local_path": "cache/miit/content_6983678.htm",
+    "format": "html"
+  }
+]

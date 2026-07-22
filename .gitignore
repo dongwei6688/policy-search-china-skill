@@ -1,0 +1,13 @@
+# 大文件：PDF 附件（需用户自行下载，总约 13MB）
+*.pdf
+# PDF 配套文本提取
+*.txt
+# local_path 中的 404 页面
+content_5712816.htm
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+*.log

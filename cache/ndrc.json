@@ -1,0 +1,67 @@
+[
+  {
+    "doc_number": "国数政策〔2023〕11号",
+    "title": "《「数据要素×」三年行动计划（2024—2026年）》",
+    "issuer": "国家数据局 等十七部门",
+    "date": "2024-01-04",
+    "source_url": "https://www.nda.gov.cn/",
+    "tags": [
+      "数据要素",
+      "数据要素×",
+      "数据局",
+      "三年行动计划"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "发挥数据要素的放大、叠加、倍增作用，构建以数据为关键要素的数字经济。实施数据要素乘行动，发挥我国超大规模市场、海量数据资源、丰富应用场景等优势，推动数据要素与劳动力、资本等要素协同。",
+    "local_path": "cache/ndrc/data_element_action_plan.pdf",
+    "format": "pdf"
+  },
+  {
+    "title": "《关于深化智慧城市发展 推进城市全域数字化转型的指导意见》（发改数据〔2024〕660号）",
+    "doc_number": "发改数据〔2024〕660号",
+    "issuer": "国家数据局 国家发展改革委",
+    "date": "2024-05-20",
+    "source_url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202405/t20240520_1386326.html",
+    "summary": "以数据融通、开发利用贯穿城市全域数字化转型建设始终，整体性重塑智慧城市技术架构、系统性变革城市管理流程、一体化推动产城深度融合。",
+    "tags": [
+      "智慧城市",
+      "数据要素",
+      "数字化转型"
+    ],
+    "searched_at": "2026-07-22",
+    "format": "html",
+    "local_path": "cache/ndrc/zhihui_chengshi_660.html"
+  },
+  {
+    "doc_number": "国数政策〔2025〕",
+    "title": "《构建数据基础制度更好发挥数据要素作用2025年工作要点》",
+    "issuer": "国家数据局",
+    "date": "2025-04-28",
+    "source_url": "https://www.nda.gov.cn/sjj/swdt/sjdt/0428/20250428132338848329482_pc.html",
+    "tags": [
+      "数据要素",
+      "数据基础制度",
+      "工作要点"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "为贯彻落实党中央、国务院决策部署，抓好数据二十条各项任务落实，国家数据局印发构建数据基础制度更好发挥数据要素作用2025年工作要点。",
+    "local_path": "",
+    "format": "link"
+  },
+  {
+    "doc_number": "国数政策〔2026〕6号",
+    "title": "《关于培育数据流通服务机构 加快推进数据要素市场化价值化的意见》",
+    "issuer": "国家数据局 工业和信息化部 公安部 中国证监会",
+    "date": "2026-02-01",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202602/content_7057405.htm",
+    "tags": [
+      "数据流通",
+      "数据要素市场化",
+      "数据局"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "国家数据局等部门关于培育数据流通服务机构 加快推进数据要素市场化价值化的意见。",
+    "local_path": "cache/ndrc/content_7057405.htm",
+    "format": "html"
+  }
+]

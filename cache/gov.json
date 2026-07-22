@@ -1,0 +1,473 @@
+[
+  {
+    "doc_number": "国资发监督规〔2021〕",
+    "title": "《中央企业重大经营风险事件报告工作规则》",
+    "issuer": "国务院国有资产监督管理委员会",
+    "date": "2021-12-13",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/2022-01/28/content_5671006.htm",
+    "summary": "为规范中央企业重大经营风险事件报告工作，建立健全重大经营风险管控机制，及时采取应对措施，有效防范和化解重大经营风险。企业是重大经营风险事件报告工作的责任主体，负责建立报告工作制度和运行机制。",
+    "tags": [
+      "国资委",
+      "中央企业",
+      "风险防控",
+      "经营风险"
+    ],
+    "searched_at": "2026-07-22",
+    "local_path": "cache/gov/content_5671006.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "（中央深改委审议通过）",
+    "title": "《关于推进国有企业打造原创技术策源地的指导意见》",
+    "issuer": "中央全面深化改革委员会",
+    "date": "2022-09-01",
+    "source_url": "https://www.gov.cn/zhengce/2022-09/06/content_5712816.htm",
+    "summary": "[链接失效] 原文页面返回404，当前仅有标题信息。",
+    "tags": [
+      "国资委",
+      "原创技术策源地",
+      "科技创新"
+    ],
+    "searched_at": "2026-07-22",
+    "local_path": "",
+    "format": "link"
+  },
+  {
+    "doc_number": "",
+    "title": "《关于构建数据基础制度更好发挥数据要素作用的意见》（数据二十条）",
+    "issuer": "中共中央 国务院",
+    "date": "2022-12-02",
+    "source_url": "https://www.gov.cn/gongbao/content/2023/content_5736707.htm",
+    "tags": [
+      "数据要素",
+      "数据基础制度",
+      "数据二十条",
+      "数字经济"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "数据作为新型生产要素，是数字化、网络化、智能化的基础，已快速融入生产、分配、流通、消费和社会服务管理等各环节。数据基础制度建设事关国家发展和安全大局。以数据产权、流通交易、收益分配、安全治理为重点。",
+    "local_path": "cache/gov/content_5736707.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "",
+    "title": "《数字中国建设整体布局规划》",
+    "issuer": "中共中央 国务院",
+    "date": "2023-02-27",
+    "source_url": "https://www.gov.cn/zhengce/2023-02/27/content_5743484.htm",
+    "tags": [
+      "数字中国",
+      "数字化",
+      "顶层规划"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "数字中国建设顶层设计文件，明确「2522」整体框架：夯实数字基础设施和数据资源体系两大基础，推进数字技术与经济、政治、文化、社会、生态文明建设五位一体深度融合。",
+    "local_path": "cache/gov/content_5743484.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "工信部联通信〔2023〕180号",
+    "title": "《算力基础设施高质量发展行动计划》",
+    "issuer": "工业和信息化部 等六部门",
+    "date": "2023-10-08",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202310/content_6907900.htm",
+    "tags": [
+      "算力",
+      "算力基础设施",
+      "智能算力",
+      "数字经济"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "到2025年算力规模超过300EFLOPS，智能算力占比达35% | 围绕计算力、运载力、存储力、应用赋能四个维度提出量化指标 | 算力是集信息计算力、网络运载力、数据存储力于一体的新型生产力，对于助推产业转型升级、赋能科技创新进步具有重要意义。",
+    "local_path": "cache/gov/suanli_infrastructure_plan.pdf",
+    "format": "pdf"
+  },
+  {
+    "doc_number": "工信部联规〔2023〕258号",
+    "title": "《关于加快传统制造业转型升级的指导意见》",
+    "issuer": "工业和信息化部 等八部门",
+    "date": "2023-12-01",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202312/content_6923270.htm",
+    "tags": [
+      "传统制造业",
+      "转型升级",
+      "数字化转型"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "工业和信息化部等八部门关于加快传统制造业转型升级的指导意见。",
+    "local_path": "cache/gov/content_6923270.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "发改数据〔2023〕1779号",
+    "title": "《关于深入实施\"东数西算\"工程 加快构建全国一体化算力网的实施意见》",
+    "issuer": "国家发展改革委 国家数据局 等五部门",
+    "date": "2024-01-01",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202401/content_6924596.htm",
+    "tags": [
+      "算力",
+      "算力网",
+      "东数西算",
+      "一体化算力"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "算力网是支撑数字经济高质量发展的关键基础设施，通过网络连接多源异构海量泛在算力，实现资源高效调度、设施绿色低碳、算力灵活供给、服务智能随需。",
+    "local_path": "cache/gov/content_6924596.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "",
+    "title": "《国务院国资委开展第二批央企原创技术策源地布局建设》",
+    "issuer": "国务院国有资产监督管理委员会",
+    "date": "2024-05-10",
+    "source_url": "https://www.gov.cn/lianbo/bumen/202405/content_6950357.htm",
+    "tags": [
+      "国资委",
+      "原创技术策源地",
+      "科技创新"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "第二批中央企业原创技术策源地布局建设，在量子信息、类脑智能、生物制造等36个领域，支持40家央企布局52个原创技术策源地。两批布局后共58家央企承建97个策源地。",
+    "local_path": "cache/gov/content_6950357.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "",
+    "title": "《国家能源局关于进一步加快煤矿智能化建设促进煤炭高质量发展的通知》",
+    "issuer": "国家能源局",
+    "date": "2024-05-27",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202405/content_6954239.htm",
+    "tags": [
+      "智能矿山",
+      "煤矿智能化",
+      "煤炭",
+      "安全生产",
+      "能源"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "大型煤矿加快智能化改造，2025年底前建成单个或多个系统智能化。鼓励300万吨/年以上煤矿全面推进智能化改造，率先建成全系统智能化煤矿。推进露天煤矿无人驾驶系统建设。",
+    "local_path": "cache/gov/content_6954239.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "",
+    "title": "《工业互联网与电力行业融合应用参考指南（2024年）》",
+    "issuer": "工业和信息化部办公厅",
+    "date": "2024-10-01",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202410/content_6980680.htm",
+    "tags": [
+      "工业互联网",
+      "电力行业",
+      "融合应用"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "推动工业互联网规模化应用，深化工业互联网在电力行业的融合创新应用 | 覆盖发电监控、电网调度、用电管理等电力行业全链条应用场景",
+    "local_path": "cache/gov/iiot_electricity_guide.pdf",
+    "format": "pdf"
+  },
+  {
+    "doc_number": "国数资源〔2024〕119号",
+    "title": "《可信数据空间发展行动计划（2024—2028年）》",
+    "issuer": "国家数据局",
+    "date": "2024-11-01",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202411/content_6996363.htm",
+    "tags": [
+      "数据要素",
+      "可信数据空间",
+      "数据流通",
+      "数据市场"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "引导和支持可信数据空间发展，促进数据要素合规高效流通使用，支撑构建全国一体化数据市场。到 2028 年，可信数据空间运营、技术、生态、标准、安全等\n体系取得突破，建成 100 个以上可信数据空间，形成一批数据空间\n解决方案和最佳实践，基本建成广泛互联、资源集聚、生态繁荣、\n价值共创、治理有序的可信数据空间网络，各领域数据开发开放和\n流通使用水平显著提升，初步形成与我国经济社会发展水平相适应\n1\n\n\f的数据生态体系。",
+    "local_path": "cache/gov/trusted_data_space_plan.pdf",
+    "format": "pdf"
+  },
+  {
+    "doc_number": "工信部信发〔2024〕",
+    "title": "《制造业企业数字化转型实施指南》",
+    "issuer": "工业和信息化部 国务院国资委 全国工商联",
+    "date": "2024-12-17",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202412/content_6994622.htm",
+    "tags": [
+      "制造业",
+      "数字化转型",
+      "实施指南"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "制造业数字化转型是运用数字技术对制造业研发生产全流程和产业链供应链各环节进行改造升级和价值重塑的过程。以企业发展实际为出发点、以解决企业痛点难点问题为目标、以提升全要素生产率为导向，精准识别数字化转型优先领域和重点方向。",
+    "local_path": "cache/gov/manufacturing_digital_guide.pdf",
+    "format": "pdf"
+  },
+  {
+    "doc_number": "",
+    "title": "《教育强国建设规划纲要（2024—2035年）》",
+    "issuer": "中共中央 国务院",
+    "date": "2025-01-19",
+    "source_url": "https://www.gov.cn/zhengce/202501/content_6999913.htm",
+    "tags": [
+      "教育强国",
+      "科技人才",
+      "教育科技人才一体",
+      "创新"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "面向2035年建成教育强国目标，一体推进教育科技人才发展，完善拔尖创新人才培养机制，推进基础教育扩优提质、高等教育提质扩容、职业教育体系建设。",
+    "local_path": "cache/gov/content_6999913.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "工信厅通信函〔2025〕55号",
+    "title": "《工业和信息化部办公厅关于组织开展算力强基揭榜行动的通知》",
+    "issuer": "工业和信息化部办公厅",
+    "date": "2025-02-18",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202502/content_7005004.htm",
+    "tags": [
+      "算力",
+      "算力网络",
+      "算力强基",
+      "揭榜挂帅"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "面向算力网络的计算、存储、网络、应用、绿色、安全六大重点方向，发掘掌握关键核心技术的企事业单位，突破标志性技术产品和方案，推动算力网络\"点、链、网、面\"体系化发展。",
+    "local_path": "cache/gov/suanli_qiangji_rank.pdf",
+    "format": "pdf"
+  },
+  {
+    "doc_number": "工信部通信〔2025〕87号",
+    "title": "《算力互联互通行动计划》",
+    "issuer": "工业和信息化部",
+    "date": "2025-05-21",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202505/content_7025968.htm",
+    "tags": [
+      "算力",
+      "算力互联互通",
+      "算力网络",
+      "算力互联网"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "以推动算力互联互通为主线，先试点后推广。到2026年建立较为完备的算力互联互通标准、标识和规则体系，实现全国头部算力企业的公共算力资源标准化互联，推动算、存、网一体化发展。",
+    "local_path": "cache/gov/suanli_interconnect_plan.pdf",
+    "format": "pdf"
+  },
+  {
+    "doc_number": "国发〔2025〕11号",
+    "title": "《国务院关于深入实施「人工智能+」行动的意见》",
+    "issuer": "国务院",
+    "date": "2025-08-21",
+    "source_url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+    "tags": [
+      "人工智能+",
+      "AI+",
+      "智能经济",
+      "科技创新"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "推动人工智能与经济社会各行业各领域广泛深度融合。以科技、产业、消费、民生、治理、全球合作为重点方向，加强AI基础理论和前沿技术研发，推进算法、算力、数据协同创新，突破大模型训练推理、具身智能、群体智能等关键技术。",
+    "local_path": "cache/gov/content_7037861.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "国能发科技〔2025〕73号",
+    "title": "《关于推进「人工智能+」能源高质量发展的实施意见》",
+    "issuer": "国家发展改革委 国家能源局",
+    "date": "2025-09-04",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202509/content_7040253.htm",
+    "tags": [
+      "能源",
+      "人工智能",
+      "AI+",
+      "数智化"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "推动能源与人工智能融合创新，聚焦电网调度、油气勘探、煤炭采掘、新能源运维等八大应用场景，推动五个以上专业大模型在电网、发电、煤炭、油气等行业深度应用。",
+    "local_path": "cache/gov/content_7040253.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "",
+    "title": "《关于促进和规范「人工智能+医疗卫生」应用发展的实施意见》",
+    "issuer": "多部门",
+    "date": "2025-11-20",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047018.htm",
+    "tags": [
+      "人工智能",
+      "AI+",
+      "医疗卫生",
+      "健康中国"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "鼓励人工智能在辅助诊疗、精准医疗、健康管理、医保服务等场景应用，加强人工智能科研保障和人才评价机制。",
+    "local_path": "cache/gov/content_7047018.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "工信厅信管〔2025〕76号",
+    "title": "《工业互联网和人工智能融合赋能行动方案》",
+    "issuer": "工业和信息化部办公厅",
+    "date": "2025-12-01",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7054192.htm",
+    "tags": [
+      "工业互联网",
+      "人工智能",
+      "AI+制造",
+      "融合赋能"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "推动工业互联网与人工智能深度融合，以工业互联网为底座、人工智能为引擎，加快制造业数字化转型和智能化升级，覆盖研发设计、生产制造、经营管理、安全运维、服务创新五大赋能场景。",
+    "local_path": "cache/gov/iiot_ai_fusion_plan.pdf",
+    "format": "pdf"
+  },
+  {
+    "doc_number": "",
+    "title": "《关于加强数据要素学科专业建设和数字人才队伍建设的意见》",
+    "issuer": "国家数据局",
+    "date": "2025-12-01",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202512/content_7050192.htm",
+    "tags": [
+      "数据要素",
+      "数字人才",
+      "学科建设",
+      "数据领域教育"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "加强数据要素学科专业建设和数字人才队伍建设，建立数据领域科技发展、国家战略需求牵引的学科专业设置调整机制和人才培养模式。",
+    "local_path": "cache/gov/content_7050192.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "",
+    "title": "《国家数据局关于加强数据科技创新的实施意见》",
+    "issuer": "国家数据局",
+    "date": "2025-12-10",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202512/content_7053003.htm",
+    "tags": [
+      "数据要素",
+      "数据科技创新",
+      "数据产业",
+      "数据要素乘数效应"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "加强数据科技创新，推动与产业创新深度融合，促进数据供得出、流得动、用得好、保安全，夯实数据资源体系，激活数据要素乘数效应。",
+    "local_path": "cache/gov/content_7053003.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "工信部联科〔2025〕279号",
+    "title": "《「人工智能+制造」专项行动实施意见》",
+    "issuer": "八部门",
+    "date": "2025-12-25",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7054201.htm",
+    "tags": [
+      "智能制造",
+      "人工智能",
+      "制造业"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "推进人工智能技术在制造业融合应用，打造新质生产力，全方位、深层次、高水平赋能新型工业化。",
+    "local_path": "cache/gov/ai_manufacturing_plan.pdf",
+    "format": "pdf"
+  },
+  {
+    "doc_number": "",
+    "title": "《推动工业互联网平台高质量发展行动方案（2026—2028年）》",
+    "issuer": "工业和信息化部",
+    "date": "2026-01-01",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7054660.htm",
+    "tags": [
+      "工业互联网",
+      "工业互联网平台",
+      "数字化转型"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "工业互联网平台是海量数据汇聚、模型沉淀和应用开发的关键载体，是工业要素资源泛在连接、弹性供给和高效配置的重要枢纽，是支撑产业智能化、绿色化、融合化发展的战略性基础设施。",
+    "local_path": "cache/gov/iiot_platform_plan.pdf",
+    "format": "pdf"
+  },
+  {
+    "doc_number": "",
+    "title": "《中华人民共和国国民经济和社会发展第十五个五年规划纲要》",
+    "issuer": "全国人民代表大会",
+    "date": "2026-03-05",
+    "source_url": "https://www.gov.cn/yaowen/liebiao/202603/content_7062633.htm",
+    "tags": [
+      "十五五",
+      "数字中国",
+      "数智化",
+      "人工智能+",
+      "科技创新",
+      "教育科技人才"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "深入推进数字中国建设 提升数智化发展水平。强化算力算法数据高效供给，全方位推进数智技术赋能。一体推进教育科技人才发展，强化企业科技创新主体地位。",
+    "local_path": "cache/gov/content_7062633.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "国能发科技〔2026〕34号",
+    "title": "《关于促进人工智能与能源双向赋能的行动方案》",
+    "issuer": "国家发展改革委 国家能源局 工业和信息化部 国家数据局",
+    "date": "2026-04-08",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202605/content_7068153.htm",
+    "tags": [
+      "能源",
+      "人工智能",
+      "双向赋能",
+      "算电协同"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "统筹算力与电力协同布局，推动AI与能源双向赋能。到2027年AI算力设施的清洁能源供给保障体系初步构建，到2030年达到世界领先水平。开放能源AI场景、发展能源大模型、促进能源数据流通。",
+    "local_path": "cache/gov/content_7068153.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "",
+    "title": "《教育部等五部门关于印发〈人工智能+教育行动计划〉的通知》",
+    "issuer": "教育部 等五部门",
+    "date": "2026-04-15",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202604/content_7065138.htm",
+    "tags": [
+      "人工智能",
+      "AI+",
+      "教育",
+      "教育数字化"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "打造教育智能大脑，利用人工智能赋能教育治理、智能命题、智能评卷、就业岗位智能推荐，支撑平安校园建设。",
+    "local_path": "cache/gov/content_7065138.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "",
+    "title": "《商务部等8部门关于加快「人工智能+消费」发展的实施意见》",
+    "issuer": "商务部 等八部门",
+    "date": "2026-06-15",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202606/content_7072672.htm",
+    "tags": [
+      "人工智能",
+      "AI+",
+      "消费升级",
+      "智能经济"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "推动人工智能与消费领域深度融合，发展智能家居、智能穿戴、智能出行等新型消费业态，加强消费者信息保护和人工智能+消费监管。",
+    "local_path": "cache/gov/content_7072672.htm",
+    "format": "html"
+  },
+  {
+    "doc_number": "工信部联信管〔2026〕152号",
+    "title": "《关于推动工业互联网高质量发展的实施意见》",
+    "issuer": "工业和信息化部 等八部门",
+    "date": "2026-06-28",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202607/content_7073906.htm",
+    "tags": [
+      "工业互联网",
+      "数字化转型",
+      "智能制造",
+      "新型工业化"
+    ],
+    "searched_at": "2026-07-22",
+    "summary": "工业互联网是实体经济和数字经济深度融合的关键底座，是推进新型工业化的重要基础设施。深入实施工业互联网创新发展战略，在更广范围、更深程度、更高水平上释放工业互联网乘数效应，加快形成新质生产力。",
+    "local_path": "cache/gov/iiot_high_quality_plan.pdf",
+    "format": "pdf"
+  }
+]
