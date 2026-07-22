@@ -41,8 +41,8 @@ checks = {
     'cache/cac.json': SYSTEM_CACHE / 'cac.json',
     'cache/gov.json': SYSTEM_CACHE / 'gov.json',
     'cache/miit.json': SYSTEM_CACHE / 'miit.json',
-    'cache/ndrc.json',
-    'cache/nda.json',: SYSTEM_CACHE / 'ndrc.json',
+    'cache/ndrc.json': SYSTEM_CACHE / 'ndrc.json',
+    'cache/nda.json': SYSTEM_CACHE / 'nda.json',
     'cache/nea.json': SYSTEM_CACHE / 'nea.json',
     'cache/sasac.json': SYSTEM_CACHE / 'sasac.json',
 }
