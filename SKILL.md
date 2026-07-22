@@ -42,7 +42,7 @@ metadata:
 
 **Phase 5：结果验证** — 逐字比对输出引文与原文，确保无改述、无捏造
 
-具体操作步骤见各 Phase 章节。输出的 HTML 文件保存在 `AGENT_HOME/output/` 目录，脚本工具在 `scripts/` 目录下。
+具体操作步骤见各 Phase 章节。输出的 HTML 文件保存在 `~/.hermes/output/` 目录，脚本工具在 `scripts/` 目录下。
 
 ## Setup
 
