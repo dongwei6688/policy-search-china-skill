@@ -74,7 +74,7 @@ python3 {skill_dir}/scripts/init.py
 | 国资委 | sasac.gov.cn | www.sasac.gov.cn/n2588035/ | `site:sasac.gov.cn` |
 | 国家能源局 | nea.gov.cn | www.nea.gov.cn/policy/zxwj.htm | `site:nea.gov.cn` |
 | 发改委 | ndrc.gov.cn | www.ndrc.gov.cn/xxgk/zcfb/ | `site:ndrc.gov.cn 政策` |
-| 网信办 | cac.gov.cn | www.cac.gov.cn/zhengce/ | `site:cac.gov.cn` |
+| 网信办 | cac.gov.cn | www.cac.gov.cn/wxzw/zcfg/A093703index_1.htm | `site:cac.gov.cn` |
 
 ### 综合政策文件库（补充信源）
 
