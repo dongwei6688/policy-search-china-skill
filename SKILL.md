@@ -125,6 +125,7 @@ python3 {skill_dir}/scripts/init.py
 高精度：人工智能 发展规划 site:gov.cn
 高精度：生成式人工智能 管理办法 site:cac.gov.cn
 高精度：人工智能+ 行动 方案 site:gov.cn
+高精度：模数共振 行动 site:miit.gov.cn OR site:gov.cn
 中精度：AI+ 产业 指导意见 site:miit.gov.cn
 宽泛：新一代人工智能 发展 政策
 ```
