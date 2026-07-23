@@ -90,7 +90,7 @@ python3 {skill_dir}/scripts/init.py
 > **🤖 大模型 API = 调用 provider 模型能力（比如当前 provider 为 DeepSeek，调用时需根据 provider 进行具体适配）完成**：需求理解、领域拆解、搜索规划、结果整合
 > **🔧 本地工具 = Hermes Agent 执行**：`web_search` / `curl` / `browser_navigate` / `read_file` / `write_file` 等
 
-**关键教训（2026-07 实战验证）：** 当需要全面扫描某领域的政策（如"近3年能源数智化政策"），纯工具搜索的"想到什么搜什么"方式覆盖面窄，容易遗漏细分领域文件。先调用大模型 API 生成搜索规划，可以一次性拆解出 10+ 个子查询，覆盖更全面。
+**关键教训：** 当需要全面扫描某领域的政策（如"近3年能源数智化政策"），纯工具搜索的"想到什么搜什么"方式覆盖面窄，容易遗漏细分领域文件。先调用大模型 API 生成搜索规划，可以一次性拆解出 10+ 个子查询，覆盖更全面。
 
 **正确做法：两段式工作流——模型规划，工具验证**
 
@@ -163,7 +163,7 @@ python3 {skill_dir}/scripts/init.py
 中精度：东数西算 工程 site:ndrc.gov.cn
 ```
 
-**8. 能源专项（新增——上次实战遗漏的细分领域）**
+**8. 能源专项**
 ```
 高精度：智能煤矿 数字化 site:nea.gov.cn OR site:gov.cn
 高精度：虚拟电厂 指导意见 site:gov.cn OR site:ndrc.gov.cn
