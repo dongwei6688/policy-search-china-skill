@@ -16,26 +16,38 @@
   # 查看帮助
   python3 scripts/rebuild_policy_html.py --help
 
+跨平台路径支持：
+  本脚本不再硬编码 ~/.hermes/ 路径，通过 path_utils.py 自动解析。
+  通过环境变量可覆盖：
+    POLICY_SEARCH_CHINA_DATA_DIR    用户数据目录（默认: ~/.hermes/data/policy-search-china/ 或 SKILL_DIR/data/）
+    POLICY_SEARCH_CHINA_OUTPUT_DIR  输出目录（默认: USER_DIR/output/）
+
 架构说明：
-  系统空间（只读，更新替换）: ~/.hermes/skills/research/policy-search-china/
-  用户空间（读写，永不覆盖）: ~/.hermes/data/policy-search-china/
-  输出目录:                  ~/.hermes/output/
+  系统空间（只读，随 skill 分发）: SKILL_DIR/cache/
+  用户空间（读写，永不覆盖）:     USER_DIR/cache/
+  输出目录:                        OUTPUT_DIR/
 
   搜索优先级：用户空间 > 系统空间
 """
+
 import argparse
 import json
+import os
 import re
 import subprocess
+import sys
 from pathlib import Path
 
-# ═══════════════════════════════════════════════════════════
-#  路径配置
-# ═══════════════════════════════════════════════════════════
-SYSTEM_DIR = Path.home() / '.hermes' / 'skills' / 'research' / 'policy-search-china'
-USER_DIR = Path.home() / '.hermes' / 'data' / 'policy-search-china'
-OUTPUT_DIR = Path.home() / '.hermes' / 'output'
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+# ── 使用跨平台路径工具 ─────────────────────────────
+_SELF_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(_SELF_DIR))
+from path_utils import (
+    SYSTEM_DIR, USER_DIR, OUTPUT_DIR,
+    SYSTEM_CACHE, USER_CACHE,
+    resolve_local_path, ensure_dirs, summary,
+)
+
+ensure_dirs()
 
 # ═══════════════════════════════════════════════════════════
 #  预设主题（仅 --all 模式使用）
@@ -51,7 +63,7 @@ PRESET_TOPICS = {
 }
 
 # ═══════════════════════════════════════════════════════════
-#  CSS 样式（生成 HTML 时嵌入）
+#  CSS 样式（生成 HTML 时嵌入，无外部依赖）
 # ═══════════════════════════════════════════════════════════
 CSS = """\
 body{font-family:'宋体',SimSun,serif;max-width:960px;margin:0 auto;padding:20px;background:#f9f9f9;color:#222;line-height:1.8}
@@ -72,7 +84,7 @@ body{font-family:'宋体',SimSun,serif;max-width:960px;margin:0 auto;padding:20p
 .doc-section p{text-indent:2em;margin:6px 0;font-size:14px;text-align:justify}
 .hl{background:#fff3cd;padding:0 2px;font-weight:bold}
 .verify{border:1px solid #27ae60;background:#eafaf1;padding:8px 15px;border-radius:5px;font-size:12px;color:#1e8449;margin:10px 0}
-.footer{text-align:center;color:#999;font-size:12px;margin-top:30px;padding-top:20px;border-top:1px solid #ddd}
+.footer{text-align:center;color:#999;font-size:12px;margin-top:30px;padding-top:20px;border-top:1px solid #ddd}\
 """
 
 
@@ -80,14 +92,6 @@ body{font-family:'宋体',SimSun,serif;max-width:960px;margin:0 auto;padding:20p
 #  双空间缓存读取
 #  核心逻辑：用户空间优先，系统空间兜底
 # ═══════════════════════════════════════════════════════════
-
-def _resolve_local_path(local_path: str) -> Path:
-    """查找本地原文文件，优先查用户空间"""
-    user_path = USER_DIR / local_path
-    if user_path.exists():
-        return user_path
-    return SYSTEM_DIR / local_path
-
 
 def load_all_cache() -> list[dict]:
     """
@@ -99,14 +103,14 @@ def load_all_cache() -> list[dict]:
     - 仅系统有的 → 保留
     """
     json_names = set()
-    for d in [USER_DIR / 'cache', SYSTEM_DIR / 'cache']:
+    for d in [USER_CACHE, SYSTEM_CACHE]:
         if d.exists():
             for jf in sorted(d.glob('*.json')):
                 json_names.add(jf.name)
 
     def _load_merged(name: str) -> list[dict]:
-        user_path = USER_DIR / 'cache' / name
-        sys_path = SYSTEM_DIR / 'cache' / name
+        user_path = USER_CACHE / name
+        sys_path = SYSTEM_CACHE / name
 
         user_entries = json.loads(user_path.read_text(encoding='utf-8')) if user_path.exists() else []
         sys_entries = json.loads(sys_path.read_text(encoding='utf-8')) if sys_path.exists() else []
@@ -160,7 +164,7 @@ def load_source(entry: dict) -> str:
     fmt = entry.get('format', '')
     if not lp:
         return ''
-    fp = _resolve_local_path(lp)
+    fp = resolve_local_path(lp)
     if not fp.exists():
         return ''
 
@@ -202,7 +206,7 @@ def extract_paragraphs(entry: dict, keyword: str) -> list[tuple[str, str]]:
     fmt = entry.get('format', '')
     if not lp:
         return []
-    fp = _resolve_local_path(lp)
+    fp = resolve_local_path(lp)
     if not fp.exists():
         return []
 
@@ -395,7 +399,7 @@ def main():
     parser = argparse.ArgumentParser(
         description='政策汇编 HTML 生成器 — 逐字提取 + 关键词高亮',
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
+        epilog="""\
 使用示例:
   # 搜索单个主题
   python3 scripts/rebuild_policy_html.py --topic 智慧城市
@@ -406,6 +410,10 @@ def main():
 
   # 搜索多关键词主题
   python3 scripts/rebuild_policy_html.py --topic "数据要素" --topic "人工智能"
+
+跨平台:
+  设置环境变量 POLICY_SEARCH_CHINA_DATA_DIR 和 POLICY_SEARCH_CHINA_OUTPUT_DIR
+  可在任何 Agent 平台上使用本 skill
         """,
     )
     parser.add_argument('--topic', action='append', dest='topics',
@@ -414,9 +422,9 @@ def main():
                         help='批量重建所有预设主题（PRESET_TOPICS）')
     args = parser.parse_args()
 
-    print(f'  用户空间: {USER_DIR}')
-    print(f'  系统空间: {SYSTEM_DIR}')
-    print(f'  {"─" * 55}')
+    # 打印路径信息
+    print(summary())
+    print(f'  {"─" * 50}')
 
     # ── --all 模式：走预设主题列表 ──
     if args.all:
@@ -433,9 +441,7 @@ def main():
 
     # ── --topic 模式：用户自定义搜索 ──
     if args.topics:
-        # 多个 --topic 视为多关键词（如 "数据要素" + "人工智能"）
         keywords = args.topics
-        # 生成标题时用关键词组合
         if len(keywords) == 1:
             title = f'{keywords[0]}政策汇编'
         else:

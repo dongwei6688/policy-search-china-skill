@@ -1,8 +1,8 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents and extract authoritative references for reports and planning documents. Covers State Council, MIIT, NDRC, SASAC, NEA, CAC and other key ministries."
-version: 1.4.0
-author: Hermes Agent
+version: 1.5.0
+author: dongwei6688 (董伟)
 license: MIT
 setup_needed: true
 metadata:
@@ -16,6 +16,8 @@ metadata:
 ## Overview
 
 撰写央国企数智化规划/报告时，需要引用权威政策原文作为依据。本 Skill 提供从搜索定位 → 原文提取 → 引用标注的完整工作流，覆盖国务院、工信部、国家数据局、国资委、国家能源局、发改委、网信办等信源。
+
+**v1.5.0 新增跨平台支持：** 不再硬编码 `~/.hermes/` 路径，可在 Hermes / OpenClaw / Workbuddy / Claude Code 等任意 Agent 平台上使用。通过环境变量 `POLICY_SEARCH_CHINA_DATA_DIR` 和 `POLICY_SEARCH_CHINA_OUTPUT_DIR` 自定义数据与输出路径。
 
 ## When to Use
 
@@ -45,23 +47,45 @@ metadata:
 
 具体操作步骤见各 Phase 章节。输出的 HTML 文件保存在 `~/.hermes/output/` 目录，脚本工具在 `scripts/` 目录下。
 
-## Setup
+|## Setup
 
 首次安装或加载本 Skill 时，运行初始化脚本确保目录结构就绪：
 
 ```bash
-python3 {skill_dir}/scripts/init.py
+python3 scripts/init.py
 ```
 
 脚本执行以下操作（幂等，可重复运行）：
-- 创建用户空间目录 `~/.hermes/data/policy-search-china/{cache, config}`
-- 创建输出目录 `~/.hermes/output/`
+- 创建用户空间目录（缓存、配置）
+- 创建输出目录
 - 检查系统空间完整性（SKILL.md、scripts/、缓存索引文件）
-- 生成默认配置文件 `~/.hermes/data/policy-search-china/config/user_config.ini`
+- 生成默认配置文件 `config/user_config.ini`
 - 检查运行依赖（python3、curl、pdftotext）
 
 **说明：** Hermes Agent 首次加载此 Skill 时会自动提示运行初始化。
-用户空间目录 `~/.hermes/data/policy-search-china/` 的数据在 skill 更新时**不会被覆盖**。
+用户空间的数据在 skill 更新时**不会被覆盖**。
+
+### 跨平台使用
+
+本 Skill **从 v1.5.0 起不再硬编码 `~/.hermes/` 路径**，可在任何 AI Agent 平台上使用（Hermes / OpenClaw / Workbuddy / Claude Code 等）。
+
+路径解析规则（优先级从高到低）：
+
+| 设置方式 | 配置项 | 说明 |
+|---------|--------|------|
+| 环境变量 | `POLICY_SEARCH_CHINA_DATA_DIR` | 用户数据目录（缓存、配置） |
+| 环境变量 | `POLICY_SEARCH_CHINA_OUTPUT_DIR` | 输出目录（生成的 HTML 等） |
+| 自动检测 | 检查 `~/.hermes/data/policy-search-china/` | 保持与 Hermes 的向后兼容 |
+| 兜底 | `SKILL_DIR/data/` | skill 自带数据目录 |
+
+```bash
+# 在任意平台上使用
+export POLICY_SEARCH_CHINA_DATA_DIR=/path/to/my/data
+export POLICY_SEARCH_CHINA_OUTPUT_DIR=/path/to/output
+python3 /path/to/skill/scripts/rebuild_policy_html.py --topic "数据要素"
+```
+
+用户空间目录 `~/.hermes/data/policy-search-china/` 的数据在 skill 更新时**不会被覆盖**（双空间架构：系统空间随 skill 更新替换，用户空间独立保留）。
 
 ## 信源体系
 
