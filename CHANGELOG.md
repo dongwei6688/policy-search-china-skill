@@ -1,5 +1,13 @@
 # 更新日志
 
+## v1.9.7 (2026-07-28)
+
+### Changed
+- 每位 Phase 加可执行代码示例（Python 缓存扫描、段落提取、HTML 高亮输出）
+- Two-Stage Principle 改为具体搜索计划示例
+- 去除 Overview 冗余描述，合并到 H1 摘要
+- 去除 Phase 描述的 reference 文件依赖（Agent 读完主文件可直接执行）
+
 ## v1.9.6 (2026-07-28)
 
 ### Changed

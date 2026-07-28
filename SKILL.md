@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents and extract authoritative references for reports and planning documents. Covers State Council, MIIT, NDRC, SASAC, NEA, CAC and other key ministries."
-version: 1.9.6
+version: 1.9.7
 author: dongwei6688 (董伟)
 license: MIT
 setup_needed: true
@@ -15,89 +15,130 @@ metadata:
 
 Search Chinese government policy documents and extract authoritative references for reports and planning documents. Covers State Council, MIIT, NDRC, SASAC, NEA, CAC and other key ministries.
 
-## Overview
-
-撰写央国企数智化规划/报告时，需要引用权威政策原文作为依据。本 Skill 提供从搜索定位 → 原文提取 → 引用标注的完整工作流，覆盖国务院、工信部、国家数据局、国资委、国家能源局、发改委、网信办等信源。缓存机制支持离线查找，每次搜索结果自动写入用户空间，持续积累。
-
 ## When to Use
 
 - 用户要求在规划/报告中引用政策原文
 - 用户提到某个政策文号或文件名（如"数据二十条"、"十四五数字经济发展规划"）
 - 用户需要确认某个政策条款的具体表述
-- 用户需要核对政策文件的发布机构、发布日期、文号
-- 用户需要快速查**一句话的具体政策出处**（如"这句话出自哪个政策"、"帮我查这个说法的来源"）
+- 用户需要快速查**一句话的具体政策出处**
 
 **不要在以下场景使用：** 已确认无法公开获取的内部流通文件、非正式发布的地方政策征求意见稿。
 
 ## Decision Guide
 
-| 用户需求 | 对应工作流 | 详细参考 |
-|----------|-----------|---------|
-| 查找某条具体政策（已知文号/文件名/关键词） | **模式一：精确查找** — 缓存 → 搜索 → 提取 → 输出 | `references/search-strategies.md` |
-| 全面扫描某领域政策全景（如"近3年AI政策"） | **模式二：全面扫描** — 模型规划 → 批量验证 → 提取 → 输出 | `references/search-strategies.md` |
-| 从政策原文中提取某主题内容并输出 HTML（如"算力"相关段落按篇章整理） | **主题提取→结构化输出** — 定位 → 读取 → 章节 → HTML → 验证 | `references/output-format.md` |
-| 需要确认信源归属/缓存文件映射/部委域名 | **查信源体系** — 按部委确定缓存文件和搜索策略 | `references/policy-sources.md` |
-| 需要排查搜索提取失败/格式问题 | **查常见问题** — 已知限制与解决方案 | `references/output-format.md` |
+| 用户需求 | 操作 | 详细参考 |
+|----------|------|---------|
+| 查找某条具体政策（已知文号/文件名） | 缓存搜索 → 文号搜索 → web 提取 → 输出 | `references/search-strategies.md` |
+| 全面扫描某领域政策（如"近3年AI政策"） | 模型规划子领域 → 批量缓存检查 → web 逐条验证 → 输出 | `references/search-strategies.md` |
+| 从政策中提取某主题按篇章输出 HTML | 缓存扫描 → 读取原文 → 章节归属 → HTML 生成 → 验证 | `references/output-format.md` |
+| 确认信源/缓存映射 | 按域名匹配缓存文件 | `references/policy-sources.md` |
 
-## Core Workflow
+## Core Workflow — 可执行指引
 
-本 Skill 的核心工作流按六个 Phase 顺序执行：
+```
+pip install pypdf pdfplumber
+```
 
-| Phase | 操作 | 动作 |
-|:-----:|------|------|
-| **0** | **缓存新鲜度检查** | 扫描本地缓存最新 `searched_at` 日期，对高动态主题联网核查有无新政策 |
-| **1** | **缓存搜索** | 遍历 `cache/` 目录下所有 `*.json` 信源文件，先匹配 keyword 在 title/summary/tags 中的命中，再匹配全文 |
-| **2** | **原文读取** | 按条目的 `format` 字段选择读取方式：`html` 解析 pages_content 容器提取段落，`pdf` 读取配套 `.txt` 文件 |
-| **3** | **关键词段提取** | 对每个段落做关键词逐段判定，记录段落编号、所属章节、原文引用 |
-| **4** | **结构化输出** | 生成含逐字引文的 HTML 文件，关键词高亮标记，每文件区块含验证标签 |
-| **5** | **结果验证** | 逐字比对输出引文与原文，确保无改述、无捏造 |
+### Phase 0: 缓存新鲜度检查
+```python
+# 检查最新缓存日期，高动态主题需联网预检
+latest = max(e.get('searched_at','') for jf in glob('cache/*.json') for e in json.load(open(jf)))
+# 如果 latest < 今年，执行一次 web_search 确认有无新政策
+```
+对"人工智能""数据要素"等高频更新主题，用 `web_search("site:gov.cn/zhengce/zhengceku/ 人工智能 2026")` 确认缓存是否覆盖最新文件。
 
-每步的详细操作见对应 reference 文件。输出目录通过 `POLICY_SEARCH_CHINA_OUTPUT_DIR` 环境变量配置（默认 `~/.hermes/data/policy-search-china/output/`）。
+### Phase 1: 缓存搜索 — 遍历所有信源文件
+```python
+for jf in Path(skill_dir).glob('cache/*.json'):
+    for e in json.load(jf.read_text()):
+        if keyword in e['title'] + ' '.join(e.get('tags',[])) + e.get('summary',''):
+            hits.append(e)
+```
+匹配优先级：文号 > 文件名 > 关键词。不同部委的缓存文件见信源表。
+
+### Phase 2: 原文读取 — 按 format 字段分流
+```python
+entry = hits[0]; lp = Path(entry['local_path'])
+if entry.get('format') == 'pdf':
+    text = open(lp.with_suffix('.txt')).read() if lp.with_suffix('.txt').exists() else ''
+else:
+    body = re.search(r'class="pages_content"[^>]*>(.*?)</?div>', open(lp).read(), re.DOTALL)
+    text = body.group(1) if body else ''
+```
+gov.cn 用 `pages_content` 容器，ndrc.gov.cn 用 `article_con`。PDF 优先读配套 `.txt` 文件。
+
+### Phase 3: 关键词段提取 — 逐段落匹配+章节归属
+```python
+paragraphs = re.findall(r'<p[^>]*>(.*?)</p>', text, re.DOTALL)
+for i, p in enumerate(paragraphs):
+    if keyword in p:
+        text_clean = re.sub(r'<[^>]+>', '', p).strip()
+        chapter = re.findall(r'第[一二三四五六七八九十百零]+[篇章节]', text_clean)
+        results.append((i, text_clean, chapter))
+```
+
+### Phase 4: 结构化 HTML 输出
+```python
+def highlight(text, keyword):
+    return text.replace(keyword, f'<span class="hl">{keyword}</span>')
+```
+HTML 格式：逐字引用 + 关键词 `<span class="hl">` 高亮 + 每个文件区块的 `verification` 验证标签。不改变原文任何内容。
+
+### Phase 5: 结果验证
+- 每个引文段落回到原文逐字比对，确认无改述、无捏造
+- 验证标签标注该文件引用的段落数量：`<div class="verification">✅ N段·逐字引用</div>`
 
 ## Setup
-
-首次加载本 Skill 时，运行初始化脚本确认目录结构就绪：
 
 ```bash
 python3 scripts/init.py
 ```
-
-脚本自动创建用户空间目录、输出目录，检查运行依赖（python3、curl、pdftotext），生成默认配置。
-
-用户空间数据在 skill 更新时不会被覆盖。
+脚本创建用户空间目录，检查运行依赖（python3、curl、pdftotext）。用户空间缓存数据在 skill 更新时不会被覆盖。
 
 ## Source Coverage
 
-政策来源覆盖 **7 个部委/机构**，详见 `references/policy-sources.md`。
+| 缓存文件 | 部门 | site: 搜索前缀 |
+|---------|------|---------------|
+| `gov.json` | 国务院 / 中国政府网 | `site:gov.cn/zhengce/zhengceku/` |
+| `miit.json` | 工信部 | `site:miit.gov.cn` |
+| `nda.json` | 国家数据局 | `site:nda.gov.cn` |
+| `sasac.json` | 国资委 | `site:gov.cn 国资委`（国资委官网时效性差） |
+| `nea.json` | 国家能源局 | `site:nea.gov.cn` |
+| `ndrc.json` | 发改委 | `site:ndrc.gov.cn` |
+| `cac.json` | 网信办 | `site:cac.gov.cn` |
 
-| 部门 | 缓存文件 | 说明 |
-|------|---------|------|
-| 国务院 / 中国政府网 | `gov.json` | 跨部委联合发文、综合性政策 |
-| 工信部 | `miit.json` | 智能制造、两化融合、AI+制造 |
-| 国家数据局 | `nda.json` | 数据要素、数据治理 |
-| 国资委 | `sasac.json` | 央国企数字化转型 |
-| 国家能源局 | `nea.json` | 能源数智化、智能煤矿 |
-| 发改委 | `ndrc.json` | 新基建、算力、双碳 |
-| 网信办 | `cac.json` | AI 监管、数据安全 |
+跨部委联合发文优先在 gov.cn 检索。完整信源表含域名、专栏路径、归属规则等见 `references/policy-sources.md`。
 
 ## Two-Stage Workflow Principle
 
-> **🤖 大模型 API** = 调用 provider 模型完成：需求理解、领域拆解、搜索规划、结果整合
-> **🔧 本地工具** = Hermes Agent 执行：`web_search` / `curl` / `browser_navigate` / `read_file` / `write_file` 等
+**不要从工具搜索开始。** 当用户说"查近3年能源领域数智化政策"，先做规划再做验证：
 
-**关键教训：** 全面扫描某领域时，不要从工具搜索开始。先调用大模型 API 生成搜索规划（拆子领域、列预期文件、规划验证路径），再用本地工具逐条验证——覆盖面远高于"想到什么搜什么"。
+```python
+# Stage 1: 🤖 大模型 API — 需求拆解与规划
+# 调用 provider 模型，输出结构化搜索计划：
+# [
+#   {"子领域": "人工智能+能源", "预期文件": "关于推进人工智能+能源高质量发展的实施意见", "搜索词": "site:gov.cn 人工智能+能源 指导意见", "推测文号": "国能发科技〔2025〕73号"},
+#   {"子领域": "智能煤矿", "预期文件": "智能化示范煤矿验收管理办法", "搜索词": "site:nea.gov.cn 智能煤矿 数字化"},
+#   ...
+# ]
+
+# Stage 2: 🔧 本地工具 — 逐条验证
+# 对每个预期文件：缓存搜索 → web_search 确认 → curl/browser 提取原文 → 缓存写入
+```
+
+这样覆盖面远高于"想到什么搜什么"，不容易遗漏细分领域文件。
 
 ## Common Pitfalls
 
-| # | 问题 | 解决方案 |
-|---|------|---------|
-| 1 | gov.cn 搜索返回过时政策 | 搜索时嵌入年份限定，引用前做时效性检查 |
-| 2 | web_extract 在 gov.cn 返回残缺内容 | 切换到 `browser_navigate` + `browser_snapshot(full=true)` |
-| 3 | 同名政策多个版本 | 检查文号、发布日期、发文机关三重确认 |
-| 4 | 国资委网站搜索结果时效性差 | 改用 `site:gov.cn 国资委 领域关键词` |
-| 5 | 引号配对与中英文混用 | 政策原文使用中文弯引号 `“”`，文号括号用中文括号 `（）` |
+| 问题 | 解决方案 |
+|------|---------|
+| gov.cn 返回过时政策 | 搜索嵌入年份限定 `2025` / `2026`，引用前做时效性检查 |
+| web_extract 在 gov.cn 返回残缺 | 切到 `browser_navigate` + `browser_snapshot(full=true)` |
+| 同名政策多个版本 | 检查文号+发布日期+发文机关三重确认 |
+| web_extract 后端不支持 URL 提取 | 用 `curl` + Python 或 `browser` 代替 |
+| 引号中英文混用 | 政策原文用中文弯引号 `“”`，文号括号用中文 `（）` |
 
-更多已知限制（PDF 扫描件、web_extract 后端限制、缓存滞后性等）见 `references/output-format.md`。
+更多已知限制（PDF 扫描件、缓存滞后性等）见 `references/output-format.md`。
 
 ## Verification Checklist
 
@@ -107,4 +148,4 @@ python3 scripts/init.py
 - [ ] 时效性确认：2022 年后的政策（或确认更早政策未被废止）
 - [ ] 引用格式完整：文件名、文号、发布机关、发布日期、原文地址
 - [ ] 原文地址可访问且为官方源（非转载）
-- [ ] 缓存已写入：新提取的政策已追加到对应信源的缓存文件（`{skill_dir}/cache/*.json`）
+- [ ] 缓存已写入：新提取的政策已追加到对应信源的缓存文件
