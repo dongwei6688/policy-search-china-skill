@@ -424,11 +424,12 @@ def build_html(title: str, groups: list, keywords: list) -> str:
 #  搜索与输出主逻辑
 # ═══════════════════════════════════════════════════════════
 
-def search_and_build(title: str, topic_keywords: list[str], mode: str = "or") -> bool:
+def search_and_build(title: str, topic_keywords: list[str], mode: str = "or") -> list:
     """
-    搜索关键词并生成 HTML
+    搜索关键词并提取段落，返回 groups 列表。
 
-    返回: True=找到了内容，False=无匹配
+    返回: [(entry, [(para_text, chapter_hint), ...]), ...]
+    若调用方传入 HTML 生成逻辑则同时写文件。
     """
     all_entries = load_all_cache()
     groups = []
@@ -467,19 +468,146 @@ def search_and_build(title: str, topic_keywords: list[str], mode: str = "or") ->
 
     if not groups:
         print(f'  ⚠️ "{title}": 无匹配结果')
-        return False
+        return []
 
-    html = build_html(title, groups, topic_keywords)
+    return groups
+
+
+# ═══════════════════════════════════════════════════════════
+#  Stage 3.5: 相关性评价 — Commander 接口
+# ═══════════════════════════════════════════════════════════
+
+def export_candidates(
+    title: str, groups: list, topic_keywords: list[str]
+) -> Path:
+    """
+    导出候选段落 JSON，供 Commander 进行相关性评价。
+
+    JSON 结构：
+      {"title": "...", "keywords": [...],
+       "policies": [{"index": 0, "title": "...", "doc_number": "...",
+                     "issuer": "...", "date": "...", "source_url": "...",
+                     "paragraph_count": N,
+                     "paragraphs": [{"p_index": 0, "text": "...",
+                                     "chapter": "...", "matched_keywords": [...]}]}]}
+    """
+    candidates = {
+        "title": title,
+        "keywords": topic_keywords,
+        "policies": [],
+    }
+    for i, (entry, paras) in enumerate(groups):
+        policy = {
+            "index": i,
+            "title": entry.get("title", ""),
+            "doc_number": entry.get("doc_number", ""),
+            "issuer": entry.get("issuer", ""),
+            "date": entry.get("date", ""),
+            "source_url": entry.get("source_url", ""),
+            "paragraph_count": len(paras),
+            "paragraphs": [],
+        }
+        for pi, (pt, ch) in enumerate(paras):
+            # 记录该段落命中了哪些关键词
+            matched = [kw for kw in topic_keywords if kw in pt]
+            policy["paragraphs"].append({
+                "p_index": pi,
+                "text": pt[:300],  # 截断，Commander 不需要全文
+                "chapter": ch or "",
+                "matched_keywords": matched,
+            })
+        candidates["policies"].append(policy)
+
+    path = OUTPUT_DIR / f"{title}_candidates.json"
+    path.write_text(json.dumps(candidates, ensure_ascii=False, indent=2),
+                    encoding='utf-8')
+    print(f'  📋 候选清单: {path.name} ({len(groups)} 项政策, '
+          f'{sum(p["paragraph_count"] for p in candidates["policies"])} 段)')
+    return path
+
+
+def build_from_relevance_scores(
+    scores_path: str, groups: list, topic_keywords: list[str]
+) -> Path:
+    """
+    根据 Commander 的评分 JSON 过滤段落，生成精简 HTML。
+
+    scores.json 格式：
+      {"title": "...",
+       "policy_scores": {"0": "核心", "1": "弱相关", "2": "无关", ...},
+       "paragraph_overrides": {"0_15": "drop", "1_3": "keep", ...}}
+
+    评分语义：
+      "核心"     → 全部保留
+      "高度相关" → 全部保留
+      "弱相关"   → 仅保留 matched_keywords ≥ 2 的段落（或 overrides 中的 "keep"）
+      "无关"     → 全部移除（或 overrides 中的 "keep"）
+    """
+    with open(scores_path, encoding='utf-8') as f:
+        scores = json.load(f)
+
+    title = scores.get("title", "政策汇编")
+    policy_scores = scores.get("policy_scores", {})
+    overrides = scores.get("paragraph_overrides", {})
+    filtered_groups = []
+
+    for i, (entry, paras) in enumerate(groups):
+        idx = str(i)
+        tier = policy_scores.get(idx, "核心")  # 默认核心
+
+        if tier == "无关":
+            # 检查段落级 override
+            kept = []
+            for pi, (pt, ch) in enumerate(paras):
+                ov = overrides.get(f"{idx}_{pi}", "")
+                if ov == "keep":
+                    kept.append((pt, ch))
+            if kept:
+                filtered_groups.append((entry, kept))
+            continue
+
+        if tier == "弱相关":
+            # 仅保留关键词密度高的段落（任一关键词出现 ≥3 次），或 override 为 keep 的
+            kept = []
+            for pi, (pt, ch) in enumerate(paras):
+                ov = overrides.get(f"{idx}_{pi}", "")
+                if ov == "drop":
+                    continue
+                if ov == "keep":
+                    kept.append((pt, ch))
+                    continue
+                # 任一关键词在段落中出现 ≥3 次 → 保留（说明该段确实在讨论此主题）
+                if any(pt.count(kw) >= 3 for kw in topic_keywords):
+                    kept.append((pt, ch))
+            if kept:
+                filtered_groups.append((entry, kept))
+            continue
+
+        # "核心" / "高度相关" → 全部保留，只处理 drop overrides
+        kept = []
+        for pi, (pt, ch) in enumerate(paras):
+            ov = overrides.get(f"{idx}_{pi}", "")
+            if ov == "drop":
+                continue
+            kept.append((pt, ch))
+        if kept:
+            filtered_groups.append((entry, kept))
+
+    if not filtered_groups:
+        print(f'  ⚠️ 评分过滤后无内容可输出')
+        return None
+
+    # 重新统计
+    total_paras = sum(len(p) for _, p in filtered_groups)
+    before_paras = sum(len(p) for _, p in groups)
+    reduction = int((1 - total_paras / before_paras) * 100) if before_paras else 0
+
+    html = build_html(title, filtered_groups, topic_keywords)
     output_path = OUTPUT_DIR / f'{title}.html'
     output_path.write_text(html, encoding='utf-8')
-    total_paras = sum(len(p) for _, p in groups)
-    print(f'  ✅ {title}.html ({len(html)}字, {total_paras}段, {len(groups)}个文件)')
-    return True
-
-
-# ═══════════════════════════════════════════════════════════
-#  命令行入口
-# ═══════════════════════════════════════════════════════════
+    print(f'  ✅ {title}.html ({len(html)}字, {total_paras}段/{before_paras}原始段,'
+          f' -{reduction}%, {len(filtered_groups)}个文件)')
+    return output_path
 
 def main():
     parser = argparse.ArgumentParser(
@@ -511,6 +639,10 @@ def main():
                         help='多关键词匹配模式：or=任一命中，and=全部命中（默认 or）')
     parser.add_argument('--all', action='store_true',
                         help='批量重建所有预设主题（PRESET_TOPICS）')
+    parser.add_argument('--candidates-only', action='store_true',
+                        help='仅导出候选段落 JSON（供 Commander 评价相关性）')
+    parser.add_argument('--relevance-scores',
+                        help='Commander 评分 JSON 路径（与 --candidates-only 互斥）')
     args = parser.parse_args()
 
     # 打印路径信息
@@ -538,7 +670,30 @@ def main():
         else:
             title = f'{keywords[0]}与{keywords[1]}政策汇编'
         print(f'\n  单次模式："{title}"\n')
-        search_and_build(title, keywords, mode=args.mode)
+
+        groups = search_and_build(title, keywords, mode=args.mode)
+        if not groups:
+            return
+
+        # --candidates-only：导出 JSON，供 Commander 进行 Stage 3.5 评价
+        if args.candidates_only:
+            path = export_candidates(title, groups, keywords)
+            print(f'\n  Commander 请评价此文件中的政策相关性 → 生成 scores.json')
+            print(f'  📋 {path}')
+            return
+
+        # --relevance-scores：读 Commander 评分后生成精简 HTML
+        if args.relevance_scores:
+            build_from_relevance_scores(args.relevance_scores, groups, keywords)
+            return
+
+        # 默认：直接生成 HTML（无相关性过滤）
+        total_paras = sum(len(p) for _, p in groups)
+        html = build_html(title, groups, keywords)
+        output_path = OUTPUT_DIR / f'{title}.html'
+        output_path.write_text(html, encoding='utf-8')
+        print(f'  ✅ {title}.html ({len(html)}字, {total_paras}段,'
+              f' {len(groups)}个文件)')
         return
 
     # ── 无参数：打印帮助 ──

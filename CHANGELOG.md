@@ -1,3 +1,15 @@
+## v2.5.0 (2026-07-28)
+
+### Added
+- Stage 3.5 相关性评价流程：Commander 评分 → Worker 过滤
+- rebuild_policy_html: --candidates-only 导出候选 JSON
+- rebuild_policy_html: --relevance-scores 读 Commander 评分后输出精简 HTML
+- 四级评分规则（核心/高度相关/弱相关/无关）
+
+### Changed
+- SKILL.md Stage 3/4 拆分为 Stage 3/3.5/4
+- 弱相关过滤由关键词计数改为密度检测（≥3次出现）
+
 ## v2.4.0 (2026-07-28)
 
 ### Added
