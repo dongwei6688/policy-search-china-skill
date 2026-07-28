@@ -49,41 +49,17 @@ Search Chinese government policy documents and extract authoritative references 
 
 具体操作步骤见各 Phase 章节。输出的 HTML 文件保存在 `~/.hermes/data/policy-search-china/output/` 目录（可通过 `POLICY_SEARCH_CHINA_OUTPUT_DIR` 自定义），脚本工具在 `scripts/` 目录下。
 
-## 安装
-
-**方式一（推荐）：npx skills add（跨平台，兼容 Hermes / OpenClaw / Workbuddy / Claude Code 等）**
-
-```bash
-npx skills add https://github.com/dongwei6688/policy-search-china-skill --skill policy-search-china
-```
-
-**方式二：手动安装（Hermes Agent）**
-
-```bash
-git clone https://github.com/dongwei6688/policy-search-china-skill.git \
-  ~/.hermes/skills/policy-search-china
-python3 scripts/init.py
-```
-
-> 两种安装方式共用同一用户数据目录 `~/.hermes/data/policy-search-china/`，切换方式不会丢失缓存。
-
 |## Setup
 
-首次安装或加载本 Skill 时，运行初始化脚本确保目录结构就绪：
+首次加载本 Skill 时，运行初始化脚本确认目录结构就绪：
 
 ```bash
 python3 scripts/init.py
 ```
 
-脚本执行以下操作（幂等，可重复运行）：
-- 创建用户空间目录（缓存、配置）
-- 创建输出目录
-- 检查系统空间完整性（SKILL.md、scripts/、缓存索引文件）
-- 生成默认配置文件 `config/user_config.ini`
-- 检查运行依赖（python3、curl、pdftotext）
+脚本自动创建用户空间目录、输出目录，检查运行依赖（python3、curl、pdftotext），生成默认配置。
 
-**说明：** Hermes Agent 首次加载此 Skill 时会自动提示运行初始化。
-用户空间的数据在 skill 更新时**不会被覆盖**。
+用户空间的数据在 skill 更新时**不会被覆盖**（双空间架构：系统空间随 skill 更新替换，用户空间独立保留）。
 
 ### 跨平台使用
 
