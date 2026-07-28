@@ -1,3 +1,8 @@
+## v1.9.10 (2026-07-28)
+
+### Added
+- Pitfalls 节改名「Pitfalls  Hard Constraints」，增加绝对禁止规则：禁止手工编写 HTML 报告，所有 HTML 最终交付必须通过 rebuild_policy_html.py 生成
+
 ## v1.9.9 (2026-07-28)
 
 ### Changed
