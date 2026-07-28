@@ -23,41 +23,48 @@ Search Chinese government policy documents and extract authoritative references 
 
 ## Decision Guide — 按意图路由
 
-| 用户意图 | 执行链 | 命令 |
-|----------|--------|------|
-| 全面扫描 | **broad 链** | `chain_runner.py --chain broad --keywords "..." --start YYYY-MM-DD` |
-| 交叉分析（多关键词 AND） | **cross 链** | `chain_runner.py --chain cross --keywords "A" "B" --start YYYY-MM-DD` |
-| 精准定位（文号/条款） | **locate 链** | `chain_runner.py --chain locate --keywords "..."` |
-| 溯源引用（句子→出处） | **trace 链** | `chain_runner.py --chain trace --keywords "原文句子"` |
-| 输出 HTML 汇编 | `rebuild_policy_html.py` | `--topic "A" --topic "B" --mode and` |
+Agent 分析用户意图后选择对应的执行链。每条链由 5 个阶段组成，每个阶段标注 🤖（大模型负责）或 🔧（脚本自动执行）。
 
-## Core Pipeline — 5 阶段
+| 用户意图 | 执行链 |
+|----------|--------|
+| 全面扫描（"近两年AI政策"） | **broad 链** — 单关键词广撒网 |
+| 交叉分析（"AI和能源结合"） | **cross 链** — 多关键词 AND 交集 |
+| 精准定位（"数据二十条确权条款"） | **locate 链** — 文号/段落精确查找 |
+| 溯源引用（"这句话出自哪"） | **trace 链** — 原文句子反查出处 |
+| 输出 HTML 汇编 | `rebuild_policy_html.py` — 逐字段落 + 原文链接 |
 
-详细实现见脚本注释，SKILL.md 只描述各阶段做什么。
+## Core Pipeline — 🤖/🔧 边界
 
-### Stage 0: 环境准备
+以下按阶段定义 🤖（大模型理解/规划/解读）和 🔧（脚本机械执行）的分工。
 
-`check_cache_freshness()` → 判断缓存是否需要联网更新；`init.py` 幂等创建工作区。
+### Stage 0: 🤖 判断 → 🔧 执行
 
-### Stage 1: 搜索 — 并行
+> **🤖 Agent** 判断："用户要搜近两年政策，缓存可能不够新，需要确认新鲜度。"  
+> **🔧** 调用 `check_cache_freshness(cache_dir)` 返回最新日期和是否需要 Web 更新。
 
-- **缓存搜索**：每个关键词独立遍历缓存 JSON，多关键词可并行
-- **Web 补充**（可选）：与缓存搜索并行发起 `web_search`，结果自动合并去重
+### Stage 1: 🤖 规划搜索 → 🔧 并行执行
 
-### Stage 2: 过滤 + 去重
+> **🤖 Agent** 将用户需求分解为搜索关键词列表。交叉分析场景下规划多关键词，全面扫描场景下规划子领域拆分（如"数字化 → AI+数据要素+工业互联网+算力+…"）。  
+> **🤖 Agent** 判断是否需要启用 Web 补充搜索（缓存不够新时）。  
+> **🔧** 每个关键词独立调用 `search_cache_title()`，多线程并行。Web 搜索并行发起。结果自动合并去重。  
+> 
+> *搜索策略参考：`references/search-strategies.md`*
 
-过滤链：AND 交集 → 时间范围 → 部门/文种(可选) → NOT 排除 → 去重。
-同一关键词的缓存+Web 结果先合并，再进入过滤。
+### Stage 2: 🤖 决定过滤条件 → 🔧 串行过滤
 
-### Stage 3: 段落提取 — 并行
+> **🤖 Agent** 根据用户意图决定：时间范围、发文机关、文件类型、排除词。  
+> **🔧** 串行执行 `intersect(AND) → filter_date → filter_issuer(可选) → filter_doctype(可选) → exclude(可选) → dedup`。  
+> 去重放在过滤末尾，节约后续文件 I/O。
 
-每个条目独立读取原文 + 提取含关键词段落，可多线程并行。
-提取完成后按条目收集聚合，准备送入输出。
+### Stage 3: 🔧 并行提取 → 聚合
 
-### Stage 4: 输出 — 逐字引用
+> **🔧** 对过滤后的每个条目独立读取原文 + 提取含关键词段落。多线程并行执行 `extract_paragraphs()`，自动按条目聚合结果。  
+> URL 不可达时自动走五层降级（HTTPS→HTTP→浏览器→搜索→替代源），Agent 无需干预。
 
-生成 HTML 汇编文件，自动注入原文链接、关键词高亮、逐字段落验证标签。
-格式见 `references/output-format.md`。
+### Stage 4: 🔧 输出 → 🤖 解读
+
+> **🔧** `build_html()` 生成结构化 HTML 汇编：逐字段落原文、关键词高亮、原文链接、验证标签。  
+> **🤖 Agent** 解读结果：告诉用户搜到几条政策、核心文件是什么、是否覆盖了所需的子领域。如需补充搜索，返回 Stage 1 追加关键词。
 
 ## Setup
 

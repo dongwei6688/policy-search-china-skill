@@ -1,3 +1,16 @@
+## v2.4.0 (2026-07-28)
+
+### Added
+- SKILL.md 全面标注 🤖/🔧 边界：每阶段明确大模型职责 vs 脚本职责
+- Stage 1 补充 🤖 子领域规划指令（broad 链先拆子领域再搜索）
+- Stage 4 补充 🤖 结果解读责任（Agent 需向用户解读搜索结果）
+
+### Removed
+- verify_verbatim() 死代码（已被 build_html 验证标签替代）
+
+### Changed
+- Decision Guide 移除 CLI 命令模板，改为意图描述（Agent 自行选择执行方式）
+
 ## v2.3.0 (2026-07-28)
 
 ### Added
