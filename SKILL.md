@@ -6,121 +6,111 @@ license: MIT
 
 # Policy Search China
 
-Search Chinese government policy documents (State Council, MIIT, NDRC, SASAC, NEA, CAC, NDA). Commander plans — workers execute. All logic lives in compiled scripts, not in Agent-interpreted code blocks. This prevents step-skipping and execution drift.
+搜索中国政府政策文件，覆盖七大信源。指挥官（大模型）规划与审核，工人（脚本）机械执行。所有逻辑封装在编译脚本中，不依赖 Agent 解释执行代码块。
 
-## Decision Guide
+## 决策指南
 
-Commander maps user intent to the correct worker. Each worker is a self-contained script — call it, review its output, decide next step.
+指挥官根据用户意图选择对应的工人脚本。
 
-| 用户需求 | Worker | 说明 |
-|----------|--------|------|
-| 全面扫描（"近两年AI政策"） | `chain_runner.py --chain broad` | 单关键词广撒网，commander 可先拆子领域 |
+| 用户需求 | 工人 | 说明 |
+|----------|------|------|
+| 全面扫描（"近两年AI政策"） | `chain_runner.py --chain broad` | 单关键词广撒网，指挥官可先拆子领域 |
 | 交叉分析（"AI和能源结合"） | `chain_runner.py --chain cross` | 多关键词 AND 交集，内置并行搜索 |
 | 精准定位（"数据二十条确权"） | `chain_runner.py --chain locate` | 文号/段落精确查找 |
 | 溯源引用（"这句话出自哪"） | `chain_runner.py --chain trace` | 原文句子反查出处 |
 | 输出 HTML 汇编 | `rebuild_policy_html.py --topic ...` | 逐字段落 + 原文链接 + 验证标签 |
 
-## Core Pipeline — Commander Execution Protocol
+## 执行流程（5 阶段 + 指挥官审核）
 
-Commander follows this protocol strictly. Each line is a **Commander action** (call worker → review → decide). Override default params based on user intent.
+指挥官严格按以下步骤执行：调工人 → 审结果 → 决定下一步。
 
-### Stage 0：Setup
+### 阶段 0：环境准备
 
 ```
 ① python3 scripts/init.py              → 幂等创建工作区（首次运行）
 ② atoms.check_cache_freshness(cache_dir) → {"latest_date", "needs_web_update"}
 ```
 
-Commander review: if `needs_web_update` is True, append `--web` flag to Stage 1 worker call.
+指挥官审核：若 `needs_web_update` 为 True，在阶段 1 的工人调用中追加 `--web` 参数。
 
-### Stage 1：Search
+### 阶段 1：搜索
 
 ```
 ③ chain_runner.py --chain {broad|cross} --keywords "..." --start YYYY-MM-DD [--web]
    → {"count": N, "entries": [...], "freshness": {...}}
 ```
 
-Commander actions before calling:
-- Decompose user intent into keyword list (cross: multiple; broad: plan sub-domains first)
-- Decide date range from user's time context
-- Add `--web` if cache is stale
+**调用前：** 指挥官将用户意图分解为关键词列表（cross 链：多关键词；broad 链：先规划子领域再搜索），根据用户的时间语境决定日期范围，缓存陈旧时追加 `--web`。
 
-Commander review after receiving output:
-- Count > 0? → proceed. Count == 0? → try broader keywords or remove date filter.
-- Count too high (>50)? → add `--end` or `--issuer` filters and re-run.
+**调用后：** 指挥官审核结果数量。count > 0 → 继续；count == 0 → 放宽关键词或移除时间过滤重试；count > 50 → 追加 `--end` 或 `--issuer` 过滤。
 
-### Stage 2：Filter
+### 阶段 2：过滤
 
-Filters are applied **inside** the worker call in Stage 1. Commander specifies filter params upfront — workers don't ask for mid-stream decisions.
+过滤条件在阶段 1 的工人调用中一次性传入，工人不在中途询问决策。
 
-| Filter | How Commander activates it |
-|--------|--------------------------|
-| Time range | `--start YYYY-MM-DD --end YYYY-MM-DD` in Stage 1 call |
-| Issuer | `--issuer 国家能源局` (if user wants specific department) |
-| Doc type | `--doctype 意见` (if user wants specific document type) |
-| AND intersection | `--keywords "A" "B"` triggers automatic intersection |
-| Dedup | automatic — worker deduplicates before returning |
+| 过滤条件 | 指挥官如何启用 |
+|----------|---------------|
+| 时间范围 | `--start YYYY-MM-DD --end YYYY-MM-DD` |
+| 发文机关 | `--issuer 国家能源局` |
+| 文件类型 | `--doctype 意见` |
+| AND 交集 | `--keywords "A" "B"` 自动触发交集 |
+| 去重 | 工人自动执行 |
 
-Commander review: count is reasonable? Any obvious false positives in titles? If yes, re-run with `--exclude`.
+指挥官审核：数量是否合理？标题中是否有明显的误匹配？如有，追加 `--exclude` 重跑。
 
-### Stage 3: 工人提取段落 → 导出候选
+### 阶段 3：提取候选段落
 
 ```
 ③ rebuild_policy_html.py --topic "A" --topic "B" --mode and --candidates-only
    → candidates.json: {policies: [{index, title, paragraphs: [{text, matched_keywords}]}]}
 ```
 
-Commander review: scan policy titles. If candidate list is large (>10 policies), proceed to Stage 3.5 to reduce.
+指挥官审核：候选政策数 > 10 项时，进入阶段 3.5 做相关性评价缩减。
 
-### Stage 3.5: Commander 相关性评价
+### 阶段 3.5：指挥官相关性评价
 
-```
-Commander 读取 candidates.json → 按政策标题+样本段落逐项评分 → 输出 scores.json
-```
+指挥官读取 `candidates.json`，按政策标题和样本段落逐项评分，输出 `scores.json`。
 
-评分等级：
 | 等级 | 规则 | 过滤行为 |
 |:-----|:-----|:---------|
 | **核心** | 政策直接讨论用户主题 | 保留全部段落 |
-| **高度相关** | 政策含重要相关内容，值得引用 | 保留全部段落 |
-| **弱相关** | 政策边缘涉及但非主题 | 仅保留关键词密度高的段落（≥3次出现） |
-| **无关** | 政策与用户主题无关 | 全部移除 |
+| **高度相关** | 政策含重要相关内容 | 保留全部段落 |
+| **弱相关** | 政策边缘涉及但非主题 | 仅保留关键词密度高的段落（任一关键词出现 ≥3 次） |
+| **无关** | 与用户主题无关 | 全部移除 |
 
-Commander 逐项评审 19 项 → 标注 9 项核心/高度相关 → 输出 scores.json。
-
-### Stage 4: 工人用评分生成精简 HTML
+### 阶段 4：生成精简 HTML
 
 ```
 ④ rebuild_policy_html.py --topic "A" --topic "B" --mode and --relevance-scores scores.json
-   → 仅输出 核心+高度相关 段落的 HTML
+   → 仅输出核心 + 高度相关段落的 HTML
 ```
 
-### Stage 4：Review & Deliver
+### 交付前审核
 
-Commander reviews before sending to user:
-1. **Coverage check** — did we catch the expected policies? Cross-check title list against known major documents in this domain.
-2. **Link check** — spot-check 1-2 source URLs for accessibility.
-3. **Gap detection** — if user mentioned a sub-domain with zero results, propose supplement search.
+指挥官在交付用户前逐项检查：
+1. **覆盖面** — 是否捕获了预期的核心政策？对照该领域的已知重要文件
+2. **链接** — 抽查 1-2 条 source_url 是否可访问
+3. **缺口** — 用户提到的子领域是否有零结果的？如有，返回阶段 1 补搜
 
-If gaps found: return to Stage 1 with adjusted keywords. Otherwise: deliver results.
+有缺口则回阶段 1 调整关键词重搜，否则交付结果。
 
-## Setup
+## 环境初始化
 
 ```bash
 python3 scripts/init.py
 ```
 
-## Workers Reference
+## 工人接口参考
 
-| Worker | Input | Output | Responsible for |
-|:-------|:------|:-------|:---------------|
-| `chain_runner.py` | chain type, keywords, date range, filters | `{"count": N, "entries": [{...}]}` | Search + filter + dedup |
-| `rebuild_policy_html.py` | topics, mode, --candidates-only, --relevance-scores | candidates.json or HTML file | Extract + score + filter + highlight + link |
-| `atoms.py` | structured data | structured data | Pure data operations (imported by above) |
+| 工人 | 输入 | 输出 | 职责 |
+|:-------|:------|:-----|:-----|
+| `chain_runner.py` | 链类型、关键词、日期范围、过滤条件 | `{"count": N, "entries": [...]}` | 搜索 + 过滤 + 去重 |
+| `rebuild_policy_html.py` | 主题、模式、相关性评分 | candidates.json 或 HTML 文件 | 提取 + 评分 + 过滤 + 高亮 + 链接 |
+| `atoms.py` | 结构化数据 | 结构化数据 | 纯数据操作（被以上两个工人引用） |
 
-Commander never imports atoms.py directly — always goes through workers. Workers are the sole execution interface.
+指挥官不直接 import `atoms.py`——始终通过工人间接调用。
 
-## Source Coverage
+## 信源覆盖
 
 | 缓存 | 部门 | site: 前缀 |
 |------|------|-----------|
@@ -134,21 +124,21 @@ Commander never imports atoms.py directly — always goes through workers. Worke
 
 详见 `references/policy-sources.md`。
 
-## Pitfalls
+## 常见问题
 
 | 问题 | 处理 |
 |------|------|
-| 搜索结果过多 | Commander 添加 `--end` / `--issuer` 过滤后重调 |
-| 搜索结果为零 | Commander 放宽关键词或移除时间限制后重调 |
-| URL 不可达 | Worker 自动五层降级，Commander 无需处理 |
-| 覆盖率不够 | Commander 审查 Stage 4 后回 Stage 1 补搜 |
+| 搜索结果过多 | 指挥官追加 `--end` / `--issuer` 过滤后重调 |
+| 搜索结果为零 | 指挥官放宽关键词或移除时间限制后重调 |
+| URL 不可达 | 工人自动五层降级，指挥官无需处理 |
+| 覆盖率不够 | 指挥官在交付前审核阶段回阶段 1 补搜 |
 | **禁止手工拼装 HTML** | 必须通过 `rebuild_policy_html.py` 生成 |
 
-## Verification Checklist
+## 交付检查清单
 
-Commander verifies before each delivery:
-- [ ] 意图 → worker 映射正确
-- [ ] Stage 1 输出 count 合理
-- [ ] Stage 4 HTML 文件已生成（不是手动拼接）
+指挥官每次交付前逐项确认：
+- [ ] 意图 → 工人映射正确
+- [ ] 阶段 1 返回数量合理
+- [ ] 阶段 4 HTML 由脚本生成（非手动拼接）
 - [ ] 抽查 1-2 条 source_url 可访问
 - [ ] 覆盖面完整，无遗漏子领域
