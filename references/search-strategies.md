@@ -262,14 +262,4 @@ intitle:[政策关键词] site:gov.cn
 
 ## 附录：缓存信源归属判断规则
 
-| 优先级 | 判断依据 | 命中则写入 |
-|-------|---------|-----------|
-| 1 | `source_url` 包含 `nea.gov.cn` | → `nea.json` |
-| 2 | `source_url` 包含 `nda.gov.cn` | → `nda.json` |
-| 3 | `source_url` 包含 `miit.gov.cn` | → `miit.json` |
-| 4 | `source_url` 包含 `sasac.gov.cn` | → `sasac.json` |
-| 5 | `source_url` 包含 `cac.gov.cn` | → `cac.json` |
-| 6 | `source_url` 包含 `ndrc.gov.cn` | → `ndrc.json` |
-| 7 | `source_url` 包含 `gov.cn` | → `gov.json` |
-| 8 | 以上都不匹配，按 `doc_number` 前缀判断 | `国能发`→`nea`、`国数`→`nda`、`工信部`→`miit`、`发改`→`ndrc`、`国资`→`sasac` |
-| 9 | 以上均无法判断 | → `gov.json`（兜底） |
+详见 `references/policy-sources.md` → 信源归属判断规则。
