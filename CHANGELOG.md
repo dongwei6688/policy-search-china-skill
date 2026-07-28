@@ -1,3 +1,14 @@
+## v2.8.1 (2026-07-28)
+
+### Added
+- 每词独立颜色：Header 关键词标签与段落高亮使用统一的 12 色调色板
+- `--highlight-keywords` CLI 参数：搜索词与展示词分离，不影响搜索精度
+- Header 匹配关键词列表替换原静态文案
+
+### Changed
+- `build_html()` 全量关键词高亮（替换原单关键词高亮）
+- 动态注入 per-keyword CSS 类（`.hl-0` ~ `.hl-N`）
+
 # Changelog
 
 ## [v2.8.0] — 2026-07-28
