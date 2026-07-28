@@ -1,3 +1,11 @@
+## v2.0.1 (2026-07-28)
+
+### Fixed
+- 国家数据局政策专栏路径：sjj/zwgk/list → sjj/zwgk/zcfb/list
+- 移除北大法宝（pkulaw.com 不可达）
+- 国资委标注：sasac.gov.cn 服务器不可达
+- Source Coverage 新增「政策专栏」列，区分 site: 搜索前缀与直访路径
+
 ## v2.0.0 (2026-07-28)
 
 ### Added
