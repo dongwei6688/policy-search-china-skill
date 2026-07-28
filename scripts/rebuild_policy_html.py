@@ -72,6 +72,9 @@ body{font-family:'宋体',SimSun,serif;max-width:960px;margin:0 auto;padding:20p
 .stats{display:flex;gap:15px;margin:20px 0;flex-wrap:wrap}
 .stat-box{background:#fff;border-radius:8px;padding:15px 25px;box-shadow:0 2px 8px rgba(0,0,0,.08);flex:1;min-width:120px;text-align:center}
 .stat-box .num{font-size:28px;font-weight:bold;color:#1a5276}.stat-box .label{font-size:12px;color:#666;margin-top:5px}
+.summary-box{background:linear-gradient(135deg,#fef9e7,#fdebd0);border:2px solid #d4ac0d;border-radius:8px;padding:25px 30px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,.08);user-select:text}
+.summary-box h2{font-size:16px;color:#7d6608;margin:0 0 12px 0;padding-bottom:8px;border-bottom:1px solid #d4ac0d}
+.summary-box p{text-indent:2em;font-size:14px;margin:6px 0;text-align:justify;line-height:2}
 .toc{background:#fff;border-radius:8px;padding:20px 30px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:25px}
 .toc h2{font-size:16px;color:#1a5276;margin:0 0 15px 0;border-bottom:2px solid #1a5276;padding-bottom:8px}
 .doc-section{background:#fff;border-radius:8px;padding:25px 30px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:25px;border-top:4px solid #1a5276}
@@ -84,7 +87,9 @@ body{font-family:'宋体',SimSun,serif;max-width:960px;margin:0 auto;padding:20p
 .doc-section p{text-indent:2em;margin:6px 0;font-size:14px;text-align:justify}
 .hl{background:#fff3cd;padding:0 2px;font-weight:bold}
 .verify{border:1px solid #27ae60;background:#eafaf1;padding:8px 15px;border-radius:5px;font-size:12px;color:#1e8449;margin:10px 0}
-.footer{text-align:center;color:#999;font-size:12px;margin-top:30px;padding-top:20px;border-top:1px solid #ddd}\
+.footer{text-align:center;color:#999;font-size:12px;margin-top:30px;padding-top:20px;border-top:1px solid #ddd}
+#back-to-top{position:fixed;right:30px;bottom:40px;width:44px;height:44px;background:#1a5276;color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;opacity:0;transition:opacity .3s;box-shadow:0 2px 12px rgba(0,0,0,.2);z-index:9999}
+#back-to-top.visible{opacity:.85}#back-to-top:hover{opacity:1;transform:scale(1.1);transition:all .2s}
 """
 
 
@@ -347,7 +352,7 @@ def search_cache_fulltext(
 #  生成 HTML 输出
 # ═══════════════════════════════════════════════════════════
 
-def build_html(title: str, groups: list, keywords: list) -> str:
+def build_html(title: str, groups: list, keywords: list, summary: str = "") -> str:
     """
     生成结构化 HTML 汇编文件
 
@@ -355,14 +360,20 @@ def build_html(title: str, groups: list, keywords: list) -> str:
       title:    输出文件标题（如"智慧城市政策汇编"）
       groups:   [(entry, [(para_text, chapter_hint), ...]), ...]
       keywords: 关键词列表（第一个用于高亮）
+      summary:  公文风格概括摘要（Commander 撰写，为空则跳过摘要区）
     """
     keyword = keywords[0]
     total_paras = sum(len(p) for _, p in groups)
+
+    # JS: 返回顶部按钮（滚动超过 300px 显示）
+    back_to_top_js = """<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300)})</script>"""
 
     lines = []
     lines.append('<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">')
     lines.append(f'<title>{title}</title>')
     lines.append(f'<style>{CSS}</style></head><body>')
+    lines.append(back_to_top_js)
     lines.append(f'<div class="header"><h1>{title}</h1><p>逐字引用 · 所有段落可在原文中验证</p></div>')
 
     # ── 统计概览卡片 ──
@@ -370,6 +381,16 @@ def build_html(title: str, groups: list, keywords: list) -> str:
     lines.append(f'<div class="stat-box"><div class="num">{len(groups)}</div><div class="label">涉及文件</div></div>')
     lines.append(f'<div class="stat-box"><div class="num">{total_paras}</div><div class="label">逐字段落</div></div>')
     lines.append('</div>')
+
+    # ── Commander 概括摘要（公文风格，直接可复制）──
+    if summary:
+        lines.append('<div class="summary-box">')
+        lines.append('<h2>📋 政策概述（可直接引用）</h2>')
+        for para in summary.strip().split('\n'):
+            para = para.strip()
+            if para:
+                lines.append(f'<p>{para}</p>')
+        lines.append('</div>')
 
     # ── 目录（带锚点跳转） ──
     lines.append('<div class="toc"><h2>目录</h2>')
@@ -602,7 +623,8 @@ def build_from_relevance_scores(
     before_paras = sum(len(p) for _, p in groups)
     reduction = int((1 - total_paras / before_paras) * 100) if before_paras else 0
 
-    html = build_html(title, filtered_groups, topic_keywords)
+    html = build_html(title, filtered_groups, topic_keywords,
+                     summary=scores.get("summary", ""))
     output_path = OUTPUT_DIR / f'{title}.html'
     output_path.write_text(html, encoding='utf-8')
     print(f'  ✅ {title}.html ({len(html)}字, {total_paras}段/{before_paras}原始段,'
@@ -643,6 +665,8 @@ def main():
                         help='仅导出候选段落 JSON（供 Commander 评价相关性）')
     parser.add_argument('--relevance-scores',
                         help='Commander 评分 JSON 路径（与 --candidates-only 互斥）')
+    parser.add_argument('--summary',
+                        help='公文风格概括摘要文本（直接嵌入 HTML 目录前）')
     args = parser.parse_args()
 
     # 打印路径信息
@@ -689,7 +713,7 @@ def main():
 
         # 默认：直接生成 HTML（无相关性过滤）
         total_paras = sum(len(p) for _, p in groups)
-        html = build_html(title, groups, keywords)
+        html = build_html(title, groups, keywords, summary=args.summary or "")
         output_path = OUTPUT_DIR / f'{title}.html'
         output_path.write_text(html, encoding='utf-8')
         print(f'  ✅ {title}.html ({len(html)}字, {total_paras}段,'

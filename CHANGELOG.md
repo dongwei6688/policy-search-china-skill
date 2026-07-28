@@ -1,3 +1,12 @@
+## v2.6.0 (2026-07-28)
+
+### Added
+- HTML 右侧悬浮返回顶部按钮（滚动300px后出现）
+- 目录前增加公文风格概括摘要区（Commander 撰写，直接可复制引用）
+- 段落级相关性审查：Commander 可标记特定段落为 drop/keep
+- scores.json 扩展 summary 字段
+- --summary CLI 参数
+
 ## v2.5.0 (2026-07-28)
 
 ### Added
