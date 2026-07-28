@@ -1,6 +1,6 @@
 # policy-search-china-skill
 
-**国内政策文件搜索与引用** — Hermes Agent Skill
+**国内政策文件搜索与引用** — 跨 Agent 平台通用 Skill（Hermes / OpenClaw / Workbuddy / Claude Code 等）
 
 搜索国务院、工信部、国家数据局、国资委、国家能源局、发改委、网信办等权威信源的政策文件，提取逐字引文，生成结构化 HTML 汇编。
 
@@ -60,4 +60,4 @@ MIT License
 
 ---
 
-*Built for Hermes Agent. Part of the [awesome-hermes-agent](https://github.com/0xNyk/awesome-hermes-agent) ecosystem.*
+> 本 Skill 采用跨平台设计（v1.5.0+），不硬编码路径，可通过环境变量 `POLICY_SEARCH_CHINA_DATA_DIR` 和 `POLICY_SEARCH_CHINA_OUTPUT_DIR` 适配任意 Agent 平台。开发维护以 Hermes Agent 为主，详见 SKILL.md 中"跨平台使用"节。
