@@ -87,6 +87,12 @@ body{font-family:'宋体',SimSun,serif;max-width:960px;margin:0 auto;padding:20p
 .doc-section p{text-indent:2em;margin:6px 0;font-size:14px;text-align:justify}
 .hl{background:#fff3cd;padding:0 2px;font-weight:bold}
 .verify{border:1px solid #27ae60;background:#eafaf1;padding:8px 15px;border-radius:5px;font-size:12px;color:#1e8449;margin:10px 0}
+.fold-toggle{display:inline-block;float:right;padding:4px 12px;background:#1a5276;color:#fff;border:none;border-radius:4px;font-size:13px;cursor:pointer;transition:background .2s}
+.fold-toggle:hover{background:#2e86c1}
+.fold-toggle .arrow{display:inline-block;transition:transform .3s;margin-right:4px}
+.fold-toggle.expanded .arrow{transform:rotate(90deg)}
+.doc-body{overflow:hidden;transition:max-height .4s ease}
+.doc-body.collapsed{max-height:0}
 .footer{text-align:center;color:#999;font-size:12px;margin-top:30px;padding-top:20px;border-top:1px solid #ddd}
 #back-to-top{position:fixed;right:30px;bottom:40px;width:44px;height:44px;background:#1a5276;color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;opacity:0;transition:opacity .3s;box-shadow:0 2px 12px rgba(0,0,0,.2);z-index:9999}
 #back-to-top.visible{opacity:.85}#back-to-top:hover{opacity:1;transform:scale(1.1);transition:all .2s}
@@ -407,6 +413,14 @@ def build_html(title: str, groups: list, keywords: list, summary: str = "") -> s
     for i, (entry, paras) in enumerate(groups, 1):
         lines.append(f'<div class="doc-section" id="doc{i}">')
         lines.append('<div class="doc-header">')
+        # 折叠按钮（默认折叠，点击展开/收起）
+        lines.append(
+            f'<button class="fold-toggle" onclick="var b=this.parentNode.parentNode;'
+            f'var body=b.querySelector(\'.doc-body\');'
+            f'var collapsed=body.classList.toggle(\'collapsed\');'
+            f'this.classList.toggle(\'expanded\',!collapsed);'
+            f'this.innerHTML=(collapsed?\'▶ 展开\':\'▼ 收起\')">▶ 展开</button>'
+        )
         lines.append(f'<h2>{i}. {entry["title"]}</h2>')
         lines.append('<div class="meta">')
 
@@ -422,6 +436,9 @@ def build_html(title: str, groups: list, keywords: list, summary: str = "") -> s
         # 验证标签
         lines.append(f'<div class="verify">✅ {len(paras)} 段 · 全部逐字引自原文</div>')
 
+        # 段落区（默认折叠）
+        lines.append('<div class="doc-body collapsed">')
+
         # 逐段输出（含章节标题 + 关键词高亮）
         last_chapter = ''
         for para_text, chapter_hint in paras:
@@ -434,7 +451,8 @@ def build_html(title: str, groups: list, keywords: list, summary: str = "") -> s
             # 关键词高亮：仅更改展示，不改变原文文字
             highlighted = para_text.replace(keyword, f'<span class="hl">{keyword}</span>')
             lines.append(f'<p>{highlighted}</p>')
-        lines.append('</div>')
+        lines.append('</div>')  # doc-body
+        lines.append('</div>')  # doc-section
 
     lines.append(f'<div class="footer"><p>来源：policy-search-china · 逐字提取</p></div>')
     lines.append('</body></html>')
