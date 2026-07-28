@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents and extract authoritative references for reports and planning documents. Covers State Council, MIIT, NDRC, SASAC, NEA, CAC and other key ministries."
-version: 1.9.7
+version: 1.9.8
 author: dongwei6688 (董伟)
 license: MIT
 setup_needed: true
@@ -38,32 +38,49 @@ Search Chinese government policy documents and extract authoritative references 
 ```
 pip install pypdf pdfplumber
 ```
+```python
+from pathlib import Path
+import json, re, glob
+```
 
 ### Phase 0: 缓存新鲜度检查
 ```python
 # 检查最新缓存日期，高动态主题需联网预检
-latest = max(e.get('searched_at','') for jf in glob('cache/*.json') for e in json.load(open(jf)))
+latest = ""
+for jf in glob.glob("cache/*.json"):
+    with open(jf) as f:
+        for e in json.load(f):
+            d = e.get("searched_at", "")
+            if d > latest:
+                latest = d
 # 如果 latest < 今年，执行一次 web_search 确认有无新政策
 ```
 对"人工智能""数据要素"等高频更新主题，用 `web_search("site:gov.cn/zhengce/zhengceku/ 人工智能 2026")` 确认缓存是否覆盖最新文件。
 
 ### Phase 1: 缓存搜索 — 遍历所有信源文件
 ```python
-for jf in Path(skill_dir).glob('cache/*.json'):
-    for e in json.load(jf.read_text()):
-        if keyword in e['title'] + ' '.join(e.get('tags',[])) + e.get('summary',''):
+# skill_dir 通常指向 skill 根目录（系统空间）
+for jf in Path(skill_dir).glob("cache/*.json"):
+    for e in json.loads(jf.read_text()):
+        if keyword in e["title"] + " ".join(e.get("tags", [])) + e.get("summary", ""):
             hits.append(e)
 ```
 匹配优先级：文号 > 文件名 > 关键词。不同部委的缓存文件见信源表。
 
 ### Phase 2: 原文读取 — 按 format 字段分流
 ```python
-entry = hits[0]; lp = Path(entry['local_path'])
-if entry.get('format') == 'pdf':
-    text = open(lp.with_suffix('.txt')).read() if lp.with_suffix('.txt').exists() else ''
+if not hits:
+    return  # 缓存未命中，需走 web_search
+entry = hits[0]; lp = Path(entry["local_path"])
+if entry.get("format") == "pdf":
+    txt = lp.with_suffix(".txt")
+    text = txt.read_text(encoding="utf-8") if txt.exists() else ""
+elif entry.get("format") == "html":
+    html = lp.read_text(encoding="utf-8")
+    body = re.search(r'class="pages_content"[^>]*>(.*?)</?div>', html, re.DOTALL)
+    text = body.group(1) if body else html
 else:
-    body = re.search(r'class="pages_content"[^>]*>(.*?)</?div>', open(lp).read(), re.DOTALL)
-    text = body.group(1) if body else ''
+    text = ""
 ```
 gov.cn 用 `pages_content` 容器，ndrc.gov.cn 用 `article_con`。PDF 优先读配套 `.txt` 文件。
 
