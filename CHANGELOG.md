@@ -1,323 +1,175 @@
-## v2.8.0 (2026-07-28)
+# Changelog
 
-### Changed
-- **职责重构**：atoms.py 彻底去除文件 I/O，所有函数改为纯数据操作
-- chain_runner.py 统一通过 load_all_cache() 加载缓存后传入 atoms
-- 函数签名简化：chain 函数不再接收 cache_dir 参数
+## [v2.8.0] — 2026-07-28
 
-### Removed
-- references/output-format.md（孤儿文件，Worker 内部逻辑无需 Commander 可见）
+### 重构
+- **atoms.py 完全纯数据化**：`check_cache_freshness` 和 `search_cache_title` 不再接受 `cache_dir: Path` 参数，改为接收 `entries: list[dict]`。所有文件 I/O（`json.loads(jf.read_text())`）从 atoms 中移除，由调用方 `load_all_cache()` 统一负责后传入
+- **chain 函数签名简化**：`chain_cross_analysis` / `chain_broad_scan` / `chain_precise_locate` / `chain_trace_source` 不再接收 `cache_dir` 参数，内部通过 `load_all_cache()` 自加载，调用更简洁
 
-### Fixed
-- rebuild_policy_html.py 删除死 import（search_cache_title 未实际调用）
-- SKILL.md 补回 search-strategies.md 引用
+### 清理
+- 删除 `references/output-format.md`（197 行 —— Commander 不需要了解 HTML 输出格式，Worker 内部实现无需暴露）
+- 删除 `rebuild_policy_html.py` 中的死 `import`（`from atoms import search_cache_title` 在 `search_cache_fulltext` 中未实际调用）
+- `atoms.py` header 从"18 个纯函数"更正为实际函数数量，去除过时注释
+- `chain_runner.py` 去除所有 `cache_dir` 变量引用（剩余 0 处）
 
-## v2.7.1 (2026-07-28)
+### 文档
+- `SKILL.md` 阶段 1 补回 `references/search-strategies.md` 引用，确保 Commander 可见搜索策略参考
 
-### Added
-- 政策概述区一键复制按钮（点击复制全部概述内容到剪贴板）
+---
 
-## v2.7.0 (2026-07-28)
+## [v2.7.1] — 2026-07-28
 
-### Added
-- 段落折叠效果：默认折叠，点击展开/收起
-- 折叠切换动画（0.3s 箭头旋转 + 0.4s 高度过渡）
+### 新增
+- **政策概述一键复制按钮**：`summary-box` 标题右侧新增「📋 复制」按钮，使用 `navigator.clipboard.writeText()` 将全部概述段落复制到剪贴板。点击后按钮变为「✓ 已复制」1.5 秒自动还原
 
-## v2.6.0 (2026-07-28)
+### 样式
+- 新增 `.copy-btn` CSS 样式（金底白字，hove 加深，#d4ac0d → #b8960b）
 
-### Added
-- HTML 右侧悬浮返回顶部按钮（滚动300px后出现）
-- 目录前增加公文风格概括摘要区（Commander 撰写，直接可复制引用）
-- 段落级相关性审查：Commander 可标记特定段落为 drop/keep
-- scores.json 扩展 summary 字段
-- --summary CLI 参数
+---
 
-## v2.5.0 (2026-07-28)
+## [v2.7.0] — 2026-07-28
 
-### Added
-- Stage 3.5 相关性评价流程：Commander 评分 → Worker 过滤
-- rebuild_policy_html: --candidates-only 导出候选 JSON
-- rebuild_policy_html: --relevance-scores 读 Commander 评分后输出精简 HTML
-- 四级评分规则（核心/高度相关/弱相关/无关）
+### 新增
+- **段落默认折叠**：每个政策 `.doc-section` 的段落区默认收起（`max-height: 0`），标题右侧显示「▶ 展开」按钮，点击切换展开/收起，箭头带 0.3s 旋转变换
+- 折叠按钮支持展开/收起文本切换（「▼ 收起」↔「▶ 展开」），0.4s 高度过渡动画
+- 验证标签（"N段 · 逐字引自原文"）始终可见，不受折叠影响
 
-### Changed
-- SKILL.md Stage 3/4 拆分为 Stage 3/3.5/4
-- 弱相关过滤由关键词计数改为密度检测（≥3次出现）
+### 样式
+- 新增 `.fold-toggle` / `.doc-body` / `.doc-body.collapsed` CSS 类，按钮深蓝底白色文字，hover 变浅蓝
 
-## v2.4.0 (2026-07-28)
+---
 
-### Added
-- SKILL.md 全面标注 🤖/🔧 边界：每阶段明确大模型职责 vs 脚本职责
-- Stage 1 补充 🤖 子领域规划指令（broad 链先拆子领域再搜索）
-- Stage 4 补充 🤖 结果解读责任（Agent 需向用户解读搜索结果）
+## [v2.6.0] — 2026-07-28
 
-### Removed
-- verify_verbatim() 死代码（已被 build_html 验证标签替代）
+### 新增
+- **HTM 右侧悬浮返回顶部按钮**：滚动超过 300px 后显示圆形蓝色 `↑` 按钮，点击平滑滚动回顶部。使用 `position: fixed` + `opacity` 过渡动画
+- **公文风格概括摘要**：`build_html()` 新增 `summary` 参数，Commander 撰写的概括文字以金底 `.summary-box` 展示在目录前面，分段落显示，可直接复制引用
+- **Commander 段落级审查能力**：`scores.json` 新增 `paragraph_overrides` 字段，支持逐段标记 `drop` / `keep`，实现"政策级 + 段落级"两级过滤
+- CLI 新增 `--summary` 参数，支持在默认路径（无相关性评分）下直接嵌入摘要
 
-### Changed
-- Decision Guide 移除 CLI 命令模板，改为意图描述（Agent 自行选择执行方式）
+### 变更
+- `build_html()` 函数签名从 `(title, groups, keywords)` 改为 `(title, groups, keywords, summary)`
+- `scores.json` 格式扩展：新增 `summary` 字段和 `paragraph_overrides` 字段
 
-## v2.3.0 (2026-07-28)
+---
 
-### Added
-- Stage 1 并行：多关键词搜索使用 ThreadPoolExecutor 多线程
-- Stage 3 并行：extract_all_paragraphs() 多线程提取 + 收集聚合
-- merge_search_results() 合并缓存+Web搜索结果
+## [v2.5.0] — 2026-07-28
 
-### Changed
-- SKILL.md 精简至 ~110 行：删除 Pipeline Planning 详细逻辑，只保留步骤描述
-- 详细实现逻辑下沉到 chain_runner.py 和 rebuild_policy_html.py
+### 新增
+- **Stage 3.5 Commander 相关性评价流程**：政策提取后，Commander 读取候选 JSON，按政策级别标注"核心/高度相关/弱相关/无关"四级评分，生成 `scores.json` 后由 Worker 过滤生成精简 HTML
+- `rebuild_policy_html.py` 新增 `--candidates-only` 模式：导出结构化候选段落 JSON（含 `matched_keywords` 标注），供 Commander 评价
+- `rebuild_policy_html.py` 新增 `--relevance-scores` 模式：读取 Commander 评分后自动过滤段落并输出精简 HTML
+- `export_candidates()` / `build_from_relevance_scores()` 两个新函数
 
-### Fixed
-- deduplicate_entries 从 Stage 4 移到 Stage 2 末尾（节省 Stage 3 文件 I/O）
-- Stage 4 验证逻辑不再独立为一个 Stage（逐字验证已嵌入 build_html 输出标签）
+### 过滤规则
+- "核心" 政策 → 全部段落保留
+- "高度相关" 政策 → 全部段落保留
+- "弱相关" 政策 → 仅保留关键词出现 ≥3 次的段落
+- "无关" 政策 → 全部移除
 
-## v2.2.0 (2026-07-28)
+### 变更
+- `search_and_build()` 返回类型从 `bool` 改为 `list`（返回 groups 列表供调用方重用）
+- Stage 3→4 拆分为 Stage 3（候选导出）+ Stage 3.5（Commander 评分）+ Stage 4（评分后输出）
 
-### Changed
-- **职责边界重构**：atoms.py 只保留纯数据操作，文件I/O+URL降级全部归 rebuild_policy_html.py
-- 删除 atoms.py 中重复的 load_source()/extract_paragraphs()/fetch_url_with_fallback()
-- search_cache_fulltext() 移至 rebuild_policy_html.py（依赖文件I/O）
-- chain_runner.py trace链改用 rebuild_load_source()，不再手动读文件
+---
 
-### Fixed
-- 修复 trace 链中 re/clean 变量引用错误
-- 消除 atoms.py 与 rebuild 间的功能分叉（atoms弱版 vs rebuild完整版）
+## [v2.4.0] — 2026-07-28
 
-## v2.1.1 (2026-07-28)
+### 新增
+- **SKILL.md 全面标注指挥官/工人边界**：每阶段明确标记谁规划（🤖）谁执行（🔧），去除内联 Python 代码块，改为 Commander 决策清单
+- **指挥官审核协议**：Stage 0/1/3/4 各设 Commander review 检查点，确保执行路径可验证、不可跳过
+- `chain_runner.py` CLI 补全 4 个缺失参数：`--issuer`、`--doctype`、`--exclude`、`--web`
+- `_merge_search_results()` 函数预留（缓存 + Web 结果合并）
 
-### Changed
-- 五层降级策略从 SKILL.md 下沉到 atoms.py：load_source() 内置自动降级，Agent 无需手动判断
-- SKILL.md 降级策略大段文档精简为一行 Pitfalls 条目
+### 删除
+- `verify_verbatim()` 死代码（已被 `build_html` 输出标签替代）
+- `chain_runner.py` 中关于 `verify_verbatim` 的过时注释
+- `search-strategies.md` 附录中与 `policy-sources.md` 重复的 15 行信源归属规则表（改为一行引用）
 
-## v2.1.0 (2026-07-28)
+### 文档
+- SKILL.md 从 192 行精简至 110 行，去除 Pipeline Planning 大段表格
 
-### Added
-- URL 五层降级策略：L1 HTTPS → L2 HTTP降级 → L3 浏览器 → L4 搜索引擎 → L5 替代源
-- atoms.py 新增 fetch_url_with_fallback() 函数，L1-L2 自动降级
-- Source Coverage 增加各信源实测结果（L1/L2/L3 标注）
+---
 
-### Fixed
-- sasac.gov.cn 原来误判为「不可达」，实际是 HTTPS 不通但 HTTP 可通
-- miit.gov.cn curl 403 → 加浏览器 UA 后直通
+## [v2.3.0] — 2026-07-28
 
-## v2.0.2 (2026-07-28)
+### 新增
+- **Stage 1 并行搜索**：多关键词使用 `ThreadPoolExecutor` 并行调用 `search_cache_title`，上限 8 线程
+- **Stage 3 并行提取**：`extract_all_paragraphs()` 使用 `ThreadPoolExecutor` 并行调用 `extract_paragraphs`，内置收集排序
+- `_merge_search_results()` 函数（缓存 + Web 补充搜索结果合并）
 
-### Fixed
-- 回滚 v2.0.1 的错误：sasac.gov.cn 和 pkulaw.com 是真实网站，服务器不可达是网络限制而非网站问题
-- 恢复北大法宝到 policy-sources.md
-- 国资委描述改为"时效性较差"而非"不可达"
+### 修复
+- `deduplicate_entries` 从 Stage 4 前移至 Stage 2 末尾，避免对重复条目做冗余文件 I/O
+- `extract_paragraphs` import 路径从 `atoms` 改为 `rebuild_policy_html`
+- `search_cache_fulltext` import 路径同步修正
 
-## v2.0.1 (2026-07-28)
+### 精简
+- SKILL.md Pipeline Planning 大段并行度分析表格删除，判断逻辑下沉到 `chain_runner.py`
 
-### Fixed
-- 国家数据局政策专栏路径：sjj/zwgk/list → sjj/zwgk/zcfb/list
-- 移除北大法宝（pkulaw.com 不可达）
-- 国资委标注：sasac.gov.cn 服务器不可达
-- Source Coverage 新增「政策专栏」列，区分 site: 搜索前缀与直访路径
+---
 
-## v2.0.0 (2026-07-28)
+## [v2.2.0] — 2026-07-28
 
-### Added
-- **18 原子操作库** `scripts/atoms.py`：5 阶段标准化（环境准备/搜索/过滤/提取/验证/输出），每个函数只做一件事
-- **执行链编排器** `scripts/chain_runner.py`：4 条预设链（broad/cross/locate/trace），命令行为 `--chain` 路由
-- **AND 交集模式**：`rebuild_policy_html.py --mode and` 多关键词同时命中
+### 重构
+- **职责边界分离**：
+  - `atoms.py` → 纯数据操作（search/filter/intersect/dedup），不含文件 I/O
+  - `rebuild_policy_html.py` → 文件 I/O + 输出（load_source/extract_paragraphs/build_html/URL 降级）
+  - `chain_runner.py` → 编排层（单向引用：chain → rebuild → atoms）
+- 删除 atoms.py 中的 `load_source()` / `extract_paragraphs()` / `fetch_url_with_fallback()` 重复实现（与 rebuild 版本功能分叉）
+- 删除 `FALLBACK_DOMAINS` 常量（降级逻辑内嵌到 `_fetch_url_fallback`）
 
-### Changed
-- **SKILL.md 全面重构**：Decision Guide 改为意图路由表，Core Workflow 改为 5 阶段 18 原子操作
-- 搜索逻辑从单体脚本拆分为可组合的原子函数，每次新增意图只需编排新链
+---
 
-### Fixed
-- trace 链：添加 GBK 编码回退处理非 UTF-8 文件
+## [v2.1.1] — 2026-07-28
 
-## v1.9.10 (2026-07-28)
-## v1.9.10 (2026-07-28)
+### 变更
+- 五层降级策略从 SKILL.md 大段文档下沉到 `atoms.py`：`load_source()` 内置自动降级，Agent 无需手动判断
+- SKILL.md 降级策略文档精简为一行 Pitfalls 条目
 
-### Added
-- Pitfalls 节改名「Pitfalls  Hard Constraints」，增加绝对禁止规则：禁止手工编写 HTML 报告，所有 HTML 最终交付必须通过 rebuild_policy_html.py 生成
+---
 
-## v1.9.9 (2026-07-28)
+## [v2.1.0] — 2026-07-28
 
-### Changed
-- YAML 精简至 3 字段（name+description+license），对齐 anthropics 标准
-- 标题改为纯英文 `# Policy Search China`
-- 新增 `## Overview` 概览节
+### 新增
+- **URL 五层降级策略**：
+  - L1: HTTPS (curl + 浏览器 UA)
+  - L2: HTTP 降级
+  - L3: 浏览器 (`browser_navigate`)
+  - L4: 搜索引擎 (`web_search`)
+  - L5: 替代源（`gov.cn` 转载）
+- `_fetch_url_fallback()` 在 `atoms.py` 中实现（后移至 `rebuild_policy_html.py`）
+- sasac.gov.cn L2 HTTP 降级可用，miit.gov.cn 加 UA 后 L1 可用
 
-# 更新日志
+### 修复
+- sasac.gov.cn 从"不可达"更正为"HTTPS 不可达但 HTTP 可达"
+- `verify_verbatim` 死函数删除
 
-## v1.9.8 (2026-07-28)
+---
 
-### Fixed
-- **SKILL.md Core Workflow 代码修复**：4 处问题
-  - 新增统一 import 块（`Path`, `json`, `re`, `glob`），代码可直接执行
-  - Phase 0 空缓存不抛 ValueError（`max()` → 显式循环）
-  - Phase 0/2 文件句柄泄漏修复（`open()` → `with`/`read_text()`）
-  - Phase 2 hits 空守卫（`if not hits: return`，防 IndexError）
-- **ndrc.json 数据修复**：3 条格式标签修正（`format: pdf` → `html`，实际为 .txt 纯文本文件）
+## [v2.0.2] — 2026-07-28
 
-## v1.9.7 (2026-07-28)
+### 修复
+- **Wiki Changelog 同步断裂**：自 v1.9.8 起 Wiki 从未成功推送（远程有手动编辑导致 `git push` 被拒）。补全 v1.9.8 至 v2.0.2 缺失条目，此后发版前执行 `git pull --rebase` + push 后 `curl` 验证
 
-### Changed
-- 每位 Phase 加可执行代码示例（Python 缓存扫描、段落提取、HTML 高亮输出）
-- Two-Stage Principle 改为具体搜索计划示例
-- 去除 Overview 冗余描述，合并到 H1 摘要
-- 去除 Phase 描述的 reference 文件依赖（Agent 读完主文件可直接执行）
+---
 
-## v1.9.6 (2026-07-28)
+## [v2.0.1] — 2026-07-28
 
-### Changed
-- 移除 SKILL.md 中 mermaid 流程图（Agent 不渲染），保留文字说明
-- 精简 Setup 节双空间架构描述，详细信息收敛到 reference 文件
+### 修复
+- 国家数据局域名从错误的 `ndrc.gov.cn` 修正为 `nda.gov.cn`
+- 政策专栏 URL 路径补充 `zcfb` 段：`/sjj/zwgk/zcfb/list/`
 
-## v1.9.5 (2026-07-28)
+---
 
-### Changed
-- 重构 SKILL.md：按 anthropics 官方规范精简至 124 行（此前 726 行），新增 Decision Guide 决策表
-- 新增 references/ 目录，拆分出 3 个 reference 文件：policy-sources.md、search-strategies.md、output-format.md
+## [v2.0.0] — 2026-07-28
 
-## v1.9.4 (2026-07-28)
-
-### Fixed
-
-- **data_elements_scenarios_guide.pdf OCR 文本提取**：457 页扫描件完成 OCR，配套 .txt 文件可用，补齐此前缺失的 PDF 全文搜索能力
-
-## v1.9.3 (2026-07-28)
-
-### Added
-
-- **pre-push hook 变更类型自动检测**：扫描本次 push 的文件变更，按发版判断矩阵自动判定是否需要发版，杜绝"该发没发"或"不该发卡住"的概率问题
-- pre-push 检查项 0：变更类型自动归类，纯文档变更跳过版本检查直接放行
-- SKILL.md：补充推前检查钩子文档（特性说明 + 分类规则表）
-
-### Changed
-
-- pre-push 检查项编号重排：版本检查移至 3-5 号（仅需发版时执行），通用检查为 1-2 号
-
-## v1.9.2 (2026-07-28)
-
-### Fixed
-
-- **条目归属清理**：nda.json 中移除发改数据〔2024〕660号（按文号单位原则，发改类归 ndrc.json），仅保留国数文号条目
-  - nda.json: 5 条 → 4 条，与 cache/nda/ 目录文件数一致
-
-## v1.9.1 (2026-07-28)
-
-### Changed
-
-- **缓存文件命名规范化**：统一为英文描述性命名，废除中文文号命名
-  - nda/: `国数综科基2025-114号.txt` → `data_infrastructure_scenarios.html`
-  - nda/: `国数综政策2025-106号.pdf` → `data_elements_scenarios_guide.pdf`
-  - nda/: `国数综政策2026-35号.txt` → `data_property_rights_guide.html`
-  - nda/: `industry_high_quality_dataset.html`（新增，补全国数科基〔2026〕25号全文）
-  - ndrc/: `发改数据2025-1154号.txt` → `digital_economy_enterprises.txt`
-  - ndrc/: `发改能源2026-622号.txt` → `non_fossil_energy_guide.txt`
-- **format 字段清理**：确保 format 与实际文件后缀一致（html → .html/.htm，pdf → .pdf/.txt）
-
-## v1.9.0 (2026-07-28)
-
-### Added
-
-- **新政策入库**：3 条重点政策（含 2 条全文 + 1 条 PDF 缓存）
-  - 《关于加强数字经济创新型企业培育的若干措施》（发改数据〔2025〕1154号），六部门联合发文
-  - 《关于在国家数据基础设施建设先行先试中加强场景应用的实施方案》（国数综科基〔2025〕114号），国家数据局综合司
-  - 《工业制造、现代农业等九个领域"数据要素×"典型场景指引》（国数综政策〔2025〕106号），国家数据局综合司
-- **新缓存条目**：nda.json 新增 2 条，ndrc.json 新增 1 条
-
-## v1.8.0 (2026-07-28)
-
-### Added
-
-- **新政策入库**：《非化石能源电力消费核算指南（试行）》（发改能源〔2026〕622号），发改委/能源局/生态环境部/统计局/数据局五部门联合发文，含全文txt缓存
-- **新缓存条目**：ndrc.json 新增 1 条能源核算政策
-
-## v1.7.0 (2026-07-28)
-
-### Added
-
-- **新政策入库**：《关于推进行业高质量数据集建设行动的实施方案》（国数科基〔2026〕25号），国家数据局，含六大专项行动、20条措施
-- **新缓存条目**：nda.json 新增 1 条行业数据集政策
-
-## v1.6.0 (2026-07-28)
-
-### Added
-
-- **新政策入库**：《数据产权登记工作指引（试行）》（国数综政策〔2026〕35号），国家数据局综合司，全文缓存
-- **新缓存条目**：nda.json 新增 1 条数据产权政策
-
-### Changed
-
-- 国家数据局域名统一为 `www.nda.gov.cn`
-
-### Fixed
-
-- SKILL.md 中多处 nda.gov.cn 缺 www 前缀
-
-## v1.5.1 (2026-07-28)
-
-### Added
-
-- **冲突处理原则**：用户空间属于用户，同文号不一致时输出对比报告+推荐理由，等待用户决定后再操作
-
-### Changed
-
-- 搜索逻辑从"用户空间优先"改为"同文号实时一致性对比"
-
-### Removed
-
-- 清理 SKILL.md 中无意义的时间戳标注
-
-## v1.5.0 (2026-07-27)
-
-### Added
-
-- **跨平台重构**：不再硬编码 `~/.hermes/` 路径，支持 Hermes / OpenClaw / Workbuddy / Claude Code 等任意 Agent
-- **开源发布**：MIT 协议，GitHub 公开发布
-- **预装缓存**：约 50 条全文缓存（7 个信源）
-
-## v1.4.0 (2026-07-22)
-
-### Added
-
-- **分层架构**：系统空间 + 用户空间，更新不覆盖用户数据
-- **初始化脚本**：`scripts/init.py`，幂等创建目录
-- **脚本重构**：`rebuild_policy_html.py` 改为 `--topic` / `--all` 模式
-
-### Changed
-
-- 全脚本增加中文分区注释
-- 输出路径改为 `~/` 相对路径
-
-### Fixed
-
-- 信源 URL 修正（网信办、能源局、数据局）
-
-## v1.3.0 (2026-07-22)
-
-### Added
-
-- HTML 输出逐字验证机制
-- 关键词高亮标记
-- 6 个 Phase 工作流定义
-
-## v1.2.0 (2026-07-21)
-
-### Added
-
-- PDF 政策处理（pdftotext 提取）
-- 缓存搜索优化（动态 glob）
-
-## v1.1.0 (2026-07-20)
-
-### Added
-
-- 6 个信源完整覆盖
-- HTML 输出结构化（统计、目录、正文）
-- 双段式工作流（大模型 API 规划 → 本地工具验证）
-
-## v1.0.0 (2026-07-19)
-
-### Added
-
-- 初始版本
-- 基础搜索 + 缓存机制
-- 5 个搜索主题预置
+### 新增
+- **系统空间 / 用户空间双层架构**：更新不覆盖用户数据
+- `scripts/init.py` 幂等初始化脚本
+- `scripts/chain_runner.py` 编排层（4 条预设执行链）
+- `scripts/atoms.py` 18 个原子操作函数
+- `scripts/rebuild_policy_html.py` HTML 输出生成器
+- `scripts/path_utils.py` 跨平台路径解析
+- 7 个信源缓存 JSON（gov / miit / nda / sasac / nea / ndrc / cac）
+- 逐字引用验证标签（`verify_verbatim` + build_html 输出标签）
+- GitHub Release + Wiki 同步的 6 步发版流程
