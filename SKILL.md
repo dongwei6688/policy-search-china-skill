@@ -97,9 +97,9 @@ python3 scripts/init.py
 | 兜底 | `SKILL_DIR/data/` | skill 自带数据目录 |
 
 ```bash
-# 在任意平台上使用
-export POLICY_SEARCH_CHINA_DATA_DIR=/path/to/my/data
-export POLICY_SEARCH_CHINA_OUTPUT_DIR=/path/to/output
+# 在任意平台上使用（默认值见上方优先级表）
+export POLICY_SEARCH_CHINA_DATA_DIR=/path/to/my_data_dir  # 默认 ~/.hermes/data/policy-search-china/
+export POLICY_SEARCH_CHINA_OUTPUT_DIR=/path/to/output  # 默认: $DATA_DIR/output/
 python3 /path/to/skill/scripts/rebuild_policy_html.py --topic "数据要素"
 ```
 
