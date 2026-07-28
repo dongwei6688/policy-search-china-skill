@@ -67,7 +67,7 @@ PRESET_TOPICS = {
 # ═══════════════════════════════════════════════════════════
 CSS = """\
 body{font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","HarmonyOS Sans SC","Microsoft YaHei",sans-serif;max-width:900px;margin:0 auto;padding:0 32px;background:#f0f2f5;color:#2c3e50;line-height:1.9}
-.header{background:linear-gradient(135deg,#0f1f3d 0%,#1a3a6b 40%,#1e5a8a 100%);color:#fff;padding:40px 0;margin:0 -32px 28px -32px}
+.header{background:linear-gradient(135deg,#0f1f3d 0%,#1a3a6b 40%,#1e5a8a 100%);color:#fff;padding:40px 28px;margin:0 0 28px 0;border-radius:8px}
 .header h1{font-size:26px;font-weight:700;color:#fff;margin:0 0 8px 0}
 .header p{margin:0;font-size:13px;color:rgba(255,255,255,.65)}
 .stats{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
