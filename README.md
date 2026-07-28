@@ -14,16 +14,20 @@
 
 ## 安装
 
+**推荐：npx skills add（跨平台，自动注册到 75+ Agent）**
+
 ```bash
-# 1. 下载 skill 到本地
+npx skills add dongwei6688/policy-search-china-skill
+```
+
+**手动安装（Hermes Agent）**
+
+```bash
 git clone git@github.com:dongwei6688/policy-search-china-skill.git \
-  ~/.hermes/skills/research/policy-search-china
+  ~/.hermes/skills/policy-search-china
 
-# 2. 运行初始化
-python3 ~/.hermes/skills/research/policy-search-china/scripts/init.py
-
-# 3. 在 Hermes 中使用
-# 加载 skill → 搜索关键词 → 生成 HTML 汇编
+# 运行初始化
+python3 ~/.hermes/skills/policy-search-china/scripts/init.py
 ```
 
 ## 使用示例
@@ -60,4 +64,4 @@ MIT License
 
 ---
 
-> 本 Skill 采用跨平台设计（v1.5.0+），不硬编码路径，可通过环境变量 `POLICY_SEARCH_CHINA_DATA_DIR` 和 `POLICY_SEARCH_CHINA_OUTPUT_DIR` 适配任意 Agent 平台。开发维护以 Hermes Agent 为主，详见 SKILL.md 中"跨平台使用"节。
+> 本 Skill 采用跨平台设计（v1.5.0+），已上架 [skills.sh](https://www.skills.sh) 生态。推荐通过 `npx skills add` 安装以自动跨平台兼容。不硬编码路径，可通过环境变量 `POLICY_SEARCH_CHINA_DATA_DIR` 和 `POLICY_SEARCH_CHINA_OUTPUT_DIR` 适配任意 Agent 平台。开发维护以 Hermes Agent 为主，详见 SKILL.md 中"跨平台使用"节。
