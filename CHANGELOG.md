@@ -1,3 +1,18 @@
+## v2.3.0 (2026-07-28)
+
+### Added
+- Stage 1 并行：多关键词搜索使用 ThreadPoolExecutor 多线程
+- Stage 3 并行：extract_all_paragraphs() 多线程提取 + 收集聚合
+- merge_search_results() 合并缓存+Web搜索结果
+
+### Changed
+- SKILL.md 精简至 ~110 行：删除 Pipeline Planning 详细逻辑，只保留步骤描述
+- 详细实现逻辑下沉到 chain_runner.py 和 rebuild_policy_html.py
+
+### Fixed
+- deduplicate_entries 从 Stage 4 移到 Stage 2 末尾（节省 Stage 3 文件 I/O）
+- Stage 4 验证逻辑不再独立为一个 Stage（逐字验证已嵌入 build_html 输出标签）
+
 ## v2.2.0 (2026-07-28)
 
 ### Changed
