@@ -51,7 +51,13 @@ policy-search-china/
 │   ├── cac.json               ← 网信办
 │   ├── nea.json               ← 国家能源局
 │   ├── sasac.json             ← 国资委
-│   └── nda/ gov/ miit/ ndrc/ nea/ cac/ sasac/  ← HTML/PDF 原文
+│   ├── nda/                   ← 各信源原文文件（HTML/PDF）
+│   ├── ndrc/
+│   ├── gov/
+│   ├── miit/
+│   ├── nea/
+│   ├── cac/
+│   └── sasac/
 └── .gitignore
 ```
 
