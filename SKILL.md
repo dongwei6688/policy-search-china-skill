@@ -179,24 +179,7 @@ python3 scripts/init.py
 | web_extract 在 gov.cn 返回残缺 | 切到 `browser_navigate` + `browser_snapshot(full=true)` |
 | 同名政策多个版本 | 检查文号+发布日期+发文机关三重确认 |
 | 单关键词匹配带出不相关文件 | 用 `--mode and` 多关键词交集，或用 `exclude_entries()` 排除 |
-| **URL 不可达** | **按五层降级策略依次尝试：①HTTPS → ②HTTP 降级(如sasac) → ③浏览器(如miit 403→browser过) → ④web_search → ⑤替代源(gov.cn转载)** |
-
-### URL 五层降级策略
-
-访问政策原文 URL 时，按以下顺序逐层降级，不因单层失败而放弃：
-
-| 层 | 方法 | 适用场景 | 实现 |
-|:--|:-----|:--------|:-----|
-| L1 | HTTPS (curl) | **默认首选**，5/7 信源直通 | `fetch_url_with_fallback(url)` |
-| L2 | HTTP 降级 (curl) | 中国政务站 CDN SSL 配置问题 | 同上，auto-fallback |
-| L3 | 浏览器 (browser_navigate) | curl 被反爬但浏览器可过 | Agent 环境工具 |
-| L4 | 搜索引擎 (web_search) | 网站完全不可达，用搜索引擎找缓存/转载 | `search_backend: ddgs` |
-| L5 | 替代源 (gov.cn) | 部委政策常被 gov.cn/lianbo/ 转载 | `site:gov.cn 关键词` |
-
-**各信源实测结果：**
-- ✅ L1 直通：gov.cn、nda.gov.cn、nea.gov.cn、ndrc.gov.cn、cac.gov.cn
-- ⚠️ L2 降级：sasac.gov.cn（HTTPS 超时，HTTP 200）
-- ⚠️ L3 降级：miit.gov.cn（curl 403，browser 200）
+| URL 不可达 | `load_source()` 内置五层自动降级（HTTPS→HTTP→浏览器→搜索引擎→替代源），无需手动处理 |
 
 ## Verification Checklist
 

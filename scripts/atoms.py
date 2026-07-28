@@ -88,13 +88,20 @@ def search_cache_fulltext(
 
 def load_source(entry: dict) -> str:
     """
-    读取原文纯文本
+    读取原文纯文本 — 内置五层URL降级
 
     按 format 字段分流：HTML → 提取 pages_content 容器 → 去标签
                       PDF → 读取配套 .txt 文件
+    若 local_path 不存在，自动通过 fetch_url_with_fallback() 从 source_url 重新获取。
     """
     lp = Path(entry.get("local_path", ""))
     if not lp.exists():
+        # 本地文件丢失，尝试从 source_url 重新获取
+        url = entry.get("source_url", "")
+        if url:
+            r = fetch_url_with_fallback(url)
+            if r["success"]:
+                return re.sub(r"<[^>]+>", "", r["content"])
         return ""
 
     fmt = entry.get("format", "")

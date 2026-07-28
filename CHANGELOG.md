@@ -1,3 +1,9 @@
+## v2.1.1 (2026-07-28)
+
+### Changed
+- 五层降级策略从 SKILL.md 下沉到 atoms.py：load_source() 内置自动降级，Agent 无需手动判断
+- SKILL.md 降级策略大段文档精简为一行 Pitfalls 条目
+
 ## v2.1.0 (2026-07-28)
 
 ### Added
