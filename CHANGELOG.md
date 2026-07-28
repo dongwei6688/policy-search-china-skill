@@ -1,5 +1,15 @@
 # 更新日志
 
+## v1.9.8 (2026-07-28)
+
+### Fixed
+- **SKILL.md Core Workflow 代码修复**：4 处问题
+  - 新增统一 import 块（`Path`, `json`, `re`, `glob`），代码可直接执行
+  - Phase 0 空缓存不抛 ValueError（`max()` → 显式循环）
+  - Phase 0/2 文件句柄泄漏修复（`open()` → `with`/`read_text()`）
+  - Phase 2 hits 空守卫（`if not hits: return`，防 IndexError）
+- **ndrc.json 数据修复**：3 条格式标签修正（`format: pdf` → `html`，实际为 .txt 纯文本文件）
+
 ## v1.9.7 (2026-07-28)
 
 ### Changed

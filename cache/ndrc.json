@@ -14,7 +14,7 @@
     "searched_at": "2026-07-22",
     "summary": "发挥数据要素的放大、叠加、倍增作用，构建以数据为关键要素的数字经济。实施数据要素乘行动，发挥我国超大规模市场、海量数据资源、丰富应用场景等优势，推动数据要素与劳动力、资本等要素协同。",
     "local_path": "cache/ndrc/data_element_action_plan.txt",
-    "format": "pdf"
+    "format": "html"
   },
   {
     "doc_number": "国数政策〔2025〕",
@@ -49,7 +49,7 @@
       "数据局"
     ],
     "searched_at": "2026-07-28",
-    "format": "pdf",
+    "format": "html",
     "local_path": "cache/ndrc/digital_economy_enterprises.txt"
   },
   {
@@ -83,7 +83,7 @@
       "发改委"
     ],
     "searched_at": "2026-07-28",
-    "format": "pdf",
+    "format": "html",
     "local_path": "cache/ndrc/non_fossil_energy_guide.txt"
   }
 ]
