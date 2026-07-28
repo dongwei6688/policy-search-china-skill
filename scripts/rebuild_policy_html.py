@@ -66,38 +66,40 @@ PRESET_TOPICS = {
 #  CSS 样式（生成 HTML 时嵌入，无外部依赖）
 # ═══════════════════════════════════════════════════════════
 CSS = """\
-body{font-family:'宋体',SimSun,serif;max-width:960px;margin:0 auto;padding:20px;background:#f9f9f9;color:#222;line-height:1.8}
-.header{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;padding:30px;border-radius:10px;margin-bottom:30px}
-.header h1{margin:0 0 10px 0;font-size:24px}.header p{margin:0;opacity:.85;font-size:14px}
-.stats{display:flex;gap:15px;margin:20px 0;flex-wrap:wrap}
-.stat-box{background:#fff;border-radius:8px;padding:15px 25px;box-shadow:0 2px 8px rgba(0,0,0,.08);flex:1;min-width:120px;text-align:center}
-.stat-box .num{font-size:28px;font-weight:bold;color:#1a5276}.stat-box .label{font-size:12px;color:#666;margin-top:5px}
-.summary-box{background:linear-gradient(135deg,#fef9e7,#fdebd0);border:2px solid #d4ac0d;border-radius:8px;padding:25px 30px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,.08);user-select:text}
-.summary-box h2{font-size:16px;color:#7d6608;margin:0 0 12px 0;padding-bottom:8px;border-bottom:1px solid #d4ac0d}
-.summary-box .copy-btn{float:right;padding:2px 10px;background:#d4ac0d;color:#fff;border:none;border-radius:3px;font-size:12px;cursor:pointer;transition:background .2s}
-.summary-box .copy-btn:hover{background:#b8960b}
-.summary-box p{text-indent:2em;font-size:14px;margin:6px 0;text-align:justify;line-height:2}
-.toc{background:#fff;border-radius:8px;padding:20px 30px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:25px}
-.toc h2{font-size:16px;color:#1a5276;margin:0 0 15px 0;border-bottom:2px solid #1a5276;padding-bottom:8px}
-.doc-section{background:#fff;border-radius:8px;padding:25px 30px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:25px;border-top:4px solid #1a5276}
-.doc-header{margin-bottom:15px;padding-bottom:12px;border-bottom:1px solid #e0e0e0}
-.doc-header h2{margin:0 0 8px 0;font-size:18px;color:#1a5276}
-.doc-header .meta{font-size:13px;color:#666;margin-top:8px}
-.doc-header .meta span{margin-right:15px}
-.doc-header .meta .label{color:#999}
-.doc-header .meta a{color:#2e86c1;text-decoration:none}
-.doc-section p{text-indent:2em;margin:6px 0;font-size:14px;text-align:justify}
-.hl{background:#fff3cd;padding:0 2px;font-weight:bold}
-.verify{border:1px solid #27ae60;background:#eafaf1;padding:8px 15px;border-radius:5px;font-size:12px;color:#1e8449;margin:10px 0}
-.fold-toggle{display:inline-block;float:right;padding:4px 12px;background:#1a5276;color:#fff;border:none;border-radius:4px;font-size:13px;cursor:pointer;transition:background .2s}
-.fold-toggle:hover{background:#2e86c1}
-.fold-toggle .arrow{display:inline-block;transition:transform .3s;margin-right:4px}
+body{font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","HarmonyOS Sans SC","Microsoft YaHei",sans-serif;max-width:880px;margin:0 auto;padding:32px 24px;background:#fafaf8;color:#2c2c2c;line-height:1.95}
+.header{padding:36px 0 24px 0;margin-bottom:32px;border-bottom:1px solid #e8e6e0}
+.header h1{font-size:26px;font-weight:600;color:#1a1a1a;margin:0 0 8px 0;letter-spacing:.5px}
+.header p{margin:0;font-size:13px;color:#999}
+.stats{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
+.stat-box{background:#fff;border-radius:10px;padding:14px 22px;box-shadow:0 1px 3px rgba(0,0,0,.04);flex:1;min-width:110px;text-align:center}
+.stat-box .num{font-size:26px;font-weight:700;color:#333}.stat-box .label{font-size:12px;color:#999;margin-top:4px}
+.summary-box{background:#fdfcf6;border:1px solid #e8e2c8;border-radius:10px;padding:28px 32px;margin:24px 0;box-shadow:0 1px 3px rgba(0,0,0,.04);user-select:text}
+.summary-box h2{font-size:15px;color:#8a7e3d;font-weight:600;margin:0 0 14px 0;padding-bottom:10px;border-bottom:1px solid #e8e2c8}
+.summary-box .copy-btn{float:right;padding:3px 12px;background:none;color:#8a7e3d;border:1px solid #d4cda0;border-radius:4px;font-size:12px;cursor:pointer;transition:all .2s}
+.summary-box .copy-btn:hover{background:#8a7e3d;color:#fff}
+.summary-box p{text-indent:2em;font-size:14px;color:#555;margin:8px 0;text-align:justify;line-height:2}
+.toc{background:#fff;border-radius:10px;padding:22px 28px;box-shadow:0 1px 3px rgba(0,0,0,.04);margin-bottom:24px}
+.toc h2{font-size:15px;font-weight:600;color:#333;margin:0 0 14px 0;padding-bottom:8px;border-bottom:1px solid #eee}
+.doc-section{background:#fff;border-radius:10px;padding:28px 32px;box-shadow:0 1px 3px rgba(0,0,0,.04);margin-bottom:24px;border-left:3px solid transparent;transition:border-color .2s}
+.doc-section:hover{border-left-color:#b0a060}
+.doc-header{margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #f0f0f0}
+.doc-header h2{font-size:17px;font-weight:600;color:#1a1a1a;margin:0 0 6px 0}
+.doc-header .meta{font-size:12px;color:#999;margin-top:6px}
+.doc-header .meta span{margin-right:14px}
+.doc-header .meta .label{color:#bbb}
+.doc-header .meta a{color:#8a7e3d;text-decoration:none}
+.doc-section p{text-indent:2em;margin:7px 0;font-size:14px;color:#444;text-align:justify;line-height:2}
+.hl{background:#fdf4d6;padding:0 2px;font-weight:600;border-radius:2px}
+.verify{border:1px solid #d4e8d0;background:#f7faf6;padding:6px 14px;border-radius:5px;font-size:11px;color:#6b9e5a;margin:10px 0;letter-spacing:.3px}
+.fold-toggle{float:right;padding:3px 10px;background:none;color:#999;border:1px solid #e0e0e0;border-radius:4px;font-size:12px;cursor:pointer;transition:all .2s}
+.fold-toggle:hover{color:#333;border-color:#aaa;background:#fafafa}
+.fold-toggle .arrow{display:inline-block;transition:transform .25s;margin-right:3px}
 .fold-toggle.expanded .arrow{transform:rotate(90deg)}
-.doc-body{overflow:hidden;transition:max-height .4s ease}
+.doc-body{overflow:hidden;transition:max-height .35s ease}
 .doc-body.collapsed{max-height:0}
-.footer{text-align:center;color:#999;font-size:12px;margin-top:30px;padding-top:20px;border-top:1px solid #ddd}
-#back-to-top{position:fixed;right:30px;bottom:40px;width:44px;height:44px;background:#1a5276;color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;opacity:0;transition:opacity .3s;box-shadow:0 2px 12px rgba(0,0,0,.2);z-index:9999}
-#back-to-top.visible{opacity:.85}#back-to-top:hover{opacity:1;transform:scale(1.1);transition:all .2s}
+.footer{text-align:center;color:#bbb;font-size:12px;margin-top:32px;padding-top:20px;border-top:1px solid #eee}
+#back-to-top{position:fixed;right:28px;bottom:36px;width:40px;height:40px;background:#fff;color:#999;border:1px solid #e0e0e0;border-radius:50%;font-size:18px;cursor:pointer;opacity:0;transition:all .25s;box-shadow:0 1px 4px rgba(0,0,0,.06);z-index:9999}
+#back-to-top.visible{opacity:.9}#back-to-top:hover{color:#333;border-color:#aaa;transform:translateY(-2px)}
 """
 
 
