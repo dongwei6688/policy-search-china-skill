@@ -37,6 +37,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from typing import Optional
 
 # ── 使用跨平台路径工具 ─────────────────────────────
 _SELF_DIR = Path(__file__).resolve().parent
@@ -368,10 +369,17 @@ def build_html(title: str, groups: list, keywords: list, summary: str = "") -> s
     参数:
       title:    输出文件标题（如"智慧城市政策汇编"）
       groups:   [(entry, [(para_text, chapter_hint), ...]), ...]
-      keywords: 关键词列表（第一个用于高亮）
+      keywords: 全量关键词列表（全部用于高亮和 Header 展示）
       summary:  公文风格概括摘要（Commander 撰写，为空则跳过摘要区）
     """
-    keyword = keywords[0]
+    # 去重并保持顺序
+    from atoms import deduplicate_entries  # 仅用于数据去重，非文件 I/O
+    seen, unique_kws = set(), []
+    for kw in keywords:
+        if kw not in seen:
+            seen.add(kw)
+            unique_kws.append(kw)
+    keywords = unique_kws
     total_paras = sum(len(p) for _, p in groups)
 
     # JS: 返回顶部按钮（滚动超过 300px 显示）
@@ -383,7 +391,9 @@ def build_html(title: str, groups: list, keywords: list, summary: str = "") -> s
     lines.append(f'<title>{title}</title>')
     lines.append(f'<style>{CSS}</style></head><body>')
     lines.append(back_to_top_js)
-    lines.append(f'<div class="header"><h1>{title}</h1><p>逐字引用 · 所有段落可在原文中验证</p></div>')
+    # Header：显示匹配关键词列表
+    kw_tags = ' · '.join(f'<span style="background:rgba(255,255,255,.15);padding:2px 8px;border-radius:3px;margin:0 4px">{kw}</span>' for kw in keywords)
+    lines.append(f'<div class="header"><h1>{title}</h1><p>匹配关键词：{kw_tags}</p></div>')
 
     # ── 统计概览卡片 ──
     lines.append('<div class="stats">')
@@ -458,8 +468,10 @@ def build_html(title: str, groups: list, keywords: list, summary: str = "") -> s
                     f'{chapter_hint}</p>'
                 )
                 last_chapter = chapter_hint
-            # 关键词高亮：仅更改展示，不改变原文文字
-            highlighted = para_text.replace(keyword, f'<span class="hl">{keyword}</span>')
+            # 全量关键词高亮：按从长到短依次替换，避免短词吃掉长词的部分
+            highlighted = para_text
+            for kw in sorted(keywords, key=len, reverse=True):
+                highlighted = highlighted.replace(kw, f'<span class="hl">{kw}</span>')
             lines.append(f'<p>{highlighted}</p>')
         lines.append('</div>')  # doc-body
         lines.append('</div>')  # doc-section
@@ -576,7 +588,8 @@ def export_candidates(
 
 
 def build_from_relevance_scores(
-    scores_path: str, groups: list, topic_keywords: list[str]
+    scores_path: str, groups: list, topic_keywords: list[str],
+    highlight_keywords: list[str] = None
 ) -> Path:
     """
     根据 Commander 的评分 JSON 过滤段落，生成精简 HTML。
@@ -651,7 +664,7 @@ def build_from_relevance_scores(
     before_paras = sum(len(p) for _, p in groups)
     reduction = int((1 - total_paras / before_paras) * 100) if before_paras else 0
 
-    html = build_html(title, filtered_groups, topic_keywords,
+    html = build_html(title, filtered_groups, highlight_keywords,
                      summary=scores.get("summary", ""))
     output_path = OUTPUT_DIR / f'{title}.html'
     output_path.write_text(html, encoding='utf-8')
@@ -695,6 +708,8 @@ def main():
                         help='Commander 评分 JSON 路径（与 --candidates-only 互斥）')
     parser.add_argument('--summary',
                         help='公文风格概括摘要文本（直接嵌入 HTML 目录前）')
+    parser.add_argument('--highlight-keywords', nargs='+',
+                        help='额外高亮关键词（仅用于展示高亮，不影响搜索过滤）')
     args = parser.parse_args()
 
     # 打印路径信息
@@ -715,8 +730,10 @@ def main():
         return
 
     # ── --topic 模式：用户自定义搜索 ──
-    if args.topics:
+    if not args.all and args.topics:
         keywords = args.topics
+        # 高亮关键词仅用于展示，不影响搜索
+        highlight_kws = keywords + (list(args.highlight_keywords) if args.highlight_keywords else [])
         if len(keywords) == 1:
             title = f'{keywords[0]}政策汇编'
         else:
@@ -736,12 +753,12 @@ def main():
 
         # --relevance-scores：读 Commander 评分后生成精简 HTML
         if args.relevance_scores:
-            build_from_relevance_scores(args.relevance_scores, groups, keywords)
+            build_from_relevance_scores(args.relevance_scores, groups, keywords, highlight_kws)
             return
 
         # 默认：直接生成 HTML（无相关性过滤）
         total_paras = sum(len(p) for _, p in groups)
-        html = build_html(title, groups, keywords, summary=args.summary or "")
+        html = build_html(title, groups, highlight_kws, summary=args.summary or "")
         output_path = OUTPUT_DIR / f'{title}.html'
         output_path.write_text(html, encoding='utf-8')
         print(f'  ✅ {title}.html ({len(html)}字, {total_paras}段,'
