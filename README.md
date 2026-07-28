@@ -1,5 +1,7 @@
 # policy-search-china-skill
 
+[![skills.sh](https://skills.sh/b/dongwei6688/policy-search-china-skill)](https://skills.sh/dongwei6688/policy-search-china-skill)
+
 **国内政策文件搜索与引用** — 跨 Agent 平台通用 Skill（Hermes / OpenClaw / Workbuddy / Claude Code 等）
 
 搜索国务院、工信部、国家数据局、国资委、国家能源局、发改委、网信办等权威信源的政策文件，提取逐字引文，生成结构化 HTML 汇编。
