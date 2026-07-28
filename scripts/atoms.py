@@ -215,17 +215,7 @@ def deduplicate_entries(entries: list[dict]) -> list[dict]:
     return result
 
 
-def verify_verbatim(paragraph: str, original_path: Path) -> bool:
-    """
-    4.2 逐字验证
-
-    检查 paragraph 是否能在 original_path 中找到逐字匹配。
-    """
-    if not original_path.exists():
-        return False
-    text = original_path.read_text(encoding="utf-8")
-    clean_text = re.sub(r'<[^>]+>', '', text)
-    return paragraph.strip() in clean_text
+# Stage 4: 验证 — 逐字校验已嵌入 build_html 输出标签（<div class="verify">），不单独作为原子操作。
 
 
 # ═══════════════════════════════════════════════════════
