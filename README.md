@@ -19,7 +19,7 @@
 **一条命令安装：**
 
 ```bash
-npx skills add dongwei6688/policy-search-china-skill
+npx skills add https://github.com/dongwei6688/policy-search-china-skill --skill policy-search-china
 ```
 
 装完后，对你的 AI 说一句：**"帮我搜索数据要素相关政策"** 即可。
