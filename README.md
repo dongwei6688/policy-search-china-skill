@@ -14,21 +14,17 @@
 
 ## 安装
 
-**推荐：npx skills add（跨平台，兼容 Hermes / OpenClaw / Workbuddy / Claude Code 等）**
+确保系统已安装 Node.js（运行 `node --version` 确认，没有的话去 [nodejs.org](https://nodejs.org) 下载）。
+
+**一条命令安装：**
 
 ```bash
 npx skills add dongwei6688/policy-search-china-skill
 ```
 
-**手动安装（Hermes Agent）**
+装完后，对你的 AI 说一句：**"帮我搜索数据要素相关政策"** 即可。
 
-```bash
-git clone git@github.com:dongwei6688/policy-search-china-skill.git \
-  ~/.hermes/skills/policy-search-china
-
-# 运行初始化
-python3 ~/.hermes/skills/policy-search-china/scripts/init.py
-```
+> 高级用户也可手动安装：`git clone git@github.com:dongwei6688/policy-search-china-skill.git ~/.hermes/skills/policy-search-china && python3 ~/.hermes/skills/policy-search-china/scripts/init.py`
 
 ## 使用示例
 
