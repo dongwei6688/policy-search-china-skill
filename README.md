@@ -14,7 +14,7 @@
 
 ## 安装
 
-**推荐：npx skills add（跨平台，自动注册到 75+ Agent）**
+**推荐：npx skills add（跨平台，兼容 Hermes / OpenClaw / Workbuddy / Claude Code 等）**
 
 ```bash
 npx skills add dongwei6688/policy-search-china-skill
