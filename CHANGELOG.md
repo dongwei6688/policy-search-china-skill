@@ -1,3 +1,18 @@
+## v2.0.0 (2026-07-28)
+
+### Added
+- **18 原子操作库** `scripts/atoms.py`：5 阶段标准化（环境准备/搜索/过滤/提取/验证/输出），每个函数只做一件事
+- **执行链编排器** `scripts/chain_runner.py`：4 条预设链（broad/cross/locate/trace），命令行为 `--chain` 路由
+- **AND 交集模式**：`rebuild_policy_html.py --mode and` 多关键词同时命中
+
+### Changed
+- **SKILL.md 全面重构**：Decision Guide 改为意图路由表，Core Workflow 改为 5 阶段 18 原子操作
+- 搜索逻辑从单体脚本拆分为可组合的原子函数，每次新增意图只需编排新链
+
+### Fixed
+- trace 链：添加 GBK 编码回退处理非 UTF-8 文件
+
+## v1.9.10 (2026-07-28)
 ## v1.9.10 (2026-07-28)
 
 ### Added
