@@ -1,3 +1,19 @@
+## v2.9.0 (2026-07-28)
+
+### Added
+- 信源扩展：7→16 个部委（新增科技部、财政部、交通运输部、生态环境部、农业农村部、教育部、文旅部、水利部、人社部）
+- 中央政策文件库（sousuo.www.gov.cn）作为跨部委统一搜索入口
+- 9 个新缓存 JSON 文件（most/mof/mot/mee/moa/moe/mct/mwr/mohrss.json）
+- 16 条 URL 域名匹配规则 + doc_number 前缀兜底
+
+### Changed
+- policy-sources.md 完整重写，覆盖 16 部委
+- SKILL.md 信源表更新
+- search-strategies.md 数字修正
+
+### Verified
+- 9 个新部委均通过 curl 可达性验证（5 HTTPS + 2 HTTP降级）
+
 ## v2.8.1 (2026-07-28)
 
 ### Added
