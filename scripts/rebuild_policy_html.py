@@ -74,6 +74,8 @@ body{font-family:'宋体',SimSun,serif;max-width:960px;margin:0 auto;padding:20p
 .stat-box .num{font-size:28px;font-weight:bold;color:#1a5276}.stat-box .label{font-size:12px;color:#666;margin-top:5px}
 .summary-box{background:linear-gradient(135deg,#fef9e7,#fdebd0);border:2px solid #d4ac0d;border-radius:8px;padding:25px 30px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,.08);user-select:text}
 .summary-box h2{font-size:16px;color:#7d6608;margin:0 0 12px 0;padding-bottom:8px;border-bottom:1px solid #d4ac0d}
+.summary-box .copy-btn{float:right;padding:2px 10px;background:#d4ac0d;color:#fff;border:none;border-radius:3px;font-size:12px;cursor:pointer;transition:background .2s}
+.summary-box .copy-btn:hover{background:#b8960b}
 .summary-box p{text-indent:2em;font-size:14px;margin:6px 0;text-align:justify;line-height:2}
 .toc{background:#fff;border-radius:8px;padding:20px 30px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:25px}
 .toc h2{font-size:16px;color:#1a5276;margin:0 0 15px 0;border-bottom:2px solid #1a5276;padding-bottom:8px}
@@ -391,7 +393,14 @@ def build_html(title: str, groups: list, keywords: list, summary: str = "") -> s
     # ── Commander 概括摘要（公文风格，直接可复制）──
     if summary:
         lines.append('<div class="summary-box">')
-        lines.append('<h2>📋 政策概述（可直接引用）</h2>')
+        lines.append(
+            '<h2>📋 政策概述（可直接引用）'
+            '<button class="copy-btn" onclick="var p=this.parentNode.parentNode.querySelectorAll(\'p\');'
+            'var t=Array.from(p).map(e=>e.innerText).join(\'\\n\\n\');'
+            'navigator.clipboard.writeText(t).then(()=>{'
+            'this.textContent=\'✓ 已复制\';setTimeout(()=>{this.textContent=\'📋 复制\'},1500)'
+            '})" title="复制全部概述内容">📋 复制</button></h2>'
+        )
         for para in summary.strip().split('\n'):
             para = para.strip()
             if para:
