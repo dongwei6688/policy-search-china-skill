@@ -47,6 +47,24 @@ metadata:
 
 具体操作步骤见各 Phase 章节。输出的 HTML 文件保存在 `~/.hermes/output/` 目录，脚本工具在 `scripts/` 目录下。
 
+## 安装
+
+**方式一（推荐）：npx skills add（跨平台，自动注册到 75+ Agent）**
+
+```bash
+npx skills add dongwei6688/policy-search-china-skill
+```
+
+**方式二：手动安装（Hermes Agent）**
+
+```bash
+git clone https://github.com/dongwei6688/policy-search-china-skill.git \
+  ~/.hermes/skills/policy-search-china
+python3 scripts/init.py
+```
+
+> 两种安装方式共用同一用户数据目录 `~/.hermes/data/policy-search-china/`，切换方式不会丢失缓存。
+
 |## Setup
 
 首次安装或加载本 Skill 时，运行初始化脚本确保目录结构就绪：
