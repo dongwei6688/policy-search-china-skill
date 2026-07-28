@@ -6,91 +6,85 @@ license: MIT
 
 # Policy Search China
 
-Search Chinese government policy documents (State Council, MIIT, NDRC, SASAC, NEA, CAC, NDA) and extract verbatim paragraphs for reports and planning. Commander plans, workers execute — five-stage pipeline with parallel search and extraction.
+Search Chinese government policy documents (State Council, MIIT, NDRC, SASAC, NEA, CAC, NDA). Commander plans — workers execute. All logic lives in compiled scripts, not in Agent-interpreted code blocks. This prevents step-skipping and execution drift.
 
 ## Decision Guide
 
-| 用户需求 | 执行链 | 命令 |
+Commander maps user intent to the correct worker. Each worker is a self-contained script — call it, review its output, decide next step.
+
+| 用户需求 | Worker | 说明 |
 |----------|--------|------|
-| 全面扫描（"近两年AI政策"） | **broad 链** | `chain_runner.py --chain broad --keywords "人工智能" --start 2024-01-01` |
-| 交叉分析（"AI和能源结合"） | **cross 链** | `chain_runner.py --chain cross --keywords "人工智能" "能源" --start 2024-01-01` |
-| 精准定位（"数据二十条确权"） | **locate 链** | `chain_runner.py --chain locate --keywords "确权"` |
-| 溯源引用（"这句话出自哪"） | **trace 链** | `chain_runner.py --chain trace --keywords "原句..."` |
-| 输出 HTML 汇编 | 生成脚本 | `rebuild_policy_html.py --topic "A" --topic "B" --mode and` |
+| 全面扫描（"近两年AI政策"） | `chain_runner.py --chain broad` | 单关键词广撒网，commander 可先拆子领域 |
+| 交叉分析（"AI和能源结合"） | `chain_runner.py --chain cross` | 多关键词 AND 交集，内置并行搜索 |
+| 精准定位（"数据二十条确权"） | `chain_runner.py --chain locate` | 文号/段落精确查找 |
+| 溯源引用（"这句话出自哪"） | `chain_runner.py --chain trace` | 原文句子反查出处 |
+| 输出 HTML 汇编 | `rebuild_policy_html.py --topic ...` | 逐字段落 + 原文链接 + 验证标签 |
 
-## Core Pipeline
+## Core Pipeline — Commander Execution Protocol
 
-Commander (Agent) plans and reviews at each stage; workers (scripts) execute mechanically. Workers never decide — they return structured data for the Commander to evaluate.
+Commander follows this protocol strictly. Each line is a **Commander action** (call worker → review → decide). Override default params based on user intent.
 
-### Stage 0：确认缓存新鲜度
+### Stage 0：Setup
 
-```python
-from atoms import check_cache_freshness
-
-freshness = check_cache_freshness(cache_dir)
-# → {"latest_date": "2026-07-28", "needs_web_update": False}
+```
+① python3 scripts/init.py              → 幂等创建工作区（首次运行）
+② atoms.check_cache_freshness(cache_dir) → {"latest_date", "needs_web_update"}
 ```
 
-> **Commander** checks `needs_web_update` — if True, enable Web supplement search in Stage 1.
+Commander review: if `needs_web_update` is True, append `--web` flag to Stage 1 worker call.
 
-### Stage 1：并行搜索 — Commander 规划，工人执行
+### Stage 1：Search
 
-```python
-from atoms import search_cache_title
-
-# Commander decides keywords based on user intent
-# Workers run each keyword in parallel (ThreadPoolExecutor)
-hits_ai  = search_cache_title(cache_dir, "人工智能")  # → 32 results
-hits_en  = search_cache_title(cache_dir, "能源")      # → 19 results
+```
+③ chain_runner.py --chain {broad|cross} --keywords "..." --start YYYY-MM-DD [--web]
+   → {"count": N, "entries": [...], "freshness": {...}}
 ```
 
-> **Commander** decomposes user intent into keywords. For broad scan, plan sub-domains first (e.g. "数字化" → AI, data, IoT, computing).  
-> **Commander** evaluates: "32 AI results + 19 energy results — reasonable scale, proceed to filter."  
-> If cache is stale: launch `web_search("site:gov.cn 人工智能 2025")` in parallel with cache search.
+Commander actions before calling:
+- Decompose user intent into keyword list (cross: multiple; broad: plan sub-domains first)
+- Decide date range from user's time context
+- Add `--web` if cache is stale
 
-### Stage 2：过滤 + 去重 — Commander 定条件，工人链式执行
+Commander review after receiving output:
+- Count > 0? → proceed. Count == 0? → try broader keywords or remove date filter.
+- Count too high (>50)? → add `--end` or `--issuer` filters and re-run.
 
-```python
-from atoms import intersect_entries, filter_date_range, deduplicate_entries
+### Stage 2：Filter
 
-# Commander decides: AND intersection + 2024+ time filter
-result = intersect_entries(hits_ai, hits_en)           # 2.4 AND
-result = filter_date_range(result, "2024-01-01", None) # 2.1 time
-# Optional: filter_issuer / filter_doctype / exclude_entries
-result = deduplicate_entries(result)                    # dedup at end
-# → 3 entries (clean, ready for extraction)
+Filters are applied **inside** the worker call in Stage 1. Commander specifies filter params upfront — workers don't ask for mid-stream decisions.
+
+| Filter | How Commander activates it |
+|--------|--------------------------|
+| Time range | `--start YYYY-MM-DD --end YYYY-MM-DD` in Stage 1 call |
+| Issuer | `--issuer 国家能源局` (if user wants specific department) |
+| Doc type | `--doctype 意见` (if user wants specific document type) |
+| AND intersection | `--keywords "A" "B"` triggers automatic intersection |
+| Dedup | automatic — worker deduplicates before returning |
+
+Commander review: count is reasonable? Any obvious false positives in titles? If yes, re-run with `--exclude`.
+
+### Stage 3：Extract & Build
+
+```
+④ rebuild_policy_html.py --topic "keyword1" --topic "keyword2" --mode {or|and}
+   → Writes {title}.html to output/ directory
 ```
 
-> **Commander** decides filter criteria: date range, issuers, doc types, exclude keywords.  
-> **Commander** reviews output: "3 entries after filtering — tight intersection. Proceed to extraction."
+Commander provides via MEDIA: or file path to user. Worker handles:
+- File I/O, HTML parsing, PDF text extraction
+- Five-layer URL fallback (HTTPS→HTTP→browser→search→mirror)
+- Keyword highlighting, source link injection, verification badges
 
-### Stage 3：工人并行提取段落
+Commander does NOT edit the HTML. Worker output is the canonical deliverable.
 
-```python
-from rebuild_policy_html import extract_paragraphs
-from chain_runner import extract_all_paragraphs
+### Stage 4：Review & Deliver
 
-# Workers extract in parallel, Commander receives aggregated results
-groups = extract_all_paragraphs(result, ["人工智能", "能源"])
-# → [(entry, [(para, chapter), ...]), ...]  — 2 groups, 71 paragraphs
-```
+Commander reviews before sending to user:
+1. **Coverage check** — did we catch the expected policies? Cross-check title list against known major documents in this domain.
+2. **Link check** — spot-check 1-2 source URLs for accessibility.
+3. **Gap detection** — if user mentioned a sub-domain with zero results, propose supplement search.
 
-> Workers handle all I/O: file reading, URL fallback (HTTPS→HTTP→browser→search→mirror), text extraction, keyword matching.  
-> Commander does not need to worry about unreachable URLs or file format issues.
-
-### Stage 4：输出 + 审核
-
-```python
-from rebuild_policy_html import build_html
-
-html = build_html("AI与能源政策汇编", groups, ["人工智能", "能源"])
-# Writes to output/ — includes source links, highlights, verification tags
-```
-
-> **Commander reviews** before delivery:
-> - Coverage: 3 policies, 71 paragraphs — tight intersection, check if any key policy is missing
-> - Links: verify 1-2 source_url fields are accessible
-> - If coverage is insufficient, return to Stage 1 with broader keywords
+If gaps found: return to Stage 1 with adjusted keywords. Otherwise: deliver results.
 
 ## Setup
 
@@ -98,10 +92,20 @@ html = build_html("AI与能源政策汇编", groups, ["人工智能", "能源"])
 python3 scripts/init.py
 ```
 
+## Workers Reference
+
+| Worker | Input | Output | Responsible for |
+|:-------|:------|:-------|:---------------|
+| `chain_runner.py` | chain type, keywords, date range, filters | `{"count": N, "entries": [{...}]}` | Search + filter + dedup |
+| `rebuild_policy_html.py` | topics, mode (or/and) | HTML file in output/ | Extract + highlight + link |
+| `atoms.py` | structured data | structured data | Pure data operations (imported by above) |
+
+Commander never imports atoms.py directly — always goes through workers. Workers are the sole execution interface.
+
 ## Source Coverage
 
-| 缓存文件 | 部门 | site: 搜索前缀 |
-|---------|------|---------------|
+| 缓存 | 部门 | site: 前缀 |
+|------|------|-----------|
 | `gov.json` | 国务院 | `site:gov.cn/zhengce/zhengceku/` |
 | `miit.json` | 工信部 | `site:miit.gov.cn` |
 | `nda.json` | 国家数据局 | `site:nda.gov.cn` |
@@ -110,23 +114,23 @@ python3 scripts/init.py
 | `ndrc.json` | 发改委 | `site:ndrc.gov.cn` |
 | `cac.json` | 网信办 | `site:cac.gov.cn` |
 
-跨部委联合发文优先 gov.cn。详见 `references/policy-sources.md`。
+详见 `references/policy-sources.md`。
 
 ## Pitfalls
 
-| 问题 | 解决方案 |
-|------|---------|
-| gov.cn 返回过时政策 | 搜索嵌入年份限定，引用前做时效性检查 |
-| 同名政策多个版本 | 检查文号+发布日期+发文机关三重确认 |
-| 单关键词带出不相关文件 | 用 `--mode and` 多关键词交集 |
-| URL 不可达 | worker 内置五层降级，commander 无需干预 |
-| 搜索结果过少 | commander 审查后回 Stage 1 放宽条件 |
-| **禁止手工 HTML** | 必须通过 `rebuild_policy_html.py` 生成 |
+| 问题 | 处理 |
+|------|------|
+| 搜索结果过多 | Commander 添加 `--end` / `--issuer` 过滤后重调 |
+| 搜索结果为零 | Commander 放宽关键词或移除时间限制后重调 |
+| URL 不可达 | Worker 自动五层降级，Commander 无需处理 |
+| 覆盖率不够 | Commander 审查 Stage 4 后回 Stage 1 补搜 |
+| **禁止手工拼装 HTML** | 必须通过 `rebuild_policy_html.py` 生成 |
 
 ## Verification Checklist
 
-- [ ] Commander 正确识别意图：4 种链选对
-- [ ] 搜索到政策与需求匹配：部门、领域、时间范围一致
-- [ ] Commander 审核：结果数量、覆盖面、链接有效性
-- [ ] 原文从官方源提取，引用逐字核对
-- [ ] 输出含完整引用：文件名、文号、机关、日期、原文链接
+Commander verifies before each delivery:
+- [ ] 意图 → worker 映射正确
+- [ ] Stage 1 输出 count 合理
+- [ ] Stage 4 HTML 文件已生成（不是手动拼接）
+- [ ] 抽查 1-2 条 source_url 可访问
+- [ ] 覆盖面完整，无遗漏子领域
