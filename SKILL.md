@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents and extract authoritative references for reports and planning documents. Covers State Council, MIIT, NDRC, SASAC, NEA, CAC and other key ministries."
-version: 1.9.5
+version: 1.9.6
 author: dongwei6688 (董伟)
 license: MIT
 setup_needed: true
@@ -64,7 +64,7 @@ python3 scripts/init.py
 
 脚本自动创建用户空间目录、输出目录，检查运行依赖（python3、curl、pdftotext），生成默认配置。
 
-本 Skill 使用双空间架构：**系统空间**（`{skill_dir}/`，只读，随更新替换）和**用户空间**（`~/.hermes/data/policy-search-china/`，读写，永不覆盖）。搜索时用户空间优先，同文号冲突时输出对比报告供用户决策。
+用户空间数据在 skill 更新时不会被覆盖。
 
 ## Source Coverage
 
@@ -86,20 +86,6 @@ python3 scripts/init.py
 > **🔧 本地工具** = Hermes Agent 执行：`web_search` / `curl` / `browser_navigate` / `read_file` / `write_file` 等
 
 **关键教训：** 全面扫描某领域时，不要从工具搜索开始。先调用大模型 API 生成搜索规划（拆子领域、列预期文件、规划验证路径），再用本地工具逐条验证——覆盖面远高于"想到什么搜什么"。
-
-```mermaid
-flowchart LR
-    A[用户需求] --> B{🤖 大模型 API\n生成搜索规划}
-    B --> C[拆分子领域]
-    B --> D[列出预期文件]
-    B --> E[规划验证路径]
-    C --> F{🔧 本地工具\n逐条验证}
-    D --> F
-    E --> F
-    F --> G[web_search 确认存在]
-    F --> H[curl/browser 提取原文]
-    F --> I[写入用户空间缓存]
-```
 
 ## Common Pitfalls
 

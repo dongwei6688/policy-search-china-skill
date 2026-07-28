@@ -1,5 +1,11 @@
 # 更新日志
 
+## v1.9.6 (2026-07-28)
+
+### Changed
+- 移除 SKILL.md 中 mermaid 流程图（Agent 不渲染），保留文字说明
+- 精简 Setup 节双空间架构描述，详细信息收敛到 reference 文件
+
 ## v1.9.5 (2026-07-28)
 
 ### Changed
