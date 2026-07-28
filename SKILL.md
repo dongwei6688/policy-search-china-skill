@@ -6,7 +6,7 @@ license: MIT
 
 # Policy Search China
 
-搜索中国政府政策文件，覆盖七大信源。指挥官（大模型）规划与审核，工人（脚本）机械执行。所有逻辑封装在编译脚本中，不依赖 Agent 解释执行代码块。
+搜索中国政府政策文件，覆盖 16 个部委/机构。指挥官（大模型）规划与审核，工人（脚本）机械执行。
 
 ## 决策指南
 
@@ -133,15 +133,26 @@ python3 scripts/init.py
 
 ## 信源覆盖
 
-| 缓存 | 部门 | site: 前缀 |
-|------|------|-----------|
-| `gov.json` | 国务院 | `site:gov.cn/zhengce/zhengceku/` |
-| `miit.json` | 工信部 | `site:miit.gov.cn` |
-| `nda.json` | 国家数据局 | `site:nda.gov.cn` |
-| `sasac.json` | 国资委 | `site:gov.cn 国资委` |
-| `nea.json` | 国家能源局 | `site:nea.gov.cn` |
-| `ndrc.json` | 发改委 | `site:ndrc.gov.cn` |
-| `cac.json` | 网信办 | `site:cac.gov.cn` |
+16 个部委/机构，详见 `references/policy-sources.md`。
+
+| 缓存文件 | 部委 |
+|:---------|:-----|
+| `gov.json` | 国务院 |
+| `miit.json` | 工信部 |
+| `nda.json` | 国家数据局 |
+| `sasac.json` | 国资委 |
+| `nea.json` | 国家能源局 |
+| `ndrc.json` | 发改委 |
+| `cac.json` | 网信办 |
+| `most.json` | 科技部 |
+| `mof.json` | 财政部 |
+| `mot.json` | 交通运输部 |
+| `mee.json` | 生态环境部 |
+| `moa.json` | 农业农村部 |
+| `moe.json` | 教育部 |
+| `mct.json` | 文旅部 |
+| `mwr.json` | 水利部 |
+| `mohrss.json` | 人社部 |
 
 详见 `references/policy-sources.md`。
 
