@@ -1,5 +1,11 @@
 # 更新日志
 
+## v1.9.5 (2026-07-28)
+
+### Changed
+- 重构 SKILL.md：按 anthropics 官方规范精简至 124 行（此前 726 行），新增 Decision Guide 决策表
+- 新增 references/ 目录，拆分出 3 个 reference 文件：policy-sources.md、search-strategies.md、output-format.md
+
 ## v1.9.4 (2026-07-28)
 
 ### Fixed
