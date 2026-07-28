@@ -362,6 +362,40 @@ def search_cache_fulltext(
 #  生成 HTML 输出
 # ═══════════════════════════════════════════════════════════
 
+# ═══════════════════════════════════════════════════════════
+#  关键词颜色调色板（每词一色，Header标签与段落高亮统一）
+# ═══════════════════════════════════════════════════════════
+
+KEYWORD_COLORS = [
+    ("#dbeafe", "#1e40af"),  # 蓝
+    ("#d1fae5", "#065f46"),  # 绿
+    ("#ffedd5", "#9a3412"),  # 橙
+    ("#ede9fe", "#5b21b6"),  # 紫
+    ("#fce7f3", "#9d174d"),  # 粉
+    ("#ccfbf1", "#115e59"),  # 青
+    ("#fef3c7", "#92400e"),  # 金
+    ("#fee2e2", "#991b1b"),  # 红
+    ("#e0e7ff", "#3730a3"),  # 靛蓝
+    ("#f3e8ff", "#6b21a8"),  # 深紫
+    ("#ecfccb", "#3f6212"),  # 黄绿
+    ("#fce4d6", "#9c3a00"),  # 深橙
+]
+
+
+def _kw_color_css(keywords: list[str]) -> str:
+    """为每个关键词生成独立的 CSS 高亮类"""
+    rules = []
+    for i, (bg, fg) in enumerate(zip(
+        [c[0] for c in KEYWORD_COLORS] * ((len(keywords) // 12) + 1),
+        [c[1] for c in KEYWORD_COLORS] * ((len(keywords) // 12) + 1),
+    )):
+        if i >= len(keywords):
+            break
+        rules.append(f".hl-{i}{{background:{bg};color:{fg};padding:0 2px;font-weight:600;border-radius:2px}}")
+        rules.append(f".kw-tag-{i}{{background:{bg};color:{fg}}}")
+    return "\n".join(rules)
+
+
 def build_html(title: str, groups: list, keywords: list, summary: str = "") -> str:
     """
     生成结构化 HTML 汇编文件
@@ -389,10 +423,15 @@ def build_html(title: str, groups: list, keywords: list, summary: str = "") -> s
     lines = []
     lines.append('<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">')
     lines.append(f'<title>{title}</title>')
-    lines.append(f'<style>{CSS}</style></head><body>')
+    # 动态注入关键词颜色 CSS
+    kw_css = _kw_color_css(keywords)
+    lines.append(f'<style>{CSS}\n{kw_css}</style></head><body>')
     lines.append(back_to_top_js)
-    # Header：显示匹配关键词列表
-    kw_tags = ' · '.join(f'<span style="background:rgba(255,255,255,.15);padding:2px 8px;border-radius:3px;margin:0 4px">{kw}</span>' for kw in keywords)
+    # Header：每词不同颜色标签
+    kw_tags = ' · '.join(
+        f'<span class="kw-tag-{i}" style="padding:2px 8px;border-radius:3px;margin:0 4px">{kw}</span>'
+        for i, kw in enumerate(keywords)
+    )
     lines.append(f'<div class="header"><h1>{title}</h1><p>匹配关键词：{kw_tags}</p></div>')
 
     # ── 统计概览卡片 ──
@@ -468,10 +507,10 @@ def build_html(title: str, groups: list, keywords: list, summary: str = "") -> s
                     f'{chapter_hint}</p>'
                 )
                 last_chapter = chapter_hint
-            # 全量关键词高亮：按从长到短依次替换，避免短词吃掉长词的部分
+            # 全量关键词高亮：每个关键词使用独立颜色（hl-0, hl-1, ...）
             highlighted = para_text
-            for kw in sorted(keywords, key=len, reverse=True):
-                highlighted = highlighted.replace(kw, f'<span class="hl">{kw}</span>')
+            for i, kw in enumerate(keywords):
+                highlighted = highlighted.replace(kw, f'<span class="hl-{i}">{kw}</span>')
             lines.append(f'<p>{highlighted}</p>')
         lines.append('</div>')  # doc-body
         lines.append('</div>')  # doc-section
