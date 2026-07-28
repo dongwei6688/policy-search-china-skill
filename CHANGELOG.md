@@ -1,3 +1,10 @@
+## v1.9.9 (2026-07-28)
+
+### Changed
+- YAML 精简至 3 字段（name+description+license），对齐 anthropics 标准
+- 标题改为纯英文 `# Policy Search China`
+- 新增 `## Overview` 概览节
+
 # 更新日志
 
 ## v1.9.8 (2026-07-28)

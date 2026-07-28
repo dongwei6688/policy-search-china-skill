@@ -1,19 +1,16 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents and extract authoritative references for reports and planning documents. Covers State Council, MIIT, NDRC, SASAC, NEA, CAC and other key ministries."
-version: 1.9.8
-author: dongwei6688 (董伟)
 license: MIT
-setup_needed: true
-metadata:
-  hermes:
-    tags: [policy, china, government, research, citation, chinese]
-    related_skills: [soe-digital-plan-writing, enterprise-plan-drafting, tech-news-briefing]
 ---
 
-# Policy Search China — 国内政策文件搜索与引用
+# Policy Search China
 
 Search Chinese government policy documents and extract authoritative references for reports and planning documents. Covers State Council, MIIT, NDRC, SASAC, NEA, CAC and other key ministries.
+
+## Overview
+
+撰写央国企数智化规划/报告时，需要引用权威政策原文作为依据。本 skill 提供从搜索定位 → 原文提取 → 引用标注的完整工作流，覆盖国务院、工信部、国家数据局、国资委、国家能源局、发改委、网信办七个核心信源。缓存机制支持离线查找与自动更新。
 
 ## When to Use
 
