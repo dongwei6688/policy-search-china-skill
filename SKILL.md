@@ -42,6 +42,8 @@ license: MIT
 
 **调用前：** 指挥官将用户意图分解为关键词列表（cross 链：多关键词；broad 链：先规划子领域再搜索），根据用户的时间语境决定日期范围，缓存陈旧时追加 `--web`。
 
+搜索策略参考：`references/search-strategies.md`。
+
 **调用后：** 指挥官审核结果数量。count > 0 → 继续；count == 0 → 放宽关键词或移除时间过滤重试；count > 50 → 追加 `--end` 或 `--issuer` 过滤。
 
 ### 阶段 2：过滤

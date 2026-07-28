@@ -342,7 +342,6 @@ def search_cache_fulltext(
     cache_dir: Path, keyword: str, hit_entries: list[dict]
 ) -> list[dict]:
     """全文级关键词搜索 — 仅在标题命中条目中扫描原文"""
-    from atoms import search_cache_title  # 依赖是单向的：rebuild → atoms
 
     result = []
     for e in hit_entries:
