@@ -1,3 +1,14 @@
+## v2.1.0 (2026-07-28)
+
+### Added
+- URL 五层降级策略：L1 HTTPS → L2 HTTP降级 → L3 浏览器 → L4 搜索引擎 → L5 替代源
+- atoms.py 新增 fetch_url_with_fallback() 函数，L1-L2 自动降级
+- Source Coverage 增加各信源实测结果（L1/L2/L3 标注）
+
+### Fixed
+- sasac.gov.cn 原来误判为「不可达」，实际是 HTTPS 不通但 HTTP 可通
+- miit.gov.cn curl 403 → 加浏览器 UA 后直通
+
 ## v2.0.2 (2026-07-28)
 
 ### Fixed

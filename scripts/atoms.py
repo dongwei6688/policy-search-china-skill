@@ -137,6 +137,64 @@ def extract_paragraphs(entry: dict, keyword: str) -> list[tuple[str, str]]:
 
 
 # ═══════════════════════════════════════════════════════
+#  Stage 1.3/1.4: URL分级降级策略
+# ═══════════════════════════════════════════════════════
+
+FALLBACK_DOMAINS = {
+    # 域名 → HTTPS 不通过时的降级方案
+    "sasac.gov.cn": {"http_works": True, "alt_search": "site:gov.cn"},
+    "miit.gov.cn":  {"http_works": False, "alt_search": "site:gov.cn"},
+}
+
+
+def fetch_url_with_fallback(url: str, timeout: int = 5) -> dict:
+    """
+    URL 五层降级访问策略
+
+    每层失败自动降级到下一层。
+    返回: {"success": bool, "content": str, "layer": int, "method": str}
+
+    Layer 1: HTTPS (curl)
+    Layer 2: HTTP 降级 (curl)
+    Layer 3: 浏览器 (browser_navigate — 需 Agent 环境)
+    Layer 4: 搜索引擎检索
+    Layer 5: 替代源 (gov.cn 转载等)
+    """
+    import subprocess
+
+    # Layer 1: HTTPS
+    r = subprocess.run(
+        ["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
+         "-m", str(timeout), "-H", "User-Agent: Mozilla/5.0", url],
+        capture_output=True, text=True
+    )
+    if r.stdout.strip() == "200":
+        r2 = subprocess.run(
+            ["curl", "-s", "-m", str(timeout), "-H", "User-Agent: Mozilla/5.0", url],
+            capture_output=True, text=True
+        )
+        return {"success": True, "content": r2.stdout, "layer": 1, "method": "HTTPS"}
+
+    # Layer 2: HTTP 降级
+    http_url = url.replace("https://", "http://")
+    r = subprocess.run(
+        ["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
+         "-m", str(timeout), http_url],
+        capture_output=True, text=True
+    )
+    if r.stdout.strip() == "200":
+        r2 = subprocess.run(
+            ["curl", "-s", "-m", str(timeout), http_url],
+            capture_output=True, text=True
+        )
+        return {"success": True, "content": r2.stdout, "layer": 2, "method": "HTTP 降级"}
+
+    # Layer 3-5 无法在纯 Python 中实现（需 browser_navigate / web_search）
+    return {"success": False, "content": "", "layer": 2, "method": "失败",
+            "suggestion": "Layer 3: 尝试 browser_navigate; Layer 4: web_search; Layer 5: 替代源"}
+
+
+# ═══════════════════════════════════════════════════════
 #  Stage 2: 过滤
 # ═══════════════════════════════════════════════════════
 
