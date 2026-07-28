@@ -348,7 +348,7 @@ def build_html(title: str, groups: list, keywords: list) -> str:
 #  搜索与输出主逻辑
 # ═══════════════════════════════════════════════════════════
 
-def search_and_build(title: str, topic_keywords: list[str]) -> bool:
+def search_and_build(title: str, topic_keywords: list[str], mode: str = "or") -> bool:
     """
     搜索关键词并生成 HTML
 
@@ -362,10 +362,20 @@ def search_and_build(title: str, topic_keywords: list[str]) -> bool:
         if not lp:
             continue
 
-        # 可能有多关键词（如"人工智能"+"数据要素"），合并段落
+        # 逐关键词提取段落
+        kw_paras = {}
+        for kw in topic_keywords:
+            kw_paras[kw] = extract_paragraphs(entry, kw)
+
+        # AND 模式：所有关键词都命中才算
+        if mode == "and":
+            if not all(kw_paras[kw] for kw in topic_keywords):
+                continue
+
+        # 合并段落
         combined = []
         for kw in topic_keywords:
-            combined.extend(extract_paragraphs(entry, kw))
+            combined.extend(kw_paras[kw])
 
         # 按段落去重
         seen = set()
@@ -411,6 +421,9 @@ def main():
   # 搜索多关键词主题
   python3 scripts/rebuild_policy_html.py --topic "数据要素" --topic "人工智能"
 
+  # 交集模式（AND）：只返回同时包含所有关键词的政策
+  python3 scripts/rebuild_policy_html.py --topic "人工智能" --topic "能源" --mode and
+
 跨平台:
   设置环境变量 POLICY_SEARCH_CHINA_DATA_DIR 和 POLICY_SEARCH_CHINA_OUTPUT_DIR
   可在任何 Agent 平台上使用本 skill
@@ -418,6 +431,8 @@ def main():
     )
     parser.add_argument('--topic', action='append', dest='topics',
                         help='搜索主题关键词（可重复，如 --topic 智慧城市）')
+    parser.add_argument('--mode', choices=['or', 'and'], default='or',
+                        help='多关键词匹配模式：or=任一命中，and=全部命中（默认 or）')
     parser.add_argument('--all', action='store_true',
                         help='批量重建所有预设主题（PRESET_TOPICS）')
     args = parser.parse_args()
@@ -447,7 +462,7 @@ def main():
         else:
             title = f'{keywords[0]}与{keywords[1]}政策汇编'
         print(f'\n  单次模式："{title}"\n')
-        search_and_build(title, keywords)
+        search_and_build(title, keywords, mode=args.mode)
         return
 
     # ── 无参数：打印帮助 ──
