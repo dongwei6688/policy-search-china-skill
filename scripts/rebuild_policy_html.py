@@ -155,17 +155,71 @@ def load_all_cache() -> list[dict]:
 
 
 # ═══════════════════════════════════════════════════════════
+#  URL 降级策略 — 本地工具，不依赖 Agent
+# ═══════════════════════════════════════════════════════════
+
+def _fetch_url_fallback(url: str, timeout: int = 5) -> dict:
+    """
+    URL 五层降级访问 — 自动尝试 HTTPS→HTTP
+
+    Layer 1: HTTPS (curl + 浏览器 UA)
+    Layer 2: HTTP 降级
+    Layer 3-5: 提示 Agent 环境工具（browser_navigate / web_search / 替代源）
+    """
+    # Layer 1: HTTPS
+    r = subprocess.run(
+        ["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
+         "-m", str(timeout), "-H", "User-Agent: Mozilla/5.0", url],
+        capture_output=True, text=True
+    )
+    if r.stdout.strip() == "200":
+        r2 = subprocess.run(
+            ["curl", "-s", "-m", str(timeout), "-H", "User-Agent: Mozilla/5.0", url],
+            capture_output=True, text=True
+        )
+        return {"success": True, "content": r2.stdout, "layer": 1, "method": "HTTPS"}
+
+    # Layer 2: HTTP 降级
+    http_url = url.replace("https://", "http://")
+    r = subprocess.run(
+        ["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
+         "-m", str(timeout), http_url],
+        capture_output=True, text=True
+    )
+    if r.stdout.strip() == "200":
+        r2 = subprocess.run(
+            ["curl", "-s", "-m", str(timeout), http_url],
+            capture_output=True, text=True
+        )
+        return {"success": True, "content": r2.stdout, "layer": 2, "method": "HTTP 降级"}
+
+    return {"success": False, "content": "", "layer": 2, "method": "失败",
+            "suggestion": "L3: browser_navigate | L4: web_search | L5: gov.cn 替代源"}
+
+
+# ═══════════════════════════════════════════════════════════
 #  原文读取与段落提取
 # ═══════════════════════════════════════════════════════════
 
 def load_source(entry: dict) -> str:
-    """读取原文全文（纯文本，去掉 HTML 标签）"""
+    """读取原文全文（纯文本，去掉 HTML 标签）
+
+    内置五层 URL 降级：本地文件丢失时自动从 source_url L1(HTTPS)→L2(HTTP)→... 获取。
+    """
     lp = entry.get('local_path', '')
     fmt = entry.get('format', '')
     if not lp:
         return ''
+
     fp = resolve_local_path(lp)
+
+    # ── 本地文件不存在 → 尝试 URL 降级获取 ──
     if not fp.exists():
+        url = entry.get('source_url', '')
+        if url:
+            r = _fetch_url_fallback(url)
+            if r['success']:
+                return re.sub(r'<[^>]+>', '', r['content'])
         return ''
 
     # PDF：读配套 TXT 或实时 pdftotext
@@ -265,6 +319,28 @@ def extract_paragraphs(entry: dict, keyword: str) -> list[tuple[str, str]]:
             results.append((text, chapter if chapter else doc_title))
 
     return results
+
+
+# ═══════════════════════════════════════════════════════════
+#  全文搜索（依赖 extract_paragraphs，属于文件 I/O 层）
+# ═══════════════════════════════════════════════════════════
+
+def search_cache_fulltext(
+    cache_dir: Path, keyword: str, hit_entries: list[dict]
+) -> list[dict]:
+    """全文级关键词搜索 — 仅在标题命中条目中扫描原文"""
+    from atoms import search_cache_title  # 依赖是单向的：rebuild → atoms
+
+    result = []
+    for e in hit_entries:
+        lp = e.get("local_path", "")
+        if not lp or not Path(lp).exists():
+            continue
+        paras = extract_paragraphs(e, keyword)
+        if paras:
+            e["_body_hits"] = len(paras)
+            result.append(e)
+    return result
 
 
 # ═══════════════════════════════════════════════════════════

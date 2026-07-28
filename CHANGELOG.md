@@ -1,3 +1,15 @@
+## v2.2.0 (2026-07-28)
+
+### Changed
+- **职责边界重构**：atoms.py 只保留纯数据操作，文件I/O+URL降级全部归 rebuild_policy_html.py
+- 删除 atoms.py 中重复的 load_source()/extract_paragraphs()/fetch_url_with_fallback()
+- search_cache_fulltext() 移至 rebuild_policy_html.py（依赖文件I/O）
+- chain_runner.py trace链改用 rebuild_load_source()，不再手动读文件
+
+### Fixed
+- 修复 trace 链中 re/clean 变量引用错误
+- 消除 atoms.py 与 rebuild 间的功能分叉（atoms弱版 vs rebuild完整版）
+
 ## v2.1.1 (2026-07-28)
 
 ### Changed

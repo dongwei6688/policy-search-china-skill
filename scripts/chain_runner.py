@@ -18,7 +18,6 @@ sys.path.insert(0, str(SKILL_DIR / "scripts"))
 from atoms import (
     check_cache_freshness,
     search_cache_title,
-    search_cache_fulltext,
     filter_date_range,
     filter_issuer,
     filter_doctype,
@@ -26,10 +25,14 @@ from atoms import (
     union_entries,
     exclude_entries,
     extract_metadata,
-    extract_paragraphs,
     extract_chapters,
     deduplicate_entries,
     generate_summary_list,
+)
+
+from rebuild_policy_html import (
+    extract_paragraphs,
+    load_source as rebuild_load_source,
 )
 
 
@@ -155,22 +158,16 @@ def chain_trace_source(
     results = []
     for jf in cache_dir.glob("*.json"):
         for e in json.loads(jf.read_text()):
-            lp = e.get("local_path", "")
-            if not lp or not Path(lp).exists():
-                continue
             try:
-                text = Path(lp).read_text(encoding="utf-8")
-            except UnicodeDecodeError:
-                try:
-                    text = Path(lp).read_text(encoding="gbk")
-                except UnicodeDecodeError:
-                    continue
-            import re
-            clean = re.sub(r"<[^>]+>", "", text)
-            if exact_phrase in clean:
+                text = rebuild_load_source(e)
+            except Exception:
+                continue
+            if not text:
+                continue
+            if exact_phrase in text:
                 # 找到后提取上下文
-                idx = clean.find(exact_phrase)
-                context = clean[max(0, idx-40):idx+len(exact_phrase)+40]
+                idx = text.find(exact_phrase)
+                context = text[max(0, idx-40):idx+len(exact_phrase)+40]
                 e["_match_context"] = context
                 results.append(e)
     
