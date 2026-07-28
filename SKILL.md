@@ -133,7 +133,7 @@ python3 scripts/init.py
 
 ## 信源覆盖
 
-16 个部委/机构，详见 `references/policy-sources.md`。
+16 个部委/机构（其中住建部/卫健委/自然资源部通过中央政策文件库托底搜索），详见 `references/policy-sources.md`。
 
 | 缓存文件 | 部委 |
 |:---------|:-----|

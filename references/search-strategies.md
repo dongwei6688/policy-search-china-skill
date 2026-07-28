@@ -260,6 +260,27 @@ intitle:[政策关键词] site:gov.cn
 
 ---
 
-## 附录：缓存信源归属判断规则
+---
+
+## 六、单部委不可达时的托底搜索
+
+当某部委官网不可达时（如住建部 `mohurd.gov.cn` DNS 不可达、卫健委返回 412 等），指挥官自动切换至**中央政策文件库**进行托底搜索：
+
+```
+https://sousuo.www.gov.cn/zcwjk/policyDocumentLibrary?q={关键词}&t=zhengcelibrary
+```
+
+### 托底流程
+
+1. Commander 先尝试从目标部委缓存搜索（如 `mohurd.json`）。
+2. 缓存无匹配 → 从目标部委官网搜索（若可达）。
+3. 部委官网不可达 → 切到**中央政策文件库** `sousuo.www.gov.cn` 搜索。
+4. 搜索结果按 `source_url` 域名归属到对应部委缓存（如 `mohurd.json`）。
+5. 后续可正常走 chain_runner 的过滤、提取、HTML 生成等流程。
+
+托底搜索的 site: 语法：
+```
+site:sousuo.www.gov.cn 建筑业 人工智能 数据 2025 2026
+```
 
 详见 `references/policy-sources.md` → 信源归属判断规则。
