@@ -727,7 +727,7 @@ intitle:[政策关键词] site:gov.cn
 import json, re
 from pathlib import Path
 
-skill_dir = Path.home() / '.hermes' / 'skills' / 'research' / 'policy-search-china'
+skill_dir = Path.home() / '.hermes' / 'skills' / 'policy-search-china'
 keyword = "算力"
 cutoff = "2024-01-01"
 hits = []
