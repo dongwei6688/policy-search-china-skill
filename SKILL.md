@@ -505,7 +505,7 @@ intitle:[政策关键词] site:gov.cn
 **关键条款定位：** 对提取的文本用 Python `re` 或字符串搜索定位目标条款，截取上下段落。
 
 **写入缓存：** 提取完成后，将文号、文件名、机关、日期、原文地址、原文摘要写入
-`{skill_dir}/cache/` 下对应信源的缓存文件。
+用户空间对应信源的缓存文件（`~/.hermes/data/policy-search-china/cache/{信源}.json`），不修改系统空间。
 
 ---
 
