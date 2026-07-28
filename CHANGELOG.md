@@ -1,5 +1,11 @@
 # 更新日志
 
+## v1.9.4 (2026-07-28)
+
+### Fixed
+
+- **data_elements_scenarios_guide.pdf OCR 文本提取**：457 页扫描件完成 OCR，配套 .txt 文件可用，补齐此前缺失的 PDF 全文搜索能力
+
 ## v1.9.3 (2026-07-28)
 
 ### Added
