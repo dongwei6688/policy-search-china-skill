@@ -31,9 +31,52 @@ Search Chinese government policy documents and extract authoritative references 
 | 溯源引用（"这句话出自哪个政策"） | **trace 链** | `chain_runner.py --chain trace --keywords "原句内容"` |
 | 输出 HTML 汇编 | `rebuild_policy_html.py` | `--topic "人工智能" --topic "能源" --mode and` |
 
-## Core Pipeline — 5 阶段 18 原子操作
+## Pipeline Planning — 并行度分析
 
-所有原子操作实现在 `scripts/atoms.py`，编排在 `scripts/chain_runner.py`。
+意图拆解后，根据原子操作间的依赖关系决定串行/并行：
+
+```
+依赖规则：
+  同一 Stage 内，操作之间无共享状态 → 可并行
+  跨 Stage，后一 Stage 的输入来自前一 Stage 的输出 → 必须串行
+  Stage 2 的 filter_* 函数互相独立 → 可并行应用后合并
+  Stage 1 多关键词搜索互相独立 → 可并行
+```
+
+| Stage | 操作 | 并行度 | 原因 |
+|:------|:-----|:------:|:-----|
+| **0** | 缓存新鲜度检查 | 1 线程 | 单次调用 |
+| **1** | 多关键词标题搜索 | **并行** | 每个关键词读不同的 JSON，无锁竞争 |
+| **1** | Web 补充搜索 | **并行** | 每个 site: 查询独立的搜索引擎请求 |
+| **2** | intersect/union | 串行 | 依赖 Stage 1 全部结果就绪 |
+| **2** | filter_* 链式过滤 | 串行 | 每个 filter 的输出是下一个的输入 |
+| **3** | 每条目段落提取 | **并行** | 每条目的 local_path 独立，可多线程读文件 |
+| **4** | 去重 + 逐字验证 | 串行 | 去重依赖全量条目，验证依赖去重结果 |
+| **5** | HTML/摘要输出 | 串行 | 依赖 Stage 4 全量结果 |
+
+### 执行模式示意（cross 链：AI ∩ 能源）
+
+```
+Stage 0  [检查缓存]                         ← 1 线程
+Stage 1  [搜索"人工智能"] [搜索"能源"]        ← 2 线程并行
+              ↓              ↓
+Stage 2  ──── intersect ────→ filter → dedup ← 串行
+Stage 3  [提取条目1] [提取条目2] ... [N]     ← N 线程并行
+              ↓         ↓           ↓
+Stage 4  ───────── 验证 ───────────────     ← 串行
+Stage 5  ───────── 输出 ───────────────     ← 串行
+```
+
+### 并行执行原则
+
+1. **Stage 1 多关键词**：交叉分析场景（如 "AI ∩ 能源"）下，每个关键词独立搜索，可同时发起，结果汇合后进入 Stage 2
+2. **Stage 3 段落提取**：过滤后的条目列表每个独立读文件，可用 ThreadPoolExecutor 并行提取
+3. **其他 Stage 串行**：Stage 0/2/4/5 的输入依赖前一阶段全部结果，必须串行
+4. **线程上限**：并行数不超过关键词个数（Stage 1）或条目数（Stage 3），但建议上限 8 以防止文件描述符耗尽
+
+> 纯数据操作（搜索/过滤/去重/元信息）→ `scripts/atoms.py`  
+> 文件 I/O + HTML 输出（原文读取/段落提取/URL降级）→ `scripts/rebuild_policy_html.py`  
+> 编排串联 → `scripts/chain_runner.py`
 
 ### Stage 0: 环境准备
 
@@ -49,7 +92,8 @@ freshness = check_cache_freshness(cache_dir)
 ### Stage 1: 搜索与命中
 
 ```python
-from atoms import search_cache_title, search_cache_fulltext
+from atoms import search_cache_title
+from rebuild_policy_html import search_cache_fulltext
 
 # 标题级（快）
 hits = search_cache_title(cache_dir, "人工智能")
@@ -93,7 +137,8 @@ result = exclude_entries(result, ["征求意见稿"])         # 2.6 NOT
 ### Stage 3: 提取
 
 ```python
-from atoms import extract_metadata, extract_paragraphs, extract_chapters
+from atoms import extract_metadata, extract_chapters
+from rebuild_policy_html import extract_paragraphs
 
 meta = extract_metadata(entry)
 # → {"title": "...", "doc_number": "国发〔2025〕11号", "issuer": "...", "source_url": "..."}
