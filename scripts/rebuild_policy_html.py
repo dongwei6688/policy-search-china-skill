@@ -66,40 +66,40 @@ PRESET_TOPICS = {
 #  CSS 样式（生成 HTML 时嵌入，无外部依赖）
 # ═══════════════════════════════════════════════════════════
 CSS = """\
-body{font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","HarmonyOS Sans SC","Microsoft YaHei",sans-serif;max-width:880px;margin:0 auto;padding:32px 24px;background:#f5f5f5;color:#333;line-height:1.95}
-.header{padding:36px 0 20px 0;margin-bottom:28px;border-bottom:2px solid #ddd}
-.header h1{font-size:26px;font-weight:700;color:#111;margin:0 0 6px 0}
-.header p{margin:0;font-size:13px;color:#888}
-.stats{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
-.stat-box{background:#fff;border-radius:8px;padding:16px 24px;box-shadow:0 1px 3px rgba(0,0,0,.06);flex:1;min-width:110px;text-align:center}
-.stat-box .num{font-size:28px;font-weight:700;color:#222}.stat-box .label{font-size:12px;color:#888;margin-top:4px}
-.summary-box{background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:24px 28px;margin:24px 0;box-shadow:0 1px 3px rgba(0,0,0,.05);user-select:text}
-.summary-box h2{font-size:15px;color:#555;font-weight:600;margin:0 0 12px 0;padding-bottom:8px;border-bottom:1px solid #eee}
-.summary-box .copy-btn{float:right;padding:3px 12px;background:none;color:#666;border:1px solid #d0d0d0;border-radius:4px;font-size:12px;cursor:pointer;transition:all .2s}
-.summary-box .copy-btn:hover{background:#555;color:#fff;border-color:#555}
-.summary-box p{text-indent:2em;font-size:14px;color:#555;margin:8px 0;text-align:justify;line-height:2}
-.toc{background:#fff;border-radius:8px;padding:20px 28px;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:24px}
-.toc h2{font-size:15px;font-weight:600;color:#222;margin:0 0 12px 0;padding-bottom:8px;border-bottom:1px solid #eee}
-.doc-section{background:#fff;border-radius:8px;padding:28px 32px;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:24px;border-left:3px solid transparent;transition:border-color .2s}
-.doc-section:hover{border-left-color:#555}
-.doc-header{margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #f0f0f0}
-.doc-header h2{font-size:17px;font-weight:600;color:#111;margin:0 0 6px 0}
-.doc-header .meta{font-size:12px;color:#888;margin-top:6px}
+body{font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","HarmonyOS Sans SC","Microsoft YaHei",sans-serif;max-width:900px;margin:0 auto;padding:0;background:#f0f2f5;color:#2c3e50;line-height:1.9}
+.header{background:linear-gradient(135deg,#0f1f3d 0%,#1a3a6b 40%,#1e5a8a 100%);color:#fff;padding:40px 36px;margin-bottom:28px}
+.header h1{font-size:26px;font-weight:700;color:#fff;margin:0 0 8px 0}
+.header p{margin:0;font-size:13px;color:rgba(255,255,255,.65)}
+.stats{display:flex;gap:12px;margin:24px 32px;flex-wrap:wrap}
+.stat-box{background:#fff;border-radius:8px;padding:16px 24px;box-shadow:0 2px 8px rgba(0,0,0,.06);flex:1;min-width:110px;text-align:center}
+.stat-box .num{font-size:30px;font-weight:700;color:#1a3a6b}.stat-box .label{font-size:12px;color:#8899aa;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.summary-box{background:#fff;border-left:3px solid #2d6aa0;border-radius:0 8px 8px 0;padding:24px 28px;margin:0 32px 24px 32px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.summary-box h2{font-size:15px;color:#2d6aa0;font-weight:600;margin:0 0 12px 0;padding-bottom:8px;border-bottom:1px solid #eef2f6}
+.summary-box .copy-btn{float:right;padding:3px 12px;background:#2d6aa0;color:#fff;border:none;border-radius:4px;font-size:12px;cursor:pointer;transition:all .2s}
+.summary-box .copy-btn:hover{background:#1a3a6b}
+.summary-box p{text-indent:2em;font-size:14px;color:#4a5568;margin:8px 0;text-align:justify;line-height:2}
+.toc{background:#fff;border-radius:8px;padding:20px 28px;margin:0 32px 20px 32px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.toc h2{font-size:15px;font-weight:600;color:#1a3a6b;margin:0 0 12px 0;padding-bottom:8px;border-bottom:1px solid #eef2f6}
+.toc a{color:#3b6cb4;text-decoration:none}
+.doc-section{background:#fff;border-radius:8px;padding:28px 32px;margin:0 32px 20px 32px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-top:3px solid #2d6aa0}
+.doc-header{margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #eef2f6}
+.doc-header h2{font-size:17px;font-weight:600;color:#1a202c;margin:0 0 6px 0}
+.doc-header .meta{font-size:12px;color:#8899aa;margin-top:6px}
 .doc-header .meta span{margin-right:14px}
-.doc-header .meta .label{color:#aaa}
-.doc-header .meta a{color:#555;text-decoration:none}
-.doc-section p{text-indent:2em;margin:7px 0;font-size:14px;color:#444;text-align:justify;line-height:2}
-.hl{background:#fef08a;padding:0 2px;font-weight:600;border-radius:2px}
-.verify{font-size:11px;color:#999;margin:10px 0;letter-spacing:.3px}
-.fold-toggle{float:right;padding:3px 10px;background:none;color:#888;border:1px solid #d0d0d0;border-radius:4px;font-size:12px;cursor:pointer;transition:all .2s}
-.fold-toggle:hover{color:#222;border-color:#888;background:#fafafa}
+.doc-header .meta .label{color:#aab5c0}
+.doc-header .meta a{color:#3b6cb4;text-decoration:none}
+.doc-section p{text-indent:2em;margin:7px 0;font-size:14px;color:#4a5568;text-align:justify;line-height:1.95}
+.hl{background:#dbeafe;color:#1e40af;padding:0 3px;font-weight:600;border-radius:3px}
+.verify{font-size:11px;color:#a0aec0;margin:10px 0}
+.fold-toggle{float:right;padding:3px 10px;background:#2d6aa0;color:#fff;border:none;border-radius:4px;font-size:12px;cursor:pointer;transition:all .2s}
+.fold-toggle:hover{background:#1a3a6b}
 .fold-toggle .arrow{display:inline-block;transition:transform .25s;margin-right:3px}
 .fold-toggle.expanded .arrow{transform:rotate(90deg)}
 .doc-body{overflow:hidden;transition:max-height .35s ease}
 .doc-body.collapsed{max-height:0}
-.footer{text-align:center;color:#bbb;font-size:12px;margin-top:32px;padding-top:20px;border-top:1px solid #e0e0e0}
-#back-to-top{position:fixed;right:28px;bottom:36px;width:40px;height:40px;background:#fff;color:#888;border:1px solid #d0d0d0;border-radius:50%;font-size:18px;cursor:pointer;opacity:0;transition:all .25s;box-shadow:0 1px 3px rgba(0,0,0,.08);z-index:9999}
-#back-to-top.visible{opacity:.95}#back-to-top:hover{color:#222;border-color:#888;transform:translateY(-2px)}
+.footer{text-align:center;color:#aab5c0;font-size:12px;margin:32px;padding-top:20px;border-top:1px solid #e0e4e8}
+#back-to-top{position:fixed;right:28px;bottom:36px;width:40px;height:40px;background:#2d6aa0;color:#fff;border:none;border-radius:50%;font-size:18px;cursor:pointer;opacity:0;transition:all .25s;box-shadow:0 2px 10px rgba(45,106,160,.3);z-index:9999}
+#back-to-top.visible{opacity:.9}#back-to-top:hover{opacity:1;transform:translateY(-2px);box-shadow:0 4px 16px rgba(45,106,160,.4)}
 """
 
 
