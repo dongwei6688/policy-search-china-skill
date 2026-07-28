@@ -52,7 +52,7 @@ metadata:
 **方式一（推荐）：npx skills add（跨平台，兼容 Hermes / OpenClaw / Workbuddy / Claude Code 等）**
 
 ```bash
-npx skills add dongwei6688/policy-search-china-skill
+npx skills add https://github.com/dongwei6688/policy-search-china-skill --skill policy-search-china
 ```
 
 **方式二：手动安装（Hermes Agent）**
