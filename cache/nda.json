@@ -31,7 +31,7 @@
     ],
     "searched_at": "2026-07-28",
     "format": "pdf",
-    "local_path": ""
+    "local_path": "cache/nda/data_elements_scenarios_guide.pdf"
   },
   {
     "title": "《关于在国家数据基础设施建设先行先试中加强场景应用的实施方案》",
@@ -47,8 +47,8 @@
       "国家数据局"
     ],
     "searched_at": "2026-07-28",
-    "format": "txt",
-    "local_path": "cache/nda/国数综科基2025-114号.txt"
+    "format": "html",
+    "local_path": "cache/nda/data_infrastructure_scenarios.html"
   },
   {
     "title": "《关于推进行业高质量数据集建设行动的实施方案》",
@@ -67,7 +67,7 @@
     ],
     "searched_at": "2026-07-28",
     "format": "html",
-    "local_path": ""
+    "local_path": "cache/nda/industry_high_quality_dataset.html"
   },
   {
     "doc_number": "国数综政策〔2026〕35号",
@@ -85,6 +85,6 @@
     ],
     "searched_at": "2026-07-28",
     "format": "html",
-    "local_path": "cache/nda/国数综政策2026-35号.txt"
+    "local_path": "cache/nda/data_property_rights_guide.html"
   }
 ]
