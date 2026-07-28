@@ -95,7 +95,7 @@ python3 /path/to/skill/scripts/rebuild_policy_html.py --topic "数据要素"
 |------|--------|-------------|---------------|
 | 国务院 | gov.cn | www.gov.cn/zhengce/ | `site:gov.cn 政策` |
 | 工信部 | miit.gov.cn | www.miit.gov.cn/zwgk/zcwj/ | `site:miit.gov.cn` |
-| 国家数据局 | nda.gov.cn | www.nda.gov.cn/sjj/zwgk/list/ | `site:nda.gov.cn` |
+| 国家数据局 | www.nda.gov.cn | www.nda.gov.cn/sjj/zwgk/list/ | `site:nda.gov.cn` |
 | 国资委 | sasac.gov.cn | www.sasac.gov.cn/n2588035/ | `site:sasac.gov.cn` |
 | 国家能源局 | nea.gov.cn | www.nea.gov.cn/policy/zxwj.htm | `site:nea.gov.cn` |
 | 发改委 | ndrc.gov.cn | www.ndrc.gov.cn/xxgk/zcfb/ | `site:ndrc.gov.cn 政策` |
@@ -270,7 +270,7 @@ python3 /path/to/skill/scripts/rebuild_policy_html.py --topic "数据要素"
 | `miit.json` | 工信部（miit.gov.cn） |
 | `gov.json` | 国务院、中国政府网（gov.cn） |
 | `ndrc.json` | 发改委（ndrc.gov.cn） |
-| `nda.json` | 国家数据局（nda.gov.cn） |
+| `nda.json` | 国家数据局（www.nda.gov.cn） |
 | `sasac.json` | 国资委（sasac.gov.cn） |
 | `cac.json` | 网信办（cac.gov.cn） |
 
@@ -543,7 +543,7 @@ intitle:[政策关键词] site:gov.cn
 
 5. **国资委网站搜索结果时效性差。** `site:sasac.gov.cn` 的搜索结果返回大量 2018-2020 年的内容，2023 年后的政策较少。解决方案：国资委的新政策经常被 gov.cn 同步收录，改用 `site:gov.cn 国资委 数字化转型`。
 
-6. **国家数据局官网原文不易获取。** 国家数据局 2023 年成立，官网 nda.gov.cn 以新闻资讯为主，政策文件多通过国务院、发改委渠道发布。解决方案：搜索以 `site:gov.cn 数据要素` 为主，辅以 `site:nda.gov.cn`。
+6. **国家数据局官网原文不易获取。** 国家数据局 2023 年成立，官网 www.nda.gov.cn 以新闻资讯为主，政策文件多通过国务院、发改委渠道发布。解决方案：搜索以 `site:gov.cn 数据要素` 为主，辅以 `site:nda.gov.cn`。
 
 7. **网信办文件适用性。** CAC 的文件多以"办法""规定"形式发布（如生成式人工智能管理办法），通常为监管性而非鼓励性政策。引用时注意区分"政策依据"与"合规要求"的引用意图。
 
