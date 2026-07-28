@@ -63,19 +63,37 @@ Filters are applied **inside** the worker call in Stage 1. Commander specifies f
 
 Commander review: count is reasonable? Any obvious false positives in titles? If yes, re-run with `--exclude`.
 
-### Stage 3：Extract & Build
+### Stage 3: 工人提取段落 → 导出候选
 
 ```
-④ rebuild_policy_html.py --topic "keyword1" --topic "keyword2" --mode {or|and}
-   → Writes {title}.html to output/ directory
+③ rebuild_policy_html.py --topic "A" --topic "B" --mode and --candidates-only
+   → candidates.json: {policies: [{index, title, paragraphs: [{text, matched_keywords}]}]}
 ```
 
-Commander provides via MEDIA: or file path to user. Worker handles:
-- File I/O, HTML parsing, PDF text extraction
-- Five-layer URL fallback (HTTPS→HTTP→browser→search→mirror)
-- Keyword highlighting, source link injection, verification badges
+Commander review: scan policy titles. If candidate list is large (>10 policies), proceed to Stage 3.5 to reduce.
 
-Commander does NOT edit the HTML. Worker output is the canonical deliverable.
+### Stage 3.5: Commander 相关性评价
+
+```
+Commander 读取 candidates.json → 按政策标题+样本段落逐项评分 → 输出 scores.json
+```
+
+评分等级：
+| 等级 | 规则 | 过滤行为 |
+|:-----|:-----|:---------|
+| **核心** | 政策直接讨论用户主题 | 保留全部段落 |
+| **高度相关** | 政策含重要相关内容，值得引用 | 保留全部段落 |
+| **弱相关** | 政策边缘涉及但非主题 | 仅保留关键词密度高的段落（≥3次出现） |
+| **无关** | 政策与用户主题无关 | 全部移除 |
+
+Commander 逐项评审 19 项 → 标注 9 项核心/高度相关 → 输出 scores.json。
+
+### Stage 4: 工人用评分生成精简 HTML
+
+```
+④ rebuild_policy_html.py --topic "A" --topic "B" --mode and --relevance-scores scores.json
+   → 仅输出 核心+高度相关 段落的 HTML
+```
 
 ### Stage 4：Review & Deliver
 
@@ -97,7 +115,7 @@ python3 scripts/init.py
 | Worker | Input | Output | Responsible for |
 |:-------|:------|:-------|:---------------|
 | `chain_runner.py` | chain type, keywords, date range, filters | `{"count": N, "entries": [{...}]}` | Search + filter + dedup |
-| `rebuild_policy_html.py` | topics, mode (or/and) | HTML file in output/ | Extract + highlight + link |
+| `rebuild_policy_html.py` | topics, mode, --candidates-only, --relevance-scores | candidates.json or HTML file | Extract + score + filter + highlight + link |
 | `atoms.py` | structured data | structured data | Pure data operations (imported by above) |
 
 Commander never imports atoms.py directly — always goes through workers. Workers are the sole execution interface.
