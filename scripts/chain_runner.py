@@ -1,10 +1,11 @@
-#!/usr/bin/env python3
 """
- policy-search-china 编排器 v2.3
+
+ policy-search-china 编排器 v2.4
 
  将原子操作按用户意图编排成执行链。
  - Stage 1 (多关键词搜索) 和 Stage 3 (条目段落提取) 支持多线程并行
- - Stage 2 (过滤去重) 和 Stage 4 (输出) 串行
+ - Stage 2 (过滤去重) 串行
+ - Commander 通过 CLI 参数传递过滤条件，Worker 返回结构化 JSON
 """
 
 import sys
@@ -36,8 +37,6 @@ from rebuild_policy_html import (
 
 # 并行执行线程上限：防止文件描述符耗尽
 MAX_WORKERS = 8
-# Stage 2 中去重后、Stage 3 段落提取前的一个轻量验证
-# verify_verbatim 在 rebuild_policy_html 的 build_html 中通过 "逐字引用" 标签落地
 
 
 # ═══════════════════════════════════════════════════════
@@ -282,12 +281,19 @@ if __name__ == "__main__":
     p.add_argument("--keywords", nargs="+", required=True, help="关键词")
     p.add_argument("--start", help="起始日期 YYYY-MM-DD")
     p.add_argument("--end", help="截止日期 YYYY-MM-DD")
+    p.add_argument("--issuer", nargs="+", help="发文机关过滤（可多个）")
+    p.add_argument("--doctype", nargs="+", help="文件类型过滤（如 意见 规划）")
+    p.add_argument("--exclude", nargs="+", help="排除关键词")
+    p.add_argument("--web", action="store_true", help="启用 Web 补充搜索")
     args = p.parse_args()
 
     if args.chain == "cross":
-        r = chain_cross_analysis(CACHE_DIR, args.keywords, args.start, args.end)
+        r = chain_cross_analysis(CACHE_DIR, args.keywords,
+                                 args.start, args.end,
+                                 args.issuer, args.doctype)
     elif args.chain == "broad":
-        r = chain_broad_scan(CACHE_DIR, args.keywords[0], args.start, args.end)
+        r = chain_broad_scan(CACHE_DIR, args.keywords[0],
+                             args.start, args.end)
     elif args.chain == "locate":
         r = chain_precise_locate(CACHE_DIR, args.keywords[0])
     elif args.chain == "trace":
