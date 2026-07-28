@@ -47,6 +47,15 @@ RECOMMENDED_CACHE = {
     'cache/nda.json': SYSTEM_CACHE / 'nda.json',
     'cache/nea.json': SYSTEM_CACHE / 'nea.json',
     'cache/sasac.json': SYSTEM_CACHE / 'sasac.json',
+    'cache/most.json': SYSTEM_CACHE / 'most.json',
+    'cache/mof.json': SYSTEM_CACHE / 'mof.json',
+    'cache/mot.json': SYSTEM_CACHE / 'mot.json',
+    'cache/mee.json': SYSTEM_CACHE / 'mee.json',
+    'cache/moa.json': SYSTEM_CACHE / 'moa.json',
+    'cache/moe.json': SYSTEM_CACHE / 'moe.json',
+    'cache/mct.json': SYSTEM_CACHE / 'mct.json',
+    'cache/mwr.json': SYSTEM_CACHE / 'mwr.json',
+    'cache/mohrss.json': SYSTEM_CACHE / 'mohrss.json',
 }
 
 
