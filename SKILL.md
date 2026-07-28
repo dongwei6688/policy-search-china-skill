@@ -107,7 +107,14 @@ python3 /path/to/skill/scripts/rebuild_policy_html.py --topic "数据要素"
 
 ## 推前检查钩子
 
-仓库包含 `scripts/pre-push.sh` 钩子脚本，用于在 `git push` 时自动检查发布流程完整性。
+仓库包含 `scripts/pre-push.sh` 钩子脚本，用于在 `git push` 时自动验证发布流程完整性。
+
+### 特性
+
+- **变更类型自动检测**：扫描本次 push 涉及的文件，按[发版判断矩阵](#changelog--发版判断矩阵)自动判定是否需要发版
+- **需要发版** → 验证 CHANGELOG + Tag 是否到位，不到位就拦截
+- **纯文档变更** → 跳过版本检查，直接放行
+- 从根源上杜绝"该发没发"或"不该发卡住"的概率问题
 
 ### 安装
 
@@ -121,11 +128,24 @@ chmod +x .git/hooks/pre-push
 
 | # | 检查项 | 未通过 |
 |---|--------|:------:|
+| 0 | 变更类型自动归类（数据/脚本/功能 → 需发版；纯文档 → 跳过） | ℹ️ 信息 |
 | 1 | 提交信息遵循 Conventional Commits | ⚠️ 警告 |
-| 2 | SKILL.md 版本号存在 | ❌ 拦截 |
-| 3 | CHANGELOG.md 包含当前版本 | ❌ 拦截 |
-| 4 | 当前版本已打 Git Tag | ⚠️ 警告 |
-| 5 | 无 dev-tools/.env 混入 | ❌ 拦截 |
+| 2 | 无 dev-tools/.env 混入 | ❌ 拦截 |
+| — | *以下仅当变更类型判定"需发版"时执行* | |
+| 3 | SKILL.md 版本号存在 | ❌ 拦截 |
+| 4 | CHANGELOG.md 包含当前版本 | ❌ 拦截 |
+| 5 | 当前版本已打 Git Tag | ⚠️ 警告 |
+
+### 分类规则
+
+| 变更路径 | 分类 | 发版 | 示例 |
+|:--------|:---:|:----:|------|
+| `cache/*` | 数据 | ✅ | 新政策入库、缓存重命名 |
+| `scripts/*.py` / `*.sh` | 脚本 | ✅ | init.py、rebuild_policy_html.py |
+| `SKILL.md` | 功能 | ✅ | 版本号/元数据改动 |
+| `templates/*` | 功能 | ✅ | 环境变量模板更新 |
+| `README.md` / `CHANGELOG.md` | 文档 | ❌ | 纯文档说明 |
+| `.gitignore` / `LICENSE` | 其他 | ❌ | 基础设施 |
 
 ## 版本管理规范
 
