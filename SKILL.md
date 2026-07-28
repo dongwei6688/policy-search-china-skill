@@ -87,6 +87,28 @@ python3 /path/to/skill/scripts/rebuild_policy_html.py --topic "数据要素"
 
 用户空间目录 `~/.hermes/data/policy-search-china/` 的数据在 skill 更新时**不会被覆盖**（双空间架构：系统空间随 skill 更新替换，用户空间独立保留）。
 
+## 推前检查钩子
+
+仓库包含 `scripts/pre-push.sh` 钩子脚本，用于在 `git push` 时自动检查发布流程完整性。
+
+### 安装
+
+```bash
+# 在仓库根目录执行
+cp scripts/pre-push.sh .git/hooks/pre-push
+chmod +x .git/hooks/pre-push
+```
+
+### 检查项
+
+| # | 检查项 | 未通过 |
+|---|--------|:------:|
+| 1 | 提交信息遵循 Conventional Commits | ⚠️ 警告 |
+| 2 | SKILL.md 版本号存在 | ❌ 拦截 |
+| 3 | CHANGELOG.md 包含当前版本 | ❌ 拦截 |
+| 4 | 当前版本已打 Git Tag | ⚠️ 警告 |
+| 5 | 无 dev-tools/.env 混入 | ❌ 拦截 |
+
 ## 信源体系
 
 ### 权威政策发布渠道
