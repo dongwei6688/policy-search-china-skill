@@ -47,14 +47,15 @@ policy-search-china/
 ├── scripts/
 │   ├── init.py                ← 初始化脚本（幂等）
 │   └── rebuild_policy_html.py ← 输出重建脚本
-├── cache/                     ← 系统预装缓存
-│   ├── cac.json
-│   ├── gov.json
-│   ├── miit.json
-│   ├── ndrc.json
-│   ├── nea.json
-│   ├── sasac.json
-│   └── cac/ gov/ miit/ ndrc/ nea/ sasac/   ← HTML 原文
+├── cache/                     ← 系统预装缓存（7 信源）
+│   ├── nda.json               ← 国家数据局
+│   ├── ndrc.json              ← 发改委
+│   ├── gov.json               ← 国务院/中共中央
+│   ├── miit.json              ← 工信部
+│   ├── cac.json               ← 网信办
+│   ├── nea.json               ← 国家能源局
+│   ├── sasac.json             ← 国资委
+│   └── nda/ gov/ miit/ ndrc/ nea/ cac/ sasac/  ← HTML/PDF 原文
 └── .gitignore
 ```
 
