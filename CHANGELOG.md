@@ -1,3 +1,17 @@
+## v2.8.0 (2026-07-28)
+
+### Changed
+- **职责重构**：atoms.py 彻底去除文件 I/O，所有函数改为纯数据操作
+- chain_runner.py 统一通过 load_all_cache() 加载缓存后传入 atoms
+- 函数签名简化：chain 函数不再接收 cache_dir 参数
+
+### Removed
+- references/output-format.md（孤儿文件，Worker 内部逻辑无需 Commander 可见）
+
+### Fixed
+- rebuild_policy_html.py 删除死 import（search_cache_title 未实际调用）
+- SKILL.md 补回 search-strategies.md 引用
+
 ## v2.7.1 (2026-07-28)
 
 ### Added

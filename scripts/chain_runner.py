@@ -31,7 +31,8 @@ from atoms import (
 )
 
 from rebuild_policy_html import (
-    extract_paragraphs,
+    load_all_cache,              # 缓存 I/O
+    extract_paragraphs,          # 文件 I/O
     load_source as rebuild_load_source,
 )
 
@@ -65,7 +66,6 @@ def _merge_search_results(cache_hits: list[dict], web_hits: list[dict]) -> list[
 # ═══════════════════════════════════════════════════════
 
 def chain_cross_analysis(
-    cache_dir: Path,
     keywords: list[str],
     start_date: str = None,
     end_date: str = None,
@@ -78,19 +78,20 @@ def chain_cross_analysis(
     场景: "近两年 AI 和能源结合的政策有哪些"
     """
     # ═══ Stage 0: 环境准备 ═══
-    freshness = check_cache_freshness(cache_dir)
+    all_entries = load_all_cache()
+    freshness = check_cache_freshness(all_entries)
 
     # ═══ Stage 1: 并行搜索 ═══
     # 每个关键词独立的缓存搜索，可并行
     all_hits = []
     if len(keywords) > 1:
         with ThreadPoolExecutor(max_workers=min(MAX_WORKERS, len(keywords))) as pool:
-            futures = {pool.submit(search_cache_title, cache_dir, kw): kw
+            futures = {pool.submit(search_cache_title, all_entries, kw): kw
                        for kw in keywords}
             for f in as_completed(futures):
                 all_hits.append(f.result())
     else:
-        all_hits = [search_cache_title(cache_dir, keywords[0])]
+        all_hits = [search_cache_title(all_entries, keywords[0])]
 
     # ═══ Stage 2: 过滤 + 去重（串行，依赖 Stage 1 全量结果）═══
     # 2.4 AND 交集
@@ -117,7 +118,6 @@ def chain_cross_analysis(
 
 
 def chain_broad_scan(
-    cache_dir: Path,
     keyword: str,
     start_date: str = None,
     end_date: str = None,
@@ -128,10 +128,11 @@ def chain_broad_scan(
     场景: "近两年所有人工智能相关政策"
     """
     # Stage 0
-    freshness = check_cache_freshness(cache_dir)
+    all_entries = load_all_cache()
+    freshness = check_cache_freshness(all_entries)
 
     # Stage 1: 单关键词（无需并行）
-    hits = search_cache_title(cache_dir, keyword)
+    hits = search_cache_title(all_entries, keyword)
 
     # Stage 2: 过滤 + 去重
     if start_date or end_date:
@@ -146,7 +147,6 @@ def chain_broad_scan(
 
 
 def chain_precise_locate(
-    cache_dir: Path,
     keyword: str,
     doc_number: str = None,
     title_keyword: str = None,
@@ -159,14 +159,14 @@ def chain_precise_locate(
     # 优先文号搜索
     hits = []
     if doc_number:
-        for jf in cache_dir.glob("*.json"):
+        for jf in (SKILL_DIR / "cache").glob("*.json"):
             for e in json.loads(jf.read_text()):
                 if doc_number in e.get("doc_number", "") or doc_number in e.get("title", ""):
                     hits.append(e)
 
     # 次选标题关键词
     if not hits and title_keyword:
-        hits = search_cache_title(cache_dir, title_keyword)
+        hits = search_cache_title(all_entries, title_keyword)
 
     # Stage 3: 段落提取
     for e in hits:
@@ -180,7 +180,6 @@ def chain_precise_locate(
 
 
 def chain_trace_source(
-    cache_dir: Path,
     exact_phrase: str,
 ) -> dict:
     """
@@ -189,7 +188,7 @@ def chain_trace_source(
     场景: "这句话出自哪个政策"
     """
     results = []
-    for jf in cache_dir.glob("*.json"):
+    for jf in (SKILL_DIR / "cache").glob("*.json"):
         for e in json.loads(jf.read_text()):
             try:
                 text = rebuild_load_source(e)
@@ -288,16 +287,16 @@ if __name__ == "__main__":
     args = p.parse_args()
 
     if args.chain == "cross":
-        r = chain_cross_analysis(CACHE_DIR, args.keywords,
+        r = chain_cross_analysis(args.keywords,
                                  args.start, args.end,
                                  args.issuer, args.doctype)
     elif args.chain == "broad":
-        r = chain_broad_scan(CACHE_DIR, args.keywords[0],
+        r = chain_broad_scan(args.keywords[0],
                              args.start, args.end)
     elif args.chain == "locate":
-        r = chain_precise_locate(CACHE_DIR, args.keywords[0])
+        r = chain_precise_locate(args.keywords[0])
     elif args.chain == "trace":
-        r = chain_trace_source(CACHE_DIR, args.keywords[0])
+        r = chain_trace_source(args.keywords[0])
 
     print(f"结果数: {r['count']}")
     for e in r["entries"][:20]:
