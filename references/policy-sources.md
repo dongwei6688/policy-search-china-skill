@@ -22,6 +22,11 @@
 | 文旅部 | `mct.gov.cn` | HTTPS | `mct.json` |
 | 水利部 | `mwr.gov.cn` | HTTP | `mwr.json` |
 | 人社部 | `mohrss.gov.cn` | HTTP | `mohrss.json` |
+| 住建部 | `mohurd.gov.cn` | ❌ 不可达 | 托底 |
+| 卫健委 | `nhc.gov.cn` | ❌ 412 | 托底 |
+| 自然资源部 | `mnr.gov.cn` | ❌ 不可达 | 托底 |
+
+> **托底说明：** 住建部、卫健委、自然资源部官网不可达，其政策通过**中央政策文件库**（`sousuo.www.gov.cn`）托底搜索。
 
 ## 中央政策文件库
 
