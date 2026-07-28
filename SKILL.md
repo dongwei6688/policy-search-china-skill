@@ -42,6 +42,8 @@ license: MIT
 
 **调用前：** 指挥官将用户意图分解为关键词列表（cross 链：多关键词；broad 链：先规划子领域再搜索），根据用户的时间语境决定日期范围，缓存陈旧时追加 `--web`。
 
+同时完成关键词扩展——列出与用户主题相关的衍生词、同义表达、子领域词（如用户说"制造业"扩展为"智能制造/智能工厂/数字化转型"等），后续通过 `--highlight-keywords` 传入用于展示高亮。
+
 搜索策略参考：`references/search-strategies.md`。
 
 **调用后：** 指挥官审核结果数量。count > 0 → 继续；count == 0 → 放宽关键词或移除时间过滤重试；count > 50 → 追加 `--end` 或 `--issuer` 过滤。
@@ -97,9 +99,12 @@ license: MIT
 ```
 
 ```
-④ rebuild_policy_html.py --topic "A" --topic "B" --mode and --relevance-scores scores.json
-   → 仅输出核心 + 高度相关段落的 HTML
+④ rebuild_policy_html.py --topic "关键词1" --topic "关键词2" --mode and \
+     --highlight-keywords "扩展词1" "扩展词2" \
+     --relevance-scores scores.json
+   → 生成精简 HTML，全量关键词（含扩展词）独立颜色高亮
 ```
+
 
 ### 交付前审核
 
