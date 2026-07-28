@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents and extract authoritative references for reports and planning documents. Covers State Council, MIIT, NDRC, SASAC, NEA, CAC and other key ministries."
-version: 1.9.1
+version: 1.9.2
 author: dongwei6688 (董伟)
 license: MIT
 setup_needed: true
