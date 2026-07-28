@@ -126,7 +126,10 @@ chmod +x .git/hooks/pre-push
 | 新政策入库 | ✅ 必写 | MINOR | ✅ |
 | Bug 修复（命名/格式/功能错误） | ✅ 必写 | PATCH | ✅ |
 | 纯文档改动（README/Wiki/注释） | ❌ 跳过 | ❌ 不升 | ❌ 不发布 |
-| Changelog 自身补漏（追补遗漏条目） | ✅ 必写，注明"补漏" | ❌ 不升 | ❌ 不发布 |
+| Changelog 补漏但数据已发过版 | ✅ 必写，注明"补漏" | ❌ 不升 | ❌ 不发布 |
+| Changelog 补漏且涉及数据修正 | ✅ 必写 | PATCH | ✅ |
+
+> **核心原则：数据变了就必须发版。** 用户通过 GitHub Release + ZIP 获取技能包（Hermes Agent 的 `skill_install` 安装方式），只靠 `git push` 用户拿不到新数据。所以任何涉及 `cache/` 目录变更的提交都必须发版。
 
 ### 说明
 
