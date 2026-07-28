@@ -152,17 +152,17 @@ python3 scripts/init.py
 
 ## Source Coverage
 
-| 缓存文件 | 部门 | site: 搜索前缀 |
-|---------|------|---------------|
-| `gov.json` | 国务院 / 中国政府网 | `site:gov.cn/zhengce/zhengceku/` |
-| `miit.json` | 工信部 | `site:miit.gov.cn` |
-| `nda.json` | 国家数据局 | `site:nda.gov.cn` |
-| `sasac.json` | 国资委 | `site:gov.cn 国资委` |
-| `nea.json` | 国家能源局 | `site:nea.gov.cn` |
-| `ndrc.json` | 发改委 | `site:ndrc.gov.cn` |
-| `cac.json` | 网信办 | `site:cac.gov.cn` |
+| 缓存文件 | 部门 | site: 搜索前缀 | 政策专栏 |
+|---------|------|---------------|---------|
+| `gov.json` | 国务院 / 中国政府网 | `site:gov.cn/zhengce/zhengceku/` | gov.cn 政策文件库 |
+| `miit.json` | 工信部 | `site:miit.gov.cn` | miit.gov.cn/zwgk/zcwj |
+| `nda.json` | 国家数据局 | `site:nda.gov.cn` | nda.gov.cn/sjj/zwgk/zcfb/list |
+| `sasac.json` | 国资委 | `site:gov.cn 国资委` | ⚠️ sasac.gov.cn 不可达，用 gov.cn 检索 |
+| `nea.json` | 国家能源局 | `site:nea.gov.cn` | nea.gov.cn/policy/zxwj.htm |
+| `ndrc.json` | 发改委 | `site:ndrc.gov.cn` | ndrc.gov.cn/xxgk/zcfb |
+| `cac.json` | 网信办 | `site:cac.gov.cn` | cac.gov.cn/wxzw/zcfg |
 
-跨部委联合发文优先在 gov.cn 检索。详见 `references/policy-sources.md`。
+> **说明：** `site:` 列为 web_search 搜索前缀。`site:` 不带路径（搜索引擎自动索引全站），政策专栏列为部委官网直接访问的政策列表页。`sasac.gov.cn` 服务器不可达，国资委政策统一通过 `site:gov.cn 国资委` 检索。
 
 ## Pitfalls & Hard Constraints
 

@@ -10,7 +10,7 @@
 |------|--------|-------------|---------------|
 | 国务院 | `gov.cn` | `www.gov.cn/zhengce/` | `site:gov.cn 政策` |
 | 工信部 | `miit.gov.cn` | `www.miit.gov.cn/zwgk/zcwj/` | `site:miit.gov.cn` |
-| 国家数据局 | `www.nda.gov.cn` | `www.nda.gov.cn/sjj/zwgk/list/` | `site:nda.gov.cn` |
+| 国家数据局 | `www.nda.gov.cn` | `www.nda.gov.cn/sjj/zwgk/zcfb/list/` | `site:nda.gov.cn` |
 | 国资委 | `sasac.gov.cn` | `www.sasac.gov.cn/n2588035/` | `site:sasac.gov.cn` |
 | 国家能源局 | `nea.gov.cn` | `www.nea.gov.cn/policy/zxwj.htm` | `site:nea.gov.cn` |
 | 发改委 | `ndrc.gov.cn` | `www.ndrc.gov.cn/xxgk/zcfb/` | `site:ndrc.gov.cn 政策` |
@@ -35,7 +35,6 @@
 | 平台 | 用途 | site: 语法 |
 |------|------|-----------|
 | 中国政府网政策文件库 | 国务院全部公开发文的统一入口 | `site:gov.cn/zhengce/zhengceku/` |
-| 北大法宝/北大法意 | 法律/行政法规数据库（公开版） | `site:pkulaw.com` |
 | 国研网 | 政策研究与解读 | `site:drcnet.com.cn` |
 
 ## 信源归属判断规则
