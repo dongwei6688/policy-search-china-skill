@@ -84,11 +84,11 @@
     "format": "html"
   },
   {
-    "doc_number": "",
+    "doc_number": "国资发财评规〔2026〕1号",
     "title": "《关于推动中央企业加快财务数智化转型升级的指导意见》（2026年国资委1号文）",
     "issuer": "国务院国有资产监督管理委员会",
     "date": "2026-01-01",
-    "source_url": "",
+    "source_url": "http://www.sasac.gov.cn/n2588025/n2643314/c35387473/content.html",
     "summary": "推动中央企业加快财务数智化转型升级，以数字化、智能化手段提升财务管理效能，实现财务数据的实时采集、智能分析和穿透式管理。",
     "tags": [
       "国资委",
@@ -97,15 +97,15 @@
       "穿透式监管"
     ],
     "searched_at": "2026-07-22",
-    "local_path": "",
-    "format": "link"
+    "local_path": "cache/sasac/content.html",
+    "format": "html"
   },
   {
-    "doc_number": "",
+    "doc_number": "国资发监督〔2026〕2号",
     "title": "《关于加强中央企业穿透式监管的指导意见（试行）》（2026年国资委2号文）",
     "issuer": "国务院国有资产监督管理委员会",
     "date": "2026-01-01",
-    "source_url": "",
+    "source_url": "http://www.sasac.gov.cn/n2588020/n2588057/n35414555/n35414570/c35542876/content.html",
     "summary": "以穿透式监管为抓手完善国资监管体系，对三重一大等重大事项探索推进穿透式监管，加快国资国企在线监管系统建设和实用化水平提升。",
     "tags": [
       "国资委",
@@ -113,7 +113,7 @@
       "国资监管"
     ],
     "searched_at": "2026-07-22",
-    "local_path": "",
-    "format": "link"
+    "local_path": "cache/sasac/content2.html",
+    "format": "html"
   }
 ]
