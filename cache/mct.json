@@ -6,11 +6,12 @@
     "issuer": "文化和旅游部",
     "source_url": "https://zwgk.mct.gov.cn/zfxxgkml/zykf/202501/P020250110438298601281.doc",
     "summary": "数据要素赋能智慧文旅管理解决方案、基于AI大模型的旅游景区智慧监管解决方案等入选。",
-    "format": "doc",
+    "format": "link",
     "tags": [
       "智慧文旅",
       "人工智能",
       "数据要素"
-    ]
+    ],
+    "local_path": "cache/mct/P020250110438298601281.doc"
   }
 ]

@@ -1,0 +1,1196 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <!--包含通用样式-->
+    <script src="https://chinajob.mohrss.gov.cn/zcms//framework/components/qrcode.js"></script>
+    <title>《2024年提升全民数字素养与技能工作要点》部署6方面重点任务 - 重要新闻 - 中国就业网</title>
+    <link rel="shortcut icon" href="/images/icon.png" type="images/x-icon" />
+    <link rel="icon" href="/images/icon.png" type="images/png" />
+    <meta name="keywords" content="数字,2024年提升全民数字素养与技能工作要点,部署,方面,重点" />
+    <meta name="description" content="央网信办、教育部、工业和信息化部、人力资源社会保障部近日联合印发《2024年提升全民数字素养与技能工作要点》。工作要点部署了6方面重点任务，包括：培育高水平复合型数字人才、加快弥合数字鸿沟、支撑做强做优做大数字经济、拓展智慧便捷的数字生活场景、打造积极健康有序的网络空间、强化支撑保障和协调联动。
+工作要点指出，做好今年的提升全民数字素养与技能工作，要以助力提高人口整体素质、服务现代化产业体系建设、促进全体人民共同富裕为目标，推动全民数字素养与技能提升行动取得新成效，以人口高质量发展支撑中国式现代化。" />
+    
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+<link rel="stylesheet" href="/v3/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="/v3/css/animate.css" type="text/css" />
+<link rel="stylesheet" href="/v3/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="/v3/css/font-opensans.css" type="text/css" />
+<link rel="stylesheet" href="/v3/css/v3-framework.css" type="text/css" />
+<link rel="stylesheet" href="/v3/css/v3-common.css" type="text/css" />
+<link rel="stylesheet" href="/v3/css/v3-site.css" type="text/css" />
+
+<script>
+	var frontAppContext = 'https://chinajob.mohrss.gov.cn/zcms/';
+	var siteID = "1";
+  var url=window.location;
+    var prefix = "/";
+	var siteUrl = "https://chinajob.mohrss.gov.cn/";
+  if(url == 'http://jc.mohrss.gov.cn/'){
+     window.location.replace("http://jc.mohrss.gov.cn/zbzl/zxfw/");    
+  }else if(url == 'http://xzy.mohrss.gov.cn/'){
+     window.location.replace("http://xzy.mohrss.gov.cn/zbzl/zxxx/");    
+  }
+</script>
+<script src="/js/zcms_require.js" contextpath="https://chinajob.mohrss.gov.cn/zcms/"></script>
+<script>
+	if (isIE && ieVersion < 9 || isIE8) {
+		importJS('../v3/js/ie/html5shiv.js')
+		if (!isIE6 && !isIE7) {
+			importJS('../v3/js/ie/respond.min.js')
+		}
+		importJS('../v3/js/ie/excanvas.js')
+	}
+	if (/MSIE (6|7)\.0/.test(navigator.userAgent)) {
+		importCSS('../v3/css/bootstrap-ie6.css')
+		importJS('../v3/js/ie/bootstrap-ie6.js')
+	}
+	if (isIE && ieVersion < 9 || isIE8) {
+		importCSS('../v3/css/v3-site-ie.css')
+	}
+	if (inTouch) {
+		importJS('../v3/js/hammer.min.js')
+	}
+	importJS('../v3/js/responsiveslides.js')
+</script>
+<script src="/js/qrcode.js"></script>
+    <link rel="stylesheet" href="/css/list.css" />
+  
+</head>
+
+<body class="bg-white detail">
+    <!-- 包含页头 -->
+    
+
+<style>
+ .header .head_search input{padding-left:15px;}
+ #advance{
+  display:block;cursor:pointer;width:36px;height:36px;border-radius:18px;background:#d9d9d9;color:#fff;font-size:16px;position:absolute;top:5px;left:4px;text-align:center;line-height:36px;
+}
+</style>
+
+<div class="header">
+    <div class="head_left fl">
+        <a href="https://chinajob.mohrss.gov.cn/">
+            <img src="/images/index/logo.png" alt="">
+        </a>
+    </div>
+    <!-- 头部添加结束 -->
+    <div class="head_right fl">
+        <div class="head_right_info clearfix">
+            <div class="head_right_info_left fl">
+                <a class="fl mr60">
+                    <div class="fl font14 head_info_tel">010--84661166（编辑部）</div>
+                </a>
+                <a href="mailto:jywzbgs@mohrss.gov.cn" class="fl">
+                    <div class="fl font14 head_info_email">jywzbgs@mohrss.gov.cn</div>
+                </a>
+            </div>
+            <div class="head_right_info_right fr">
+                <a href="#" class="head_register fl member-register hide">
+                    注册
+                </a>
+                <a href="#" class="fl member-login hide">
+                    登录
+                </a>
+                <div class="login_info hide clearfix">
+                	<a class="font14 clearfix" href="javascript:;">
+                		<img class="fl" style="margin-top:18px;" src="/images/header/login_logo1.png" alt="" />
+                		<img class="fl hover" style="margin-top:18px;" src="/images/header/login_logo2.png" alt="" />
+                		<span class="fl member-username"></span>
+                	</a>
+                	<ul class="login_info_list">
+                		<li><a href="https://chinajob.mohrss.gov.cn/zcms/member/info?SiteID=1" target="_blank">个人中心</a></li>
+                		<li><a href="https://chinajob.mohrss.gov.cn/zcms/ask/myaskcenter?SiteID=1" target="_blank">我的问答</a></li>
+                		<li><a href="https://chinajob.mohrss.gov.cn/zcms/member/favorites?Type=Content&amp;Current=MemberFavorites&amp;SiteID=1" target="_blank">我的收藏</a></li>
+                		<li class="last"><a class="member-logout" href="">退出登录</a></li>
+                	</ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="head_right_banner">
+            <ul class="fl font16">
+                <li class="fl" id="home">
+                    <a href="https://chinajob.mohrss.gov.cn/">
+                        <img src="/images/header/head_logo3.png" alt="">
+                    </a>
+                </li>
+                
+		        	
+		        		<li class="fl">
+							
+							
+								
+								
+									<a>资讯频道</a>
+									<ul class="head_banner_hov">
+										
+										
+											
+												<li>
+													<a href="/zxpd/szyw/" target="_blank">时政要闻</a>
+												</li>
+												<li>
+													<a href="/zxpd/zyxw/" target="_blank">重要新闻</a>
+												</li>
+												<li>
+													<a href="/zxpd/zxdt/" target="_blank">中心工作</a>
+												</li>
+												<li>
+													<a href="/zxpd/ztzx/" target="_blank">专题资讯</a>
+												</li>
+												<li>
+													<a href="/zxpd/gjdt/" target="_blank">国际动态</a>
+												</li>
+												<li>
+													<a href="/zxpd/wqlb/" target="_blank">往期轮播</a>
+												</li>
+										
+									</ul>
+								
+							
+						</li>
+		        		<li class="fl">
+							
+							
+								
+								
+									<a>业务频道</a>
+									<ul class="head_banner_hov">
+										
+											
+												<li>
+													<a href="/zbzl/" target="_blank">专版专栏</a>
+												</li>
+											
+										
+										
+											
+												<li>
+													<a href="/ywpd/jyfw/" target="_blank">就业服务</a>
+												</li>
+												<li>
+													<a href="/hlwcyfw/" target="_blank">创业服务</a>
+												</li>
+												<li>
+													<a href="/ywpd/pxjd/" target="_blank">培训鉴定</a>
+												</li>
+												<li>
+													<a href="/ywpd/ldgx/" target="_blank">劳动关系</a>
+												</li>
+												<li>
+													<a href="/ywpd/shbz/" target="_blank">社会保障</a>
+												</li>
+										
+									</ul>
+								
+							
+						</li>
+		        		<li class="fl">
+							
+							
+								
+									<a>工作平台</a>
+									<ul class="head_banner_hov">
+										<li>
+											<a href="http://chinajob.mohrss.gov.cn/zy/#/" target="_blank">职业数字展馆</a>
+										</li>
+										
+											<li>
+												<a href="http://jc.mohrss.gov.cn" target="_blank">就创平台</a>
+											</li>
+										
+										
+											<li>
+												<a href="http://xzy.mohrss.gov.cn" target="_blank">新职业平台</a>
+											</li>
+										
+										<!--<cms:catalog alias="bmfw_zyzjglxt">
+											<li>
+												<a href="${Catalog.Link}" target="_blank">${Catalog.Name}</a>
+											</li>
+										</cms:catalog>-->
+
+										<li>
+											<a href="https://chinajob.mohrss.gov.cn/lwpp/" target="_blank">劳务品牌数字服务平台</a>
+										</li>
+                                      <li>
+                                        <a href="http://chinajob.mohrss.gov.cn/ycpx" target="_blank">线上平台征集<br/>管理调度系统</a>
+										</li>
+									</ul>
+								
+								
+							
+						</li>
+		        		<li class="fl">
+							
+								<a href="/zcfg/zxzc/" target="_blank">政策法规</a>
+							
+							
+						</li>
+		        		<li class="fl">
+							
+							
+								
+								
+									<a>数据频道</a>
+									<ul class="head_banner_hov">
+										
+										
+											
+												<li>
+													<a href="/sjpd/jdfbh/" target="_blank">季度发布会</a>
+												</li>
+												<li>
+													<a href="/sjpd/dqzypx/" target="_blank">短缺职业排行</a>
+												</li>
+												<li>
+													<a href="/sjpd/gzsj/" target="_blank">工资数据</a>
+												</li>
+										
+									</ul>
+								
+							
+						</li>
+		        		<li class="fl">
+							
+							
+								
+								
+									<a>便民服务</a>
+									<ul class="head_banner_hov">
+										
+										
+											
+												<li>
+													<a href="/bmfw/ytzx/" target="_blank">一图知晓</a>
+												</li>
+												<li>
+													<a href="/bmfw/hdjl/" target="_blank">互动交流</a>
+												</li>
+												<li>
+													<a href="/bmfw/wsbl/" target="_blank">快捷查询</a>
+												</li>
+										
+									</ul>
+								
+							
+						</li>
+		        		<li class="fl">
+							
+								<a href="/gywm/" target="_blank">关于我们</a>
+							
+							
+						</li>
+                
+            </ul>
+            <div class="head_search fr search">
+                <input type="text" class="search-query">
+               	<a type="button" class="search-submit searchBtn"></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+<!-- scrollBar滚动上部固定栏	 -->
+<div class="scrollBar">
+	<div class="scrollBar_con clearfix">
+		<a href="https://chinajob.mohrss.gov.cn/" class="fl">
+			<img src="/images/index/logo.png" alt="" />
+		</a>
+		<div class="head_right_banner">
+			<ul class="fl font16">
+	            
+			       	
+						<li class="fl">
+							
+							
+								
+								
+									<a>资讯频道</a>
+									<ul class="head_banner_hov">
+										
+										
+											
+												<li>
+													<a href="/zxpd/szyw/" target="_blank">时政要闻</a>
+												</li>
+												<li>
+													<a href="/zxpd/zyxw/" target="_blank">重要新闻</a>
+												</li>
+												<li>
+													<a href="/zxpd/zxdt/" target="_blank">中心工作</a>
+												</li>
+												<li>
+													<a href="/zxpd/ztzx/" target="_blank">专题资讯</a>
+												</li>
+												<li>
+													<a href="/zxpd/gjdt/" target="_blank">国际动态</a>
+												</li>
+												<li>
+													<a href="/zxpd/wqlb/" target="_blank">往期轮播</a>
+												</li>
+										
+									</ul>
+								
+							
+						</li>
+						<li class="fl">
+							
+							
+								
+								
+									<a>业务频道</a>
+									<ul class="head_banner_hov">
+										
+											
+												<li>
+													<a href="/zbzl/" target="_blank">专版专栏</a>
+												</li>
+											
+										
+										
+											
+												<li>
+													<a href="/ywpd/jyfw/" target="_blank">就业服务</a>
+												</li>
+												<li>
+													<a href="/hlwcyfw/" target="_blank">创业服务</a>
+												</li>
+												<li>
+													<a href="/ywpd/pxjd/" target="_blank">培训鉴定</a>
+												</li>
+												<li>
+													<a href="/ywpd/ldgx/" target="_blank">劳动关系</a>
+												</li>
+												<li>
+													<a href="/ywpd/shbz/" target="_blank">社会保障</a>
+												</li>
+										
+									</ul>
+								
+							
+						</li>
+						<li class="fl">
+							
+							
+								
+									<a>工作平台</a>
+									<ul class="head_banner_hov">
+										<li>
+											<a href="http://chinajob.mohrss.gov.cn/zy/#/" target="_blank">职业数字展馆</a>
+										</li>
+										
+											<li>
+												<a href="http://jc.mohrss.gov.cn" target="_blank">就创平台</a>
+											</li>
+										
+										
+											<li>
+												<a href="http://xzy.mohrss.gov.cn" target="_blank">新职业平台</a>
+											</li>
+										
+										<!--<cms:catalog alias="bmfw_zyzjglxt">
+											<li>
+												<a href="${Catalog.Link}" target="_blank">${Catalog.Name}</a>
+											</li>
+										</cms:catalog>-->
+
+										<li>
+											<a href="https://chinajob.mohrss.gov.cn/lwpp/" target="_blank">劳务品牌数字服务平台</a>
+										</li>
+										<li>
+											<a href="http://chinajob.mohrss.gov.cn/ycpx" target="_blank">线上平台征集<br />管理调度系统</a>
+										</li>
+									</ul>
+								
+								
+							
+						</li>
+						<li class="fl">
+							
+								<a href="/zcfg/zxzc/" target="_blank">政策法规</a>
+							
+							
+						</li>
+						<li class="fl">
+							
+							
+								
+								
+									<a>数据频道</a>
+									<ul class="head_banner_hov">
+										
+										
+											
+												<li>
+													<a href="/sjpd/jdfbh/" target="_blank">季度发布会</a>
+												</li>
+												<li>
+													<a href="/sjpd/dqzypx/" target="_blank">短缺职业排行</a>
+												</li>
+												<li>
+													<a href="/sjpd/gzsj/" target="_blank">工资数据</a>
+												</li>
+										
+									</ul>
+								
+							
+						</li>
+						<li class="fl">
+							
+							
+								
+								
+									<a>便民服务</a>
+									<ul class="head_banner_hov">
+										
+										
+											
+												<li>
+													<a href="/bmfw/ytzx/" target="_blank">一图知晓</a>
+												</li>
+												<li>
+													<a href="/bmfw/hdjl/" target="_blank">互动交流</a>
+												</li>
+												<li>
+													<a href="/bmfw/wsbl/" target="_blank">快捷查询</a>
+												</li>
+										
+									</ul>
+								
+							
+						</li>
+						<li class="fl">
+							
+								<a href="/gywm/" target="_blank">关于我们</a>
+							
+							
+						</li>
+                
+            </ul>
+		</div>
+		<img src="/images/index/logo_03.png" alt="" class="fr splogo" style="width:100px;margin-top:12px">
+    	<!-- <div class="head_right_info_right fr">
+             <a href="#" class="head_register fl member-register">
+                 	注册
+             </a>
+             <a href="#" class="fl member-login">
+                 	登录
+             </a>
+             <div class="login_info hide clearfix">
+               	<a class="font14 clearfix" href="javascript:;">
+               		<img class="fl" style="margin-top:18px;" src="${prefix("images/header/login_logo1.png")}" alt="" />
+               		<img class="fl hover" style="margin-top:18px;" src="${prefix("images/header/login_logo2.png")}" alt="" />
+               		<span class="fl member-username"></span>
+               	</a>
+               	<ul class="login_info_list">
+               		<li><a href="${FrontAppContext + 'member/info?SiteID=' + Site.ID}" target="_blank">个人中心</a></li>
+               		<li><a href="${FrontAppContext + 'ask/myaskcenter?SiteID=' + Site.ID}" target="_blank">我的问答</a></li>
+               		<li><a href="${FrontAppContext + 'member/favorites?Type=Content&Current=MemberFavorites&SiteID=' + Site.ID}" target="_blank">我的收藏</a></li>
+               		<li class="last"><a class="member-logout" href="">退出登录</a></li>
+               	</ul>
+               </div>
+         </div>-->
+	</div>
+</div>
+<script>
+$(function () {
+	$(window).scroll(function () {
+		if ($(window).scrollTop() >= 150) {
+			$('.scrollBar').fadeIn(500);
+		}else{
+			$('.scrollBar').fadeOut(200);
+		}
+	})
+
+})
+</script>
+
+    <!-- 右侧栏 --> 
+    
+<div class="right_banner hidden-xs">
+    <ul>
+        <li>
+            
+                <a href="/qt/wsdc/" class="right_banner_diao" target="_blank">网上调查</a>
+            
+        </li>
+            <li>
+                <a href="javascript:;" class="right_banner_wexin">公众号</a>
+                <div>
+                    
+                        
+                            <div class="ban_hov">
+                                <img src="/upload/resources/image/2018/08/20/50.png" alt="" />
+                                <p>“中国就业创业” 微信公众号</p>
+                            </div>
+                            <div class="ban_hov">
+                                <img src="/upload/resources/image/2021/06/10/94570.jpg" alt="" />
+                                <p>“中国就业创业” 快手号</p>
+                            </div>
+                    
+                </div>
+            </li>
+            
+        <li>
+            
+            <a href="/bmfw/hdjl/" class="right_banner_yijian">留言板</a>
+            <div class='yijian'>
+                    <div class="ban_hov">
+                        <div class="email"><p>留言邮箱：</p>
+                            <p class='font14'>jywzbgs@mohrss.gov.cn</p></div>
+                            <!-- <div id="copy" data-clipboard-text="jywzbgs@mohrss.gov.cn">
+                                    <span>复制</span>
+                                </div> -->
+                                <div id="copy">
+                                        <span><a href='/bmfw/hdjl/' style='color:#fff'>留言板</a></span>
+                                </div>
+                    </div>
+                </div>
+            
+        </li>
+        <li>
+            <a href="https://chinajob.mohrss.gov.cn/zcms/advanceSearch/result?SiteID=1" class="right_banner_sousuo" target="_blank">高级搜索</a>
+        </li>
+    </ul>
+</div>
+
+<script src="/js/clipboard.min.js"></script>
+<script>
+$(function(){  
+    var btn = document.getElementById('copy');
+    var clipboard = new ClipboardJS(btn);
+    clipboard.on('success', function(e) {
+        Dialog.alert('已成功复制到剪切板！');
+    });
+    // clipboard.on('error', function(e) {
+    //     Dialog.alert('shibai');
+    // });
+});  
+</script>
+    <!--  列表页头部 -->
+    <div class="list_warp">
+        <div class="list_con">
+            <h2 class="list_title">重要新闻</h2>
+            <div class="clearfix ">
+                <ul class="list_position fl">
+                    
+                    
+                        <li class="fr ml20 selected">
+                            <a href="/ywpd/pxjd/zyxw/">重要新闻</a>
+                            <span></span>
+                        </li>
+                        
+                            
+                                
+                                    
+                                    
+                                    
+                                        <li class="fr ml20">
+                                            <a href="/ywpd/pxjd/">培训鉴定</a>
+                                        </li>
+                                    
+                                
+                            
+                        
+                            
+                                
+                                    
+                                    
+                                        <li class="fr ml20">业务频道</li>
+                                    
+                                    
+                                
+                            
+                        
+                            
+                                
+                            
+                        
+                            
+                                
+                            
+                        
+                            
+                                
+                            
+                        
+                    
+                    
+                    <li class="fr">
+                        <a href="https://chinajob.mohrss.gov.cn/">首页</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <ul class="list_banner clearfix">
+                
+                    
+                        
+                            <li class="fl selected">
+                                <a href="/ywpd/pxjd/zyxw/">重要新闻</a>
+                                <strong></strong>
+                            </li>
+                        
+                        
+                        
+                        
+                            
+                            
+                                <li class="fl">
+                                    <a href="/ywpd/pxjd/gzdt/">工作动态</a>
+                                </li>
+                            
+                        
+                        
+                        
+                            
+                            
+                                <li class="fl">
+                                    <a href="/ywpd/pxjd/zcyjd/">政策与解读</a>
+                                </li>
+                            
+                        
+                        
+                        
+                            
+                            
+                                <li class="fl">
+                                    <a href="/ywpd/pxjd/sjtj/">数据统计</a>
+                                </li>
+                            
+                        
+                        
+                        
+                            
+                            
+                                <li class="fl">
+                                    <a href="http://zscx.osta.org.cn/">国家职业资格证书查询</a>
+                                </li>
+                            
+                        
+                        
+                        
+                            
+                            
+                                <li class="fl">
+                                    <a href="/ywpd/pxjd/rmzt/">热门专题</a>
+                                </li>
+                            
+                        
+                    
+                
+            </ul>
+            
+            <div class="list_con_con clearfix">
+                <div class="list_con_left fl">
+
+                    <div class="detail_con">
+                        <h4 style="word-break:break-all;line-height:30px;">《2024年提升全民数字素养与技能工作要点》部署6方面重点任务</h4>
+                        <div class="detail_info clearfix">
+                            <div class="fl link">新华网</div>
+                            <div class="fl date">2024.02.22</div>
+                            <div class="fl font">
+                                <div class="fl" font="12">小</div>
+                                <div class="fl" font="14">中</div>
+                                <div class="fl selected" font="16">大</div>
+                            </div>
+                            <a href="javascript:;" class="fl detail_collect" style="" onclick="Member.addFavorites('397925','Content')"></a>
+
+                        </div>
+                        <hr />
+                        <div class="detail_article">
+                            <p style="text-align: justify; text-indent: 2em;">中央网信办、教育部、工业和信息化部、人力资源社会保障部近日联合印发《2024年提升全民数字素养与技能工作要点》。工作要点部署了6方面重点任务，包括：培育高水平复合型数字人才、加快弥合数字鸿沟、支撑做强做优做大数字经济、拓展智慧便捷的数字生活场景、打造积极健康有序的网络空间、强化支撑保障和协调联动。</p><p style="text-align: justify; text-indent: 2em;">工作要点指出，做好今年的提升全民数字素养与技能工作，要以助力提高人口整体素质、服务现代化产业体系建设、促进全体人民共同富裕为目标，推动全民数字素养与技能提升行动取得新成效，以人口高质量发展支撑中国式现代化。</p><p style="text-align: justify; text-indent: 2em;">工作要点明确了年度工作目标：到2024年底，我国全民数字素养与技能发展水平迈上新台阶，数字素养与技能培育体系更加健全，数字无障碍环境建设全面推进，群体间数字鸿沟进一步缩小，智慧便捷的数字生活更有质量，网络空间更加规范有序，助力提高数字时代我国人口整体素质，支撑网络强国、人才强国建设。</p>
+                            
+                        </div>
+
+                        <div class="detail_banner clearfix">
+                            
+                                <ul class="detail_tag fl">
+                                    
+                                        
+                                            <li class="fl">数字</li>
+                                            <li class="fl">2024年提升全民数字素养与技能工作要点</li>
+                                            <li class="fl">部署</li>
+                                            <li class="fl">方面</li>
+                                            <li class="fl">重点</li>
+                                    
+                                </ul>
+                            
+                            <!-- 分享 -->
+                            <div class="fxsummary hide">央网信办、教育部、工业和信息化部、人力资源社会保障部近日联合印发《2024年提升全民数字素养与技能工作要点》。工作要点部署了6方面重点任务，包括：培育高水平复合型数字人才、加快弥合数字鸿沟、支撑做强做优做大数字经济、拓展智慧便捷的数字生活场景、打造积极健康有序的网络空间、强化支撑保障和协调联动。
+工作要点指出，做好今年的提升全民数字素养与技能工作，要以助力提高人口整体素质、服务现代化产业体系建设、促进全体人民共同富裕为目标，推动全民数字素养与技能提升行动取得新成效，以人口高质量发展支撑中国式现代化。</div>
+                            <div class="fxlogo hide"></div>
+                            <div class="bshare-custom fr">
+                                <a id="bdshare" class="detail_share">
+                                    分享该文章
+                                    <span class="isline"></span>
+                                    <span class="share xwzx-detail">
+                                        <span class="bshare-qqim pointer"></span>
+                                        <span class="bshare-weixin pointer"></span>
+                                        <span class="bshare-sinaminiblog pointer"></span>
+                                        <div id="qrcode_c">
+                                        </div>
+                                    </span>
+                                    <script src="/v3/js/v3-share.js" type="text/javascript"></script>
+                                </a>
+                            </div>                        </div>
+                        <div class="detail_chenge clearfix">
+                            
+                                <a class="detail_prev fl" href="/c/2024-02-29/398339.shtml">
+                                    <span class="fl">上一篇</span>
+                                    <div class="fl" title="全国民政行业职业技能大赛首次举办">全国民政行业职业技能大赛首次举办</div>
+                                </a>
+                            
+                            
+                            
+                                <a class="detail_next fr" href="/c/2024-02-20/397627.shtml">
+                                    <span class="fr">下一篇</span>
+                                    <div class="fr" title="整治虚假职业技能培训">整治虚假职业技能培训</div>
+                                </a>
+                            
+                            
+                        </div>
+                        <div class="detail_tuijian">
+                            <div class="detail_tuijian_title clearfix">
+                                <div class="fl">
+                                    <i class="fl"></i>
+                                    <span class="fl">推荐阅读</span>
+                                </div>
+                            </div>
+                            <ul class="detail_tuijian_con">
+                                
+                                    
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 右侧 -->
+                    
+</div>
+<div class="list_con_right fl">
+	<div class="list_rmzx">
+		<h4 class="font16">热门资讯
+			<span></span>
+		</h4>
+		<hr style="margin-top:15px;margin-bottom:20px;height:1px;background:#ccc;" />
+		<div class="list_rmzx_con">
+			<div class="list_rmzx_con_title clearfix">
+				<h4 class="fl selected">
+					<a>今日要闻</a>
+				</h4>
+				<h4 class="fl">
+					<a>最新政策</a>
+				</h4>
+				<h4 class="fl last">
+					<a>本周排行</a>
+				</h4>
+			</div>
+			<ul class="list_rmzx_con_con">
+				
+					
+				
+				
+					
+				
+				<li class="show">
+					<ul>
+						
+							
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-29/569742.shtml" target="_blank" title="安徽池州：上半年城镇新增就业近万人">安徽池州：上半年城镇新增就业近万人</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-29/569741.shtml" target="_blank" title="四川：启动2026年“百日千万招聘专项行动”&#32;各地每周至少1场线上专场招聘">四川：启动2026年“百日千万招聘专项行动”&#32;各地每周...</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-29/575353.shtml" target="_blank" title="内蒙古乌兰察布：多端发力拓岗位&#32;精准施策强技能">内蒙古乌兰察布：多端发力拓岗位&#32;精准施策强技能</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-29/575340.shtml" target="_blank" title="江苏：四大行动推进人工智能领域技术技能培训">江苏：四大行动推进人工智能领域技术技能培训</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-29/575379.shtml" target="_blank" title="重庆：首个数币工程款分账监管业务落地&#32;“智能合约”保障农民工工资发放">重庆：首个数币工程款分账监管业务落地&#32;“智能合约”...</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-29/580730.shtml" target="_blank" title="四川江油：“规范+畅联”用心守护退休幸福">四川江油：“规范+畅联”用心守护退休幸福</a>
+										</h4>
+									</li>
+								
+						
+					</ul>
+				</li>
+				<li>
+					<ul>
+						
+							
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="https://hrss.ah.gov.cn/public/6595721/80767944.html" target="_blank" title="《安徽省电子创业券管理办法》政策解读">《安徽省电子创业券管理办法》政策解读</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="https://content-static.cctvnews.cctv.com/snow-book/index.html?item_id=2140125898240306890&amp;toc_style_id=feeds_default&amp;track_id=2AB71B3C-EAD5-4796-9EFD-2E7ACEC47CE3_790070683762&amp;share_to=copy_url" target="_blank" title="今年民生领域哪些政策将加力&#32;总台专访人社部部长">今年民生领域哪些政策将加力&#32;总台专访人社部部长</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2025-03-19/427943.shtml" target="_blank" title="海南省人力资源和社会保障厅等四部门&#32;&#32;关于印发《海南省职业技能竞赛&#32;&#32;管理办法》的通知（琼人社规〔2024〕12号）">海南省人力资源和社会保障厅等四部门&#32;&#32;关于印发《海南省职...</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2025-03-19/427942.shtml" target="_blank" title="人力资源社会保障部关于开展&#32;2025年全国公共就业服务专项活动的通知（人社部函〔2025〕2号）">人力资源社会保障部关于开展&#32;2025年全国公共就业服务专项活...</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2024-12-04/419675.shtml" target="_blank" title="福建省人力资源和社会保障厅&#32;福建省财政厅关于公布2024年省级高技能人才培训基地备案名单的通知（闽人社文〔2024〕131号）">福建省人力资源和社会保障厅&#32;福建省财政厅关于公布2024年省...</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2024-08-01/414238.shtml" target="_blank" title="河南省人力资源和社会保障厅&#32;河南省教育厅&#32;河南省财政厅关于支持高校毕业生等青年就业创业工作的通知（豫人社办&#32;〔2024〕54号）">河南省人力资源和社会保障厅&#32;河南省教育厅&#32;河南省财政厅关...</a>
+										</h4>
+									</li>
+								
+						
+					</ul>
+				</li>
+				<li>
+					<ul>
+						
+							
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-23/571199.shtml" target="_blank" title="福建仙游：首期人工智能训练师就业技能提升培训班圆满收官">福建仙游：首期人工智能训练师就业技能提升培训班圆满收官</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-23/577101.shtml" target="_blank" title="四川江油：兼顾“银发”权益&#32;“柔性”仲裁成功调解24人集体劳动争议">四川江油：兼顾“银发”权益&#32;“柔性”仲裁成功调解24人集体...</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-23/572904.shtml" target="_blank" title="云南：征集2026年专项职业能力考核项目">云南：征集2026年专项职业能力考核项目</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-24/577105.shtml" target="_blank" title="江苏泰兴：2026夏季大型招聘会入场超7500人次">江苏泰兴：2026夏季大型招聘会入场超7500人次</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-24/574184.shtml" target="_blank" title="新疆：“六个一”工作法&#32;打通治理欠薪“最后一米”">新疆：“六个一”工作法&#32;打通治理欠薪“最后一米”</a>
+										</h4>
+									</li>
+								
+								
+								
+									<li class="clearfix has_icon">
+										<h4>
+											<a href="/c/2026-07-24/577133.shtml" target="_blank" title="山东济宁：&#32;任城区人才夜市招聘会火热开市">山东济宁：&#32;任城区人才夜市招聘会火热开市</a>
+										</h4>
+									</li>
+								
+						
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="list_rmlm">
+		<h4 class="font16">标签
+			<span></span>
+		</h4>
+		<hr style="margin-top:15px;margin-bottom:20px;height:1px;background:#ccc;" />
+		<ul class="list_gjc">
+			
+				
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=365" target="_blank">高校毕业生就业</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=174" target="_blank">脱贫攻坚</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=268" target="_blank">职业培训</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=275" target="_blank">欠薪</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=95" target="_blank">春风行动</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=101" target="_blank">招聘会</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=269" target="_blank">技能扶贫</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=5" target="_blank">技能培训</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=350" target="_blank">就业扶贫</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=362" target="_blank">劳动争议</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=129" target="_blank">公共就业服务</a>
+					</li>
+					<li class="fl">
+						<a href="https://chinajob.mohrss.gov.cn/zcms/tagword/list?SiteID=1&amp;TagWordID=264" target="_blank">仲裁</a>
+					</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+</div>
+</div>
+                    <!-- 包含页尾 -->
+                    
+<div class="footer">
+    <div class="footer_top clearfix font14">
+        <ul>
+        	
+        		
+        			<li class="fl ">
+		                <a href="http://www.mohrss.gov.cn/" target="_blank">人力资源和社会保障部</a>
+		            </li>
+        			<li class="fl ">
+		                <a href="http://job.mohrss.gov.cn/" target="_blank">中国公共招聘网</a>
+		            </li>
+        			<li class="fl ">
+		                <a href="http://worldskillschina.mohrss.gov.cn/" target="_blank">世界技能大赛中国组委会</a>
+		            </li>
+        			<li class="fl ">
+		                <a href="http://www.newjobs.com.cn/" target="_blank">中国国家人才网</a>
+		            </li>
+        			<li class="fl ">
+		                <a href="https://chrm.mohrss.gov.cn/" target="_blank">中国人力资源市场网</a>
+		            </li>
+        			<li class="fl last">
+		                <a href="http://www.osta.org.cn" target="_blank">技能人才评价工作网</a>
+		            </li>
+        	
+            <li class="footer_link fr " >
+                <span>地方链接</span>
+                <ul class="hide hide_list">
+                	
+                		
+                			<li>
+                				<a href="http://rsj.beijing.gov.cn/" target="_blank">北京</a>
+                			</li>
+                			<li>
+                				<a href="http://hrss.tj.gov.cn" target="_blank">天津</a>
+                			</li>
+                			<li>
+                				<a href="https://rst.hebei.gov.cn/index.html" target="_blank">河北</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.shanxi.gov.cn/" target="_blank">山西</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.nmg.gov.cn/" target="_blank">内蒙古</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.ln.gov.cn/" target="_blank">辽宁</a>
+                			</li>
+                			<li>
+                				<a href="http://hrss.jl.gov.cn/" target="_blank">吉林</a>
+                			</li>
+                			<li>
+                				<a href="https://hrss.hlj.gov.cn/hrss/" target="_blank">黑龙江</a>
+                			</li>
+                			<li>
+                				<a href="http://rsj.sh.gov.cn/" target="_blank">上海</a>
+                			</li>
+                			<li>
+                				<a href="http://jshrss.jiangsu.gov.cn/" target="_blank">江苏</a>
+                			</li>
+                			<li>
+                				<a href="http://rlsbt.zj.gov.cn/" target="_blank">浙江</a>
+                			</li>
+                			<li>
+                				<a href="http://hrss.ah.gov.cn/" target="_blank">安徽</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.fujian.gov.cn/" target="_blank">福建</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.jiangxi.gov.cn/" target="_blank">江西</a>
+                			</li>
+                			<li>
+                				<a href="http://hrss.shandong.gov.cn/" target="_blank">山东</a>
+                			</li>
+                			<li>
+                				<a href="http://hrss.henan.gov.cn/" target="_blank">河南</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.hubei.gov.cn/" target="_blank">湖北</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.hunan.gov.cn/" target="_blank">湖南</a>
+                			</li>
+                			<li>
+                				<a href="http://hrss.gd.gov.cn/" target="_blank">广东</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.gxzf.gov.cn/" target="_blank">广西</a>
+                			</li>
+                			<li>
+                				<a href="http://hrss.hainan.gov.cn/" target="_blank">海南</a>
+                			</li>
+                			<li>
+                				<a href="http://rlsbj.cq.gov.cn/" target="_blank">重庆</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.sc.gov.cn/" target="_blank">四川</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.guizhou.gov.cn/" target="_blank">贵州</a>
+                			</li>
+                			<li>
+                				<a href="http://hrss.yn.gov.cn/" target="_blank">云南</a>
+                			</li>
+                			<li>
+                				<a href="http://hrss.xizang.gov.cn/" target="_blank">西藏</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.shaanxi.gov.cn/" target="_blank">陕西</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.gansu.gov.cn/" target="_blank">甘肃</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.qinghai.gov.cn/" target="_blank">青海</a>
+                			</li>
+                			<li>
+                				<a href="http://hrss.nx.gov.cn/" target="_blank">宁夏</a>
+                			</li>
+                			<li>
+                				<a href="http://rst.xinjiang.gov.cn/" target="_blank">新疆</a>
+                			</li>
+                			<li>
+                				<a href="http://rsj.xjbt.gov.cn/" target="_blank">兵团</a>
+                			</li>
+                	
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="footer_center  font14">
+        <div>
+        	
+        		<a href="/c/2018-08-01/201.shtml" target="_blank">网站声明</a>
+        	
+        </div>
+        <div>
+        	
+            <a href="/qt/wzdt/" target="_blank">网站地图</a>
+            
+        </div>
+        <div>
+        	
+        		<a href="/c/2018-08-01/202.shtml" target="_blank">联系我们</a>
+        	
+        </div>
+    </div>
+    <div class="footer_bottom font12 clearfix">
+        <a class="fl" href="http://bszs.conac.cn/sitename?method=show&id=24CB768E226157CEE053022819ACCF4A" target="_blank"><img src="/images/footer/footer_logo.png?v=260209" alt=""></a>
+        <p class="fl">主办单位：中国就业培训技术指导中心.<br /> 京ICP备09079694号-10 京公网安备110401200230<br />网站标识码bm15000006</p>
+        <div class="fl" style="margin-left:20px;">
+			<script style="width: 0;height: 0;overflow: hidden;" id="_jiucuo_" sitecode="bm15000006" src="/js/jiucuo.js?v=1.0"></script><span id="_span_jiucuo"></span>
+		</div>
+    </div>
+</div>
+<script src="/v3/js/bootstrap.min.js"></script>
+<script src="/v3/js/hammer.min.js"></script>
+<script src="/v3/js/v3_common.js"></script>
+<script src="/js/swiper.min.js"></script>
+<link rel="stylesheet" href="/css/swiper.css" type="text/css" />
+<script src="/v3/js/v3_site.js"></script>
+
+
+
+<script src="https://chinajob.mohrss.gov.cn/zcms/stat/front/stat.js" type="text/javascript"></script>
+<script>
+if(window._zcms_stat)_zcms_stat("SiteID=1&CatalogInnerCode=000002000003000001&Type=Article&LeafID=397925&Dest=https://chinajob.mohrss.gov.cn/zcms/stat/dealer");
+</script>
+
+<!-- App=ZCMS(ZCMS内容管理系统) 2.5.28199,CostTime=7,PublishDate=2025-12-27 12:47:56 -->
+</body>
+
+</html>
