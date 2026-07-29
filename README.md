@@ -152,7 +152,7 @@ policy-search-china/
 | `mwr` | 水利部 | Ministry of Water Resources |
 | `mohrss` | 人社部 | Ministry of Human Resources and Social Security |
 
-> 住建部、卫健委、自然资源部等通过中央政策文件库（sousuo.www.gov.cn）托底搜索。
+> 住建部、卫健委、自然资源部等通过中央政策文件库 （sousuo.www.gov.cn） 托底搜索。
 
 ---
 
