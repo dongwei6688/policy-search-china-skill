@@ -3,8 +3,6 @@
 ### Fixed
 - 修复 18 条政策索引缺 local_path 的问题，下载补全原文文件
 - 补齐 2 条缺文号政策（发改数据〔2025〕1425号、国数科基〔2025〕70号）
-- 修复 audit_cache.py 双重 cache/ 路径解析 Bug
-- 新增 repair_cache.py 一键修复脚本
 
 ## v2.9.0 (2026-07-28)
 
@@ -183,9 +181,6 @@
 
 ## [v2.0.2] — 2026-07-28
 
-### 修复
-- **Wiki Changelog 同步断裂**：自 v1.9.8 起 Wiki 从未成功推送（远程有手动编辑导致 `git push` 被拒）。补全 v1.9.8 至 v2.0.2 缺失条目，此后发版前执行 `git pull --rebase` + push 后 `curl` 验证
-
 ---
 
 ## [v2.0.1] — 2026-07-28
@@ -207,4 +202,3 @@
 - `scripts/path_utils.py` 跨平台路径解析
 - 7 个信源缓存 JSON（gov / miit / nda / sasac / nea / ndrc / cac）
 - 逐字引用验证标签（`verify_verbatim` + build_html 输出标签）
-- GitHub Release + Wiki 同步的 6 步发版流程
