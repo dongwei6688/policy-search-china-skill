@@ -6,11 +6,12 @@
     "issuer": "人社部等四部门",
     "source_url": "https://chinajob.mohrss.gov.cn/c/2024-02-22/397925.shtml",
     "summary": "培育高水平复合型数字人才、加快弥合数字鸿沟、支撑做强做优做大数字经济。",
-    "format": "html",
+    "format": "link",
     "tags": [
       "数字素养",
       "数字人才",
       "数字经济"
-    ]
+    ],
+    "local_path": "cache/mohrss/397925.shtml"
   }
 ]
