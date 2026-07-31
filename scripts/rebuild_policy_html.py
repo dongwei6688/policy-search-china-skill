@@ -313,7 +313,32 @@ def extract_paragraphs(entry: dict, keyword: str) -> list[tuple[str, str]]:
             body = m.group(1)
             break
     if not body:
-        return []
+        # 纯文本/非标准 HTML 兜底：剥离残留标签后按空行切块（与 PDF 分支逻辑一致）
+        text = re.sub(r'<[^>]+>', '', html)
+        blocks = re.split(r'\n\s*\n', text)
+        results = []
+        current_chapter = ''
+        for block in blocks:
+            s = re.sub(r'\s+', ' ', block).strip()
+            if not s:
+                continue
+            # 超长块（>900字符）多为"每行一段"的紧凑排版（如 nda.gov.cn 纯文本页），按行再切
+            if len(s) > 900:
+                for line in block.split('\n'):
+                    ls = re.sub(r'\s+', ' ', line).strip()
+                    if not ls:
+                        continue
+                    if len(ls) < 60 and not ls.endswith(('。', '）', '"', '”')):
+                        current_chapter = ls[:80]
+                    if keyword in ls and len(ls) > 30:
+                        results.append((ls, current_chapter))
+                continue
+            # 短文本且不以句号结尾 → 可能是章节标题
+            if len(s) < 60 and not s.endswith(('。', '）', '"', '”')):
+                current_chapter = s[:80]
+            if keyword in s and len(s) > 30:
+                results.append((s, current_chapter))
+        return results
 
     # 从 <title> 获取文档名作为章节兜底
     doc_title = ''
