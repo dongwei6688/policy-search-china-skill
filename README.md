@@ -1,5 +1,8 @@
 # Policy Search China
 
+[![skills.sh](https://skills.sh/b/dongwei6688/policy-search-china-skill)](https://skills.sh/dongwei6688/policy-search-china-skill)
+[![GitHub release](https://img.shields.io/github/v/release/dongwei6688/policy-search-china-skill)](https://github.com/dongwei6688/policy-search-china-skill/releases)
+
 **国内政策文件搜索与引用** — 跨 Agent 平台通用 Skill（Hermes / npx skills / Claude Code 等）
 
 搜索国务院、工信部、国家数据局、国资委、国家能源局等 16 个部委/机构的政策文件，通过 Commander/Worker 架构实现智能搜索、逐字引文提取和结构化 HTML 汇编。支持 4 种决策链覆盖从广撒网到精准溯源的全部场景。
