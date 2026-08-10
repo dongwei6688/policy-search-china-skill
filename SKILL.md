@@ -175,3 +175,7 @@ python3 scripts/init.py
 - [ ] 阶段 4 HTML 由脚本生成（非手动拼接）
 - [ ] 抽查 1-2 条 source_url 可访问
 - [ ] 覆盖面完整，无遗漏子领域
+
+## 发版版本号同步
+
+`release_skill.py` 发版时自动同步仓库内 4 个版本号位置（SKILL.md frontmatter、README.md 最新版本行、atoms.py/chain_runner.py docstring 首行），无需手工维护。若手动发版或修改版本号，请确保这 4 处一致。
