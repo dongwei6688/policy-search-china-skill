@@ -1,31 +1,48 @@
 [
-  {
-    "title": "科技部关于印发《国家新一代人工智能创新发展试验区建设工作指引》的通知",
-    "doc_number": "国科发规〔2019〕298号",
-    "date": "2019-08-01",
-    "issuer": "科技部",
-    "source_url": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/gfxwj/gfxwj2019/201909/t20190905_148663.html",
-    "summary": "开展人工智能政策试验和社会实验，探索AI发展新模式新路径，形成可复制推广的经验。",
-    "format": "html",
-    "tags": [
-      "人工智能",
-      "创新发展试验区"
-    ],
-    "local_path": "cache/most/t20190905_148663.html"
-  },
-  {
-    "title": "科技部等六部门关于印发《关于加快场景创新以人工智能高水平应用促进经济高质量发展的指导意见》的通知",
-    "doc_number": "国科发规〔2022〕199号",
-    "date": "2022-07-29",
-    "issuer": "科技部等六部门",
-    "source_url": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/gfxwj/gfxwj2022/202208/t20220812_181851.html",
-    "summary": "围绕人工智能场景创新，提出着力打造人工智能重大场景、提升人工智能场景创新能力、加快推动人工智能场景开放、统筹推进人工智能场景创新等部署。鼓励京津冀、长三角、粤港澳大湾区探索AI场景创新共同体。",
-    "format": "html",
-    "tags": [
-      "人工智能",
-      "场景创新",
-      "经济高质量发展"
-    ],
-    "local_path": "cache/most/t20220812_181851.html"
-  }
+ {
+  "title": "科技部关于印发《国家新一代人工智能创新发展试验区建设工作指引》的通知",
+  "doc_number": "国科发规〔2019〕298号",
+  "date": "2019-08-01",
+  "issuer": "科技部",
+  "source_url": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/gfxwj/gfxwj2019/201909/t20190905_148663.html",
+  "summary": "开展人工智能政策试验和社会实验，探索AI发展新模式新路径，形成可复制推广的经验。",
+  "format": "html",
+  "tags": [
+   "人工智能",
+   "创新发展试验区"
+  ],
+  "local_path": "cache/most/t20190905_148663.html"
+ },
+ {
+  "title": "科技部等六部门关于印发《关于加快场景创新以人工智能高水平应用促进经济高质量发展的指导意见》的通知",
+  "doc_number": "国科发规〔2022〕199号",
+  "date": "2022-07-29",
+  "issuer": "科技部等六部门",
+  "source_url": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/gfxwj/gfxwj2022/202208/t20220812_181851.html",
+  "summary": "围绕人工智能场景创新，提出着力打造人工智能重大场景、提升人工智能场景创新能力、加快推动人工智能场景开放、统筹推进人工智能场景创新等部署。鼓励京津冀、长三角、粤港澳大湾区探索AI场景创新共同体。",
+  "format": "html",
+  "tags": [
+   "人工智能",
+   "场景创新",
+   "经济高质量发展"
+  ],
+  "local_path": "cache/most/t20220812_181851.html"
+ },
+ {
+  "doc_number": "科学技术部令第24号",
+  "title": "科学技术部令第24号 科学技术活动违规行为调查处理规定",
+  "issuer": "科学技术部",
+  "date": "2026-02-06",
+  "source_url": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/bmgz/202602/t20260211_195895.html",
+  "tags": [
+   "科研诚信",
+   "违规行为",
+   "调查处理",
+   "部门规章"
+  ],
+  "searched_at": "2026-08-10",
+  "summary": "科学技术部令第24号公布《科学技术活动违规行为调查处理规定》，自2026年3月1日起施行，对科学技术活动违规行为的调查处理程序、处理措施等作出规定，加强科研作风学风建设。",
+  "local_path": "cache/most/科学技术部令第24号_科学技术活动违规行.htm",
+  "format": "html"
+ }
 ]

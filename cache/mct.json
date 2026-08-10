@@ -1,17 +1,34 @@
 [
-  {
-    "title": "2024年全国智慧旅游解决方案拟入选名单",
-    "doc_number": "",
-    "date": "2025-01-10",
-    "issuer": "文化和旅游部",
-    "source_url": "https://zwgk.mct.gov.cn/zfxxgkml/zykf/202501/P020250110438298601281.doc",
-    "summary": "数据要素赋能智慧文旅管理解决方案、基于AI大模型的旅游景区智慧监管解决方案等入选。",
-    "format": "link",
-    "tags": [
-      "智慧文旅",
-      "人工智能",
-      "数据要素"
-    ],
-    "local_path": "cache/mct/P020250110438298601281.doc"
-  }
+ {
+  "title": "2024年全国智慧旅游解决方案拟入选名单",
+  "doc_number": "",
+  "date": "2025-01-10",
+  "issuer": "文化和旅游部",
+  "source_url": "https://zwgk.mct.gov.cn/zfxxgkml/zykf/202501/P020250110438298601281.doc",
+  "summary": "数据要素赋能智慧文旅管理解决方案、基于AI大模型的旅游景区智慧监管解决方案等入选。",
+  "format": "link",
+  "tags": [
+   "智慧文旅",
+   "人工智能",
+   "数据要素"
+  ],
+  "local_path": "cache/mct/P020250110438298601281.doc"
+ },
+ {
+  "doc_number": "文旅资源发〔2026〕42号",
+  "title": "文化和旅游部关于印发《旅游强国建设“十五五”规划》的通知",
+  "issuer": "文化和旅游部",
+  "date": "2026-07-07",
+  "source_url": "https://zwgk.mct.gov.cn/zfxxgkml/ghjh/202607/t20260707_966446.html",
+  "tags": [
+   "十五五",
+   "旅游强国",
+   "文旅融合",
+   "规划"
+  ],
+  "searched_at": "2026-08-10",
+  "summary": "文化和旅游部印发《旅游强国建设“十五五”规划》，已经国务院同意，对“十五五”时期建设旅游强国作出系统部署。",
+  "local_path": "cache/mct/文化和旅游部关于印发_旅游强国建设_十五.htm",
+  "format": "html"
+ }
 ]
