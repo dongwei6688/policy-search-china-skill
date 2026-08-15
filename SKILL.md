@@ -159,20 +159,22 @@ python3 scripts/init.py
 
 ## 运维约定（工作区唯一性 + 路径架构）
 
+> ⚠️ 本节为维护者内部约定，路径一律用相对/通用表述，勿写入具体机器路径（隐私安全）。
+
 ### 唯一工作区铁律
 
-- **系统空间 `~/.hermes/skills/research/policy-search-china/` 是唯一工作区与发版源**（git 仓库，remote=GitHub）。所有修改/提交/发版只在这里进行。
-- **发布仓库 `RELEASE_CLONE_DIR` 只是镜像副本**（独立 clone）。日常不提交；如误提交导致分叉，用 `git reset --hard origin/main` 对齐（内容已覆盖时安全）。
+- **系统空间（skill 安装目录）是唯一工作区与发版源**（git 仓库，remote=GitHub）。所有修改/提交/发版只在这里进行。
+- **发布仓库（`~/projects/` 下的同名独立 clone）只是镜像副本**。日常不提交；如误提交导致分叉，用 `git reset --hard origin/main` 对齐（内容已覆盖时安全）。
 - **禁止在两个 clone 都手动提交**——会导致历史分叉（曾发生：发布仓库落后 30 个提交，v2.10.0 vs v2.25.0）。
-- 三方一致性判定：`git -C 系统空间 rev-parse HEAD` == `git -C 发布仓库 rev-parse HEAD` == GitHub origin/main。
+- 三方一致性判定：系统空间 HEAD == 发布仓库 HEAD == GitHub origin/main。
 
 ### 路径架构（政策监控 cron 运行时）
 
-- cron（3b206cb082ee，每日 12:00）**无 workdir**，运行 cwd = Hermes gateway 的 cwd（`AGENT_HOME`）。所有脚本**绝对路径**硬编码，不依赖 cwd，不会跑偏到其他项目目录。
+- cron（每日 12:00）**无 workdir**，运行 cwd = Agent 网关的 cwd。所有脚本**绝对路径**（基于 skill 目录推算），不依赖 cwd，不会跑偏到其他项目目录。
 - 缓存**双写**（设计如此，勿改）：
-  - 系统空间 `~/.hermes/skills/research/policy-search-china/cache/`（随包分发、发版时 git 提交）
-  - 用户空间 `~/.hermes/data/policy-search-china/cache/`（运行读写区，local_path 不悬空）
-- 涉及脚本：`~/.hermes/scripts/policy_daily_pipeline.py`（入库+发版）、`release_skill.py`（发版六步）、`dev-tools/policy_monitor.py`（发现）。
+  - 系统空间 `cache/`（随包分发、发版时 git 提交）
+  - 用户空间（`~/.hermes/data/policy-search-china/cache/` 或 `POLICY_SEARCH_CHINA_DATA_DIR` 指定，运行读写区，local_path 不悬空）
+- 涉及脚本：`policy_daily_pipeline.py`（入库+发版）、`release_skill.py`（发版六步）、`dev-tools/policy_monitor.py`（发现），位于用户脚本目录。
 - **教训（2026-08-15）**：.gitignore 防污染修复（排除 `.agents/` + `skills-lock.json`）必须提交到**系统空间**再 push，不能只提交在镜像仓库——否则 GitHub 缺失该防护。
 
 ## 常见问题
