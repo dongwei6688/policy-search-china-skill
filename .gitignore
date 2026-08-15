@@ -7,3 +7,7 @@ __pycache__/
 *.pyo
 .DS_Store
 *.log
+
+# Agent 本地配置（npx skills add 安装产物，禁止入库——skill 必须独立空间，不嵌套其他 skill）
+.agents/
+skills-lock.json
