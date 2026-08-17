@@ -1,6 +1,6 @@
 """
 
- policy-search-china 编排器 v2.25.1
+ policy-search-china 编排器 v2.25.2
 
  将原子操作按用户意图编排成执行链。
  - Stage 1 (多关键词搜索) 和 Stage 3 (条目段落提取) 支持多线程并行
