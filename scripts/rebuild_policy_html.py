@@ -128,8 +128,14 @@ def load_all_cache() -> list[dict]:
         user_path = USER_CACHE / name
         sys_path = SYSTEM_CACHE / name
 
-        user_entries = json.loads(user_path.read_text(encoding='utf-8')) if user_path.exists() else []
-        sys_entries = json.loads(sys_path.read_text(encoding='utf-8')) if sys_path.exists() else []
+        # 兼容两种缓存格式（2026-08-20 修复：nda/nea 用户空间为 {entries:[...]} 包裹，裸 list 也会出现）
+        def _norm(raw):
+            if isinstance(raw, dict):
+                raw = raw.get('entries', [])
+            return raw if isinstance(raw, list) else []
+
+        user_entries = _norm(json.loads(user_path.read_text(encoding='utf-8'))) if user_path.exists() else []
+        sys_entries = _norm(json.loads(sys_path.read_text(encoding='utf-8'))) if sys_path.exists() else []
 
         if not user_entries:
             return sys_entries
