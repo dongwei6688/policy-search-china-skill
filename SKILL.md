@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.28.1
+version: v2.29.0
 license: MIT
 ---
 
