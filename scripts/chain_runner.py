@@ -1,6 +1,6 @@
 """
 
- policy-search-china 编排器 v2.30.0
+ policy-search-china 编排器 v2.31.0
 
  将原子操作按用户意图编排成执行链。
  - Stage 1 (多关键词搜索) 和 Stage 3 (条目段落提取) 支持多线程并行
@@ -283,9 +283,11 @@ if __name__ == "__main__":
     p.add_argument("--issuer", nargs="+", help="发文机关过滤（可多个）")
     p.add_argument("--doctype", nargs="+", help="文件类型过滤（如 意见 规划）")
     p.add_argument("--exclude", nargs="+", help="排除关键词")
-    p.add_argument("--web", action="store_true", help="启用 Web 补充搜索")
+    p.add_argument("--web", action="store_true", help="启用 Web 补充搜索（含政策库搜索接口）")
+    p.add_argument("--pages", type=int, default=1, help="政策库搜索页数（--web 时生效）")
     args = p.parse_args()
 
+    r = None
     if args.chain == "cross":
         r = chain_cross_analysis(args.keywords,
                                  args.start, args.end,
@@ -298,8 +300,26 @@ if __name__ == "__main__":
     elif args.chain == "trace":
         r = chain_trace_source(args.keywords[0])
 
+    assert r is not None, "未知的 chain 类型"
     print(f"结果数: {r['count']}")
     for e in r["entries"][:20]:
         meta = extract_metadata(e)
         print(f"  {meta['title'][:70]}")
         print(f"    {meta['doc_number']} | {meta['issuer'][:30]} | {meta['date']}")
+
+    # ═══ --web：政策库搜索接口补充（降级链 L3）═══
+    if args.web:
+        try:
+            from gov_library_search import search_gov_library
+            gl = search_gov_library(args.keywords, args.start, args.end,
+                                    pages=min(args.pages, 5))
+            merged = _merge_search_results(r["entries"], gl["entries"])
+            added = len(merged) - len(r["entries"])
+            r["entries"] = merged
+            r["count"] = len(merged)
+            if added:
+                print(f"\n[政策库搜索接口] 新增 {added} 条（缓存外新政策）:")
+                for e in gl["entries"][:10]:
+                    print(f"  + {e.get('title', '')[:60]} | {e.get('date', '')} | {e.get('doc_number', '')}")
+        except Exception as e:
+            print(f"\n[政策库搜索接口] 不可用: {e}")

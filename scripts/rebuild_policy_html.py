@@ -180,13 +180,14 @@ def load_all_cache() -> list[dict]:
 #  URL 降级策略 — 本地工具，不依赖 Agent
 # ═══════════════════════════════════════════════════════════
 
-def _fetch_url_fallback(url: str, timeout: int = 5) -> dict:
+def _fetch_url_fallback(url: str, timeout: int = 5, title: str = "") -> dict:
     """
-    URL 五层降级访问 — 自动尝试 HTTPS→HTTP
+    URL 五层降级访问 — 自动尝试 HTTPS→HTTP→政策库搜索接口
 
     Layer 1: HTTPS (curl + 浏览器 UA)
     Layer 2: HTTP 降级
-    Layer 3-5: 提示 Agent 环境工具（browser_navigate / web_search / 替代源）
+    Layer 3: gov.cn 政策库搜索接口（sousuo.www.gov.cn，按标题查该政策）
+    Layer 4-6: 提示 Agent 环境工具（browser_navigate / web_search / 替代源）
     """
     # Layer 1: HTTPS
     r = subprocess.run(
@@ -215,8 +216,24 @@ def _fetch_url_fallback(url: str, timeout: int = 5) -> dict:
         )
         return {"success": True, "content": r2.stdout, "layer": 2, "method": "HTTP 降级"}
 
-    return {"success": False, "content": "", "layer": 2, "method": "失败",
-            "suggestion": "L3: browser_navigate | L4: web_search | L5: gov.cn 替代源"}
+    # Layer 3: gov.cn 政策库搜索接口（WAF 403 时按标题兜底查原文摘要）
+    if "gov.cn" in url and title.strip():
+        try:
+            from gov_library_search import search_gov_library
+            kw = title.strip()[:20]
+            res = search_gov_library([kw], pages=2)
+            for e in res.get("entries", []):
+                src = e.get("source_url", "")
+                if src and (src == url or url in src or src in url):
+                    summary = e.get("summary", "")
+                    if summary:
+                        return {"success": True, "content": summary,
+                                "layer": 3, "method": "政策库搜索接口"}
+        except Exception:
+            pass
+
+    return {"success": False, "content": "", "layer": 3, "method": "失败",
+            "suggestion": "L4: browser_navigate | L5: web_search | L6: gov.cn 替代源"}
 
 
 # ═══════════════════════════════════════════════════════════
@@ -239,7 +256,7 @@ def load_source(entry: dict) -> str:
     if not fp.exists():
         url = entry.get('source_url', '')
         if url:
-            r = _fetch_url_fallback(url)
+            r = _fetch_url_fallback(url, title=entry.get('title', ''))
             if r['success']:
                 return re.sub(r'<[^>]+>', '', r['content'])
         return ''
