@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.30.0
+version: v2.31.0
 license: MIT
 ---
 
@@ -19,6 +19,7 @@ license: MIT
 | 交叉分析（"AI和能源结合"） | `chain_runner.py --chain cross` | 多关键词 AND 交集，内置并行搜索 |
 | 精准定位（"数据二十条确权"） | `chain_runner.py --chain locate` | 文号/段落精确查找 |
 | 溯源引用（"这句话出自哪"） | `chain_runner.py --chain trace` | 原文句子反查出处 |
+| **gov.cn 被 WAF 拦截 / 查缓存外新政策** | `gov_library_search.py --keywords ...` | 国务院政策文件库搜索接口（浏览器渲染） |
 | 输出 HTML 汇编 | `rebuild_policy_html.py --topic ...` | 逐字段落 + 原文链接 + 验证标签 |
 
 ## 执行流程（5 阶段 + 指挥官审核）
@@ -183,7 +184,8 @@ python3 scripts/init.py
 |------|------|
 | 搜索结果过多 | 指挥官追加 `--end` / `--issuer` 过滤后重调 |
 | 搜索结果为零 | 指挥官放宽关键词或移除时间限制后重调 |
-| URL 不可达 | 工人自动五层降级，指挥官无需处理 |
+| URL 不可达 | 工人自动降级（HTTPS→HTTP→政策库搜索接口），指挥官无需处理 |
+| **gov.cn 政策页 403 / 静默空响应** | 走政策库搜索接口（`gov_library_search.py` / `--web`），无需换 IP |
 | 覆盖率不够 | 指挥官在交付前审核阶段回阶段 1 补搜 |
 | **禁止手工拼装 HTML** | 必须通过 `rebuild_policy_html.py` 生成 |
 

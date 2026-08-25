@@ -1,3 +1,14 @@
+## v2.31.0 (2026-08-25)
+
+### Added
+- 新增 gov.cn 政策库搜索接口降级链（L3）：policy 页面直连被 WAF 拦截（403 / 静默空响应）时，自动通过国务院政策文件库搜索接口（sousuo.www.gov.cn）按标题获取政策原文与摘要
+- `chain_runner --web` 启用政策库搜索补充：自动发现缓存外的新政策（实测新增《商务部等8部门关于加快"人工智能+消费"发展的实施意见》等）
+- 新增脚本：`scripts/gov_library_search.py`（Python 封装，curl 直连 + playwright 渲染双策略）、`scripts/gov_library_dom.js`（playwright DOM 提取，支持翻页）
+- `rebuild_policy_html.load_source` 原文读取降级扩展：本地缓存丢失且 URL 被 WAF 拦截时，自动走政策库搜索接口兜底
+
+### Changed
+- URL 降级链由「HTTPS → HTTP → 提示浏览器」扩展为「HTTPS → HTTP → 政策库搜索接口 → 提示浏览器」
+
 ## v2.30.0 (2026-08-24)
 
 ### Added
