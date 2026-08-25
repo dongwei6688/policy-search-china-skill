@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.32.1
+version: v2.32.2
 license: MIT
 ---
 
@@ -20,6 +20,7 @@ license: MIT
 | 精准定位（"数据二十条确权"） | `chain_runner.py --chain locate` | 文号/段落精确查找 |
 | 溯源引用（"这句话出自哪"） | `chain_runner.py --chain trace` | 原文句子反查出处 |
 | **gov.cn 被 WAF 拦截 / 查缓存外新政策** | `gov_library_search.py --keywords ...` | 国务院政策文件库搜索接口（浏览器渲染） |
+| **gov.cn 政策详情页 403（下载原文）** | `gov_library_search.py` 的 `fetch_gov_policy(url)` | playwright 渲染详情页提取全文（`.pages_content`） |
 | 输出 HTML 汇编 | `rebuild_policy_html.py --topic ...` | 逐字段落 + 原文链接 + 验证标签 |
 
 ## 执行流程（5 阶段 + 指挥官审核）
