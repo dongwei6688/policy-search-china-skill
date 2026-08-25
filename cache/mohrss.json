@@ -1,17 +1,33 @@
 [
-  {
-    "title": "《2024年提升全民数字素养与技能工作要点》",
-    "doc_number": "",
-    "date": "2024-02-22",
-    "issuer": "人社部等四部门",
-    "source_url": "https://chinajob.mohrss.gov.cn/c/2024-02-22/397925.shtml",
-    "summary": "培育高水平复合型数字人才、加快弥合数字鸿沟、支撑做强做优做大数字经济。",
-    "format": "link",
-    "tags": [
-      "数字素养",
-      "数字人才",
-      "数字经济"
-    ],
-    "local_path": "cache/mohrss/397925.shtml"
-  }
+ {
+  "title": "《2024年提升全民数字素养与技能工作要点》",
+  "doc_number": "",
+  "date": "2024-02-22",
+  "issuer": "人社部等四部门",
+  "source_url": "https://chinajob.mohrss.gov.cn/c/2024-02-22/397925.shtml",
+  "summary": "培育高水平复合型数字人才、加快弥合数字鸿沟、支撑做强做优做大数字经济。",
+  "format": "link",
+  "tags": [
+   "数字素养",
+   "数字人才",
+   "数字经济"
+  ],
+  "local_path": "cache/mohrss/397925.shtml"
+ },
+ {
+  "doc_number": "人社部发〔2026〕40号",
+  "title": "关于加快推进「人工智能＋人社」应用发展的实施意见",
+  "issuer": "人力资源社会保障部 国家发展改革委 工业和信息化部 国家数据局",
+  "date": "2026-07-08",
+  "source_url": "https://www.gov.cn/zhengce/zhengceku/202607/content_7074732.htm",
+  "tags": [
+   "人工智能+",
+   "人社",
+   "就业"
+  ],
+  "searched_at": "2026-08-25",
+  "summary": "人力资源社会保障部等四部门联合印发，推动人工智能与人力资源和社会保障领域深度融合应用。",
+  "local_path": "cache/mohrss/关于加快推进_人工智能_人社_应用发展的.htm",
+  "format": "html"
+ }
 ]

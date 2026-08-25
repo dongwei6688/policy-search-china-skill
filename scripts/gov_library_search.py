@@ -103,6 +103,26 @@ def _search_via_playwright(keyword: str, page: int = 1) -> list[dict]:
         return []
 
 
+# ── 策略 C：playwright 渲染 gov.cn 政策详情页，提取全文（WAF 403 时替代 urllib）──
+def fetch_gov_policy(url: str) -> dict:
+    """按 URL 抓取 gov.cn 政策详情页全文（urllib 被 WAF 403 时的降级通道）。
+
+    返回 {success, title, doc_number, issuer, date, content}。
+    content 为政策正文纯文本（.pages_content 容器）。
+    """
+    node_path = _resolve_node_path()
+    cmd = ["node", str(SCRIPTS_DIR / "gov_page_fetch.js"), url]
+    env = dict(os.environ)
+    if node_path:
+        env["NODE_PATH"] = node_path
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=90, env=env)
+        d = json.loads(r.stdout.strip())
+        return d
+    except Exception as e:
+        return {"success": False, "error": str(e)[:150]}
+
+
 # ── 后处理：doc_number / 日期过滤 / AND 语义 ──
 _DOCNO_RE = re.compile(
     r"([国地][\u4e00-\u9fa5]{0,6}(?:〔|\[)20\d{2}(?:〕|\])\s?\d+\s*号)")
