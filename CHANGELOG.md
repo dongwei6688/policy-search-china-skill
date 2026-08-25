@@ -1,3 +1,13 @@
+## v2.32.2 (2026-08-25)
+
+### Added
+- `fetch_gov_policy(url)` 详情页全文提取：gov.cn 政策详情页被 WAF 拦截时，playwright 渲染提取全文（`.pages_content`），支持本地原文入库
+- 新增脚本：`scripts/gov_page_fetch.js`（详情页全文提取器）
+
+### Changed
+- `policy_daily_pipeline.py` 下载/验证环节接入降级：gov.cn URL 被 WAF 403 时自动改用 `fetch_gov_policy` 提取全文入库（local_path 不再悬空）
+- SKILL.md / README 同步：补充详情页全文提取的决策指南与使用说明
+
 ## v2.32.1 (2026-08-25)
 
 ### Fixed
