@@ -1,5 +1,5 @@
 """
- policy-search-china 原子操作库 v2.32.2
+ policy-search-china 原子操作库 v2.33.0
 
  纯数据操作函数集合。不涉及文件 I/O 和子进程调用。
  所有函数接收结构化数据 → 返回结构化数据。
