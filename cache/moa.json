@@ -1,32 +1,49 @@
 [
-  {
-    "title": "农业农村部关于大力发展智慧农业的指导意见",
-    "doc_number": "农市发〔2024〕3号",
-    "date": "2024-10-25",
-    "issuer": "农业农村部",
-    "source_url": "https://www.moa.gov.cn/govpublic/SCYJJXXS/202410/t20241025_6464809.html",
-    "summary": "大力推进智慧农业建设，加快信息技术与农机农艺深度融合，推动农业全产业链数字化智能化转型。",
-    "format": "html",
-    "tags": [
-      "智慧农业",
-      "数字化转型",
-      "农业强国"
-    ],
-    "local_path": "cache/moa/t20241025_6464809.html"
-  },
-  {
-    "title": "全国智慧农业行动计划（2024—2028年）",
-    "doc_number": "农市发〔2024〕4号",
-    "date": "2024-10-25",
-    "issuer": "农业农村部",
-    "source_url": "https://www.moa.gov.cn/ztzl/zhnyzxd/",
-    "summary": "提出到2028年智慧农业发展迈上新台阶的总体目标和工作安排，覆盖智慧种业、智慧农田、智慧种植等。",
-    "format": "html",
-    "tags": [
-      "智慧农业",
-      "行动计划",
-      "数字乡村"
-    ],
-    "local_path": "cache/moa/zhnyzxd.htm"
-  }
+ {
+  "title": "农业农村部关于大力发展智慧农业的指导意见",
+  "doc_number": "农市发〔2024〕3号",
+  "date": "2024-10-25",
+  "issuer": "农业农村部",
+  "source_url": "https://www.moa.gov.cn/govpublic/SCYJJXXS/202410/t20241025_6464809.html",
+  "summary": "大力推进智慧农业建设，加快信息技术与农机农艺深度融合，推动农业全产业链数字化智能化转型。",
+  "format": "html",
+  "tags": [
+   "智慧农业",
+   "数字化转型",
+   "农业强国"
+  ],
+  "local_path": "cache/moa/t20241025_6464809.html"
+ },
+ {
+  "title": "全国智慧农业行动计划（2024—2028年）",
+  "doc_number": "农市发〔2024〕4号",
+  "date": "2024-10-25",
+  "issuer": "农业农村部",
+  "source_url": "https://www.moa.gov.cn/ztzl/zhnyzxd/",
+  "summary": "提出到2028年智慧农业发展迈上新台阶的总体目标和工作安排，覆盖智慧种业、智慧农田、智慧种植等。",
+  "format": "html",
+  "tags": [
+   "智慧农业",
+   "行动计划",
+   "数字乡村"
+  ],
+  "local_path": "cache/moa/zhnyzxd.htm"
+ },
+ {
+  "doc_number": "",
+  "title": "农业农村部关于印发《全国农产品产地市场体系发展“十五五”规划》的通知",
+  "issuer": "农业农村部",
+  "date": "2026-08-25",
+  "source_url": "https://www.moa.gov.cn/govpublic/SCYJJXXS/202608/t20260825_6486996.htm",
+  "tags": [
+   "农产品流通",
+   "十五五",
+   "产地市场",
+   "乡村振兴"
+  ],
+  "searched_at": "2026-09-01",
+  "summary": "为贯彻落实《国民经济和社会发展第十五个五年规划纲要》、《加快农业农村现代化“十五五”规划》有关部署，加快建设现代农产品产地市场体系编制本规划。到2030年基本建成契合产业、产需衔接、高效顺畅、内联外通的现代农产品产地市场体系，打造50个辐射带动区域乃至全国的产地市场，推进“人工智能+”农产品流通发展。",
+  "local_path": "cache/moa/农业农村部关于印发_全国农产品产地市场体.htm",
+  "format": "html"
+ }
 ]

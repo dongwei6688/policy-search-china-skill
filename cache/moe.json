@@ -1,32 +1,49 @@
 [
-  {
-    "title": "教育部关于发布4项行动助推人工智能赋能教育的通知",
-    "doc_number": "",
-    "date": "2024-03-28",
-    "issuer": "教育部",
-    "source_url": "http://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/2024/2024_zt05/mtbd/202403/t20240329_1123025.html",
-    "summary": "启动数字教育集成化、智能化、国际化专项行动，推动人工智能赋能教育。",
-    "format": "html",
-    "tags": [
-      "人工智能+",
-      "教育数字化",
-      "AI赋能教育"
-    ],
-    "local_path": "cache/moe/t20240329_1123025.html"
-  },
-  {
-    "title": "国家教育数字化战略行动2025年部署会",
-    "doc_number": "",
-    "date": "2025-04-16",
-    "issuer": "教育部",
-    "source_url": "http://www.moe.gov.cn/jyb_xwfb/s5147/202504/t20250417_1187747.html",
-    "summary": "强调科学把握AI在教育强国建设中的定位、方向与方法，积极推动人工智能赋能教育强国建设。",
-    "format": "html",
-    "tags": [
-      "教育数字化",
-      "人工智能",
-      "教育强国"
-    ],
-    "local_path": "cache/moe/t20250417_1187747.html"
-  }
+ {
+  "title": "教育部关于发布4项行动助推人工智能赋能教育的通知",
+  "doc_number": "",
+  "date": "2024-03-28",
+  "issuer": "教育部",
+  "source_url": "http://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/2024/2024_zt05/mtbd/202403/t20240329_1123025.html",
+  "summary": "启动数字教育集成化、智能化、国际化专项行动，推动人工智能赋能教育。",
+  "format": "html",
+  "tags": [
+   "人工智能+",
+   "教育数字化",
+   "AI赋能教育"
+  ],
+  "local_path": "cache/moe/t20240329_1123025.html"
+ },
+ {
+  "title": "国家教育数字化战略行动2025年部署会",
+  "doc_number": "",
+  "date": "2025-04-16",
+  "issuer": "教育部",
+  "source_url": "http://www.moe.gov.cn/jyb_xwfb/s5147/202504/t20250417_1187747.html",
+  "summary": "强调科学把握AI在教育强国建设中的定位、方向与方法，积极推动人工智能赋能教育强国建设。",
+  "format": "html",
+  "tags": [
+   "教育数字化",
+   "人工智能",
+   "教育强国"
+  ],
+  "local_path": "cache/moe/t20250417_1187747.html"
+ },
+ {
+  "doc_number": "教基〔2026〕9号",
+  "title": "教育部等七部门关于印发《特殊教育发展提升“十五五”行动计划》的通知",
+  "issuer": "教育部等七部门",
+  "date": "2026-08-27",
+  "source_url": "https://www.gov.cn/zhengce/zhengceku/202608/content_7079639.htm",
+  "tags": [
+   "特殊教育",
+   "十五五",
+   "教育公平",
+   "残疾人事业"
+  ],
+  "searched_at": "2026-09-01",
+  "summary": "为推进特殊教育优质融合发展制定行动计划，坚持普惠发展、有教无类，坚持数字赋能、因材施教，加快建设高质量特殊教育体系。到2030年，适龄残疾儿童义务教育入学率巩固在97%以上，特殊教育保障机制不断完善，数字化、智能化水平逐步增强，基本形成特殊教育优质融合发展格局。",
+  "local_path": "cache/moe/教育部等七部门关于印发_特殊教育发展提升.htm",
+  "format": "html"
+ }
 ]
