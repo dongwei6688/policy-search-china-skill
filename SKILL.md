@@ -177,6 +177,7 @@ python3 scripts/init.py
   - 系统空间 `cache/`（随包分发、发版时 git 提交）
   - 用户空间（`~/.hermes/data/policy-search-china/cache/` 或 `POLICY_SEARCH_CHINA_DATA_DIR` 指定，运行读写区，local_path 不悬空）
 - 涉及脚本：`policy_daily_pipeline.py`（入库+发版）、`release_skill.py`（发版六步）、`dev-tools/policy_monitor.py`（发现），位于用户脚本目录。
+- **发现脚本（2026-09-03 重构为 16 源）**：`policy_monitor.py` 直爬 11 个信源列表页（gov 政策库/国资委 http/发改委/能源局主页/科技部/财政部/生态部 zcwj/农业农村部/教育部/文旅部/水利部），输出 `/tmp/policy_candidates.json`（`policies` + `skipped_sources` + `warnings`）。**5 个困难源走 Commander 兜底**：工信部/国家数据局/人社部/交通运输部（JS 渲染或反爬空页）+ gov.cn/网信办（403 WAF 记 warnings）。缓存比对用 title_keys 多键（书名号核心/文号/全名），窗口过滤按日期精度（day 可剔、month/year 宁多勿漏）。cron 流程：`policy_daily_pipeline.py --discover-only` 发现 → Commander 审核剔除清单写 `/tmp/policy_skip.json` → 追加兜底命中到 policy_extra.json → `--candidates --skip-file` 一次入库自动发版。
 - **教训（2026-08-15）**：.gitignore 防污染修复（排除 `.agents/` + `skills-lock.json`）必须提交到**系统空间**再 push，不能只提交在镜像仓库——否则 GitHub 缺失该防护。
 
 ## 常见问题
