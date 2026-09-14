@@ -1,6 +1,10 @@
 # local_path 中的 404 页面
 content_5712816.htm
 
+# 清理/修复脚本产生的临时备份目录（只应留在本地，不得随包分发）
+cache/_backup_*/
+cache/_removed_*/
+
 # Python 缓存
 __pycache__/
 *.pyc
