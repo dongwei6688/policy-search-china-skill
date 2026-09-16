@@ -1623,16 +1623,23 @@
   "format": "html"
  },
  {
-  "doc_number": "",
+  "doc_number": "工信部规〔2021〕180号",
   "title": "工业和信息化部关于印发“十四五”软件和信息技术服务业发展规划的通知",
-  "issuer": "",
+  "issuer": "工业和信息化部",
   "date": "2021-11-15",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-12/01/content_5655205.htm",
-  "tags": [],
+  "tags": [
+   "软件产业",
+   "基础软件",
+   "操作系统",
+   "开源",
+   "信息技术应用创新"
+  ],
   "searched_at": "2026-09-16",
-  "summary": "",
-  "local_path": "cache/gov/工业和信息化部关于印发_十四五_软件和信.htm",
-  "format": "html"
+  "summary": "《“十四五”软件和信息技术服务业发展规划》提出到2025年规模以上企业软件业务收入突破14万亿元、工业APP突破100万个、建设2-3个有国际影响力的开源社区；围绕推动软件产业链升级、提升产业基础保障水平、强化产业创新发展能力、激发数字化发展新需求、完善协同共享产业生态部署主要任务，设置关键基础软件补短板、开源生态培育等专项行动，明确聚力攻坚基础软件、繁荣国内开源生态、壮大信息技术应用创新体系。",
+  "local_path": "cache/gov/工业和信息化部_十四五软件和信息技术服务业发展规划.pdf",
+  "format": "pdf",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/2021-12/01/5655205/files/a44b507d67c74591ad4f5e55b98c4518.pdf"
  },
  {
   "doc_number": "",
