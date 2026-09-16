@@ -1,3 +1,9 @@
+## v2.49.5 (2026-09-16)
+
+### Docs
+
+- 补充 `references/policy-user-conventions.md` 的缓存文件维护约定：写入格式统一（indent=1）、双空间同步校验、临时备份位置约束
+
 ## v2.49.4 (2026-09-16)
 
 ### Fixed
