@@ -49,6 +49,7 @@ section must have a `<div class="verification">✅ N段·逐字引用</div>` bad
 - **开源 CHANGELOG 只保留用户可见变更**（功能新增、数据修复、架构改动），删除内部开发工具/流程内容（audit_cache.py/repair_cache.py 等运维脚本、Wiki 同步修复、发版流程描述）；GitHub Release 描述同步清理
 - **发版时机（2026-09-14 补）**：cache/ 索引发生任何变更（含清理/删除类改动）必须**当日**发版，否则次日日常发版会将其静默并入 commit，CHANGELOG 无法追溯——与"无新政不发"互补、不冲突
 - **分发 ZIP 打包（09-14 修复）**：必须用 `git archive` 生成（分发内容 == 仓库内容）并做非分发内容校验；**禁用 `zip -r .`** —— 实测会把本地草稿与 `cache/_backup_*/` 清理备份目录打进分发包；`.gitignore` 已加 `cache/_backup_*/`、`cache/_removed_*/`
+- **缓存文件写入纪律（09-16 补）**：①手动写回 cache JSON 必须用 `indent=1`（与 pipeline 及各信源文件一致；用 `indent=2` 会整文件重排，产生千行级 diff 噪声，且下次 pipeline 写入会再次重排）②改完两空间必须同步，用 md5 校验 system/user 同名文件一致 ③临时备份放**仓库外**——`cache/gov.json.bak-*` 这类命名不匹配 `.gitignore` 的 `cache/_backup_*` 规则，会被发版的 `git add` 卷进提交；三条做完后按发版时机规则当日发版
 - **wiki 验证误报**：`release_skill.py` 报 "⚠️ Wiki 验证未找到 vX.Y.Z" 属误报（它 curl 的是 GitHub 缓存页面）。正确验证 = clone wiki 仓库查 `Changelog.md` 头部版本 + `Home.md` 计数，再核远端 tag/release 是否存在
 
 ## 7. README 安装说明偏好
