@@ -1,3 +1,11 @@
+## v2.51.3 (2026-09-18)
+
+### Changed
+
+- **主题门禁（窄口）**：新增 `policy_theme_gate.py` 作为唯一口径来源，发现脚本 `policy_monitor.py` 与入库流水线 `policy_daily_pipeline.py` 共用。程序/事务类文书（批复、许可证、注册登记、质保大纲、环评报告、验收报备、征求意见稿、部委公告第 N 号）直接判主题外；标题未命中主题白名单（数字化/数智/数据/智慧/人工智能/算力/网络/互联网/云计算/软件/集成电路/操作系统/开源/信创/网络安全/智能制造/机器人/科技创新等）亦判主题外。被拦条目记入 `auto_skipped` / `skipped_by_theme`（含原因），可用 `--allow-title`、`--no-theme-gate` 人工放行
+- **新增 `--require-skip` 护栏**：剔除清单缺失即中止入库，确保「审核先于入库」（修复 2026-09-18 剔除清单写在入库之后、导致主题外条目照样入库的问题）
+- **date 口径加固**：候选缺 `pub_date` 时改为从 URL 反推（新增 `/YYYY-MM/DD/` 日精度支持，如 cac.gov.cn 风格），不再直接回退入库日；入库条目新增 `date_source` 字段（candidate / url-day / url-month / ingest-day）便于核账
+
 ## v2.51.2 (2026-09-18)
 
 ### Changed
