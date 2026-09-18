@@ -1,3 +1,9 @@
+## v2.50.1 (2026-09-18)
+
+### Changed
+
+- 工作路径迁移：政策线中间产物（候选 / 剔除清单 / 补充候选 / 流程报告）由 `/tmp` 改为持久目录 `~/.hermes/data/policy-search-china/scratch/`。`/tmp` 为 tmpfs，机器重启即清空，流程跑到一半重启会丢中间产物；`policy_daily_pipeline.py` 的 `DEFAULT_CANDIDATES` 与报告输出、SKILL.md 的流程说明、cron prompt 均已同步指向新目录
+
 ## v2.50.0 (2026-09-17)
 
 ### Added
