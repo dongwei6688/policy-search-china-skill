@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.51.4
+version: v2.51.5
 license: MIT
 ---
 
@@ -178,7 +178,9 @@ python3 scripts/init.py
   - 用户空间（`~/.hermes/data/policy-search-china/cache/` 或 `POLICY_SEARCH_CHINA_DATA_DIR` 指定，运行读写区，local_path 不悬空）
 - 涉及脚本：`policy_daily_pipeline.py`（入库+发版）、`release_skill.py`（发版六步）、`dev-tools/policy_monitor.py`（发现），位于用户脚本目录。
 - **发现脚本（2026-09-03 重构为 16 源）**：`policy_monitor.py` 直爬 11 个信源列表页（gov 政策库/国资委 http/发改委/能源局主页/科技部/财政部/生态部 zcwj/农业农村部/教育部/文旅部/水利部），输出 `<scratch>/policy_candidates.json`（`policies` + `skipped_sources` + `warnings`）。**5 个困难源走 Commander 兜底**：工信部/国家数据局/人社部/交通运输部（JS 渲染或反爬空页）+ gov.cn/网信办（403 WAF 记 warnings）。缓存比对用 title_keys 多键（书名号核心/文号/全名），窗口过滤按日期精度（day 可剔、month/year 宁多勿漏）。cron 流程：`policy_daily_pipeline.py --discover-only` 发现 → Commander 审核剔除清单写 `<scratch>/policy_skip.json` → 追加兜底命中到 `<scratch>/policy_extra.json` → `--candidates --skip-file` 一次入库自动发版。**`<scratch>` = `~/.hermes/data/policy-search-china/scratch/`；禁用 /tmp**（tmpfs，重启即失，2026-09-18 迁移）：`policy_daily_pipeline.py` 的 `DEFAULT_CANDIDATES` 与流程报告输出均已指向该目录。
-- **主题门禁（窄口，2026-09-18 拍板）**：`~/hermes/scripts/policy_theme_gate.py` 是**唯一口径来源**，`policy_monitor.py`（发现）与 `policy_daily_pipeline.py`（入库）共同引用。两层判定：① 程序/事务类文书（批复、许可证、注册登记、质量保证大纲、环评报告、验收报备、征求意见稿、部委公告第N号）直接主题外；② 标题未命中主题白名单（数字/数智/数据/智慧/人工智能/大模型/算力/算法/网络/互联网/物联网/云计算/区块链/信息化/信息通信/软件/集成电路/操作系统/开源/信创/网络安全/数据安全/智能制造/机器人/科技创新/数字乡村…）判主题外。被判主题外的条目**不静默丢弃**：发现侧记入 `auto_skipped`，入库侧记入流程报告的 `skipped_by_theme`（含 reason）。误判放行：`--allow-title "标题"`（逐条）或 `--no-theme-gate`（整轮）。入库须带 `--require-skip`：剔除清单缺失即中止——**审核必须先于入库**（2026-09-18 事故：审核清单写在入库之后，紧急采购/烟花爆竹/统计改革发展“十五五”规划照样入库）。
+- **主题门禁（窄口，2026-09-18 拍板）**：`~/hermes/scripts/policy_theme_gate.py` 是**唯一口径来源**，`policy_monitor.py`（发现）与 `policy_daily_pipeline.py`（入库）共同引用。两层判定：① 程序/事务类文书（批复、许可证、注册登记、质量保证大纲、环评报告、验收报备、征求意见稿、部委公告第N号）直接主题外；② 标题未命中主题白名单（数字/数智/数据/智慧/人工智能/大模型/算力/算法/网络/互联网/物联网/云计算/区块链/信息化/信息通信/软件/集成电路/操作系统/开源/信创/网络安全/数据安全/智能制造/机器人/科技创新/数字乡村…）判主题外。被判主题外的条目**不静默丢弃**：发现侧记入 `auto_skipped`，入库侧记入流程报告的 `skipped_by_theme`（含 reason）。误判放行：`--allow-title "标题"`（逐条）或 `--no-theme-gate`（整轮）。**机关名中性化（2026-09-21 实盘修复）**：匹配前先把标题里的「工业和信息化部」替换为「工信部」（`_AGENCY_NEUTRALIZE`），否则该部任一文件都会因机关名里的“信息化”被判主题内——今日《全国农业机械化发展“十五五”规划》即由此漏过门禁。修后回归：今日 218 条预筛零变化、库内合法数字化文件（软件规划、人工智能实施意见）仍保留，多判出 18 条工信部行业管理类文件（节能装备/民爆/中小企业等，符合窄口口径）。注意：门禁只管未来入库，**不追溯删除库内已有条目**。
+
+入库须带 `--require-skip`：剔除清单缺失即中止——**审核必须先于入库**（2026-09-18 事故：审核清单写在入库之后，紧急采购/烟花爆竹/统计改革发展“十五五”规划照样入库）。
 - **date 来源优先级（2026-09-18 加固）**：`date` 一律取**原文页成文/发布日**，取值顺序为 ① 候选自带 `pub_date`/`date` → ② **URL 反推**（`tYYYYMMDD`、`/YYYYMMDD/`、`/YYYY-MM/DD/` 精确到日；`/YYYYMM/`、`/YYYY-MM/` 仅到月，宁可多留不误剔）→ ③ 入库日（最后手段）。入库条目带 `date_source` 字段（`candidate` / `url-day` / `url-month` / `ingest-day`）便于事后核账。兜底补搜（`policy_extra.json`）的候选也务必带上 `pub_date`。
 - **教训（2026-08-15）**：.gitignore 防污染修复（排除 `.agents/` + `skills-lock.json`）必须提交到**系统空间**再 push，不能只提交在镜像仓库——否则 GitHub 缺失该防护。
 
