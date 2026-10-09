@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.53.0
+version: v2.53.1
 license: MIT
 ---
 
@@ -182,6 +182,13 @@ python3 scripts/init.py
 
 入库须带 `--require-skip`：剔除清单缺失即中止——**审核必须先于入库**（2026-09-18 事故：审核清单写在入库之后，紧急采购/烟花爆竹/统计改革发展“十五五”规划照样入库）。
 - **date 来源优先级（2026-09-18 加固）**：`date` 一律取**原文页成文/发布日**，取值顺序为 ① 候选自带 `pub_date`/`date` → ② **URL 反推**（`tYYYYMMDD`、`/YYYYMMDD/`、`/YYYY-MM/DD/` 精确到日；`/YYYYMM/`、`/YYYY-MM/` 仅到月，宁可多留不误剔）→ ③ 入库日（最后手段）。入库条目带 `date_source` 字段（`candidate` / `url-day` / `url-month` / `ingest-day`）便于事后核账。兜底补搜（`policy_extra.json`）的候选也务必带上 `pub_date`。
+- **误入库条目剔除（仅用户明确点名要求时执行）**：默认“存量不动”，门禁不追溯删库内条目；用户点名剔除时的固定动作——
+  ① 先备份：双空间 `cache/*.json` + 拟删条目的原文文件 → `~/.hermes/backups/policy-removal-<日期>/`；
+  ② 按**标题精确匹配**删条目（不要按下标/序号），双空间同步写回、`indent=1`、写后核对两处 md5 一致；
+  ③ 同步删除条目对应的原文文件（系统空间 + 用户空间各一份），避免分发包里留孤儿文件；
+  ④ **当日发版**（改 cache 必发），Release notes 写明删了哪几条；
+  ⑤ 验收四件：三方一致、`gov.json` 条目数下降 N、分发包内 grep 不到被删标题/文件名、索引计数（README/wiki）同步；
+  ⑥ 交代幂等性：这几条若再被搜到，门禁会直接判主题外拦下，不会回流。
 - **教训（2026-08-15）**：.gitignore 防污染修复（排除 `.agents/` + `skills-lock.json`）必须提交到**系统空间**再 push，不能只提交在镜像仓库——否则 GitHub 缺失该防护。
 
 ## 常见问题
@@ -207,3 +214,5 @@ python3 scripts/init.py
 ## 发版版本号同步
 
 `发版脚本` 发版时自动同步仓库内 4 个版本号位置（SKILL.md frontmatter、README.md 最新版本行、atoms.py/chain_runner.py docstring 首行），无需手工维护。若手动发版或修改版本号，请确保这 4 处一致。
+
+发版说明（notes）一律**先写入文件再传 `--notes <文件>`**：长中文内联参数易被守卫判为可疑字符而拦下。若整条发版命令被审批闸门拦下，**不要原样重试，也不要换一种写法凑同一个结果**——先把文件侧改动（文档/脚本）单独做完并核验，再向用户确认后只跑步发那一步。
