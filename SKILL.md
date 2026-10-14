@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.53.5
+version: v2.53.6
 license: MIT
 ---
 
@@ -182,7 +182,7 @@ python3 scripts/init.py
 
 入库须带 `--require-skip`：剔除清单缺失即中止——**审核必须先于入库**（2026-09-18 事故：审核清单写在入库之后，紧急采购/烟花爆竹/统计改革发展“十五五”规划照样入库）。
 - **date 来源优先级（2026-09-18 加固）**：`date` 一律取**原文页成文/发布日**，取值顺序为 ① 候选自带 `pub_date`/`date` → ② **URL 反推**（`tYYYYMMDD`、`/YYYYMMDD/`、`/YYYY-MM/DD/` 精确到日；`/YYYYMM/`、`/YYYY-MM/` 仅到月，宁可多留不误剔）→ ③ 入库日（最后手段）。入库条目带 `date_source` 字段（`candidate` / `url-day` / `url-month` / `ingest-day`）便于事后核账。兜底补搜（`policy_extra.json`）的候选也务必带上 `pub_date`。
-- **误入库条目剔除（仅用户明确点名要求时执行）**：默认“存量不动”，门禁不追溯删库内条目；用户点名剔除时的固定动作——
+- **误入库条目剔除（仅用户明确点名要求时执行）**：默认“存量不动”，门禁不追溯删库内条目。**点名之前先出清单**：按发文系统分组、逐条给「日期 + 标题」，并把「内容与主题无关」与「白名单覆盖不到」两类分开标注（后者应补词、不该删）；口径判定只看标题会误伤，给清单时要说明这层局限。用户点名后再执行下面的固定动作——
   ① 先备份：双空间 `cache/*.json` + 拟删条目的原文文件 → `~/.hermes/backups/policy-removal-<日期>/`；
   ② 按**标题精确匹配**删条目（不要按下标/序号），双空间同步写回、`indent=1`、写后核对两处 md5 一致；
   ③ 同步删除条目对应的原文文件（系统空间 + 用户空间各一份），避免分发包里留孤儿文件；
@@ -234,3 +234,5 @@ python3 scripts/init.py
 - `--dry-run` 必须读取**真实**最新 tag 再报下一版本号，不得返回硬编码占位值（曾长期返回 `v2.22.0`，干跑结论全是假的）。
 - **批量补齐**（多个版本同时欠 Release/Wiki/ZIP）：用本机运维脚本（批量补齐）自动盘点“本地有 tag、远端无 Release”的版本并逐项补完；**盘点以最新已有 Release 为下界**，不可用本地 tag 全集减远端 Release 集（历史 tag 多无 Release，会误列几十个）。推送顺序为 SSH → HTTPS+token（GIT_ASKPASS 注入）。细则见本地运维文档（不随本仓库分发）。
 - **报告只列真实结果**：发版/补齐脚本不得打印未验证的成功 URL，汇总里未完成的环节必须显式标 ❌；事后用免登录接口复核（`GET /releases/tags/<v>` 是否 200、wiki 页面是否含该版本）。
+- **分发包构成（ZIP 内容口径）**：包内容 = 仓库已跟踪文件，但排除两类 PDF——**无人引用**的，以及条目已带文字层（`text_path`）的**原件**。即：正文只存在于 PDF 的条目，其 PDF 必须随包（否则包用户拿到索引打不开原文）；扫描件已备 OCR 文字层时原件不进包（原件仍留仓库），包体积可差一个数量级。改打包规则后回读包内清单核对：PDF 数、索引条目数、被排除项确实不在包内。
+- **历史清理（重写历史）**：删掉的文字仍留在 git 与 wiki 历史里，要清须重写并强推。固定动作：① 镜像克隆备份主仓库与 wiki（另存 bundle）；② **只在镜像副本内**跑 `git filter-repo --replace-text <替换清单>`（长模式排在短模式之前，`--invert-paths` 移除本就不该存在的文件）；③ 替换清单必须**先确认敏感串在政策原文里不出现**（`grep -rc` 核一遍）——政策原文逐字引用，绝不能被动到；④ 本地双核验：全对象扫描为 0，且**重写后 HEAD 文件树 hash 与重写前一致**（证明只改文本、未动文件内容）；⑤ 强推 `refs/heads/*` + `refs/tags/*`（tag 名不变，Release 自动跟随）与 wiki；⑥ 从 GitHub **重新克隆**复核，本地仓库再 `reflog expire --expire=now --all` + `gc --prune=now` 清掉旧对象。
