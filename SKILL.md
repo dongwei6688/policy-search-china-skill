@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.53.1
+version: v2.53.2
 license: MIT
 ---
 
@@ -216,3 +216,9 @@ python3 scripts/init.py
 `发版脚本` 发版时自动同步仓库内 4 个版本号位置（SKILL.md frontmatter、README.md 最新版本行、atoms.py/chain_runner.py docstring 首行），无需手工维护。若手动发版或修改版本号，请确保这 4 处一致。
 
 发版说明（notes）一律**先写入文件再传 `--notes <文件>`**：长中文内联参数易被守卫判为可疑字符而拦下。若整条发版命令被审批闸门拦下，**不要原样重试，也不要换一种写法凑同一个结果**——先把文件侧改动（文档/脚本）单独做完并核验，再向用户确认后只跑步发那一步。
+
+**发版前置校验与半途失败续跑**：
+- `发版脚本` 现在**在动仓库之前**先校验 GitHub token，HTTP 401 即中止并说明“本次未产生任何提交/tag，无需回滚”——校验不过时仓库零改动。
+- token 必须是 **classic PAT 且含 `repo` 权限**（细粒度 token 覆盖不到 wiki 仓库，Wiki 同步会继续失败）；文件位置见脚本内 `TOKEN_FILE`，换 token 由用户自己写入（不要在聊天里传密钥）。
+- 若发版在 **Release 一步失败**（tag 已推，Release/Wiki/ZIP 未完成，属半成品状态）：**不要 bump 新版本号补一次**，用续跑方式对**同一版本**补齐 `create_release → sync_wiki → rebuild_zip`（幂等：Release 已存在则跳过），补完再核三方一致并把镜像 `pull --ff-only` 追平。
+- `--dry-run` 必须读取**真实**最新 tag 再报下一版本号，不得返回硬编码占位值（曾长期返回 `v2.22.0`，干跑结论全是假的）。
