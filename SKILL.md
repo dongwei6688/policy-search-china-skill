@@ -176,9 +176,9 @@ python3 scripts/init.py
 - 缓存**双写**（设计如此，勿改）：
   - 系统空间 `cache/`（随包分发、发版时 git 提交）
   - 用户空间（`~/.hermes/data/policy-search-china/cache/` 或 `POLICY_SEARCH_CHINA_DATA_DIR` 指定，运行读写区，local_path 不悬空）
-- 涉及脚本：`入库流程脚本`（入库+发版）、`发版脚本`（发版六步）、`dev-tools/发现脚本`（发现），位于用户脚本目录。
-- **发现脚本（2026-09-03 重构为 16 源）**：`发现脚本` 直爬 11 个信源列表页（gov 政策库/国资委 http/发改委/能源局主页/科技部/财政部/生态部 zcwj/农业农村部/教育部/文旅部/水利部），输出 `<scratch>/policy_candidates.json`（`policies` + `skipped_sources` + `warnings`）。**5 个困难源走 Commander 兜底**：工信部/国家数据局/人社部/交通运输部（JS 渲染或反爬空页）+ gov.cn/网信办（403 WAF 记 warnings）。缓存比对用 title_keys 多键（书名号核心/文号/全名），窗口过滤按日期精度（day 可剔、month/year 宁多勿漏）。cron 流程：`入库流程脚本 --discover-only` 发现 → Commander 审核剔除清单写 `<scratch>/policy_skip.json` → 追加兜底命中到 `<scratch>/policy_extra.json` → `--candidates --skip-file` 一次入库自动发版。**`<scratch>` = `~/.hermes/data/policy-search-china/scratch/`；禁用 /tmp**（tmpfs，重启即失，2026-09-18 迁移）：`入库流程脚本` 的 `DEFAULT_CANDIDATES` 与流程报告输出均已指向该目录。
-- **主题门禁（窄口，2026-09-18 确认）**：`scripts/主题门禁模块` 是**唯一口径来源**，`发现脚本`（发现）与 `入库流程脚本`（入库）共同引用。两层判定：① 程序/事务类文书（批复、许可证、注册登记、质量保证大纲、环评报告、验收报备、征求意见稿、部委公告第N号）直接主题外；② 标题未命中主题白名单（数字/数智/数据/智慧/人工智能/大模型/算力/算法/网络/互联网/物联网/云计算/区块链/信息化/信息通信/软件/集成电路/操作系统/开源/信创/网络安全/数据安全/智能制造/机器人/科技创新/数字乡村…）判主题外。被判主题外的条目**不静默丢弃**：发现侧记入 `auto_skipped`，入库侧记入流程报告的 `skipped_by_theme`（含 reason）。误判放行：`--allow-title "标题"`（逐条）或 `--no-theme-gate`（整轮）。**机关名中性化（2026-09-21 实盘修复）**：匹配前先把标题里的「工业和信息化部」替换为「工信部」（`_AGENCY_NEUTRALIZE`），否则该部任一文件都会因机关名里的“信息化”被判主题内——今日《全国农业机械化发展“十五五”规划》即由此漏过门禁。修后回归：今日 218 条预筛零变化、库内合法数字化文件（软件规划、人工智能实施意见）仍保留，多判出 18 条工信部行业管理类文件（节能装备/民爆/中小企业等，符合窄口口径）。注意：门禁只管未来入库，**不追溯删除库内已有条目**。
+- 涉及脚本：本机运维脚本（不在分发包内）：入库+发版流程、发版六步脚本、发现脚本。
+- **发现脚本（2026-09-03 重构为 16 源）**：发现脚本直爬 11 个信源列表页（gov 政策库/国资委 http/发改委/能源局主页/科技部/财政部/生态部 zcwj/农业农村部/教育部/文旅部/水利部），输出 `<scratch>/policy_candidates.json`（`policies` + `skipped_sources` + `warnings`）。**5 个困难源走 Commander 兜底**：工信部/国家数据局/人社部/交通运输部（JS 渲染或反爬空页）+ gov.cn/网信办（403 WAF 记 warnings）。缓存比对用 title_keys 多键（书名号核心/文号/全名），窗口过滤按日期精度（day 可剔、month/year 宁多勿漏）。cron 流程：`入库流程脚本 --discover-only` 发现 → Commander 审核剔除清单写 `<scratch>/policy_skip.json` → 追加兜底命中到 `<scratch>/policy_extra.json` → `--candidates --skip-file` 一次入库自动发版。**`<scratch>` = `~/.hermes/data/policy-search-china/scratch/`；禁用 /tmp**（tmpfs，重启即失，2026-09-18 迁移）：`入库流程脚本` 的 `DEFAULT_CANDIDATES` 与流程报告输出均已指向该目录。
+- **主题门禁（窄口，2026-09-18 起）**：主题门禁模块是**唯一口径来源**，发现脚本与入库流程脚本共同引用。两层判定：① 程序/事务类文书（批复、许可证、注册登记、质量保证大纲、环评报告、验收报备、征求意见稿、部委公告第N号）直接主题外；② 标题未命中主题白名单（数字/数智/数据/智慧/人工智能/大模型/算力/算法/网络/互联网/物联网/云计算/区块链/信息化/信息通信/软件/集成电路/操作系统/开源/信创/网络安全/数据安全/智能制造/机器人/科技创新/数字乡村…）判主题外。被判主题外的条目**不静默丢弃**：发现侧记入 `auto_skipped`，入库侧记入流程报告的 `skipped_by_theme`（含 reason）。误判放行：`--allow-title "标题"`（逐条）或 `--no-theme-gate`（整轮）。**机关名中性化（2026-09-21 实盘修复）**：匹配前先把标题里的「工业和信息化部」替换为「工信部」（`_AGENCY_NEUTRALIZE`），否则该部任一文件都会因机关名里的“信息化”被判主题内——今日《全国农业机械化发展“十五五”规划》即由此漏过门禁。修后回归：今日 218 条预筛零变化、库内合法数字化文件（软件规划、人工智能实施意见）仍保留，多判出 18 条工信部行业管理类文件（节能装备/民爆/中小企业等，符合窄口口径）。注意：门禁只管未来入库，**不追溯删除库内已有条目**。
 
 入库须带 `--require-skip`：剔除清单缺失即中止——**审核必须先于入库**（2026-09-18 事故：审核清单写在入库之后，紧急采购/烟花爆竹/统计改革发展“十五五”规划照样入库）。
 - **date 来源优先级（2026-09-18 加固）**：`date` 一律取**原文页成文/发布日**，取值顺序为 ① 候选自带 `pub_date`/`date` → ② **URL 反推**（`tYYYYMMDD`、`/YYYYMMDD/`、`/YYYY-MM/DD/` 精确到日；`/YYYYMM/`、`/YYYY-MM/` 仅到月，宁可多留不误剔）→ ③ 入库日（最后手段）。入库条目带 `date_source` 字段（`candidate` / `url-day` / `url-month` / `ingest-day`）便于事后核账。兜底补搜（`policy_extra.json`）的候选也务必带上 `pub_date`。
@@ -189,7 +189,7 @@ python3 scripts/init.py
   ④ **当日发版**（改 cache 必发），Release notes 写明删了哪几条；
   ⑤ 验收四件：三方一致、`gov.json` 条目数下降 N、分发包内 grep 不到被删标题/文件名、索引计数（README/wiki）同步；
   ⑥ 交代幂等性：这几条若再被搜到，门禁会直接判主题外拦下，不会回流。
-- **教训（2026-08-15）**：.gitignore 防污染修复（排除 `.agents/` + `skills-lock.json`）必须提交到**系统空间**再 push，不能只提交在镜像仓库——否则 GitHub 缺失该防护。
+- **仓库卫生**：忽略规则（`.gitignore`）必须在主仓库提交后再推送，避免远端缺失防护。
 
 ## 常见问题
 
@@ -214,16 +214,16 @@ python3 scripts/init.py
 
 ## 发版版本号同步
 
-`发版脚本` 发版时自动同步仓库内 4 个版本号位置（SKILL.md frontmatter、README.md 最新版本行、atoms.py/chain_runner.py docstring 首行），无需手工维护。若手动发版或修改版本号，请确保这 4 处一致。
+发版脚本会自动同步仓库内 4 个版本号位置（SKILL.md frontmatter、README.md 最新版本行、atoms.py/chain_runner.py docstring 首行），无需手工维护。若手动发版或修改版本号，请确保这 4 处一致。
 
 发版说明（notes）一律**先写入文件再传 `--notes <文件>`**，避免长中文内联参数引发命令行解析问题。若发版命令未能放行，**不要原样重试，也不要换一种写法凑同一个结果**——先把文件侧改动（文档/脚本）单独完成并核验，再单独执行发版。
 
 **发表内容口径**：Release notes / CHANGELOG / wiki 只写**用户可见的变更**——政策入库条目、脚本功能与接口变化、数据口径调整。内部流程约定、运维操作细节、协作过程记录一律不写入公开发布面（写在 SKILL.md 或本地运维文档即可）。
 
 **发版前置校验与半途失败续跑**：
-- `发版脚本` 现在**在动仓库之前**先校验 GitHub token，HTTP 401 即中止并说明“本次未产生任何提交/tag，无需回滚”——校验不过时仓库零改动。
+- 发版脚本现在**在动仓库之前**先校验 GitHub token，HTTP 401 即中止并说明“本次未产生任何提交/tag，无需回滚”——校验不过时仓库零改动。
 - token 必须是 **classic PAT 且含 `repo` 权限**（细粒度 token 覆盖不到 wiki 仓库，Wiki 同步会继续失败）；文件位置见脚本内 `TOKEN_FILE`，换 token 由用户自己写入（不要在聊天里传密钥）。
 - 若发版在 **Release 一步失败**（tag 已推，Release/Wiki/ZIP 未完成，属半成品状态）：**不要 bump 新版本号补一次**，用续跑方式对**同一版本**补齐 `create_release → sync_wiki → rebuild_zip`（幂等：Release 已存在则跳过），补完再核三方一致并把镜像 `pull --ff-only` 追平。
 - `--dry-run` 必须读取**真实**最新 tag 再报下一版本号，不得返回硬编码占位值（曾长期返回 `v2.22.0`，干跑结论全是假的）。
-- **批量补齐**（多个版本同时欠 Release/Wiki/ZIP）：用 `scripts/批量补齐脚本`，它会自动盘点“本地有 tag、远端无 Release”的版本并逐项补完；**盘点以最新已有 Release 为下界**，不可用本地 tag 全集减远端 Release 集（历史 tag 多无 Release，会误列几十个）。推送顺序为 SSH → HTTPS+token（GIT_ASKPASS 注入）。细则见 `references/运维清单`。
+- **批量补齐**（多个版本同时欠 Release/Wiki/ZIP）：用本机运维脚本（批量补齐）自动盘点“本地有 tag、远端无 Release”的版本并逐项补完；**盘点以最新已有 Release 为下界**，不可用本地 tag 全集减远端 Release 集（历史 tag 多无 Release，会误列几十个）。推送顺序为 SSH → HTTPS+token（GIT_ASKPASS 注入）。细则见本地运维文档（不随本仓库分发）。
 - **报告只列真实结果**：发版/补齐脚本不得打印未验证的成功 URL，汇总里未完成的环节必须显式标 ❌；事后用免登录接口复核（`GET /releases/tags/<v>` 是否 200、wiki 页面是否含该版本）。

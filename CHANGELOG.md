@@ -9,7 +9,7 @@
 
 ### Docs
 
-- 补充信源说明与发版检查清单（`references/policy-sources.md`、`references/运维清单`）
+- 补充信源说明（`references/policy-sources.md`）
 
 ## v2.53.1 (2026-10-09)
 
@@ -298,7 +298,7 @@
 - 新增脚本：`scripts/gov_page_fetch.js`（详情页全文提取器）
 
 ### Changed
-- `入库流程脚本` 下载/验证环节接入降级：gov.cn URL 被 WAF 403 时自动改用 `fetch_gov_policy` 提取全文入库（local_path 不再悬空）
+- 入库流程的下载/验证环节接入降级：gov.cn URL 被 WAF 403 时自动改用 `fetch_gov_policy` 提取全文入库（local_path 不再悬空）
 - SKILL.md / README 同步：补充详情页全文提取的决策指南与使用说明
 
 ## v2.32.1 (2026-08-25)
