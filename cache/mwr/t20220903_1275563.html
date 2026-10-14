@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="../../../images/base.css" type="text/css" rel="stylesheet" />
+    <link href="../../../images/index.css" type="text/css" rel="stylesheet" />
+    <title>信息化行业管理</title>
+    <script src="../../../images/jquery-1.11.0.min.js" /></script>
+    <script src="../../../images/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../../../images/index.js" /></script>
+</head>
+
+<body>
+<div class="top">
+     <form name=loginMailForm method=post action=https://mail.mwr.gov.cn/login.php?for_web=1 target="_blank">
+        <div class="login">
+               <input type="hidden" name="F_domain" value="mwr.gov.cn" />
+            <input name="F_email" type="text" placeholder="请输入用户名" />
+            <input name="F_password" type="password" class="password" placeholder="邮箱密码" />
+			<span>邮箱密码</span>
+            <input type="submit" value="&nbsp;" />
+        </div>
+     </form>
+     <form  id="form1"  name="websearch" action="http://www.mwr.gov.cn/WebSearch/action/Search/search" method="post" target="_self"  onsubmit="return false;" >
+        <div class="search">
+           <input name="queryObj.siteid" type="hidden" value="136" /> 
+	  <input name="queryObj.orderField" type="hidden" value="date" /> 
+	  <input name="queryObj.orderFD" type="hidden" value="0" />
+
+            <input id="searchword" name="queryObj.keywords" type="text" placeholder="请输入检索关键字" />
+            <input type="submit" onclick="doSubmit()" value="搜索" />
+
+
+
+
+
+        </div>
+      </form> 
+    </div>
+    <div class="nav">
+        <ul>
+            <li style="text-indent:3rem;"><a href="../../../">首页</a></li>
+            <li><a href="../../../zzjg/">组织机构</a></li>
+            <li class="a"><a href="../../">政策法规<span></span></a><div class="nav_ box_s"><a href="../../gjzc/">国家政策</a><a href="../">部门规章</a><a href="../../xybz/">行业标准</a></div></li>
+            <li class="a"><a href="../../../ywgz/">业务工作<span></span></a><div class="nav_ box_s"><a href="../../../ywgz/zhgx/">整合共享</a><a href="../../../ywgz/rjzbh/">软件正版化</a><a href="../../../ywgz/fzdc/">发展调查</a></div></li>
+            
+			<div class="clear"></div>
+        </ul>
+    </div>
+
+
+<script>
+function doSubmit(){
+ var inTXT  = document.getElementById('searchword').value;
+ if (inTXT=="请输入关键字"||inTXT==""){
+      alert("请输入关键字！");
+      document.getElementById('searchword').value=" ";
+      return false;                                               }
+ else{
+    document.getElementById('form1').submit();}
+}
+</script>
+<div class="hidden" style="padding-bottom:10px;">
+      
+      <table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style=" border:1px solid #c6c5c5; background:#fff; margin-top:6px">
+  <tr>
+    <td width="15">&nbsp;</td>
+    <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+          <td align="left" height="40">&nbsp;&nbsp;<strong>当前位置：</strong><a href="../../../" title="首页" class="CurrChnlCls">首页</a>--<a href="../../" title="政策法规" class="CurrChnlCls">政策法规</a>--<a href="../" title="部门规章" class="CurrChnlCls">部门规章</a></td>
+        </tr>
+  </table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+               <tr>
+                <td height="50" align="center" style="COLOR: #000000; line-height:150%; font-size:16px; font-weight:bold; border-bottom:1px #E7E5E3 solid">关于大力推进智慧水利建设的指导意见</td>
+              </tr>
+              <tr>
+                <td align="center" style="font-size:13px; COLOR: #000000;">
+                    <table align="center" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td>来源：水利部信息中心网站&nbsp;</td>
+                        <td>&nbsp;&nbsp;2021-11-29 14:52&nbsp;&nbsp;</td>
+                        <td><!-- 分享工具栏start -->
+<table border="0" cellpadding="0" cellspacing="0">
+	  <tr>
+		<td><a title="分享到微信" href="javascript:dowechat();" target="_self"><img ignoreapd="1" src="http://www.mwr.gov.cn/images2/dowechat.jpg" border="0" /></a></td>
+		<td height="30" width="30" align="center"><a title="分享到新浪微博" href="javascript:doweibo();" target="_self"><img ignoreapd="1" src="http://www.mwr.gov.cn/images2/doweibo.jpg" border="0" /></a></td>
+		
+	  </tr>
+</table>
+
+<div id="wechat" style="width:100%; position:absolute; top:220px; left:0px; z-index:9; display:none; " >
+	<table border="0" cellspacing="0" bgcolor="#ffffff" cellpadding="0" width="260" style="border:#d8d8d8 1px solid; margin:0 auto; " align="center">
+	  <tr>
+		<td height="40">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+				<td align="left" style="color:#000; font-size:12px; padding-left:10px; font-weight:bold;">分享到微信朋友圈</td>
+				<td width="38" align="center" onclick="closewechat();" style="color:#999; font-size:16px; font-weight:bold; cursor:pointer;">×</td>
+			  </tr>
+			</table>
+		</td>
+	  </tr>
+	  <tr>
+		<td align="center" height="215"><div id="qrcode_top"></div></td>
+	  </tr>
+	  <tr>
+		<td style="color:#666; line-height:22px; padding:10px; padding-right:0; text-align:left; font-size:12px;">打开微信，点击底部的“发现”，<br />使用“扫一扫”即可将网页分享至朋友圈。</td>
+	  </tr>
+	</table>
+</div>
+
+<script type="text/javascript" src="/images/jquery.min.js" ignoreapd="1"></script>
+<script type="text/javascript" src="/images/jquery.qrcode.min.js" ignoreapd="1"></script>
+<SCRIPT type="text/javascript">
+var _render;
+if (document.getElementById("Canvas").getContext) {          
+		_render = "canvas";
+}else{
+		_render = "table";
+}
+//jQuery('#qrcode').qrcode({render: _render,width: 138,height: 138,text: window.location.href});	
+
+function doweibo(){	
+	window.open('http://service.weibo.com/share/share.php?url='+encodeURIComponent(window.location.href))
+}
+function doTencentweibo(){
+	var _u = 'http://share.v.t.qq.com/index.php?c=share&a=index'+'&url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title);
+	window.open(_u);
+}	
+function dowechat(){	
+	jQuery('#qrcode_top').qrcode({render:_render,width:205,height:205,text:window.location.href});
+	document.getElementById("wechat").style.display = "block";
+}	
+function closewechat(){
+	document.getElementById('wechat').style.display = 'none';
+	document.getElementById('qrcode_top').innerHTML = '';
+}
+
+</SCRIPT>
+<!-- 分享工具栏end --></td>
+                      </tr>
+                    </table>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td align="left" style="LINE-HEIGHT: 200%; FONT-SIZE: 14px; padding-top:10px; font-family:\5B8B\4F53;" class="content">
+
+                <DIV class='TRS_Editor'>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-family: 微软雅黑;">为践行习近平总书记“节水优先、空间均衡、系统治理、两手发力”的治水思路，贯彻习近平总书记关于网络强国的重要思想，落实《中华人民共和国国民经济和社会发展第十四个五年规划和2035年远景目标纲要》提出的“构建智慧水利体系，以流域为单元提升水情测报和智能调度能力”要求，以及水利部党组把智慧水利建设作为推动新阶段水利高质量发展六条实施路径之一的决策部署，现就推进当前和今后一段时期智慧水利建设提出以下指导意见。</span>
+<div class="TRS_Editor" style="font-family: 微软雅黑;">
+<p style="font-family: 微软雅黑;"><strong>　　一、总体要求</strong></p>
+<p style="font-family: 微软雅黑;">　　（一）指导思想</p>
+<p style="font-family: 微软雅黑;">　　以习近平新时代中国特色社会主义思想为指导，全面贯彻党的十九大和十九届二中、三中、四中、五中全会精神，深入践行习近平总书记“十六字”治水思路和习近平总书记关于网络强国的重要思想，立足新发展阶段，完整、准确、全面贯彻新发展理念，构建新发展格局，推动高质量发展，按照“需求牵引、应用至上、数字赋能、提升能力”要求，以数字化、网络化、智能化为主线，以数字化场景、智慧化模拟、精准化决策为路径，以构建数字孪生流域为核心，全面推进算据、算法、算力建设，加快构建具有预报、预警、预演、预案（以下简称“四预”）功能的智慧水利体系，为新阶段水利高质量发展提供有力支撑和强力驱动。</p>
+<p style="font-family: 微软雅黑;">　　（二）基本原则</p>
+<p style="font-family: 微软雅黑;">　　坚持党的领导。智慧水利建设是一项艰巨复杂事关全局的工作，各级水利部门党委（党组）要充分发挥总揽全局、协调各方的领导核心作用，将智慧水利建设作为重点工作纳入党委（党组）重要议事日程，对智慧水利建设重大事项定期进行专题研究和督办落实，确保党的领导贯穿智慧水利建设工作全过程。</p>
+<p style="font-family: 微软雅黑;">　　坚持统筹谋划。遵循《智慧水利建设顶层设计》的建设目标、总体框架和建设布局，按照“加快构建具有预报、预警、预演、预案功能的智慧水利体系”要求，深化业务需求分析，编制流域、省级、重大水利工程智慧水利建设规划（实施方案），确保智慧水利建设全国一盘棋。</p>
+<p style="font-family: 微软雅黑;">　　坚持整合共享。加快建立完善智慧水利建设标准体系，统一技术标准，基于全国水利一张图推进水利行业跨业务跨层级数据调用以及与其他行业数据共享，实现水利信息有序共享；基于模块化链接整合已建、统筹在建、规范新建，推进业务应用共建共用，实现水利资源集约利用。</p>
+<p style="font-family: 微软雅黑;">　　坚持协同推进。按照《智慧水利建设顶层设计》《“十四五”智慧水利建设规划》的技术路线、建设任务以及任务分工等，协同建设数字孪生流域，构建水利部本级、流域管理机构、省级水行政主管部门以及重大水利工程管理单位分级部署和支撑多级应用的智慧水利体系。</p>
+<p style="font-family: 微软雅黑;">　　坚持急用先建。以问题为导向，率先在流域防洪、水资源管理与调配业务领域开展具有“四预”功能的智慧水利建设，积极推进水利工程建设和运行管理、河湖长制及河湖管理、水土保持、农村水利水电等业务应用建设，逐步形成“2+N”水利智能业务应用体系，全面支撑各项水利工作。</p>
+<p style="font-family: 微软雅黑;">　　坚持融合创新。加强新一代信息技术与水利业务的深度融合，强化数字孪生、大数据、人工智能、区块链等技术在水利业务中的应用研究，瞄准智慧水利建设关键核心问题，组织产学研优势力量协同攻关，增强科技创新对智慧水利建设的推动作用。</p>
+<p style="font-family: 微软雅黑;">　　（三）工作目标</p>
+<p style="font-family: 微软雅黑;">　　到2025年，通过建设数字孪生流域、“2+N”水利智能业务应用体系、水利网络安全体系、智慧水利保障体系，推进水利工程智能化改造，建成七大江河数字孪生流域，在重点防洪地区实现“四预”，在跨流域重大引调水工程、跨省重点河湖基本实现水资源管理与调配“四预”，N项业务应用水平明显提升，建成智慧水利体系1.0版。</p>
+<p style="font-family: 微软雅黑;">　　到2030年，具有防洪任务的河湖全面建成数字孪生流域，水利业务应用的数字化、网络化、智能化水平全面提升，建成智慧水利体系2.0版。</p>
+<p style="font-family: 微软雅黑;">　　到2035年，各项水利治理管理活动全面实现数字化、网络化、智能化。</p>
+<p style="font-family: 微软雅黑;"><strong>　　二、重点任务</strong></p>
+<p style="font-family: 微软雅黑;">　　“十四五”期间，智慧水利建设的重点任务是构建数字孪生流域、建设“2+N”水利智能业务应用体系和完善水利网络安全体系。</p>
+<p style="font-family: 微软雅黑;">　　（一）构建数字孪生流域</p>
+<p style="font-family: 微软雅黑;">　　一是建设数字孪生平台。升级扩展全国水利一张图，建设基础数据统一、监测数据汇集、二三维一体化、三级贯通的数据底板，建设包含水文、水力学、泥沙动力学、水资源、水环境、水土保持、水利工程安全7大类专业模型的标准统一、接口规范、分布部署、快速组装、敏捷复用的模型平台以及结构化、自优化、自学习的知识平台。按照统一的要求和标准建设重大水利工程的数字孪生工程。</p>
+<p style="font-family: 微软雅黑;">　　二是完善信息基础设施。在传统水利监测体系的基础上，利用智能感知技术和通信技术，建设对涉水对象属性及其环境状态进行监测和智能分析的天空地一体化水利感知网；依托国家电子政务网络、租赁公共网络等多种方式构建联通水利部本级、流域管理机构、省（自治区、直辖市）、市、县以及工程管理单位等的水利业务网，建设覆盖水利工程及其相关管理单位的水利工控网；升级改造IT基础设施，建设公有云和专有云有机统一的水利云，为智慧水利提供云端按需扩展和安全可信的大规模联机计算服务。</p>
+<p style="font-family: 微软雅黑;">　　（二）建设流域防洪应用</p>
+<p style="font-family: 微软雅黑;">　　在国家防汛抗旱指挥系统的基础上，扩展定制流域防洪数字化场景，升级完善洪水预报、预警功能，重点构建模拟仿真模块，补充旱情综合监测预测功能和淤地坝洪水预报功能，搭建防汛抗旱“四预”业务平台。数字化场景方面，扩展中小河流、中小水库、淤地坝等信息感知，补充流域下垫面、社会经济等数据。预报方面，集成“降水—产流—汇流—演进”全过程模型。预警方面，扩展防洪风险影响和薄弱环节判别、主要江河风险防控目标识别等功能。预演方面，扩展模拟计算和动态仿真等功能。预案方面，集成各类防洪方案、调度规则和专家经验等，扩展方案自动生成、多方案比选等功能。旱情综合监测预测方面，建设全国旱情一张图。</p>
+<p style="font-family: 微软雅黑;">　　（三）建设水资源管理与调配应用</p>
+<p style="font-family: 微软雅黑;">　　在国家水资源监控能力建设项目、国家地下水监测工程的基础上，完善水资源管理与调配数字化场景，整合取水许可审批、水资源税（费）等信息系统以及水资源监管预警、调配管理决策等功能，搭建取用水管理政务服务与调配综合平台。数字化场景方面，整合水资源基础数据，汇集重要断面等监测数据，共享税务、统计等部门相关数据，打造水资源管控一张图，动态掌握并及时更新水资源监测计量台账。水资源监管预警方面，完善水资源承载力、预警等模型，扩展地下水双控等功能。调配管理决策方面，构建来水预报、需水调配、水量分配、水量调度等模型，开发不同来水、不同调度措施、不同调度目标下的调度预演以及多方案比选等功能。</p>
+<p style="font-family: 微软雅黑;">　　（四）建设N项业务应用</p>
+<p style="font-family: 微软雅黑;">　　1.水利工程建设和运行管理。水利工程建设管理方面，收集整合水利工程规划、建设等相关数据，共享建设市场交易信息及市场主体信用信息，依托全国水利一张图整合集成水利工程建设基础数据库，完善水利工程管理及水利建设市场监管等功能，加强水利工程BIM应用和智能化建设。水利工程运行管理方面，在全国水库运行管理信息系统、大型水库大坝安全监测监督平台、堤防水闸基础信息数据库等基础上，整合接入雨水情等信息，构建工程运行安全评估预警、工况视频智能识别、工程险情识别等模型，扩展完善水利工程基础数据联动更新、水利工程注册登记、降等报废以及病险水库项目管理等功能。推动水利工程智能化改造，推进重大水利工程的数字孪生工程建设。其中，三峡工程运行监管方面，完善三峡工程综合管理信息服务平台功能，扩展升级三峡后续项目管理系统、三峡工程运行安全综合监测系统、三峡库区高切坡监测预警系统功能；推进数字孪生三峡建设，提升三峡工程综合管理智慧化水平。</p>
+<p style="font-family: 微软雅黑;">　　2.河湖长制及河湖管理。以河湖长制管理信息系统为基础，整合集成河湖管理、涉河建设项目、河道采砂等相关数据以及卫星遥感、视频监控、互联网舆情等信息，构建河湖管理数字化场景，扩展河湖管理保护突出问题遥感智能识别、视频智能分析等模型，升级完善巡查、详查、核查、复查功能，构建支撑查、认、改、罚全生命周期的河湖监管平台。</p>
+<p style="font-family: 微软雅黑;">　　3.水土保持。健全水土保持数据库，形成水土保持一张图，建设水土保持数字化场景，研究构建水土保持智能模型。推进智慧水利水土保持分系统平台建设，建立完善水土保持数据管理规则体系，加快构建具有水土流失动态监测评价、生产建设活动人为水土流失监管风险预警、淤地坝安全运行管理等功能的智慧水土保持应用体系。</p>
+<p style="font-family: 微软雅黑;">　　4.农村水利水电。在农村水利水电信息管理系统的基础上，建立农村供水工程名录台账，制作全国农村供水专题图，开展水源地可供水量动态预测以及农村供水工程运维管理安全预警。依托灌区现代化改造项目，改造完善灌区监测计量、重点泵站远程控制等设施，扩展完善用水管理、水量调度、水费计收、灌区工程巡检等功能。汇集小水电站运行、安全度汛预案、生态流量监测等信息，完善小水电安全生产监管、生态流量监管等功能。</p>
+<p style="font-family: 微软雅黑;">　　5.节水管理与服务。在国家水资源监控能力建设项目的基础上，依托有关项目整合节水相关信息系统和信息资源，搭建区域与行业节水潜力评估、用水效率评价等模型，构建节水管理与服务平台，强化用水总量与强度双控信息化管理，为国家节水行动提供支撑。</p>
+<p style="font-family: 微软雅黑;">　　6.南水北调工程运行与监管。在南水北调中线和南水北调东线一期工程已有信息系统基础上，整合接入水量、水位、分水以及工程安全运行监管相关信息，共享沿线及受水区相关雨水情、地下水、水生态及经济社会等数据，强化工程安全运行监管和安全预警。推进数字孪生南水北调建设。</p>
+<p style="font-family: 微软雅黑;">　　7.水行政执法。以水行政执法统计信息系统数据库等为基础，依托国家水利大数据中心、国家水利综合监管平台和水利部在线政务服务平台等，整合集成河湖、水资源、水土保持、水利工程等相关数据，建立全国水行政执法数据库，搭建水行政执法综合管理平台，大力推进智慧执法。</p>
+<p style="font-family: 微软雅黑;">　　8.水利监督。结合水利基础数据和江河湖泊、水资源、水利工程、资金、政务等业务数据，研发水利行业风险评估预测模型，构建水利综合监管平台，提高综合监管水平和处置效率。</p>
+<p style="font-family: 微软雅黑;">　　9.水文管理。完善现有水文业务系统，强化水文站网管理、水文测站信息管理、数据处理与监控、报汛管理、资料整编、水文信息和产品服务等业务功能。</p>
+<p style="font-family: 微软雅黑;">　　10.水利行政。完善综合办公、规划计划、财务、人事、移民和乡村振兴、国科、宣传教育等水利管理服务功能。补充完善移民征地补偿、搬迁安置、后期扶持实施情况等。整合统一乡村振兴数据指标，建设乡村振兴智能监管应用。加强国际河流管理合作，扩展共享国际河流采集信息。</p>
+<p style="font-family: 微软雅黑;">　　11.水利公共服务。完善“互联网+水利政务服务”公共服务门户，对水利部在线政务服务平台进行标准化改造，推进水利涉企证照电子化和涉水政务服务数据共享利用，强化政务服务平台用户认证，建设完善水利部“互联网+监管”平台。拓展全国水利一张图服务，开展预报预警、水指数、水体验等服务。打造水利融媒体平台。</p>
+<p style="font-family: 微软雅黑;">　　（五）完善水利网络安全体系</p>
+<p style="font-family: 微软雅黑;">　　1.水利网络安全管理。健全水利网络安全制度体系，以网络安全等级保护为基础，以水利关键信息基础设施保护为重点，强化重要数据和供应链安全，完善水利网络安全事件应急预案，推进水利商用密码应用。</p>
+<p style="font-family: 微软雅黑;">　　2.水利网络安全防护。构建涵盖基础防护、监测分析和响应恢复的水利网络安全防护体系，建设完善统一身份认证服务、统一密码服务等统一基础安全服务，构建安全情报中心，建设包括安全数据采集、安全大数据平台、安全威胁感知应用在内的网络安全威胁感知系统，建设网络安全风险全过程闭环管理系统和统一设备管控系统。开展水利关键信息基础设施国产化改造，强化水利重要数据保护。</p>
+<p style="font-family: 微软雅黑;">　　3.水利网络安全监督。深化水利网络安全“查、改、罚”监管机制，推进三级及以上重要信息系统等级保护测评和实战化攻防，健全水利网络安全联防联控、通报预警、奖惩等机制。</p>
+<p style="font-family: 微软雅黑;"><strong>　　三、保障措施</strong></p>
+<p style="font-family: 微软雅黑;">　　（一）落实责任</p>
+<p style="font-family: 微软雅黑;">　　水利部网络安全与信息化领导小组负责指导全国智慧水利建设，统筹建设数字孪生流域、部本级流域防洪应用、水资源管理与调配应用以及N项业务应用，对全局性重大问题进行决策，对流域管理机构、省级水行政主管部门以及重大水利工程管理单位智慧水利建设工作进行评估考核。水利部网络安全与信息化领导小组办公室负责智慧水利建设的日常管理工作。业务司局负责组织本领域需求分析、业务系统应用、数据更新等工作。流域管理机构根据履职需要，按照智慧水利建设总体布局等要求，共享调用水利部本级提供的公共资源，建设数字孪生流域，完成总体布局中流域管理机构的其他任务，按照要求和标准向水利部本级汇交数据成果，并向省级水行政主管部门共享数据成果。省级水行政主管部门按照智慧水利建设总体布局中对省级智慧水利建设的安排，以集中建设为主，统筹建设网络、平台等公用基础支撑，并按照要求和标准向水利部本级和流域管理机构汇交共享数据成果。重大水利工程管理单位按照智慧水利建设总体布局等要求建设数字孪生工程，并按照要求和标准向水利部本级和流域管理机构汇交共享数据成果。</p>
+<p style="font-family: 微软雅黑;">　　各单位要建立网信部门统筹，综合部门保障，业务部门负责需求分析、业务应用和数据更新，技术支撑部门负责建设与维护管理的有效机制，并确保责任落实到人到位。</p>
+<p style="font-family: 微软雅黑;">　　（二）加大投入</p>
+<p style="font-family: 微软雅黑;">　　各单位要积极争取资金投入，拓宽资金来源，统筹资金渠道，利用中央财政、地方财政以及重大水利工程管理单位自筹资金等推进智慧水利建设，重点保障拟立项项目经费和开发性维护经费，积极争取运维经费并纳入财政预算。积极推动BIM在水利工程全生命周期管理运用，结合国家水网建设推进已建水利工程智能化改造和在建水利工程智能化建设，确保新建水利工程在项目预算中安排智能化和网络安全建设资金投入。</p>
+<p style="font-family: 微软雅黑;">　　（三）加强监督</p>
+<p style="font-family: 微软雅黑;">　　各单位要按照《智慧水利建设顶层设计》《“十四五”智慧水利建设规划》以及本单位规划（实施方案）要求，全面建立智慧水利建设工作清单管理制度，提出节点明确、重点突出、可量化、可考核的工作任务，实行清单管理、挂图作战，将智慧水利建设工作纳入督办事项范围，加强督促检查，对重点任务进行考核并将结果作为党政领导班子和领导干部考察的重要内容。</p>
+<p style="font-family: 微软雅黑;">　　（四）建强队伍</p>
+<p style="font-family: 微软雅黑;">　　各单位要优化智慧水利建设人才发展工作体制机制，研究与智慧水利建设人才特点相适应的人才选拔标准和条件，完善工程建设、科学研究等人才的稳定措施，加强对网络安全和业务系统运行维护人才的保障；探索创建智慧水利创新人才培养基地，加强人才创新团队建设，推动智慧水利建设人才培养使用与服务国家发展战略、研究解决重大水问题深度融合，加快培养出一批既懂水利又懂网信的复合型人才；开展互联网、大数据、云计算、人工智能、区块链等新知识新技能学习培训，强化各级干部特别是领导干部的网络思维培训教育。</p>
+<div>&nbsp;</div>
+</div>
+<p style="font-family: 微软雅黑;">&nbsp;</p>
+</DIV>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" style="LINE-HEIGHT: 200%; FONT-SIZE: 14px">
+                
+<!-- 文档附件start -->  
+<script>
+var msg='';
+if(msg.length!=0)
+{
+document.write("<br><strong>附件：</strong><br/>");
+}
+</script>
+
+<!-- 文档附件end -->
+                
+                
+                </td>
+              </tr>
+              <tr>
+                <td align="right" style="LINE-HEIGHT: 200%; FONT-SIZE: 12px"> 
+                
+                责编：曾焱
+                &nbsp;                  
+                </td>
+              </tr>
+			  
+            </table>              
+           </td>
+          </tr>
+
+  </table>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="40" align="center">&nbsp;</td>
+          </tr>
+      </table></td>
+    <td width="15">&nbsp;</td>
+  </tr>
+</table>
+      
+      
+      
+      </div>
+<div style="background-color:#0064b9;max-width:1900px; margin:0 auto; padding-bottom:5px">
+
+<table align="center" width="1208" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="170" align="left" valign="top" bgcolor="#0064b9">
+	
+	
+	<table width="1208" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="793" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><table width="95%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="33">&nbsp;</td>
+                <td width="460" align="left" valign="top" style="line-height: 25px; font-size: 15px; color:#fff"><span class="STYLE9">ICP备案号：京ICP备14010557号<br>
+                  主办单位：水利部信息中心（水利部水文水资源监测预报中心）<br>
+                  电话：010-63202557<br>
+                  地址：北京市西城区白广路二条2号<br>
+                  E-mail：xxzx@mwr.gov.cn</span></td>
+				  <td align="left">
+				  <a href="https://zfwzgl.www.gov.cn/exposure/jiucuo.html?site_code=bm20000001&amp;url=http%3A%2F%2Fxxzx.mwr.gov.cn%2F" target="_blank"><img src="http://xxzx.mwr.gov.cn/images/ditu20190505_jiucuo.png" width="119" height="56" border="0" /></a></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+        <td width align="right" valign="top">
+
+
+
+		</td>
+        <td width="250" align="left" valign="top">
+		
+		
+
+		<table width="200" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="8%" rowspan="2">&nbsp;</td>
+                  <td width="92%" align="center" valign="top"><img src="http://xxzx.mwr.gov.cn/images/slxxhandswjcyb.jpg" width="119" height="119" /></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top" style="line-height: 25px; font-size: 15px; color:#fff"><span class="STYLE10">水利信息化和水文监测预报</span></td>
+                </tr>
+            </table></td>
+          </tr>
+        </table>
+		
+		</td>
+      </tr>
+    </table>
+	
+	</td>
+  </tr>
+</table>
+</div>
+
+
+
+
+
+    <!-- content page count -->
+    <!-- PHPStat Start -->
+    <script language="javascript">var __$nodeid='15899';var __$contentid='1275563';var __$title='关于大力推进智慧水利建设的指导意见';var __$AuthorPh='';var __$Editor='';var __$Liability='曾焱';var __$pubtime='2021-11-29 14:52:00';var __$source='水利部信息中心网站';
+    </script>
+
+    <!-- 信息化行业管理 -->
+    <script language="JavaScript" charset="utf-8" src="//pv.mwr.gov.cn/count/10000006/10000006.js"></script>
+    
+    <!-- /PHPStat End -->
+ 
+
+<!-- 新版统计代码 -->
+<script language="javascript">
+var _yfx_trackdata = _yfx_trackdata || [];      
+var _yfx_website = "10000006";          
+(function() {
+    var yfxjs = document.createElement("script");
+    yfxjs.charset = "utf-8";
+    yfxjs.src = "//fwtj.mwr.gov.cn/count/yeefxcount.js";
+    var yfxjs_t = document.getElementsByTagName("script")[0];
+    yfxjs_t.parentNode.insertBefore(yfxjs, yfxjs_t);
+})();
+</script>
+
+<!-- wza Start -->  
+<div style="position:absolute; top:0; width:100%; display:;height:0;" id="ztwza"><div id="ztwzacon" style="width:1000px; margin:0 auto; text-align:right; padding-right:0px; padding-top:15px;height:0; "><a href="javascript:" target="_self" id="toolbarSwitch" style="color:#fff; font-size:14px; text-decoration:none;">进入无障碍阅读</a></div></div>
+<script type="text/javascript" src="../../../images/esdToolsInit.js" charset="utf-8"></script>
+
+
+<style>
+#toolbar_Div{background: url(../../../images/bg.jpg) no-repeat top center #e5f3ff;}
+
+</style>
+<!-- wza end -->
+<script type="text/javascript">
+
+</script>
+</body>
+
+</html>
