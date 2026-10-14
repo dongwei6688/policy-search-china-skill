@@ -85,7 +85,9 @@
   "searched_at": "2026-07-31",
   "summary": "工业和信息化部等七部门联合开展2026年工业和信息化领域创新任务揭榜挂帅工作，附件含未来产业方向、装备制造方向、信息技术方向创新任务揭榜挂帅申报指南。",
   "local_path": "cache/miit/jbg_2026_1.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/miit/jbg_2026_1.txt",
+  "ocr": true
  },
  {
   "doc_number": "工信部规〔2026〕169号",
@@ -103,7 +105,9 @@
   "searched_at": "2026-07-31",
   "summary": "为加快推动工业绿色低碳发展，积极稳妥推进和实现碳达峰，促进经济社会发展全面绿色转型，依据《中华人民共和国国民经济和社会发展第十五个五年规划纲要》，制定本规划。",
   "local_path": "cache/miit/green_lowcarbon_15_plan.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/miit/green_lowcarbon_15_plan.txt",
+  "ocr": true
  },
  {
   "doc_number": "工信厅联科函〔2026〕256号",

@@ -80,7 +80,9 @@
   "searched_at": "2026-07-22",
   "summary": "到2025年算力规模超过300EFLOPS，智能算力占比达35% | 围绕计算力、运载力、存储力、应用赋能四个维度提出量化指标 | 算力是集信息计算力、网络运载力、数据存储力于一体的新型生产力，对于助推产业转型升级、赋能科技创新进步具有重要意义。",
   "local_path": "cache/gov/suanli_infrastructure_plan.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/suanli_infrastructure_plan.txt",
+  "ocr": true
  },
  {
   "doc_number": "工信部联规〔2023〕258号",
@@ -163,7 +165,9 @@
   "searched_at": "2026-07-22",
   "summary": "推动工业互联网规模化应用，深化工业互联网在电力行业的融合创新应用 | 覆盖发电监控、电网调度、用电管理等电力行业全链条应用场景",
   "local_path": "cache/gov/iiot_electricity_guide.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/iiot_electricity_guide.txt",
+  "ocr": true
  },
  {
   "doc_number": "国数资源〔2024〕119号",
@@ -180,7 +184,9 @@
   "searched_at": "2026-07-22",
   "summary": "引导和支持可信数据空间发展，促进数据要素合规高效流通使用，支撑构建全国一体化数据市场。到 2028 年，可信数据空间运营、技术、生态、标准、安全等\n体系取得突破，建成 100 个以上可信数据空间，形成一批数据空间\n解决方案和最佳实践，基本建成广泛互联、资源集聚、生态繁荣、\n价值共创、治理有序的可信数据空间网络，各领域数据开发开放和\n流通使用水平显著提升，初步形成与我国经济社会发展水平相适应\n1\n\n\f的数据生态体系。",
   "local_path": "cache/gov/trusted_data_space_plan.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/trusted_data_space_plan.txt",
+  "ocr": true
  },
  {
   "doc_number": "工信部信发〔2024〕",
@@ -196,7 +202,9 @@
   "searched_at": "2026-07-22",
   "summary": "制造业数字化转型是运用数字技术对制造业研发生产全流程和产业链供应链各环节进行改造升级和价值重塑的过程。以企业发展实际为出发点、以解决企业痛点难点问题为目标、以提升全要素生产率为导向，精准识别数字化转型优先领域和重点方向。",
   "local_path": "cache/gov/manufacturing_digital_guide.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/manufacturing_digital_guide.txt",
+  "ocr": true
  },
  {
   "doc_number": "",
@@ -230,7 +238,9 @@
   "searched_at": "2026-07-22",
   "summary": "面向算力网络的计算、存储、网络、应用、绿色、安全六大重点方向，发掘掌握关键核心技术的企事业单位，突破标志性技术产品和方案，推动算力网络\"点、链、网、面\"体系化发展。",
   "local_path": "cache/gov/suanli_qiangji_rank.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/suanli_qiangji_rank.txt",
+  "ocr": true
  },
  {
   "doc_number": "工信部通信〔2025〕87号",
@@ -247,7 +257,9 @@
   "searched_at": "2026-07-22",
   "summary": "以推动算力互联互通为主线，先试点后推广。到2026年建立较为完备的算力互联互通标准、标识和规则体系，实现全国头部算力企业的公共算力资源标准化互联，推动算、存、网一体化发展。",
   "local_path": "cache/gov/suanli_interconnect_plan.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/suanli_interconnect_plan.txt",
+  "ocr": true
  },
  {
   "doc_number": "国发〔2025〕11号",
@@ -315,7 +327,9 @@
   "searched_at": "2026-07-22",
   "summary": "推动工业互联网与人工智能深度融合，以工业互联网为底座、人工智能为引擎，加快制造业数字化转型和智能化升级，覆盖研发设计、生产制造、经营管理、安全运维、服务创新五大赋能场景。",
   "local_path": "cache/gov/iiot_ai_fusion_plan.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/iiot_ai_fusion_plan.txt",
+  "ocr": true
  },
  {
   "doc_number": "发改数据〔2025〕1425号",
@@ -365,7 +379,9 @@
   "searched_at": "2026-07-22",
   "summary": "推进人工智能技术在制造业融合应用，打造新质生产力，全方位、深层次、高水平赋能新型工业化。",
   "local_path": "cache/gov/ai_manufacturing_plan.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/ai_manufacturing_plan.txt",
+  "ocr": true
  },
  {
   "doc_number": "",
@@ -381,7 +397,9 @@
   "searched_at": "2026-07-22",
   "summary": "工业互联网平台是海量数据汇聚、模型沉淀和应用开发的关键载体，是工业要素资源泛在连接、弹性供给和高效配置的重要枢纽，是支撑产业智能化、绿色化、融合化发展的战略性基础设施。",
   "local_path": "cache/gov/iiot_platform_plan.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/iiot_platform_plan.txt",
+  "ocr": true
  },
  {
   "doc_number": "",
@@ -468,7 +486,9 @@
   "searched_at": "2026-07-22",
   "summary": "工业互联网是实体经济和数字经济深度融合的关键底座，是推进新型工业化的重要基础设施。深入实施工业互联网创新发展战略，在更广范围、更深程度、更高水平上释放工业互联网乘数效应，加快形成新质生产力。",
   "local_path": "cache/gov/iiot_high_quality_plan.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/iiot_high_quality_plan.txt",
+  "ocr": true
  },
  {
   "doc_number": "环气候〔2026〕42号",
@@ -486,7 +506,9 @@
   "searched_at": "2026-07-31",
   "summary": "为深入实施积极应对气候变化国家战略，全面推进美丽中国建设，如期实现碳达峰目标，依据《中华人民共和国国民经济和社会发展第十五个五年规划纲要》《美丽中国建设“十五五”规划》《“十五五”碳达峰行动方案》编制本规划。",
   "local_path": "cache/gov/qhbh_15_plan.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/qhbh_15_plan.txt",
+  "ocr": true
  },
  {
   "doc_number": "国发〔2026〕30号",
@@ -764,7 +786,9 @@
   "searched_at": "2026-08-12",
   "summary": "生态环境部、自然资源部、住房城乡建设部、水利部、农业农村部、国家林草局联合印发《生态保护“十五五”规划》（环生态〔2026〕47号，2026年8月6日成文，8月11日在国务院政策文件库公开发布）。规划提出“加快建立智慧高效现代化生态保护与修复监管体系”，明确“到2030年，生态空间格局持续优化，生态质量稳步改善，生物多样性丧失趋势得到有效缓解，优质生态产品供给更加丰富，生态系统多样性稳定性持续性不断提升，生态保护与修复监管制度进一步完善，国家生态安全得到有效保障”。部署“生态治理数智化能力提升工程”，要求“构建智能预警、精准研判、靶向执法的数智化监管模式，形成生态保护与修复监管‘智慧大脑’和应用场景”，推进“生态保护与修复监管智能体建设，集成人工智能、大数据分析、大语言模型等技术”，并“依托国家政务大数据平台”推动跨部门数据共享与业务联动。",
   "local_path": "cache/gov/关于印发_生态保护_十五五_规划_的通知.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/关于印发_生态保护_十五五_规划_的通知.txt",
+  "ocr": true
  },
  {
   "doc_number": "工信部联规〔2026〕186号",
@@ -782,7 +806,9 @@
   "searched_at": "2026-08-14",
   "summary": "工业和信息化部、应急管理部联合印发《安全应急装备产业发展“十五五”规划》（工信部联规〔2026〕186号，2026年8月6日成文、8月13日对外发布）。规划提出，到2030年，安全应急装备产业规模、技术水平、产品质量、应用深度和广度显著提升，重点领域产业规模达到1.4万亿元，突破一批关键核心技术，形成一批国际领先的标志性产品。规划设置“关键共性技术攻关方向”“新兴技术融合创新重点方向”等专栏，将人工智能列为融合创新重点方向，推进新技术、新工艺、新材料等深度赋能安全应急装备。",
   "local_path": "cache/gov/工业和信息化部_应急管理部关于印发_安全.pdf",
-  "format": "pdf"
+  "format": "pdf",
+  "text_path": "cache/gov/工业和信息化部_应急管理部关于印发_安全.txt",
+  "ocr": true
  },
  {
   "doc_number": "国务院令第843号",
@@ -1617,7 +1643,9 @@
   "summary": "《“十四五”软件和信息技术服务业发展规划》提出到2025年规模以上企业软件业务收入突破14万亿元、工业APP突破100万个、建设2-3个有国际影响力的开源社区；围绕推动软件产业链升级、提升产业基础保障水平、强化产业创新发展能力、激发数字化发展新需求、完善协同共享产业生态部署主要任务，设置关键基础软件补短板、开源生态培育等专项行动，明确聚力攻坚基础软件、繁荣国内开源生态、壮大信息技术应用创新体系。",
   "local_path": "cache/gov/工业和信息化部_十四五软件和信息技术服务业发展规划.pdf",
   "format": "pdf",
-  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/2021-12/01/5655205/files/a44b507d67c74591ad4f5e55b98c4518.pdf"
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/2021-12/01/5655205/files/a44b507d67c74591ad4f5e55b98c4518.pdf",
+  "text_path": "cache/gov/工业和信息化部_十四五软件和信息技术服务业发展规划.txt",
+  "ocr": true
  },
  {
   "doc_number": "",

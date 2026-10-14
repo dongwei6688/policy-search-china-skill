@@ -15,7 +15,9 @@
   ],
   "searched_at": "2026-07-28",
   "format": "pdf",
-  "local_path": "cache/nda/data_elements_scenarios_guide.pdf"
+  "local_path": "cache/nda/data_elements_scenarios_guide.pdf",
+  "text_path": "cache/nda/data_elements_scenarios_guide.txt",
+  "ocr": true
  },
  {
   "title": "《关于在国家数据基础设施建设先行先试中加强场景应用的实施方案》",
