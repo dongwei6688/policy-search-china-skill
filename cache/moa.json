@@ -21,13 +21,16 @@
   "issuer": "农业农村部",
   "source_url": "https://www.moa.gov.cn/ztzl/zhnyzxd/",
   "summary": "提出到2028年智慧农业发展迈上新台阶的总体目标和工作安排，覆盖智慧种业、智慧农田、智慧种植等。",
-  "format": "html",
+  "format": "pdf",
   "tags": [
    "智慧农业",
    "行动计划",
    "数字乡村"
   ],
-  "local_path": "cache/moa/zhnyzxd.htm"
+  "local_path": "cache/moa/attachments/P020241120580056183041.pdf",
+  "page_path": "cache/moa/zhnyzxd.htm",
+  "attachment_url": "https://www.moa.gov.cn/ztzl/zhnyzxd/gdlj/202411/P020241120580056183041.pdf",
+  "text_path": "cache/moa/attachments/P020241120580056183041.txt"
  },
  {
   "doc_number": "",

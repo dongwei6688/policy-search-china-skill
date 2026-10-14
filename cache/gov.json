@@ -20,8 +20,8 @@
   "doc_number": "（中央深改委审议通过）",
   "title": "《关于推进国有企业打造原创技术策源地的指导意见》",
   "issuer": "中央全面深化改革委员会",
-  "date": "2022-09-01",
-  "source_url": "https://www.gov.cn/zhengce/2022-09/06/content_5712816.htm",
+  "date": "2022-02-28",
+  "source_url": "http://www.sasac.gov.cn/n2588020/n2588057/n2592506/n2592512/c23504836/content.html",
   "summary": "[链接失效] 原文页面返回404，当前仅有标题信息。",
   "tags": [
    "国资委",
@@ -29,8 +29,11 @@
    "科技创新"
   ],
   "searched_at": "2026-07-22",
-  "local_path": "cache/gov/content_5712816.htm",
-  "format": "html"
+  "local_path": "cache/sasac/策源地指导意见_国资委传达学习报道_20220304.htm",
+  "format": "html",
+  "date_source": "中央深改委审议通过日",
+  "page_path": "cache/gov/content_5712816.htm",
+  "note": "中央深改委第二十四次会议 2022-02-28 审议通过，全文未公开发布；本条正文为国资委官方传达学习报道留档，非政策原文"
  },
  {
   "doc_number": "",
@@ -131,7 +134,8 @@
   "searched_at": "2026-07-22",
   "summary": "第二批中央企业原创技术策源地布局建设，在量子信息、类脑智能、生物制造等36个领域，支持40家央企布局52个原创技术策源地。两批布局后共58家央企承建97个策源地。",
   "local_path": "cache/gov/content_6950357.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "url-day"
  },
  {
   "doc_number": "",
@@ -575,8 +579,11 @@
   ],
   "searched_at": "2026-08-04",
   "summary": "一是规划依据与目标。依据《国民经济和社会发展第十五个五年规划纲要》和《新型能源体系建设“十五五”规划》制定，到2030年新型电力系统初步建成，非化石能源发电量占比达到50%，初步建成安全可靠、绿色低碳、坚强韧性、智能灵活的新型电网。二是重点任务。加快形成绿色低碳的电力供给格局，着力构建主配微协同的新型电网，促进用电侧协同发展，增强电力系统调节能力，夯实电力供应保障能力，提高民生用电服务水平。三是深化人工智能赋能。加强电力行业数据资源开发利用，统筹推进人工智能赋能新型电力系统建设，推动电力行业全环节、全流程的数字化、智能化升级，强化电力行业“人工智能+”基础理论研究与应用，围绕典型应用场景开展试点，打造一批可复制、可推广的标杆案例。四是体制机制保障。深化电力市场化体制机制改革，完善监督管理机制，加快修订《中华人民共和国电力法》，适时修订《电力监管条例》，积极稳妥推进电力国际合作。",
-  "local_path": "cache/gov/国家发展改革委_国家能源局关于印发_新型.htm",
-  "format": "html"
+  "local_path": "cache/gov/attachments/P020260803795360119797.pdf",
+  "format": "pdf",
+  "page_path": "cache/gov/国家发展改革委_国家能源局关于印发_新型.htm",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202608/P020260803795360119797.pdf",
+  "text_path": "cache/gov/attachments/P020260803795360119797.txt"
  },
  {
   "doc_number": "国令第842号",
@@ -625,8 +632,11 @@
   ],
   "searched_at": "2026-08-08",
   "summary": "工业和信息化部、中央网信办、国家发展改革委、国家数据局四部门联合印发《关于推动互联网基础资源高质量发展的指导意见》（工信部联信管〔2026〕159号，2026年7月1日成文）。互联网基础资源包括IP地址、域名、自治域号码、网络标识等资源及其服务设施，是互联网安全稳定运行的基础保障。文件部署16项重点任务，提出到2030年互联网基础资源高质量发展实现体系化突破，到2035年我国成为全球互联网基础领域重要创新策源地和引领者，全面支撑建成架构先进、全域互联、高速泛在、安全可控的新型互联网基础设施。",
-  "local_path": "cache/gov/四部门关于推动互联网基础资源高质量发展的.htm",
-  "format": "html"
+  "local_path": "cache/gov/attachments/P020260714379413306090.pdf",
+  "format": "pdf",
+  "page_path": "cache/gov/四部门关于推动互联网基础资源高质量发展的.htm",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202607/P020260714379413306090.pdf",
+  "text_path": "cache/gov/attachments/P020260714379413306090.txt"
  },
  {
   "doc_number": "国发〔2026〕20号",
@@ -713,8 +723,11 @@
   ],
   "searched_at": "2026-08-10",
   "summary": "工业和信息化部印发《“人工智能+信息通信”创新发展实施意见（2026—2028年）》，围绕推动信息通信行业智能化升级、夯实人工智能与信息通信融合发展的基础设施等部署17项任务。提出到2028年城域算力1毫秒时延圈覆盖率不低于75%，人工智能与信息通信初步构建融合互促的创新发展格局。",
-  "local_path": "cache/gov/工业和信息化部关于印发__人工智能_信息.htm",
-  "format": "html"
+  "local_path": "cache/gov/attachments/P020260610711627707756.pdf",
+  "format": "pdf",
+  "page_path": "cache/gov/工业和信息化部关于印发__人工智能_信息.htm",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202606/P020260610711627707756.pdf",
+  "text_path": "cache/gov/attachments/P020260610711627707756.txt"
  },
  {
   "doc_number": "工信部联节〔2026〕44号",
@@ -731,8 +744,11 @@
   ],
   "searched_at": "2026-08-10",
   "summary": "工业和信息化部、国家发展改革委、国务院国资委、国家能源局联合印发《节能装备高质量发展实施方案（2026—2028年）》，提出到2028年节能装备关键材料、零部件取得突破，围绕加快先进节能装备研发推广、扩大节能装备绿色低碳供给、强化节能装备系统耦合匹配、推进节能装备数字化提升等作出部署。",
-  "local_path": "cache/gov/工业和信息化部等四部门关于印发_节能装备.htm",
-  "format": "html"
+  "local_path": "cache/gov/attachments/P020260320716940759093.pdf",
+  "format": "pdf",
+  "page_path": "cache/gov/工业和信息化部等四部门关于印发_节能装备.htm",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202603/P020260320716940759093.pdf",
+  "text_path": "cache/gov/attachments/P020260320716940759093.txt"
  },
  {
   "doc_number": "财资环〔2026〕7号",
@@ -748,8 +764,11 @@
   ],
   "searched_at": "2026-08-10",
   "summary": "财政部修订印发《重点生态保护修复治理资金管理办法》（财资环〔2026〕7号），为加强重点生态保护修复治理资金管理，提高资金使用效益，促进生态系统保护和修复，明确了资金支持范围、分配方式、使用管理等要求。",
-  "local_path": "cache/gov/财政部关于印发_重点生态保护修复治理资金.htm",
-  "format": "html"
+  "local_path": "cache/gov/attachments/P020260117357119737253.pdf",
+  "format": "pdf",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202601/P020260117357119737253.pdf",
+  "text_path": "cache/gov/attachments/P020260117357119737253.txt",
+  "ocr": true
  },
  {
   "doc_number": "发改能源〔2026〕979号",
@@ -766,8 +785,11 @@
   ],
   "searched_at": "2026-08-11",
   "summary": "国家发展改革委、国家能源局印发《煤炭工业发展“十五五”规划》（发改能源〔2026〕979号，2026年8月10日在国务院政策文件库公开发布），明确“到2030年……全国大型现代化煤矿产能比重提升至87%；安全绿色开发和清洁高效利用水平明显提高，全系统智能化建设深入推进，智能化煤矿产能比例提升至75%”。规划部署“加快人工智能场景化应用”，要求“深入实施‘人工智能+’行动，加强煤炭领域人工智能数据归集，推进人工智能在勘探设计、建设生产、运营维护、安全管理等重点场景系统化应用”，并“加快研发推广煤炭领域专用大模型”。",
-  "local_path": "cache/gov/国家发展改革委_国家能源局关于印发_煤炭.htm",
-  "format": "html"
+  "local_path": "cache/gov/attachments/P020260810649159236627.pdf",
+  "format": "pdf",
+  "page_path": "cache/gov/国家发展改革委_国家能源局关于印发_煤炭.htm",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202608/P020260810649159236627.pdf",
+  "text_path": "cache/gov/attachments/P020260810649159236627.txt"
  },
  {
   "doc_number": "环生态〔2026〕47号",
@@ -1101,8 +1123,11 @@
   "tags": [],
   "searched_at": "2026-09-04",
   "summary": "",
-  "local_path": "cache/gov/关于印发_全国碳排放权交易市场2025_.html",
-  "format": "html"
+  "local_path": "cache/gov/attachments/W020260903551498752549.pdf",
+  "format": "pdf",
+  "page_path": "cache/gov/关于印发_全国碳排放权交易市场2025_.html",
+  "attachment_url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk03/202609/W020260903551498752549.pdf",
+  "text_path": "cache/gov/attachments/W020260903551498752549.txt"
  },
  {
   "doc_number": "",
@@ -1175,8 +1200,11 @@
   "tags": [],
   "searched_at": "2026-09-11",
   "summary": "",
-  "local_path": "cache/gov/关于2026年7月全国新增建档立卡新能源.html",
-  "format": "html"
+  "local_path": "cache/gov/attachments/20260904324fdc3e4908431392b82d19ab10de6b_42bd03ae02fada44ae9f4a1bba5cbe97fe.docx",
+  "format": "docx",
+  "page_path": "cache/gov/关于2026年7月全国新增建档立卡新能源.html",
+  "attachment_url": "http://www.nea.gov.cn/20260904/324fdc3e4908431392b82d19ab10de6b/20260904324fdc3e4908431392b82d19ab10de6b_42bd03ae02fada44ae9f4a1bba5cbe97fe.docx",
+  "text_path": "cache/gov/attachments/20260904324fdc3e4908431392b82d19ab10de6b_42bd03ae02fada44ae9f4a1bba5cbe97fe.txt"
  },
  {
   "doc_number": "",
@@ -1211,8 +1239,11 @@
   "tags": [],
   "searched_at": "2026-09-14",
   "summary": "工业和信息化部印发《“人工智能+软件”专项行动实施方案》（工信部信发〔2026〕209号），部署推动人工智能与软件产业深度融合，明确专项行动的目标任务与重点举措。",
-  "local_path": "cache/gov/工业和信息化部关于印发__人工智能_软件.htm",
-  "format": "html"
+  "local_path": "cache/gov/attachments/P020260911688449695690.pdf",
+  "format": "pdf",
+  "page_path": "cache/gov/工业和信息化部关于印发__人工智能_软件.htm",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202609/P020260911688449695690.pdf",
+  "text_path": "cache/gov/attachments/P020260911688449695690.txt"
  },
  {
   "doc_number": "工信部联规函〔2026〕305号",
@@ -1223,8 +1254,11 @@
   "tags": [],
   "searched_at": "2026-09-14",
   "summary": "工业和信息化部等九部门印发《智能网联新能源汽车产业发展“十五五”规划》（工信部联规函〔2026〕305号），提出“十五五”时期行业数智化发展达到较高水平，全员劳动生产率较2025年提升15%，培育形成若干家进入全球销量前十的整车企业和全球百强零部件企业。",
-  "local_path": "cache/gov/工业和信息化部等九部门关于印发_智能网联.htm",
-  "format": "html"
+  "local_path": "cache/gov/attachments/P020260912375693571065.pdf",
+  "format": "pdf",
+  "page_path": "cache/gov/工业和信息化部等九部门关于印发_智能网联.htm",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202609/P020260912375693571065.pdf",
+  "text_path": "cache/gov/attachments/P020260912375693571065.txt"
  },
  {
   "doc_number": "财金〔2026〕88号",
@@ -1481,8 +1515,11 @@
   "tags": [],
   "searched_at": "2026-09-16",
   "summary": "",
-  "local_path": "cache/gov/工业和信息化部_国家标准化管理委员会关于.htm",
-  "format": "html"
+  "local_path": "cache/gov/attachments/P020251009771355098297.pdf",
+  "format": "pdf",
+  "page_path": "cache/gov/工业和信息化部_国家标准化管理委员会关于.htm",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202510/P020251009771355098297.pdf",
+  "text_path": "cache/gov/attachments/P020251009771355098297.txt"
  },
  {
   "doc_number": "",
@@ -1505,8 +1542,11 @@
   "tags": [],
   "searched_at": "2026-09-17",
   "summary": "",
-  "local_path": "cache/gov/文化和旅游部关于印发_文化和旅游发展_十.html",
-  "format": "html"
+  "local_path": "cache/gov/attachments/P020261006458771650339.pdf",
+  "format": "pdf",
+  "page_path": "cache/gov/文化和旅游部关于印发_文化和旅游发展_十.html",
+  "attachment_url": "https://zwgk.mct.gov.cn/zfxxgkml/ghjh/202609/P020261006458771650339.pdf",
+  "text_path": "cache/gov/attachments/P020261006458771650339.txt"
  },
  {
   "doc_number": "",
@@ -1530,8 +1570,11 @@
   "tags": [],
   "searched_at": "2026-09-22",
   "summary": "",
-  "local_path": "cache/gov/工业和信息化部等五部门关于组织开展202.html",
-  "format": "html"
+  "local_path": "cache/gov/attachments/92f75f8569264d20a5e10405323a2bd7.doc",
+  "format": "doc",
+  "page_path": "cache/gov/工业和信息化部等五部门关于组织开展202.html",
+  "attachment_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/202311/92f75f8569264d20a5e10405323a2bd7.doc",
+  "text_path": "cache/gov/attachments/92f75f8569264d20a5e10405323a2bd7.txt"
  },
  {
   "doc_number": "",
