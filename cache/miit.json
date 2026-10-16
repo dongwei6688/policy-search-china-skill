@@ -16,13 +16,15 @@
   "format": "pdf",
   "page_path": "cache/miit/content_6977718.htm",
   "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202409/P020240930509730414979.pdf",
-  "text_path": "cache/miit/attachments/P020240930509730414979.txt"
+  "text_path": "cache/miit/attachments/P020240930509730414979.txt",
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2024-09-30-14:03:42\">；成文日期： 2024年09月19日"
  },
  {
   "doc_number": "工信厅联通装函〔2024〕399号",
   "title": "《关于开展2024年度智能工厂梯度培育行动的通知》",
   "issuer": "工业和信息化部办公厅 国家发展改革委办公厅 财政部办公厅 国务院国资委办公厅 市场监管总局办公厅 国家数据局综合司",
-  "date": "2024-10-28",
+  "date": "2024-10-29",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202410/content_6983678.htm",
   "tags": [
    "智能制造",
@@ -32,13 +34,14 @@
   "searched_at": "2026-07-22",
   "summary": "贯彻落实国务院办公厅印发的《制造业数字化转型行动方案》，构建智能工厂、解决方案、标准体系三位一体工作体系。",
   "local_path": "cache/miit/content_6983678.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信厅联科函〔2026〕193号",
   "title": "《工业和信息化部办公厅 国家数据局综合司关于联合实施2026年「模数共振」行动的通知》",
   "issuer": "工业和信息化部办公厅 国家数据局综合司",
-  "date": "2026-04-24",
+  "date": "2026-04-28",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_ba07e09d40834ec992615490fd2ccd18.html",
   "summary": "推动人工智能模型与数据资源协同互促、同频共振，重点面向钢铁、石化化工、有色金属等20+行业，到2026年底基本形成「数据-模型-场景应用」良性互促的循环。七大重点任务：构建行业通识数据集打造行业模型、梳理高价值场景打造特色智能体、完善模型评测机制、创建「模数共振」空间、打造创新联合体、完善生态配套、确定重点城市打造标杆。",
   "tags": [
@@ -51,13 +54,16 @@
   ],
   "searched_at": "2026-07-23",
   "local_path": "cache/miit/art_ba07e09d40834ec992615490fd2ccd18.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-online",
+  "issued_date": "2026-04-24",
+  "date_evidence": "发布日期： 2026-04-28；成文日期： 2026-04-24"
  },
  {
   "doc_number": "工信厅企业函﹝2026﹞353号",
   "title": "《\"小快轻准\"数字化产品和服务培育指引（2026年版）》",
   "issuer": "工业和信息化部办公厅",
-  "date": "2026-07-22",
+  "date": "2026-07-27",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_067d45af14c242f2a4c03f94d5c9b399.html",
   "summary": "为深入贯彻党中央、国务院关于加快中小企业数字化转型系列决策部署，落实《中小企业数字化赋能专项行动方案（2025—2027年）》重点任务，工业和信息化部组织编制了《\"小快轻准\"数字化产品和服务培育指引（2026年版）》，引导数字化服务商面向中小企业专精特新发展需求，加强供需适配，优化健全促进中小企业数字化转型服务供给生态。",
   "tags": [
@@ -69,7 +75,10 @@
   "searched_at": "2026-07-29",
   "local_path": "cache/miit/xiao_kuai_qing_zhun_2026.pdf",
   "format": "pdf",
-  "attachment_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/496b514493884f9b89d38ef8acd556dd.pdf"
+  "attachment_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/496b514493884f9b89d38ef8acd556dd.pdf",
+  "date_source": "backfill-online",
+  "issued_date": "2026-07-22",
+  "date_evidence": "发布日期： 2026-07-27；成文日期： 2026-07-22"
  },
  {
   "doc_number": "工信厅联科函〔2026〕363号",
@@ -90,13 +99,16 @@
   "local_path": "cache/miit/jbg_2026_1.pdf",
   "format": "pdf",
   "text_path": "cache/miit/jbg_2026_1.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "issued_date": "2026-07-24",
+  "date_evidence": "发布日期： 2026-07-28；成文日期： 2026-07-24"
  },
  {
   "doc_number": "工信部规〔2026〕169号",
   "title": "《工业绿色低碳发展“十五五”规划》",
   "issuer": "工业和信息化部",
-  "date": "2026-07-15",
+  "date": "2026-07-31",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_c46889040a4e48629dc3a60b0e137d25.html",
   "tags": [
    "工信部",
@@ -110,13 +122,16 @@
   "local_path": "cache/miit/green_lowcarbon_15_plan.pdf",
   "format": "pdf",
   "text_path": "cache/miit/green_lowcarbon_15_plan.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "issued_date": "2026-07-15",
+  "date_evidence": "发布日期： 2026-07-31；成文日期： 2026-07-15"
  },
  {
   "doc_number": "工信厅联科函〔2026〕256号",
   "title": "工业和信息化部办公厅 国务院国资委办公厅关于联合开展2026年度人形机器人与具身智能实景实训专项行动的通知",
   "issuer": "工业和信息化部办公厅 国务院国资委办公厅",
-  "date": "2026-06-08",
+  "date": "2026-06-09",
   "source_url": "https://www.miit.gov.cn/jgsj/kjs/wjfb/art/2026/art_cd666691abf8471fb8553d463aa416e3.html",
   "tags": [
    "人工智能+",
@@ -127,13 +142,14 @@
   "searched_at": "2026-08-03",
   "summary": "工业和信息化部办公厅、国务院国资委办公厅联合开展2026年度人形机器人与具身智能实景实训专项行动（工信厅联科函〔2026〕256号）。坚持应用牵引，面向工业、特种、服务等领域重点场景，一体推进实景实训空间建设、创新应用联合体培育、作业技能攻关、应用部署验证等重点任务。到2026年底，人形机器人等重点产品在一批代表性场景中率先完成应用验证和常态部署，凝练形成百个以上高价值应用场景，带动形成万台级规模落地能力。",
   "local_path": "cache/miit/工业和信息化部办公厅_国务院国资委办公厅.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信厅节函﹝2026﹞334号",
   "title": "工业和信息化部办公厅关于组织开展国家级零碳工厂建设工作的通知",
   "issuer": "工业和信息化部办公厅",
-  "date": "2026-07-13",
+  "date": "2026-07-22",
   "source_url": "https://www.miit.gov.cn/jgsj/jns/wjfb/art/2026/art_21f9f914bde4476f860eb5e345ba7cd0.html",
   "tags": [
    "绿色低碳",
@@ -147,7 +163,10 @@
   "format": "pdf",
   "page_path": "cache/miit/工业和信息化部办公厅关于组织开展国家级零.htm",
   "attachment_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/bd608be3d33348eaa39eee9a93c55279.pdf",
-  "text_path": "cache/miit/attachments/bd608be3d33348eaa39eee9a93c55279.txt"
+  "text_path": "cache/miit/attachments/bd608be3d33348eaa39eee9a93c55279.txt",
+  "date_source": "backfill-online",
+  "issued_date": "2026-07-13",
+  "date_evidence": "发布日期： 2026-07-22；成文日期： 2026-07-13"
  },
  {
   "doc_number": "工信厅联节函〔2026〕372号",
@@ -167,7 +186,10 @@
   "format": "pdf",
   "page_path": "cache/miit/工业和信息化部办公厅_国家发展改革委办公.htm",
   "attachment_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/202111/dec183f87b654fa0b04f1d9c00d50a7e.pdf",
-  "text_path": "cache/miit/attachments/dec183f87b654fa0b04f1d9c00d50a7e.txt"
+  "text_path": "cache/miit/attachments/dec183f87b654fa0b04f1d9c00d50a7e.txt",
+  "date_source": "backfill-online",
+  "issued_date": "2026-07-30",
+  "date_evidence": "发布日期： 2026-08-03；成文日期： 2026-07-30"
  },
  {
   "doc_number": "工信厅节函〔2026〕383号",
@@ -184,13 +206,14 @@
   "searched_at": "2026-08-10",
   "summary": "按照《工业和信息化部办公厅关于组织开展2026年度工业节能降碳诊断服务工作的通知》（工信厅节函〔2026〕179号，以下简称《通知》），经省级工业和信息化主管部门、中央企业集团推荐以及公开招标等程序，确定70家中标机构对1839家工业企业开展节能降碳诊断服务。现将任务清单印发给你们，按照《通知》要求，落实好年度工业节能降碳诊断服务任务。",
   "local_path": "cache/miit/工业和信息化部办公厅关于印发2026年度.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "工信厅联通装函〔2026〕343号",
   "title": "工业和信息化部等六部门办公厅（综合司）关于开展2026年度智能工厂梯度培育行动的通知",
   "issuer": "工业和信息化部办公厅 国家发展改革委办公厅 财政部办公厅 国务院国资委办公厅 市场监管总局办公厅 金融监管总局办公厅",
-  "date": "2026-07-17",
+  "date": "2026-07-20",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
   "tags": [
    "智能工厂",
@@ -202,7 +225,8 @@
   "searched_at": "2026-08-10",
   "summary": "工业和信息化部等六部门办公厅（综合司）联合开展2026年度智能工厂梯度培育行动，按照《智能工厂梯度培育行动实施方案》和《智能工厂梯度培育行动管理办法（暂行）》部署，组织开展2026年度智能工厂梯度培育工作。",
   "local_path": "cache/miit/工业和信息化部等六部门办公厅_综合司_关.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信厅高新函〔2026〕324号",
@@ -219,7 +243,8 @@
   "searched_at": "2026-08-10",
   "summary": "工业和信息化部办公厅发布通知，国家产融合作平台高新技术企业专区正式上线服务，依托国家产融合作平台为高新技术企业提供融资对接等服务。",
   "local_path": "cache/miit/工业和信息化部办公厅关于国家产融合作平台.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "工信厅科函〔2026〕298号",
@@ -236,13 +261,14 @@
   "searched_at": "2026-08-10",
   "summary": "工业和信息化部办公厅印发2026年第四批行业标准制修订项目计划，对相关行业标准的制修订工作进行部署安排。",
   "local_path": "cache/miit/工业和信息化部办公厅关于印发2026年第.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "工信厅联通装函〔2026〕269号",
   "title": "两部委关于开展农业领域机器人典型应用场景遴选工作的通知",
   "issuer": "工业和信息化部办公厅 农业农村部办公厅",
-  "date": "2026-06-09",
+  "date": "2026-07-02",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_750f6bdfb49e49188136c7bcb3b65dc7.html",
   "tags": [
    "农业机器人",
@@ -254,13 +280,14 @@
   "searched_at": "2026-08-10",
   "summary": "工业和信息化部办公厅、农业农村部办公厅联合开展农业领域机器人典型应用场景遴选工作，面向农业领域征集机器人典型应用场景，推动机器人在农业生产中的规模化应用。",
   "local_path": "cache/miit/两部委关于开展农业领域机器人典型应用场景.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信厅联科函〔2026〕290号",
   "title": "三部门关于做好科技型企业孵化器相关政策衔接工作的通知",
   "issuer": "工业和信息化部办公厅 科技部办公厅 财政部办公厅",
-  "date": "2026-06-17",
+  "date": "2026-07-14",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_21446a8c153f4fae86121552fe1e9fd4.html",
   "tags": [
    "科技型企业",
@@ -272,7 +299,8 @@
   "searched_at": "2026-08-10",
   "summary": "工业和信息化部办公厅、科技部办公厅、财政部办公厅联合印发通知，依据《科技型企业孵化器管理办法》（工信部科〔2025〕131号），做好科技型企业孵化器相关政策衔接工作。",
   "local_path": "cache/miit/三部门关于做好科技型企业孵化器相关政策衔.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信厅科函〔2026〕414号",
@@ -289,13 +317,14 @@
   "searched_at": "2026-09-01",
   "summary": "以专项行动为牵引建立人工智能应用服务商资源池，靶向提升服务商技术创新、集成交付、安全合规能力，锻造懂行业痛点、通技术机理、知安全风险、善交付运营的AI应用服务商队伍。到2026年底，全国服务商资源池内服务商数量突破2000家，形成结构合理、分工有序、协同创新的多层次梯队。",
   "local_path": "cache/miit/工业和信息化部办公厅关于开展人工智能应用.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "工信厅联通装函〔2026〕407号",
   "title": "工业和信息化部等四部门办公厅关于开展道路机动车辆产品生产一致性和质量提升专项行动的通知",
   "issuer": "工业和信息化部办公厅 公安部办公厅 生态环境部办公厅 市场监管总局办公厅",
-  "date": "2026-08-27",
+  "date": "2026-08-28",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_8d0f546dabb440189c0ceea0bea099fc.html",
   "tags": [
    "道路机动车辆",
@@ -307,7 +336,8 @@
   "summary": "四部门在全国范围内开展为期1年的道路机动车辆产品生产一致性和质量提升专项行动，集中整治产品生产一致性、可靠性、耐久性、新技术测试验证四方面问题，通过组织企业自查自纠、加强审查评估、强化监督检查、加强行业自律、健全政策标准体系等措施，规范新能源汽车产业竞争秩序，维护公平竞争市场秩序。",
   "local_path": "cache/miit/工业和信息化部等四部门办公厅关于开展道路机动车辆.html",
   "format": "html",
-  "searched_at": "2026-09-03"
+  "searched_at": "2026-09-03",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信厅科函〔2026〕412号",
@@ -325,19 +355,21 @@
   "summary": "为深入实施制造业卓越质量工程、夯实行业质量基础设施，根据《工业产品质量控制和技术评价实验室管理办法》（工信部科〔2026〕68号），组织开展第六批实验室申报。申报领域覆盖原材料、装备（具身智能、高端医疗装备、高端仪器仪表、船舶与海洋工程装备、安全应急装备等）、消费品（生物制造、生物医药等）、电子信息（新型显示、新能源电池）；申请机构于2026年9月20日前在线填报，省级主管部门10月15日前完成推荐审查。",
   "local_path": "cache/miit/工业和信息化部办公厅关于开展第六批工业产品质量控.html",
   "format": "html",
-  "searched_at": "2026-09-03"
+  "searched_at": "2026-09-03",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
   "title": "三部门关于开展2026年高端医疗装备推广应用项目申报工作的通知",
   "issuer": "",
-  "date": "2026-09-10",
+  "date": "2026-09-11",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_a71dece5351c40268b0ae98b42f2c0b4.html",
   "tags": [],
   "searched_at": "2026-09-11",
   "summary": "",
   "local_path": "cache/miit/三部门关于开展2026年高端医疗装备推广.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
@@ -349,7 +381,8 @@
   "searched_at": "2026-09-11",
   "summary": "",
   "local_path": "cache/miit/三部门关于开展2026年度享受增值税加计.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
@@ -361,18 +394,20 @@
   "searched_at": "2026-09-11",
   "summary": "",
   "local_path": "cache/miit/三部门关于2026年度享受增值税加计抵减.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
   "title": "工业和信息化部办公厅关于集中组织开展2026年典型案例征集工作的通知",
   "issuer": "",
-  "date": "2026-09-03",
+  "date": "2026-09-04",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_526aed1520f142728cd34c98213bcad0.html",
   "tags": [],
   "searched_at": "2026-09-11",
   "summary": "",
   "local_path": "cache/miit/工业和信息化部办公厅关于集中组织开展20.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  }
 ]

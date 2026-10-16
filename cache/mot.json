@@ -12,7 +12,8 @@
    "智慧公路",
    "交通强国"
   ],
-  "local_path": "cache/mot/t20230920_3922478.html"
+  "local_path": "cache/mot/t20230920_3922478.html",
+  "date_source": "verified-original"
  },
  {
   "title": "交通运输部关于加快智慧港口和智慧航道建设的意见",
@@ -27,7 +28,8 @@
    "智慧航道",
    "水运数字化"
   ],
-  "local_path": "cache/mot/t20231204_3961959.html"
+  "local_path": "cache/mot/t20231204_3961959.html",
+  "date_source": "verified-original"
  },
  {
   "title": "关于支持引导公路水路交通运输基础设施数字化转型升级的通知",
@@ -42,7 +44,8 @@
    "转型升级",
    "数据赋能"
   ],
-  "local_path": "cache/mot/t20251226_4191354.html"
+  "local_path": "cache/mot/t20251226_4191354.html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
@@ -68,7 +71,7 @@
   "doc_number": "交规划发〔2026〕36号",
   "title": "交通运输部 国家发展改革委关于2026年实施老旧营运货车报废更新的通知",
   "issuer": "交通运输部 国家发展改革委",
-  "date": "2026-04-27",
+  "date": "2026-04-28",
   "source_url": "https://xxgk.mot.gov.cn/jigou/zhghs/202604/t20260427_4204392.html",
   "tags": [
    "老旧货车",
@@ -80,13 +83,14 @@
   "searched_at": "2026-08-10",
   "summary": "为贯彻落实《国务院关于印发〈推动大规模设备更新和消费品以旧换新行动方案〉的通知》部署，交通运输部、国家发展改革委发布通知，明确2026年老旧营运货车报废更新支持政策，按照报废车辆类型、报废时间和新购置车辆动力类型等实施差别化补贴资金标准。",
   "local_path": "cache/mot/交通运输部_国家发展改革委关于2026年.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "交科技发〔2026〕89号",
   "title": "交通运输部 市场监管总局 国家铁路局 中国民航局 国家邮政局关于印发《综合交通运输标准化发展“十五五”规划》的通知",
   "issuer": "交通运输部 市场监管总局 国家铁路局 中国民航局 国家邮政局",
-  "date": "2026-07-20",
+  "date": "2026-08-11",
   "source_url": "https://xxgk.mot.gov.cn/jigou/kjs/202608/P020260811353347681171.pdf",
   "tags": [
    "综合交通运输",
@@ -99,7 +103,10 @@
   "local_path": "cache/mot/交通运输部_市场监管总局_国家铁路局_中.pdf",
   "format": "pdf",
   "text_path": "cache/mot/交通运输部_市场监管总局_国家铁路局_中.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "issued_date": "2026-07-20",
+  "date_evidence": "<meta name=\"PubDate\" content=\"2026-08-11 09:42\">；现将《综合交通运输标准化发展“十五五”规划》印发给你们，请结合实际认真贯彻执行。 | 交通运输部 市场监管总局 国家铁路局 | 中国民航局 国家邮政局 | 2026年7月20日"
  },
  {
   "doc_number": "交办水函〔2026〕1758号",
@@ -119,7 +126,8 @@
   "format": "docx",
   "page_path": "cache/mot/智慧港口数智化技术指南（第一版）.html",
   "attachment_url": "https://xxgk.mot.gov.cn/jigou/syj/202608/P020260818553787379206.docx",
-  "text_path": "cache/mot/attachments/P020260818553787379206.txt"
+  "text_path": "cache/mot/attachments/P020260818553787379206.txt",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",

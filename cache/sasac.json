@@ -3,7 +3,7 @@
   "doc_number": "国资委令第42号",
   "title": "《中央企业合规管理办法》",
   "issuer": "国务院国有资产监督管理委员会",
-  "date": "2022-08-23",
+  "date": "2022-09-16",
   "source_url": "http://www.sasac.gov.cn/n2588035/n2588325/n4516906/c26018430/content.html",
   "summary": "为深入贯彻习近平法治思想，落实全面依法治国战略部署，深化法治央企建设，推动中央企业加强合规管理，切实防控风险，自2022年10月1日起施行。",
   "tags": [
@@ -14,13 +14,14 @@
   ],
   "searched_at": "2026-07-22",
   "local_path": "cache/sasac/content_26018430.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国资发产权规〔2023〕34号",
   "title": "《中央企业债券发行管理办法》",
   "issuer": "国务院国有资产监督管理委员会",
-  "date": "2023-05-01",
+  "date": "2023-05-06",
   "source_url": "http://www.sasac.gov.cn/n2588035/n2588325/n4516906/c27846549/content.html",
   "summary": "规范中央企业债券发行管理，防范债务风险，加强债券全流程管控。明确中央企业债券发行实行年度计划管理，强化债券风险监测预警和应急处置。",
   "tags": [
@@ -31,7 +32,8 @@
   ],
   "searched_at": "2026-07-22",
   "local_path": "cache/sasac/content_27846549.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
@@ -65,7 +67,8 @@
   ],
   "searched_at": "2026-07-22",
   "local_path": "cache/sasac/brand_content.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
@@ -83,7 +86,8 @@
   ],
   "searched_at": "2026-07-22",
   "local_path": "cache/gov/content_7015624.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
@@ -100,13 +104,14 @@
   ],
   "searched_at": "2026-07-22",
   "local_path": "cache/sasac/content.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "国资发监督〔2026〕2号",
   "title": "《关于加强中央企业穿透式监管的指导意见（试行）》（2026年国资委2号文）",
   "issuer": "国务院国有资产监督管理委员会",
-  "date": "2026-01-01",
+  "date": "2026-07-02",
   "source_url": "http://www.sasac.gov.cn/n2588020/n2588057/n35414555/n35414570/c35542876/content.html",
   "summary": "以穿透式监管为抓手完善国资监管体系，对三重一大等重大事项探索推进穿透式监管，加快国资国企在线监管系统建设和实用化水平提升。",
   "tags": [
@@ -116,13 +121,14 @@
   ],
   "searched_at": "2026-07-22",
   "local_path": "cache/sasac/content2.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国务院国资委令第46号",
   "title": "国务院国资委印发《中央企业违规经营投资责任追究实施办法》",
   "issuer": "国务院国资委",
-  "date": "2026-01-01",
+  "date": "2025-12-18",
   "source_url": "http://www.sasac.gov.cn/n2588035/c35128141/content.html",
   "tags": [
    "中央企业",
@@ -134,7 +140,8 @@
   "searched_at": "2026-08-10",
   "summary": "国务院国资委印发《中央企业违规经营投资责任追究实施办法》（国务院国资委令第46号），自2026年1月1日起施行，在《国务院办公厅关于建立国有企业违规经营投资责任追究制度的意见》基础上，进一步明确中央企业违规经营投资责任追究的具体规则。",
   "local_path": "cache/sasac/国务院国资委印发_中央企业违规经营投资责.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国资发法规规〔2026〕32号",
@@ -152,6 +159,7 @@
   "searched_at": "2026-08-31",
   "summary": "2026年4月30日印发，经国务院国资委第8次委务会议审议通过，经2026年第24号国务院公报公布。方案提出“十五五”时期健全法治工作领导责任、依法治理、规章制度、合规管理、工作组织“五个体系”，提升法治工作引领支撑、风险管控、涉外保障、主动维权和数字化管理“五种能力”，部署强化全面依法治企领导责任、增强法治战略性保障功能、更大力度强化案件管控、全面提升合规管理有效性、加快提升涉外法治工作能力等任务。",
   "local_path": "cache/sasac/关于推动法治央企建设进一步走深走实的方案.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  }
 ]

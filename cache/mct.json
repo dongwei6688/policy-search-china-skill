@@ -12,7 +12,10 @@
    "人工智能",
    "数据要素"
   ],
-  "local_path": "cache/mct/P020250110438298601281.doc"
+  "local_path": "cache/mct/P020250110438298601281.doc",
+  "date_source": "backfill-online",
+  "issued_date": "2025-01-10",
+  "date_evidence": "发布日期： 2025-01-10；联系电话： 010-5988 2061（ 传真 ） | 电子邮箱： zyqy @mct.gov.cn | 文化和旅游部资源开发司 | 2025年1月10日"
  },
  {
   "doc_number": "文旅资源发〔2026〕42号",
@@ -32,6 +35,7 @@
   "format": "pdf",
   "page_path": "cache/mct/文化和旅游部关于印发_旅游强国建设_十五.htm",
   "attachment_url": "https://zwgk.mct.gov.cn/zfxxgkml/ghjh/202607/P020260729330516092527.pdf",
-  "text_path": "cache/mct/attachments/P020260729330516092527.txt"
+  "text_path": "cache/mct/attachments/P020260729330516092527.txt",
+  "date_source": "verified-original"
  }
 ]

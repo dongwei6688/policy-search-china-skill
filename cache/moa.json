@@ -12,7 +12,8 @@
    "数字化转型",
    "农业强国"
   ],
-  "local_path": "cache/moa/t20241025_6465040.htm"
+  "local_path": "cache/moa/t20241025_6465040.htm",
+  "date_source": "verified-original"
  },
  {
   "title": "全国智慧农业行动计划（2024—2028年）",
@@ -30,7 +31,10 @@
   "local_path": "cache/moa/attachments/P020241120580056183041.pdf",
   "page_path": "cache/moa/zhnyzxd.htm",
   "attachment_url": "https://www.moa.gov.cn/ztzl/zhnyzxd/gdlj/202411/P020241120580056183041.pdf",
-  "text_path": "cache/moa/attachments/P020241120580056183041.txt"
+  "text_path": "cache/moa/attachments/P020241120580056183041.txt",
+  "date_source": "backfill-online",
+  "issued_date": "2024-10-23",
+  "date_evidence": "发布时间：2024年10月25日；业厅(局、委),新疆生产建设兵团农业农村局,北大荒农垦集团有限公司、广东省农垦总局,部机关各司局、派出机构、各直属单位,有关单位: | 为大力推进智慧农业建设,进一步推动《农业农村部关于大力发展智慧农业的指导意见》落地落实,我部组织制定了《全国智"
  },
  {
   "doc_number": "",
@@ -47,6 +51,7 @@
   "searched_at": "2026-09-01",
   "summary": "为贯彻落实《国民经济和社会发展第十五个五年规划纲要》、《加快农业农村现代化“十五五”规划》有关部署，加快建设现代农产品产地市场体系编制本规划。到2030年基本建成契合产业、产需衔接、高效顺畅、内联外通的现代农产品产地市场体系，打造50个辐射带动区域乃至全国的产地市场，推进“人工智能+”农产品流通发展。",
   "local_path": "cache/moa/农业农村部关于印发_全国农产品产地市场体.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  }
 ]

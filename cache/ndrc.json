@@ -30,7 +30,8 @@
   "searched_at": "2026-07-22",
   "summary": "为贯彻落实党中央、国务院决策部署，抓好数据二十条各项任务落实，国家数据局印发构建数据基础制度更好发挥数据要素作用2025年工作要点。",
   "local_path": "cache/ndrc/20250428132338848329482_pc.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "title": "《关于加强数字经济创新型企业培育的若干措施》",
@@ -56,7 +57,7 @@
   "doc_number": "国数政策〔2026〕6号",
   "title": "《关于培育数据流通服务机构 加快推进数据要素市场化价值化的意见》",
   "issuer": "国家数据局 工业和信息化部 公安部 中国证监会",
-  "date": "2026-02-01",
+  "date": "2026-02-09",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202602/content_7057405.htm",
   "tags": [
    "数据流通",
@@ -66,7 +67,8 @@
   "searched_at": "2026-07-22",
   "summary": "国家数据局等部门关于培育数据流通服务机构 加快推进数据要素市场化价值化的意见。",
   "local_path": "cache/ndrc/content_7057405.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "title": "《非化石能源电力消费核算指南（试行）》",
@@ -164,7 +166,10 @@
   "local_path": "cache/ndrc/国家发展改革委_国家能源局关于印发_石油.pdf",
   "format": "pdf",
   "text_path": "cache/ndrc/国家发展改革委_国家能源局关于印发_石油.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "issued_date": "2026-07-03",
+  "date_evidence": "发布时间：2026/08/17；依据《中华人民共和国国民经济和社会发展第十五个五年规划纲要》和《新型能源体系建设“十五五”规划》总体要求，为加快推进石油天然气行业高质量发展和高水平安全，我们制定了《石油天然气发展“十五五”规划》。现印发给你们，请认真贯彻执行。 | 国家发展改革委"
  },
  {
   "doc_number": "发改经贸〔2026〕1241号",
@@ -184,13 +189,15 @@
   "local_path": "cache/ndrc/物流网建设实施方案.pdf",
   "format": "pdf",
   "text_path": "cache/ndrc/物流网建设实施方案.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-08-28-14:52:00\">；成文日期： 2026年08月18日"
  },
  {
   "doc_number": "国家发展改革委等七部门令第43号",
   "title": "公共资源交易中心招标投标现场管理暂行办法",
   "issuer": "国家发展改革委 工业和信息化部 住房城乡建设部 交通运输部 水利部 农业农村部 商务部",
-  "date": "2026-07-03",
+  "date": "2026-08-30",
   "source_url": "https://www.gov.cn/gongbao/2026/issue_12946/202608/content_7079360.html",
   "tags": [
    "招标投标",
@@ -200,6 +207,7 @@
   "searched_at": "2026-09-02",
   "summary": "2026年6月12日经国家发展改革委委务会议审议通过，并经工业和信息化部、住房城乡建设部、交通运输部、水利部、农业农村部、商务部审签，2026年7月3日七部门令第43号公布，自2027年1月1日起施行。为规范公共资源交易中心招标投标现场管理，明确交易中心职责、招标投标活动现场管理、电子交易平台应用、信息记录与监督管理等要求。",
   "local_path": "cache/ndrc/公共资源交易中心招标投标现场管理暂行办法.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  }
 ]

@@ -34,7 +34,8 @@
   ],
   "searched_at": "2026-07-28",
   "format": "html",
-  "local_path": "cache/nda/data_infrastructure_scenarios.html"
+  "local_path": "cache/nda/data_infrastructure_scenarios.html",
+  "date_source": "verified-original"
  },
  {
   "title": "《关于推进行业高质量数据集建设行动的实施方案》",
@@ -77,7 +78,7 @@
   "doc_number": "人社部发〔2026〕40号",
   "title": "《关于加快推进“人工智能＋人社”应用发展的实施意见》",
   "issuer": "人力资源社会保障部 国家发展改革委 工业和信息化部 国家数据局",
-  "date": "2026-06-22",
+  "date": "2026-07-08",
   "source_url": "https://www.nda.gov.cn/sjj/zwgk/zcfb/0708/20260708133949899211227_pc.html",
   "tags": [
    "人工智能+",
@@ -87,6 +88,7 @@
   "searched_at": "2026-08-01",
   "summary": "人力资源社会保障部、国家发展改革委、工业和信息化部、国家数据局联合印发《关于加快推进“人工智能＋人社”应用发展的实施意见》（人社部发〔2026〕40号）。为贯彻落实《国务院关于深入实施“人工智能＋”行动的意见》（国发〔2025〕11号），促进和规范人工智能在人力资源社会保障行业领域应用发展，有力支撑人社事业高质量发展，结合数字人社建设任务，就加快推进“人工智能＋人社”应用发展提出实施意见。",
   "local_path": "cache/nda/_关于加快推进_人工智能_人社_应用发展.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  }
 ]

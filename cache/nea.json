@@ -3,7 +3,7 @@
   "doc_number": "国能发科技〔2023〕27号",
   "title": "《国家能源局关于加快推进能源数字化智能化发展的若干意见》",
   "issuer": "国家能源局",
-  "date": "2023-03-28",
+  "date": "2023-04-02",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2023-04/02/content_5749758.htm",
   "tags": [
    "能源",
@@ -13,13 +13,14 @@
   "searched_at": "2026-07-22",
   "summary": "国家能源局关于加快推进能源数字化智能化发展的若干意见。推动数字技术与实体经济深度融合，赋能传统产业数字化智能化转型升级。到2030年，能源系统各环节数字化智能化创新应用体系初步构筑、数据要素潜能充分激活。",
   "local_path": "cache/nea/content_5749758.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国能发科技〔2026〕34号",
   "title": "《关于促进人工智能与能源双向赋能的行动方案》",
   "issuer": "国家发展改革委 国家能源局 工业和信息化部 国家数据局",
-  "date": "2026-04-08",
+  "date": "2026-05-08",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202605/content_7068153.htm",
   "tags": [
    "能源",
@@ -30,7 +31,8 @@
   "searched_at": "2026-07-22",
   "summary": "强化能源对人工智能发展的基础支撑作用，发挥人工智能对能源转型的叠加倍增作用。到2027年支撑AI创新发展的能源保障体系初步构建，清洁能源与算力设施互动能力显著提升。到2030年AI算力设施的清洁能源供给保障、能源领域AI专用技术研发和应用达到世界领先水平。",
   "local_path": "cache/gov/content_7068153.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国能发煤炭〔2026〕50号",
@@ -47,7 +49,8 @@
   ],
   "searched_at": "2026-07-29",
   "local_path": "cache/nea/ordos_coalbeds_2026.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "国能发规划〔2026〕45号",
@@ -64,7 +67,8 @@
   "searched_at": "2026-08-01",
   "summary": "国家能源局印发《能源领域节能降碳行动计划（2026—2028年）》（国能发规划〔2026〕45号）。国家能源局将会同有关部门建立能源领域节能降碳重点项目库，持续跟踪项目建设，强化政策实施情况监管，推动更多领域实现更深层次的绿色低碳转型。",
   "local_path": "cache/nea/_能源领域节能降碳行动计划_2026_2.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "发改能源〔2026〕884号",
@@ -90,7 +94,7 @@
   "doc_number": "",
   "title": "国家能源局关于印发《电力安全生产“十五五”行动计划》的通知",
   "issuer": "国家能源局",
-  "date": "2026-08-07",
+  "date": "2026-07-14",
   "source_url": "https://www.nea.gov.cn/20260807/f098081c878044999a75f7ed82688e7f/c.html",
   "tags": [
    "电力安全",
@@ -100,7 +104,8 @@
   "searched_at": "2026-08-08",
   "summary": "国家能源局关于印发《电力安全生产“十五五”行动计划》的通知，制发日期2026年7月14日，2026年8月7日公开发布。计划提出到2030年，电力安全治理体系和治理能力现代化建设取得明显进展，电力安全生产责任全面落实，电力安全风险分级管控和隐患排查治理双重预防机制有效运转，重大灾害防范和应急处置能力显著增强，以科技为核心的本质安全建设全面推进，推动实现从“要我安全”向“我要安全”转变。主要任务涵盖夯实安全管理基础、加强常规发电安全管理、加强新业态新主体安全管理（含海上风电、新型储能）、加强电网安全运行主动防控等。量化指标包括电力安全事故五年总起数不超过2起、重大及以上网络安全事件数量0起、全国城市用户年平均停电时间0.88小时/户等。",
   "local_path": "cache/nea/电力安全生产十五五行动计划_2026.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国能发资质规〔2025〕109号",
@@ -117,13 +122,15 @@
   "searched_at": "2026-08-10",
   "summary": "国家能源局印发《能源行业公共信用信息管理办法》（国能发资质规〔2025〕109号），规范和加强能源行业公共信用信息管理，推进能源行业信用体系建设。",
   "local_path": "cache/nea/国家能源局关于印发_能源行业公共信用信息.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original",
+  "issued_date": "2026-05-01"
  },
  {
   "doc_number": "",
   "title": "国家能源局综合司关于建立“一带一路”能源合作伙伴关系合作网络“人工智能+能源”工作组的通知",
   "issuer": "国家能源局综合司",
-  "date": "2026-08-24",
+  "date": "2026-08-17",
   "source_url": "https://www.nea.gov.cn/20260824/84450f00d9d34b5ca163f4655059ec43/c.html",
   "tags": [
    "人工智能",
@@ -133,7 +140,8 @@
   "searched_at": "2026-08-28",
   "summary": "国家能源局综合司关于建立“一带一路”能源合作伙伴关系合作网络“人工智能+能源”工作组的通知，推动人工智能与能源领域国际合作的机制建设。",
   "local_path": "cache/nea/国家能源局综合司关于建立_一带一路_能源.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
@@ -145,6 +153,7 @@
   "searched_at": "2026-09-14",
   "summary": "国家能源局公告2026年第3号：清理行政规范性文件，废止《国家能源局综合司关于当前开展电力用户与发电企业直接交易有关事项的通知》（国能综监管〔2013〕258号）等15件文件，同时延长《核电厂非生产区消防安全管理暂行规定》（国能发核电规〔2021〕46号）、《关于促进地热能开发利用的若干意见》（国能发新能规〔2021〕43号）等2件文件有效期。",
   "local_path": "cache/nea/国家能源局公告_2026年第3号.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  }
 ]

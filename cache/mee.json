@@ -2,7 +2,7 @@
  {
   "title": "「人工智能+」核能高质量发展倡议",
   "doc_number": "",
-  "date": "2025-11-25",
+  "date": "2025-11-20",
   "issuer": "国家核安全局（生态环境部）",
   "source_url": "https://nnsa.mee.gov.cn/ywdt/hyzx/202511/t20251125_1134753.html",
   "summary": "将「人工智能+」核能融合发展纳入国家能源战略顶层设计，深度对接双碳行动和数字中国建设。",
@@ -12,13 +12,14 @@
    "核能",
    "双碳"
   ],
-  "local_path": "cache/mee/t20251125_1134753.html"
+  "local_path": "cache/mee/t20251125_1134753.html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "环科财〔2026〕51号",
   "title": "关于推动生态环境领域科技创新多元化投入的指导意见",
   "issuer": "生态环境部 科学技术部 中国人民银行 国务院国资委 国家金融监督管理总局",
-  "date": "2026-08-20",
+  "date": "2026-08-27",
   "source_url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk03/202608/t20260827_1164595.html",
   "tags": [
    "生态环境",
@@ -29,7 +30,8 @@
   "searched_at": "2026-08-28",
   "summary": "生态环境部、科技部、中国人民银行、国务院国资委、国家金融监督管理总局联合印发《关于推动生态环境领域科技创新多元化投入的指导意见》（环科财〔2026〕51号），2026年8月20日印发，提出到2030年形成与生态环境领域科技创新特点相适应的多元化投入格局。",
   "local_path": "cache/mee/关于推动生态环境领域科技创新多元化投入的.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国核安发〔2026〕167号",
@@ -44,6 +46,7 @@
   "format": "pdf",
   "page_path": "cache/mee/关于发布核安全导则_核动力厂化学管理_的.html",
   "attachment_url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk09/202609/W020260907550577037393.pdf",
-  "text_path": "cache/mee/attachments/W020260907550577037393.txt"
+  "text_path": "cache/mee/attachments/W020260907550577037393.txt",
+  "date_source": "verified-original"
  }
 ]

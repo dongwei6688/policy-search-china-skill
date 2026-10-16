@@ -3,7 +3,7 @@
   "doc_number": "国资发监督规〔2021〕",
   "title": "《中央企业重大经营风险事件报告工作规则》",
   "issuer": "国务院国有资产监督管理委员会",
-  "date": "2021-12-13",
+  "date": "2022-01-28",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2022-01/28/content_5671006.htm",
   "summary": "为规范中央企业重大经营风险事件报告工作，建立健全重大经营风险管控机制，及时采取应对措施，有效防范和化解重大经营风险。企业是重大经营风险事件报告工作的责任主体，负责建立报告工作制度和运行机制。",
   "tags": [
@@ -14,13 +14,14 @@
   ],
   "searched_at": "2026-07-22",
   "local_path": "cache/gov/content_5671006.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "（中央深改委审议通过）",
   "title": "《关于推进国有企业打造原创技术策源地的指导意见》",
   "issuer": "中央全面深化改革委员会",
-  "date": "2022-02-28",
+  "date": "2022-03-04",
   "source_url": "http://www.sasac.gov.cn/n2588020/n2588057/n2592506/n2592512/c23504836/content.html",
   "summary": "[链接失效] 原文页面返回404，当前仅有标题信息。",
   "tags": [
@@ -31,7 +32,7 @@
   "searched_at": "2026-07-22",
   "local_path": "cache/sasac/策源地指导意见_国资委传达学习报道_20220304.htm",
   "format": "html",
-  "date_source": "中央深改委审议通过日",
+  "date_source": "backfill-original",
   "page_path": "cache/gov/content_5712816.htm",
   "note": "中央深改委第二十四次会议 2022-02-28 审议通过，全文未公开发布；本条正文为国资委官方传达学习报道留档，非政策原文"
  },
@@ -39,7 +40,7 @@
   "doc_number": "",
   "title": "《关于构建数据基础制度更好发挥数据要素作用的意见》（数据二十条）",
   "issuer": "中共中央 国务院",
-  "date": "2022-12-02",
+  "date": "2023-01-10",
   "source_url": "https://www.gov.cn/gongbao/content/2023/content_5736707.htm",
   "tags": [
    "数据要素",
@@ -50,7 +51,8 @@
   "searched_at": "2026-07-22",
   "summary": "数据作为新型生产要素，是数字化、网络化、智能化的基础，已快速融入生产、分配、流通、消费和社会服务管理等各环节。数据基础制度建设事关国家发展和安全大局。以数据产权、流通交易、收益分配、安全治理为重点。",
   "local_path": "cache/gov/content_5736707.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
@@ -66,13 +68,14 @@
   "searched_at": "2026-07-22",
   "summary": "数字中国建设顶层设计文件，明确「2522」整体框架：夯实数字基础设施和数据资源体系两大基础，推进数字技术与经济、政治、文化、社会、生态文明建设五位一体深度融合。",
   "local_path": "cache/gov/content_5743484.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "工信部联通信〔2023〕180号",
   "title": "《算力基础设施高质量发展行动计划》",
   "issuer": "工业和信息化部 等六部门",
-  "date": "2023-10-08",
+  "date": "2023-10-09",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202310/content_6907900.htm",
   "tags": [
    "算力",
@@ -85,13 +88,15 @@
   "local_path": "cache/gov/suanli_infrastructure_plan.pdf",
   "format": "pdf",
   "text_path": "cache/gov/suanli_infrastructure_plan.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2023-10-09-14:28:00\">；成文日期： 2023年10月08日"
  },
  {
   "doc_number": "工信部联规〔2023〕258号",
   "title": "《关于加快传统制造业转型升级的指导意见》",
   "issuer": "工业和信息化部 等八部门",
-  "date": "2023-12-01",
+  "date": "2023-12-29",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202312/content_6923270.htm",
   "tags": [
    "传统制造业",
@@ -101,13 +106,14 @@
   "searched_at": "2026-07-22",
   "summary": "工业和信息化部等八部门关于加快传统制造业转型升级的指导意见。",
   "local_path": "cache/gov/content_6923270.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "发改数据〔2023〕1779号",
   "title": "《关于深入实施\"东数西算\"工程 加快构建全国一体化算力网的实施意见》",
   "issuer": "国家发展改革委 国家数据局 等五部门",
-  "date": "2024-01-01",
+  "date": "2024-01-06",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202401/content_6924596.htm",
   "tags": [
    "算力",
@@ -118,7 +124,8 @@
   "searched_at": "2026-07-22",
   "summary": "算力网是支撑数字经济高质量发展的关键基础设施，通过网络连接多源异构海量泛在算力，实现资源高效调度、设施绿色低碳、算力灵活供给、服务智能随需。",
   "local_path": "cache/gov/content_6924596.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
@@ -141,7 +148,7 @@
   "doc_number": "",
   "title": "《国家能源局关于进一步加快煤矿智能化建设促进煤炭高质量发展的通知》",
   "issuer": "国家能源局",
-  "date": "2024-05-27",
+  "date": "2024-05-29",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202405/content_6954239.htm",
   "tags": [
    "智能矿山",
@@ -153,13 +160,14 @@
   "searched_at": "2026-07-22",
   "summary": "大型煤矿加快智能化改造，2025年底前建成单个或多个系统智能化。鼓励300万吨/年以上煤矿全面推进智能化改造，率先建成全系统智能化煤矿。推进露天煤矿无人驾驶系统建设。",
   "local_path": "cache/gov/content_6954239.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "《工业互联网与电力行业融合应用参考指南（2024年）》",
   "issuer": "工业和信息化部办公厅",
-  "date": "2024-10-01",
+  "date": "2024-10-16",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202410/content_6980680.htm",
   "tags": [
    "工业互联网",
@@ -171,13 +179,15 @@
   "local_path": "cache/gov/iiot_electricity_guide.pdf",
   "format": "pdf",
   "text_path": "cache/gov/iiot_electricity_guide.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2024-10-16-11:30:16\">；成文日期： 2024年09月30日"
  },
  {
   "doc_number": "国数资源〔2024〕119号",
   "title": "《可信数据空间发展行动计划（2024—2028年）》",
   "issuer": "国家数据局",
-  "date": "2024-11-01",
+  "date": "2024-11-24",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202411/content_6996363.htm",
   "tags": [
    "数据要素",
@@ -190,13 +200,16 @@
   "local_path": "cache/gov/trusted_data_space_plan.pdf",
   "format": "pdf",
   "text_path": "cache/gov/trusted_data_space_plan.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "issued_date": "2024-11-21",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2024-11-24-08:09:00\">；成文日期： 2024年11月21日"
  },
  {
   "doc_number": "工信部信发〔2024〕",
   "title": "《制造业企业数字化转型实施指南》",
   "issuer": "工业和信息化部 国务院国资委 全国工商联",
-  "date": "2024-12-17",
+  "date": "2024-12-26",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202412/content_6994622.htm",
   "tags": [
    "制造业",
@@ -208,7 +221,10 @@
   "local_path": "cache/gov/manufacturing_digital_guide.pdf",
   "format": "pdf",
   "text_path": "cache/gov/manufacturing_digital_guide.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "issued_date": "2024-12-17",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2024-12-26-12:35:00\">；成文日期： 2024年12月17日"
  },
  {
   "doc_number": "",
@@ -225,13 +241,14 @@
   "searched_at": "2026-07-22",
   "summary": "面向2035年建成教育强国目标，一体推进教育科技人才发展，完善拔尖创新人才培养机制，推进基础教育扩优提质、高等教育提质扩容、职业教育体系建设。",
   "local_path": "cache/gov/content_6999913.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "工信厅通信函〔2025〕55号",
   "title": "《工业和信息化部办公厅关于组织开展算力强基揭榜行动的通知》",
   "issuer": "工业和信息化部办公厅",
-  "date": "2025-02-18",
+  "date": "2025-02-22",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202502/content_7005004.htm",
   "tags": [
    "算力",
@@ -244,13 +261,15 @@
   "local_path": "cache/gov/suanli_qiangji_rank.pdf",
   "format": "pdf",
   "text_path": "cache/gov/suanli_qiangji_rank.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2025-02-22-08:25:00\">；成文日期： 2025年02月18日"
  },
  {
   "doc_number": "工信部通信〔2025〕87号",
   "title": "《算力互联互通行动计划》",
   "issuer": "工业和信息化部",
-  "date": "2025-05-21",
+  "date": "2025-05-30",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202505/content_7025968.htm",
   "tags": [
    "算力",
@@ -263,13 +282,15 @@
   "local_path": "cache/gov/suanli_interconnect_plan.pdf",
   "format": "pdf",
   "text_path": "cache/gov/suanli_interconnect_plan.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2025-05-30-20:25:00\">；成文日期： 2025年05月21日"
  },
  {
   "doc_number": "国发〔2025〕11号",
   "title": "《国务院关于深入实施「人工智能+」行动的意见》",
   "issuer": "国务院",
-  "date": "2025-08-21",
+  "date": "2025-08-26",
   "source_url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
   "tags": [
    "人工智能+",
@@ -280,13 +301,14 @@
   "searched_at": "2026-07-23",
   "summary": "（一）人工智能+科学技术：1.加速科学发现进程，2.驱动技术研发模式创新和效能提升，3.创新哲学社会科学研究方法。推动人工智能驱动的技术研发、工程实现、产品落地一体化协同发展，加速从1到N技术落地和迭代突破，促进创新成果高效转化。",
   "local_path": "cache/gov/content_7037861.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国能发科技〔2025〕73号",
   "title": "《关于推进「人工智能+」能源高质量发展的实施意见》",
   "issuer": "国家发展改革委 国家能源局",
-  "date": "2025-09-04",
+  "date": "2025-09-12",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202509/content_7040253.htm",
   "tags": [
    "能源",
@@ -297,13 +319,14 @@
   "searched_at": "2026-07-22",
   "summary": "推动能源与人工智能融合创新，聚焦电网调度、油气勘探、煤炭采掘、新能源运维等八大应用场景，推动五个以上专业大模型在电网、发电、煤炭、油气等行业深度应用。",
   "local_path": "cache/gov/content_7040253.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "《关于促进和规范「人工智能+医疗卫生」应用发展的实施意见》",
   "issuer": "多部门",
-  "date": "2025-11-20",
+  "date": "2025-11-04",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047018.htm",
   "tags": [
    "人工智能",
@@ -314,13 +337,14 @@
   "searched_at": "2026-07-22",
   "summary": "鼓励人工智能在辅助诊疗、精准医疗、健康管理、医保服务等场景应用，加强人工智能科研保障和人才评价机制。",
   "local_path": "cache/gov/content_7047018.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信厅信管〔2025〕76号",
   "title": "《工业互联网和人工智能融合赋能行动方案》",
   "issuer": "工业和信息化部办公厅",
-  "date": "2025-12-01",
+  "date": "2026-01-07",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7054192.htm",
   "tags": [
    "工业互联网",
@@ -333,13 +357,16 @@
   "local_path": "cache/gov/iiot_ai_fusion_plan.pdf",
   "format": "pdf",
   "text_path": "cache/gov/iiot_ai_fusion_plan.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "issued_date": "2025-12-30",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-01-07-21:01:00\">；成文日期： 2025年12月30日"
  },
  {
   "doc_number": "发改数据〔2025〕1425号",
   "title": "《关于加强数据要素学科专业建设和数字人才队伍建设的意见》",
   "issuer": "国家数据局",
-  "date": "2025-12-01",
+  "date": "2025-12-03",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202512/content_7050192.htm",
   "tags": [
    "数据要素",
@@ -350,13 +377,14 @@
   "searched_at": "2026-07-22",
   "summary": "加强数据要素学科专业建设和数字人才队伍建设，建立数据领域科技发展、国家战略需求牵引的学科专业设置调整机制和人才培养模式。",
   "local_path": "cache/gov/content_7050192.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国数科基〔2025〕70号",
   "title": "《国家数据局关于加强数据科技创新的实施意见》",
   "issuer": "国家数据局",
-  "date": "2025-12-10",
+  "date": "2025-12-29",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202512/content_7053003.htm",
   "tags": [
    "数据要素",
@@ -367,13 +395,14 @@
   "searched_at": "2026-07-22",
   "summary": "加强数据科技创新，推动与产业创新深度融合，促进数据供得出、流得动、用得好、保安全，夯实数据资源体系，激活数据要素乘数效应。",
   "local_path": "cache/gov/content_7053003.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信部联科〔2025〕279号",
   "title": "《「人工智能+制造」专项行动实施意见》",
   "issuer": "八部门",
-  "date": "2025-12-25",
+  "date": "2026-01-07",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7054201.htm",
   "tags": [
    "智能制造",
@@ -385,13 +414,16 @@
   "local_path": "cache/gov/ai_manufacturing_plan.pdf",
   "format": "pdf",
   "text_path": "cache/gov/ai_manufacturing_plan.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "issued_date": "2025-12-25",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-01-07-21:17:00\">；成文日期： 2025年12月25日"
  },
  {
   "doc_number": "",
   "title": "《推动工业互联网平台高质量发展行动方案（2026—2028年）》",
   "issuer": "工业和信息化部",
-  "date": "2026-01-01",
+  "date": "2026-01-13",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7054660.htm",
   "tags": [
    "工业互联网",
@@ -403,13 +435,16 @@
   "local_path": "cache/gov/iiot_platform_plan.pdf",
   "format": "pdf",
   "text_path": "cache/gov/iiot_platform_plan.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "issued_date": "2025-12-29",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-01-13-19:41:00\">；成文日期： 2025年12月29日"
  },
  {
   "doc_number": "",
   "title": "《中华人民共和国国民经济和社会发展第十五个五年规划纲要》",
   "issuer": "全国人民代表大会",
-  "date": "2026-03-05",
+  "date": "2026-03-13",
   "source_url": "https://www.gov.cn/yaowen/liebiao/202603/content_7062633.htm",
   "tags": [
    "十五五",
@@ -422,13 +457,14 @@
   "searched_at": "2026-07-22",
   "summary": "深入推进数字中国建设 提升数智化发展水平。强化算力算法数据高效供给，全方位推进数智技术赋能。一体推进教育科技人才发展，强化企业科技创新主体地位。",
   "local_path": "cache/gov/content_7062633.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国能发科技〔2026〕34号",
   "title": "《关于促进人工智能与能源双向赋能的行动方案》",
   "issuer": "国家发展改革委 国家能源局 工业和信息化部 国家数据局",
-  "date": "2026-04-08",
+  "date": "2026-05-08",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202605/content_7068153.htm",
   "tags": [
    "能源",
@@ -439,13 +475,14 @@
   "searched_at": "2026-07-22",
   "summary": "统筹算力与电力协同布局，推动AI与能源双向赋能。到2027年AI算力设施的清洁能源供给保障体系初步构建，到2030年达到世界领先水平。开放能源AI场景、发展能源大模型、促进能源数据流通。",
   "local_path": "cache/gov/content_7068153.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "《教育部等五部门关于印发〈人工智能+教育行动计划〉的通知》",
   "issuer": "教育部 等五部门",
-  "date": "2026-04-15",
+  "date": "2026-04-10",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202604/content_7065138.htm",
   "tags": [
    "人工智能",
@@ -456,13 +493,14 @@
   "searched_at": "2026-07-22",
   "summary": "打造教育智能大脑，利用人工智能赋能教育治理、智能命题、智能评卷、就业岗位智能推荐，支撑平安校园建设。",
   "local_path": "cache/gov/content_7065138.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "《商务部等8部门关于加快「人工智能+消费」发展的实施意见》",
   "issuer": "商务部 等八部门",
-  "date": "2026-06-15",
+  "date": "2026-06-18",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202606/content_7072672.htm",
   "tags": [
    "人工智能",
@@ -473,13 +511,14 @@
   "searched_at": "2026-07-22",
   "summary": "推动人工智能与消费领域深度融合，发展智能家居、智能穿戴、智能出行等新型消费业态，加强消费者信息保护和人工智能+消费监管。",
   "local_path": "cache/gov/content_7072672.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信部联信管〔2026〕152号",
   "title": "《关于推动工业互联网高质量发展的实施意见》",
   "issuer": "工业和信息化部 等八部门",
-  "date": "2026-06-28",
+  "date": "2026-07-01",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202607/content_7073906.htm",
   "tags": [
    "工业互联网",
@@ -492,13 +531,15 @@
   "local_path": "cache/gov/iiot_high_quality_plan.pdf",
   "format": "pdf",
   "text_path": "cache/gov/iiot_high_quality_plan.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-07-01-10:11:00\">；成文日期： 2026年06月20日"
  },
  {
   "doc_number": "环气候〔2026〕42号",
   "title": "《国家应对气候变化“十五五”规划》",
   "issuer": "生态环境部 等十八部门",
-  "date": "2026-07-24",
+  "date": "2026-07-29",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202607/content_7076966.htm",
   "tags": [
    "气候变化",
@@ -512,13 +553,15 @@
   "local_path": "cache/gov/qhbh_15_plan.pdf",
   "format": "pdf",
   "text_path": "cache/gov/qhbh_15_plan.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-07-29-17:34:00\">；成文日期： 2026年07月24日"
  },
  {
   "doc_number": "国发〔2026〕30号",
   "title": "《知识产权保护和运用“十五五”规划》",
   "issuer": "国务院",
-  "date": "2026-07-27",
+  "date": "2026-07-31",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202607/content_7077200.htm",
   "tags": [
    "知识产权",
@@ -528,13 +571,14 @@
   "searched_at": "2026-08-01",
   "summary": "国务院印发《知识产权保护和运用“十五五”规划》（国发〔2026〕30号，2026年7月27日）。规划指出：知识产权是国家发展的战略性资源和国际竞争力的核心要素。为加快建设知识产权强国，根据《中华人民共和国国民经济和社会发展第十五个五年规划纲要》，制定本规划。",
   "local_path": "cache/gov/_知识产权保护和运用_十五五_规划_.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国管节能〔2026〕161号",
   "title": "国家机关事务管理局 国家发展和改革委员会关于印发《\"十五五\"公共机构节能降碳工作方案》的通知",
   "issuer": "国管局 国家发展改革委",
-  "date": "2026-07-29",
+  "date": "2026-08-01",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202608/content_7077294.htm",
   "tags": [
    "绿色低碳",
@@ -545,7 +589,8 @@
   "searched_at": "2026-08-03",
   "summary": "国管局与国家发展改革委联合印发《\"十五五\"公共机构节能降碳工作方案》（国管节能〔2026〕161号）。方案提出以2025年碳排放、能源资源消费为基数，到2030年统计范围内公共机构单位建筑面积碳排放下降8.5%，单位建筑面积能耗下降5%，人均用水量下降3%，公共机构碳排放总量2030年前尽早达峰。部署完善节能降碳管理机制、加大节能降碳改造力度（含算力设施等综合能源系统改造）、优化能源消费结构（公共机构煤炭消费占能源消费总量比例控制在5%以内）等重点任务。",
   "local_path": "cache/gov/国家机关事务管理局_国家发展和改革委员会.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国发〔2026〕22号",
@@ -562,13 +607,14 @@
   "searched_at": "2026-08-03",
   "summary": "国务院印发《\"十五五\"碳达峰行动方案》（国发〔2026〕22号）。方案提出到2030年单位国内生产总值二氧化碳排放比2025年降低17%，非化石能源消费占比达到25%，确保如期实现碳达峰目标。部署加快能源结构调整优化（到2030年风电和太阳能发电总装机容量达28亿千瓦以上、抽水蓄能装机1.6亿千瓦左右、新型储能装机力争3亿千瓦）、推进产业绿色化低碳化、重点行业节能降碳改造、推进数智技术赋能绿色低碳发展等重点任务。",
   "local_path": "cache/gov/国务院关于印发__十五五_碳达峰行动方案.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "发改能源〔2026〕942号",
   "title": "国家发展改革委 国家能源局关于印发《新型电力系统建设“十五五”规划》的通知",
   "issuer": "国家发展改革委 国家能源局",
-  "date": "2026-07-21",
+  "date": "2026-08-03",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202608/content_7077425.htm",
   "tags": [
    "十五五",
@@ -583,7 +629,9 @@
   "format": "pdf",
   "page_path": "cache/gov/国家发展改革委_国家能源局关于印发_新型.htm",
   "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202608/P020260803795360119797.pdf",
-  "text_path": "cache/gov/attachments/P020260803795360119797.txt"
+  "text_path": "cache/gov/attachments/P020260803795360119797.txt",
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-08-03-22:04:00\">；成文日期： 2026年07月21日"
  },
  {
   "doc_number": "国令第842号",
@@ -599,7 +647,8 @@
   "searched_at": "2026-08-05",
   "summary": "《集成电路布图设计保护条例》已经2026年7月10日国务院第91次常务会议修订通过，现予公布，自2026年10月15日起施行。条例旨在保护集成电路布图设计专有权，鼓励集成电路技术创新，促进科学技术发展，共6章54条。",
   "local_path": "cache/gov/集成电路布图设计保护条例.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "自然资办函〔2026〕1198号",
@@ -616,13 +665,14 @@
   "searched_at": "2026-08-06",
   "summary": "为深入贯彻落实习近平总书记关于防灾减灾救灾工作的重要指示批示精神，全面加强“十五五”时期地质灾害防治工作，自然资源部办公厅印发《全国地质灾害防治“十五五”实施方案》。方案对“十五五”时期地质灾害防治工作作出部署，要求各省、自治区、直辖市自然资源主管部门等认真抓好贯彻执行和组织实施。",
   "local_path": "cache/gov/自然资源部办公厅关于印发_全国地质灾害防.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "工信部联信管〔2026〕159号",
   "title": "四部门关于推动互联网基础资源高质量发展的指导意见",
   "issuer": "工业和信息化部 中央网信办 国家发展改革委 国家数据局",
-  "date": "2026-07-01",
+  "date": "2026-07-14",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202607/content_7075333.htm",
   "tags": [
    "互联网基础资源",
@@ -636,7 +686,9 @@
   "format": "pdf",
   "page_path": "cache/gov/四部门关于推动互联网基础资源高质量发展的.htm",
   "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202607/P020260714379413306090.pdf",
-  "text_path": "cache/gov/attachments/P020260714379413306090.txt"
+  "text_path": "cache/gov/attachments/P020260714379413306090.txt",
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-07-14-10:31:00\">；成文日期： 2026年07月01日"
  },
  {
   "doc_number": "国发〔2026〕20号",
@@ -654,7 +706,8 @@
   "searched_at": "2026-08-10",
   "summary": "国务院关于印发《美丽中国建设“十五五”规划》的通知，国发〔2026〕20号，2026年6月21日成文。规划提出到2030年生态环境质量全面改善、美丽中国建设取得新的重大进展，到2035年生态环境根本好转、美丽中国目标基本实现。部署深入打好蓝天碧水净土保卫战、全面实施固体废物和新污染物治理行动、统筹推进生态系统优化等任务。",
   "local_path": "cache/gov/国务院关于印发_美丽中国建设_十五五_规.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "国发〔2026〕19号",
@@ -672,7 +725,8 @@
   "searched_at": "2026-08-10",
   "summary": "国务院关于印发《教育发展“十五五”规划》的通知，明确了“十五五”时期建设教育强国的思路目标、重点任务和政策举措。规划提出推进教育数智化变革，强化一体推进教育科技人才工作协同等任务。",
   "local_path": "cache/gov/国务院关于印发_教育发展_十五五_规划_.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "国发〔2026〕16号",
@@ -689,7 +743,8 @@
   "searched_at": "2026-08-10",
   "summary": "国务院印发《实施就业优先战略“十五五”规划》，明确“十五五”时期就业保持总体稳定、就业机会更加充分、就业环境更加公平、就业结构更加优化、人岗匹配更加高效、劳动关系更加和谐，高质量充分就业取得新进展。",
   "local_path": "cache/gov/国务院关于印发_实施就业优先战略_十五五.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "国发〔2026〕14号",
@@ -706,13 +761,14 @@
   "searched_at": "2026-08-10",
   "summary": "国务院关于印发《加快农业农村现代化“十五五”规划》的通知（国发〔2026〕14号），部署“十五五”时期加快农业农村现代化7方面重点任务，首次提出培育壮大农业领域新兴产业和未来产业，一体推进农业现代化和农村现代化。",
   "local_path": "cache/gov/国务院关于印发_加快农业农村现代化_十五.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "工信部通信〔2026〕121号",
   "title": "工业和信息化部关于印发《“人工智能+信息通信”创新发展实施意见（2026—2028年）》的通知",
   "issuer": "工业和信息化部",
-  "date": "2026-06-03",
+  "date": "2026-06-10",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202606/content_7071755.htm",
   "tags": [
    "人工智能",
@@ -727,13 +783,15 @@
   "format": "pdf",
   "page_path": "cache/gov/工业和信息化部关于印发__人工智能_信息.htm",
   "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202606/P020260610711627707756.pdf",
-  "text_path": "cache/gov/attachments/P020260610711627707756.txt"
+  "text_path": "cache/gov/attachments/P020260610711627707756.txt",
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-06-10-19:43:00\">；成文日期： 2026年06月03日"
  },
  {
   "doc_number": "工信部联节〔2026〕44号",
   "title": "工业和信息化部等四部门关于印发《节能装备高质量发展实施方案（2026—2028年）》的通知",
   "issuer": "工业和信息化部 国家发展改革委 国务院国资委 国家能源局",
-  "date": "2026-02-13",
+  "date": "2026-03-20",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202603/content_7063339.htm",
   "tags": [
    "节能装备",
@@ -748,13 +806,15 @@
   "format": "pdf",
   "page_path": "cache/gov/工业和信息化部等四部门关于印发_节能装备.htm",
   "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202603/P020260320716940759093.pdf",
-  "text_path": "cache/gov/attachments/P020260320716940759093.txt"
+  "text_path": "cache/gov/attachments/P020260320716940759093.txt",
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-03-20-19:54:00\">；成文日期： 2026年02月13日"
  },
  {
   "doc_number": "财资环〔2026〕7号",
   "title": "财政部关于印发《重点生态保护修复治理资金管理办法》的通知",
   "issuer": "财政部",
-  "date": "2026-01-14",
+  "date": "2026-01-17",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7055022.htm",
   "tags": [
    "生态保护修复",
@@ -768,13 +828,15 @@
   "format": "pdf",
   "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202601/P020260117357119737253.pdf",
   "text_path": "cache/gov/attachments/P020260117357119737253.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-01-17-09:55:00\">；成文日期： 2026年01月07日"
  },
  {
   "doc_number": "发改能源〔2026〕979号",
   "title": "国家发展改革委 国家能源局关于印发《煤炭工业发展“十五五”规划》的通知",
   "issuer": "国家发展改革委 国家能源局",
-  "date": "2026-07-06",
+  "date": "2026-08-10",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202608/content_7077816.htm",
   "tags": [
    "十五五规划",
@@ -789,13 +851,15 @@
   "format": "pdf",
   "page_path": "cache/gov/国家发展改革委_国家能源局关于印发_煤炭.htm",
   "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202608/P020260810649159236627.pdf",
-  "text_path": "cache/gov/attachments/P020260810649159236627.txt"
+  "text_path": "cache/gov/attachments/P020260810649159236627.txt",
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-08-10-18:01:00\">；成文日期： 2026年07月06日"
  },
  {
   "doc_number": "环生态〔2026〕47号",
   "title": "关于印发《生态保护“十五五”规划》的通知",
   "issuer": "生态环境部 自然资源部 住房城乡建设部 水利部 农业农村部 国家林草局",
-  "date": "2026-08-06",
+  "date": "2026-08-11",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202608/P020260811799477450940.pdf",
   "tags": [
    "十五五规划",
@@ -810,13 +874,15 @@
   "local_path": "cache/gov/关于印发_生态保护_十五五_规划_的通知.pdf",
   "format": "pdf",
   "text_path": "cache/gov/关于印发_生态保护_十五五_规划_的通知.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-08-11-22:10:00\">；成文日期： 2026年08月06日"
  },
  {
   "doc_number": "工信部联规〔2026〕186号",
   "title": "工业和信息化部 应急管理部关于印发《安全应急装备产业发展“十五五”规划》的通知",
   "issuer": "工业和信息化部 应急管理部",
-  "date": "2026-08-06",
+  "date": "2026-08-13",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202608/P020260813691504325703.pdf",
   "tags": [
    "十五五规划",
@@ -830,7 +896,9 @@
   "local_path": "cache/gov/工业和信息化部_应急管理部关于印发_安全.pdf",
   "format": "pdf",
   "text_path": "cache/gov/工业和信息化部_应急管理部关于印发_安全.txt",
-  "ocr": true
+  "ocr": true,
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-08-13-18:12:00\">；成文日期： 2026年08月06日"
  },
  {
   "doc_number": "国务院令第843号",
@@ -846,13 +914,14 @@
   "searched_at": "2026-08-17",
   "summary": "国务院总理李强签署国务院令第843号，公布《国务院关于修改和废止部分行政法规的决定》。该决定已经2026年7月31日国务院第93次常务会议通过，自2026年8月15日起施行。为全面有效贯彻实施《中华人民共和国生态环境法典》，确保生态环境法律制度体系逻辑统一、规则协调，国务院对涉及的行政法规进行了清理，决定对12部行政法规的部分条款予以修改，对3部行政法规予以废止。",
   "local_path": "cache/gov/国务院关于修改和废止部分行政法规的决定.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "国务院令第844号",
   "title": "国务院关于修改《住房公积金管理条例》的决定",
   "issuer": "国务院",
-  "date": "2026-08-10",
+  "date": "2026-08-18",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202608/content_7078478.htm",
   "tags": [
    "住房公积金",
@@ -862,13 +931,14 @@
   "searched_at": "2026-08-19",
   "summary": "国务院令第844号。2026年7月31日国务院第93次常务会议通过，自2026年9月20日起施行。主要修改：一是在第一条立法目的中增加\"更好满足多样化住房消费需求\"；二是明确住房公积金存贷利率由国务院决定；三是拓宽提取情形，明确支付房租、购买建造翻建大修自住住房、偿还购房贷款本息、装修、支付物业费、离休退休、完全丧失劳动能力并与单位终止劳动关系、出境定居、国务院批准的其他住房消费情形等九类可提取；四是缴存比例下限为职工上一年度月平均工资的5%，上限按国家规定；五是住房公积金可购买国债和政策性金融债；六是增值收益主要用于建立贷款风险准备金、管理中心管理费用和建设筹集运维公共租赁住房以及房屋全生命周期安全管理等住房领域相关公共支出的补充资金；七是提取申请3日内作出决定、贷款申请10日内作出决定。",
   "local_path": "cache/gov/国务院关于修改_住房公积金管理条例_的决.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国函〔2026〕89号",
   "title": "国务院关于《特殊教育发展提升“十五五”行动计划》的批复",
   "issuer": "国务院",
-  "date": "2026-08-12",
+  "date": "2026-08-17",
   "source_url": "https://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1778/202608/t20260817_1447122.html",
   "summary": "国务院批复同意《特殊教育发展提升“十五五”行动计划》，请认真组织实施。要求坚持党的教育方针，落实立德树人根本任务，加快建设高质量特殊教育体系，充分保障残疾儿童青少年受教育机会，着力提高特殊教育质量，促进特殊教育数字化发展，强化特殊教育普惠发展，加强特殊教育国际交流合作，持续增强残疾儿童青少年融入社会和终身发展的能力。各省（区、市）要把特殊教育发展提升作为“十五五”时期重要任务，加强组织领导，细化落实举措；教育部要加强统筹协调，强化对《行动计划》实施情况的动态监测和评估。",
   "tags": [
@@ -880,13 +950,14 @@
   ],
   "searched_at": "2026-08-20",
   "local_path": "cache/gov/content_7078505_moe.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国办发〔2021〕60号",
   "title": "国务院办公厅关于转发教育部等部门“十四五”特殊教育发展提升行动计划的通知",
   "issuer": "国务院办公厅",
-  "date": "2021-12-31",
+  "date": "2022-01-25",
   "source_url": "https://www.gov.cn/zhengce/content/2022-01/25/content_5670341.htm",
   "summary": "转发教育部、国家发展改革委、民政部、财政部、人力资源社会保障部、国家卫生健康委、中国残联《“十四五”特殊教育发展提升行动计划》。行动计划提出：到2025年高质量特殊教育体系初步建立，适龄残疾儿童义务教育入学率达到97%；以适宜融合为目标，按照拓展学段服务、推进融合教育、提升支撑能力的基本思路；持续提高残疾儿童义务教育普及水平，大力发展非义务教育阶段特殊教育；加强普通教育与特殊教育融合、推动职业教育和特殊教育融合、促进医疗康复信息技术与特殊教育融合；到2025年将义务教育阶段特殊教育生均公用经费补助标准提高至每生每年7000元以上。",
   "tags": [
@@ -897,13 +968,14 @@
   ],
   "searched_at": "2026-08-20",
   "local_path": "cache/gov/content_5670341.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "医保发〔2026〕17号",
   "title": "国家医疗保障局关于印发《全民医疗保障“十五五”规划》的通知",
   "issuer": "国家医疗保障局",
-  "date": "2026-07-27",
+  "date": "2026-08-19",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202608/content_7078568.htm",
   "tags": [
    "医疗保障",
@@ -913,13 +985,14 @@
   "searched_at": "2026-08-21",
   "summary": "《全民医疗保障“十五五”规划》已经国家医疗保障局党组会议审议通过，现印发给你们，请认真贯彻执行。规划根据《中华人民共和国国民经济和社会发展第十五个五年规划纲要》制定。到2030年，公平医保普惠均衡，基本医保公共服务可及性进一步增强；法治医保规范完善，医疗保障法制体系基本形成；安全医保持续稳健，医保基金运行安全可持续；数智医保便捷高效，基于大数据、人工智能等技术的精细化管理、精准化服务广泛应用；协同医保同频共振，“三医”协同发展和治理机制更加完善。主要指标包括：基本医疗保险参保率每年保持在95%左右，长期护理保险制度覆盖所有统筹地区，公立医疗机构通过省级平台采购药品和高值医用耗材金额占全部采购金额的比例保持稳定，即时结算基本医疗保险基金支出覆盖率80%以上等。重点任务包括健全多层次医疗保障体系、完善基本医疗保险制度、持续提升全民医保参保质量等。",
   "local_path": "cache/gov/国家医疗保障局关于印发_全民医疗保障_十.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "商建发2026年第89号",
   "title": "商务部等8部门关于加快「人工智能+消费」发展的实施意见",
   "issuer": "商务部 中央网信办 国家发展改革委 教育部 工业和信息化部 民政部 住房城乡建设部 文化和旅游部",
-  "date": "2026-06-09",
+  "date": "2026-06-18",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202606/content_7072672.htm",
   "tags": [
    "人工智能+",
@@ -929,7 +1002,8 @@
   "searched_at": "2026-08-25",
   "summary": "为贯彻落实《国务院关于深入实施「人工智能+」行动的意见》和提振消费专项行动方案部署，推动人工智能与消费深度融合，培育消费新增长点。",
   "local_path": "cache/gov/商务部等8部门关于加快_人工智能_消费_.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国药监综〔2026〕6号",
@@ -944,13 +1018,14 @@
   "searched_at": "2026-08-25",
   "summary": "国家药监局印发，推动人工智能技术在药品监管领域的应用。",
   "local_path": "cache/gov/国家药监局关于_人工智能_药品监管_的实.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "国家密码管理局令第6号",
   "title": "电子认证服务使用密码管理办法",
   "issuer": "国家密码管理局",
-  "date": "2026-05-30",
+  "date": "2026-08-20",
   "source_url": "https://www.gov.cn/gongbao/2026/issue_12926/202608/content_7078415.html",
   "tags": [
    "商用密码",
@@ -960,13 +1035,14 @@
   "searched_at": "2026-08-26",
   "summary": "国家密码管理局令第6号公布，自2026年7月1日起施行。规范电子认证服务使用密码行为：采用商用密码技术提供电子认证服务，应当依法取得国家密码管理局颁发的《电子认证服务使用密码许可证》；明确许可证申请条件与受理审查程序，国家密码管理局自受理之日起20个工作日内作出许可决定；许可证有效期5年，明确变更、延续手续；获证机构应当履行电子认证服务使用密码安全管理义务，每年至少进行一次密码合规性评估并向属地密码管理部门报送报告；密码管理部门依法对电子认证服务使用密码情况实施监督检查。",
   "format": "html",
-  "local_path": "cache/gov/电子认证服务使用密码管理办法.html"
+  "local_path": "cache/gov/电子认证服务使用密码管理办法.html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "交通运输部令2026年第12号",
   "title": "铁路建设工程竣工验收管理办法",
   "issuer": "交通运输部",
-  "date": "2026-06-22",
+  "date": "2026-08-20",
   "source_url": "https://www.gov.cn/gongbao/2026/issue_12926/202608/content_7078419.html",
   "tags": [
    "铁路建设",
@@ -976,13 +1052,14 @@
   "searched_at": "2026-08-27",
   "summary": "交通运输部令2026年第12号公布，自2026年9月1日起施行。适用于中华人民共和国境内新建、改建、扩建铁路建设工程的竣工验收及其监督管理活动。竣工验收分为静态验收、动态验收、初步验收、正式验收四个阶段；国家铁路局对全国铁路建设工程竣工验收活动实施监督管理。",
   "local_path": "cache/gov/铁路建设工程竣工验收管理办法.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国家卫生健康委令第15号",
   "title": "国家卫生健康委关于修改和废止部分部门规章的决定",
   "issuer": "国家卫生健康委",
-  "date": "2026-06-05",
+  "date": "2026-08-20",
   "source_url": "https://www.gov.cn/gongbao/2026/issue_12926/202608/content_7078418.html",
   "tags": [
    "部门规章",
@@ -992,13 +1069,14 @@
   "searched_at": "2026-08-27",
   "summary": "国家卫生健康委令第15号公布，自公布之日起施行。为全面贯彻党的二十大和二十届历次全会精神，落实党和国家机构改革精神，维护法制统一，对5件部门规章的部分条款予以修改；废止《灾害事故医疗救援工作管理办法》（1995年4月27日卫生部令第39号公布）；将《卫生行政执法文书规范》调整为规范性文件。",
   "local_path": "cache/gov/国家卫生健康委关于修改和废止部分部门规章.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "医保发〔2026〕19号",
   "title": "国家医疗保障局关于做好长期护理保险支付管理工作的指导意见",
   "issuer": "国家医保局",
-  "date": "2026-08-21",
+  "date": "2026-08-26",
   "source_url": "https://www.nhsa.gov.cn/art/2026/8/26/art_104_21907.html",
   "tags": [
    "长期护理保险",
@@ -1008,7 +1086,8 @@
   "searched_at": "2026-08-27",
   "summary": "医保发〔2026〕19号，2026年8月21日成文。长期护理保险基金按规定支付失能等级定点评估机构提供的失能等级评估服务费用、定点长护服务机构提供的长期护理服务费用，以及依法依规引入的社会力量参与经办管理服务的费用等；支付范围依据《国家长期护理保险服务项目目录》确定，基本医疗保险与长期护理保险原则上不得重复支付。规范支付方式：评估服务以按人次付费为主，护理服务以按时长付费为主，居家护理服务以小时为付费单元、机构护理服务以床日为付费单元。参保人员基金年度最高支付限额不超过统筹地区上年度城乡居民人均可支配收入的50%。原试点地区相关工作与本意见要求不符的，要利用3年左右时间逐步过渡。",
   "local_path": "cache/gov/国家医疗保障局关于做好长期护理保险支付管.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
@@ -1024,13 +1103,14 @@
   "searched_at": "2026-08-28",
   "summary": "为深入贯彻落实党中央、国务院决策部署，促进航空保税维修高质量发展，提出加大航空保税维修支持力度、加强财税金融政策支持等意见。",
   "local_path": "cache/gov/商务部等9部门关于促进航空保税维修高质量.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "交通运输部令2026年第11号",
   "title": "铁路建设工程安全生产监督管理办法",
   "issuer": "交通运输部",
-  "date": "2026-06-22",
+  "date": "2026-08-20",
   "source_url": "https://www.gov.cn/gongbao/2026/issue_12926/202608/content_7078422.html",
   "tags": [
    "铁路建设",
@@ -1040,13 +1120,14 @@
   "searched_at": "2026-08-28",
   "summary": "铁路建设工程安全生产监督管理办法，2026年6月12日经交通运输部部务会议通过，2026年6月22日交通运输部令2026年第11号公布，自2026年9月1日起施行。",
   "local_path": "cache/gov/铁路建设工程安全生产监督管理办法.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "交通运输部令2026年第13号",
   "title": "通用航空运营许可程序规定",
   "issuer": "交通运输部",
-  "date": "2026-07-01",
+  "date": "2026-08-30",
   "source_url": "https://www.gov.cn/gongbao/2026/issue_12946/202608/content_7079359.html",
   "tags": [
    "通用航空",
@@ -1056,13 +1137,14 @@
   "searched_at": "2026-08-31",
   "summary": "2026年6月26日经交通运输部部务会议通过，2026年7月1日交通运输部令2026年第13号公布，自公布之日起施行。为规范通用航空运营许可管理工作，根据《中华人民共和国民用航空法》《中华人民共和国行政许可法》《中华人民共和国安全生产法》等制定，明确运营人基本要求、运营种类、运营许可及其监督管理等要求。",
   "local_path": "cache/gov/通用航空运营许可程序规定.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "金融监管总局令2026年第3号",
   "title": "金融监管总局关于严重失信主体名单管理的规定（试行）",
   "issuer": "国家金融监督管理总局",
-  "date": "2026-07-03",
+  "date": "2026-08-30",
   "source_url": "https://www.gov.cn/gongbao/2026/issue_12946/202608/content_7079357.html",
   "tags": [
    "金融监管",
@@ -1072,13 +1154,14 @@
   "searched_at": "2026-08-31",
   "summary": "2025年9月29日经金融监管总局局务会议审议通过，2026年7月3日金融监管总局令2026年第3号公布，自2026年10月1日起施行。为规范严重失信主体名单管理工作、强化信用监管、维护金融市场秩序，明确列入名单的情形、事先告知与陈述申辩、名单记录共享公示、管理措施及信用修复等要求。",
   "local_path": "cache/gov/金融监管总局关于严重失信主体名单管理的规定（试行）.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "林生规〔2026〕4号",
   "title": "国家林草局 国家发展改革委 财政部 自然资源部关于印发《“三北”工程建设管理办法（试行）》的通知",
   "issuer": "国家林草局 国家发展改革委 财政部 自然资源部",
-  "date": "2026-06-02",
+  "date": "2026-08-30",
   "source_url": "https://www.gov.cn/gongbao/2026/issue_12946/202608/content_7079354.html",
   "tags": [
    "三北工程",
@@ -1088,31 +1171,34 @@
   "searched_at": "2026-08-31",
   "summary": "经国务院同意，2026年6月2日印发。办法适用于“三北”工程六期规划布局实施项目的建设管理，明确中央统筹、省负总责、市县抓落实的工作机制，对组织管理、前期工作、项目实施、监督管理等作出规定。",
   "local_path": "cache/gov/“三北”工程建设管理办法（试行）.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "中央企业发展规划管理办法",
   "issuer": "",
-  "date": "2026-09-04",
+  "date": "2025-06-06",
   "source_url": "http://www.sasac.gov.cn/n2588035/n2588320/../../n2588035/n2588320/n2588335/c33689673/content.html",
   "tags": [],
   "searched_at": "2026-09-04",
   "summary": "",
   "local_path": "cache/gov/中央企业发展规划管理办法.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "中共中央办公厅 国务院办公厅印发《党政领导干部生态环境损害责任追究办法》",
   "issuer": "",
-  "date": "2026-09-04",
+  "date": "2026-08-25",
   "source_url": "https://www.mee.gov.cn/zcwj/zyygwj/202608/t20260825_1164514.shtml",
   "tags": [],
   "searched_at": "2026-09-04",
   "summary": "",
   "local_path": "cache/gov/中共中央办公厅_国务院办公厅印发_党政领.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
@@ -1133,63 +1219,72 @@
   "doc_number": "",
   "title": "电力安全事故应急处置和调查处理条例（中华人民共和国国务院令 第845号）",
   "issuer": "",
-  "date": "2026-09-08",
+  "date": "2026-09-07",
   "source_url": "https://www.mee.gov.cn/zcwj/gwywj/202609/t20260907_1165234.shtml",
   "tags": [],
   "searched_at": "2026-09-08",
   "summary": "",
   "local_path": "cache/gov/电力安全事故应急处置和调查处理条例_中华.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "工业和信息化部等十部门关于印发《促进中小企业发展“十五五”规划》的通知",
   "issuer": "",
-  "date": "2026-09-08",
+  "date": "2026-09-04",
   "source_url": "https://www.miit.gov.cn/jgsj/qyj/wjfb/art/2026/art_dbe17b3fbf0d43cfa1dc907e5936611d.html",
   "tags": [],
   "searched_at": "2026-09-08",
   "summary": "",
   "local_path": "cache/gov/工业和信息化部等十部门关于印发_促进中小.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "工业和信息化部关于印发《信息通信行业发展“十五五”规划》的通知",
   "issuer": "",
-  "date": "2026-09-08",
+  "date": "2026-09-07",
   "source_url": "https://www.miit.gov.cn/jgsj/txs/wjfb/art/2026/art_f55fe09a1e26411fa6926e5195850990.html",
   "tags": [],
   "searched_at": "2026-09-08",
   "summary": "",
   "local_path": "cache/gov/工业和信息化部关于印发_信息通信行业发展.pdf",
   "format": "pdf",
-  "attachment_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20269/3e520e61597143b69b6098beb479dc96.pdf"
+  "attachment_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20269/3e520e61597143b69b6098beb479dc96.pdf",
+  "date_source": "backfill-online",
+  "issued_date": "2026-08-12",
+  "date_evidence": "发布日期： 2026-09-07；成文日期： 2026-08-12"
  },
  {
   "doc_number": "",
   "title": "农业农村部关于印发《全国渔业发展“十五五”规划》的通知",
   "issuer": "",
-  "date": "2026-09-09",
+  "date": "2026-09-08",
   "source_url": "http://www.moa.gov.cn/gk/tzgg_1/../../govpublic/YYJ/202609/t20260908_6487395.htm",
   "tags": [],
   "searched_at": "2026-09-09",
   "summary": "",
   "local_path": "cache/gov/农业农村部关于印发_全国渔业发展_十五五.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "工业和信息化部办公厅关于印发《人工智能中小企业创业支持计划（2026-2028年）》的通知",
   "issuer": "",
-  "date": "2026-09-10",
+  "date": "2026-09-04",
   "source_url": "https://www.miit.gov.cn/jgsj/qyj/wjfb/art/2026/art_86c400b4473849818629663a94a6d44b.html",
   "tags": [],
   "searched_at": "2026-09-10",
   "summary": "",
   "local_path": "cache/gov/工业和信息化部办公厅关于印发_人工智能中.pdf",
   "format": "pdf",
-  "attachment_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20268/e032eb10b4764aceb432c7c6a7726dfe.pdf"
+  "attachment_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20268/e032eb10b4764aceb432c7c6a7726dfe.pdf",
+  "date_source": "backfill-online",
+  "issued_date": "2026-08-29",
+  "date_evidence": "发布日期： 2026-09-04；成文日期： 2026-08-29"
  },
  {
   "doc_number": "",
@@ -1204,7 +1299,8 @@
   "format": "docx",
   "page_path": "cache/gov/关于2026年7月全国新增建档立卡新能源.html",
   "attachment_url": "http://www.nea.gov.cn/20260904/324fdc3e4908431392b82d19ab10de6b/20260904324fdc3e4908431392b82d19ab10de6b_42bd03ae02fada44ae9f4a1bba5cbe97fe.docx",
-  "text_path": "cache/gov/attachments/20260904324fdc3e4908431392b82d19ab10de6b_42bd03ae02fada44ae9f4a1bba5cbe97fe.txt"
+  "text_path": "cache/gov/attachments/20260904324fdc3e4908431392b82d19ab10de6b_42bd03ae02fada44ae9f4a1bba5cbe97fe.txt",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
@@ -1216,25 +1312,27 @@
   "searched_at": "2026-09-11",
   "summary": "",
   "local_path": "cache/gov/国务院办公厅关于加强中小企业回款难问题治.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
   "title": "农业农村部关于印发《全国畜牧兽医行业发展“十五五”规划》的通知",
   "issuer": "",
-  "date": "2026-09-10",
+  "date": "2026-09-07",
   "source_url": "http://www.moa.gov.cn/gk/tzgg_1/../../govpublic/xmsyj/202609/t20260910_6487564.htm",
   "tags": [],
   "searched_at": "2026-09-11",
   "summary": "",
   "local_path": "cache/gov/农业农村部关于印发_全国畜牧兽医行业发展.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信部信发〔2026〕209号",
   "title": "工业和信息化部关于印发《“人工智能+软件”专项行动实施方案》的通知",
   "issuer": "工业和信息化部",
-  "date": "2026-09-02",
+  "date": "2026-09-11",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202609/content_7080773.htm",
   "tags": [],
   "searched_at": "2026-09-14",
@@ -1243,13 +1341,15 @@
   "format": "pdf",
   "page_path": "cache/gov/工业和信息化部关于印发__人工智能_软件.htm",
   "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202609/P020260911688449695690.pdf",
-  "text_path": "cache/gov/attachments/P020260911688449695690.txt"
+  "text_path": "cache/gov/attachments/P020260911688449695690.txt",
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-09-11-19:06:00\">；成文日期： 2026年09月02日"
  },
  {
   "doc_number": "工信部联规函〔2026〕305号",
   "title": "工业和信息化部等九部门关于印发《智能网联新能源汽车产业发展“十五五”规划》的通知",
   "issuer": "工业和信息化部 国家发展改革委 公安部 交通运输部 商务部 自然资源部 住房和城乡建设部 市场监管总局 国家网信办",
-  "date": "2026-09-09",
+  "date": "2026-09-12",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202609/content_7080845.htm",
   "tags": [],
   "searched_at": "2026-09-14",
@@ -1258,7 +1358,9 @@
   "format": "pdf",
   "page_path": "cache/gov/工业和信息化部等九部门关于印发_智能网联.htm",
   "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202609/P020260912375693571065.pdf",
-  "text_path": "cache/gov/attachments/P020260912375693571065.txt"
+  "text_path": "cache/gov/attachments/P020260912375693571065.txt",
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2026-09-12-10:26:00\">；成文日期： 2026年09月09日"
  },
  {
   "doc_number": "财金〔2026〕88号",
@@ -1270,7 +1372,8 @@
   "searched_at": "2026-09-14",
   "summary": "财政部、农业农村部、金融监管总局、国家林草局经国务院同意印发《关于加快农业保险高质量发展的实施方案》：到2030年基本建成多层次农业保险体系，农业保险深度达1.9%、密度达1200元/人、科技投入强度达1%，三大粮食作物农业保险覆盖率稳定在90%左右，农业保险综合费用率不高于20%；重点健全多层次农业保险体系、增强种植业与养殖业风险保障、推动林草保险提质增效。",
   "local_path": "cache/gov/关于印发_关于加快农业保险高质量发展的实.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
@@ -1282,31 +1385,34 @@
   "searched_at": "2026-09-15",
   "summary": "",
   "local_path": "cache/gov/中央网信办等七部门联合印发_促进数字化绿.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
   "title": "商务部等8部门关于印发《促进智能家居消费行动方案》的通知",
   "issuer": "",
-  "date": "2026-09-02",
+  "date": "2026-09-14",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202609/content_7081037.htm",
   "tags": [],
   "searched_at": "2026-09-15",
   "summary": "",
   "local_path": "cache/gov/商务部等8部门关于印发_促进智能家居消费.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "农农发〔2026〕9号",
   "title": "农业农村部关于印发《全国种植业发展“十五五”规划》的通知",
   "issuer": "农业农村部",
-  "date": "2026-09-15",
+  "date": "2026-09-07",
   "source_url": "http://www.moa.gov.cn/gk/tzgg_1/../../govpublic/ZZYGLS/202609/t20260915_6487694.htm",
   "tags": [],
   "searched_at": "2026-09-16",
   "summary": "",
   "local_path": "cache/gov/农业农村部关于印发_全国种植业发展_十五.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信部联规〔2026〕216号",
@@ -1318,13 +1424,14 @@
   "searched_at": "2026-09-16",
   "summary": "",
   "local_path": "cache/gov/工业和信息化部_国家发展改革委关于印发_.html",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "国发〔2020〕8号",
   "title": "国务院关于印发新时期促进集成电路产业和软件产业高质量发展若干政策的通知",
   "issuer": "国务院",
-  "date": "2020-07-27",
+  "date": "2020-08-04",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2020-08/04/content_5532370.htm",
   "tags": [
    "软件产业",
@@ -1334,13 +1441,14 @@
   "searched_at": "2026-09-16",
   "summary": "印发《新时期促进集成电路产业和软件产业高质量发展的若干政策》：明确集成电路产业和软件产业是信息产业的核心，是引领新一轮科技革命和产业变革的关键力量；为进一步优化集成电路产业和软件产业发展环境、深化产业国际合作、提升产业创新能力和发展质量，从财税、投融资、研究开发、进出口、人才、知识产权、市场应用、国际合作等方面制定政策。",
   "local_path": "cache/gov/国务院关于印发新时期促进集成电路产业和软.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "财关税〔2021〕4号",
   "title": "财政部 海关总署 税务总局关于支持集成电路产业和软件产业发展进口税收政策的通知",
   "issuer": "财政部 海关总署 税务总局",
-  "date": "2021-03-16",
+  "date": "2021-03-29",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-03/29/content_5596564.htm",
   "tags": [
    "软件产业",
@@ -1350,13 +1458,14 @@
   "searched_at": "2026-09-16",
   "summary": "为贯彻落实《国务院关于印发新时期促进集成电路产业和软件产业高质量发展若干政策的通知》（国发〔2020〕8号），经国务院同意，明确支持集成电路产业和软件产业发展进口税收政策：对符合条件的情形免征进口关税。",
   "local_path": "cache/gov/财政部_海关总署_税务总局关于支持集成电.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信部联通装〔2025〕45号",
   "title": "工业和信息化部 市场监管总局关于进一步加强智能网联汽车产品准入、召回及软件在线升级管理的通知",
   "issuer": "工业和信息化部 市场监管总局",
-  "date": "2025-02-25",
+  "date": "2025-03-01",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202503/content_7009422.htm",
   "tags": [
    "软件在线升级",
@@ -1366,13 +1475,14 @@
   "searched_at": "2026-09-16",
   "summary": "落实《关于加强智能网联汽车生产企业及产品准入管理的意见》《关于试行汽车安全沙盒监管制度的通告》《关于进一步加强汽车远程升级（OTA）技术召回监管的通知》，进一步做好搭载组合驾驶辅助系统和具备软件在线升级（OTA升级）功能的智能网联汽车产品准入与召回管理，规范汽车生产企业OTA升级活动，提升智能网联汽车产品安全水平。",
   "local_path": "cache/gov/工业和信息化部_市场监管总局关于进一步加.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国发〔2011〕4号",
   "title": "国务院关于印发进一步鼓励软件产业和集成电路产业发展若干政策的通知",
   "issuer": "国务院",
-  "date": "2011-01-28",
+  "date": "2011-02-09",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2011-02/09/content_3378.htm",
   "tags": [
    "软件产业",
@@ -1381,13 +1491,14 @@
   "searched_at": "2026-09-16",
   "summary": "印发《进一步鼓励软件产业和集成电路产业发展的若干政策》：明确软件产业和集成电路产业是国家战略性新兴产业，是国民经济和社会信息化的重要基础；继续完善激励措施，明确政策导向，优化产业发展环境。",
   "local_path": "cache/gov/国务院关于印发进一步鼓励软件产业和集成电.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "国发〔2000〕18号",
   "title": "国务院关于印发鼓励软件产业和集成电路产业发展若干政策的通知",
   "issuer": "国务院",
-  "date": "2000-06-24",
+  "date": "2000-08-20",
   "source_url": "http://www.gov.cn/gongbao/content/2000/content_60310.htm",
   "tags": [
    "软件产业",
@@ -1396,13 +1507,14 @@
   "searched_at": "2026-09-16",
   "summary": "印发《鼓励软件产业和集成电路产业发展的若干政策》：为推动我国软件产业和集成电路产业发展、增强信息产业创新能力和国际竞争力，制定投融资政策、税收政策、产业技术政策等，力争到2010年使我国软件产业研究开发和生产能力达到或接近国际先进水平。",
   "local_path": "cache/gov/国务院关于印发鼓励软件产业和集成电路产业.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "教科信函〔2024〕83号",
   "title": "教育部 国家版权局关于做好教育系统软件正版化工作的通知",
   "issuer": "教育部 国家版权局",
-  "date": "2024-11-25",
+  "date": "2024-12-13",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202412/content_6992388.htm",
   "tags": [
    "软件正版化",
@@ -1411,43 +1523,47 @@
   "searched_at": "2026-09-16",
   "summary": "为贯彻落实《国务院办公厅关于印发政府机关使用正版软件管理办法的通知》（国办发〔2013〕88号），完善教育系统软件正版化工作长效机制：提出2027年底前教育系统软件正版化工作长效机制基本建立、软件正版率显著提升，全面使用正版操作系统软件、办公软件和杀毒软件；要求健全工作机制、严格采购管理、规范使用管理、扩大推广应用、深化产学合作。",
   "local_path": "cache/gov/教育部_国家版权局关于做好教育系统软件正.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "国务院办公厅转发国务院信息化工作办公室关于振兴软件产业行动纲要的通知",
   "issuer": "",
-  "date": "2002-09-18",
+  "date": "2016-10-12",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2016-10/12/content_5117974.htm",
   "tags": [],
   "searched_at": "2026-09-16",
   "summary": "",
   "local_path": "cache/gov/国务院办公厅转发国务院信息化工作办公室关.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "国务院关于同意建立推进企业使用正版软件工作部际联席会议的批复",
   "issuer": "",
-  "date": "2007-02-13",
+  "date": "2008-03-28",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2008-03/28/content_5486.htm",
   "tags": [],
   "searched_at": "2026-09-16",
   "summary": "",
   "local_path": "cache/gov/国务院关于同意建立推进企业使用正版软件工.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "国务院办公厅关于印发政府机关使用正版软件管理办法的通知",
   "issuer": "",
-  "date": "2013-08-15",
+  "date": "2013-08-28",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2013-08/28/content_1096.htm",
   "tags": [],
   "searched_at": "2026-09-16",
   "summary": "",
   "local_path": "cache/gov/国务院办公厅关于印发政府机关使用正版软件.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "工信部规〔2021〕180号",
@@ -1474,43 +1590,46 @@
   "doc_number": "",
   "title": "财政部 国家发展改革委 工业和信息化部 海关总署 税务总局关于支持集成电路产业和软件产业发展进口税收政策管理办法的通知",
   "issuer": "",
-  "date": "2021-03-22",
+  "date": "2021-03-29",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-03/29/content_5596565.htm",
   "tags": [],
   "searched_at": "2026-09-16",
   "summary": "",
   "local_path": "cache/gov/财政部_国家发展改革委_工业和信息化部_.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "国务院关于促进云计算创新发展培育信息产业新业态的意见",
   "issuer": "",
-  "date": "2015-01-06",
+  "date": "2015-01-30",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2015-01/30/content_9440.htm",
   "tags": [],
   "searched_at": "2026-09-16",
   "summary": "",
   "local_path": "cache/gov/国务院关于促进云计算创新发展培育信息产业.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "国家互联网信息办公室 国家发展和改革委员会 工业和信息化部 财政部关于发布《云计算服务安全评估办法》的公告",
   "issuer": "",
-  "date": "2019-07-02",
+  "date": "2019-10-14",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2019-10/14/content_5439222.htm",
   "tags": [],
   "searched_at": "2026-09-16",
   "summary": "",
   "local_path": "cache/gov/国家互联网信息办公室_国家发展和改革委员.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
   "title": "工业和信息化部 国家标准化管理委员会关于印发《云计算综合标准化体系建设指南（2025版）》的通知",
   "issuer": "",
-  "date": "2025-08-20",
+  "date": "2025-10-09",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202510/content_7043720.htm",
   "tags": [],
   "searched_at": "2026-09-16",
@@ -1519,19 +1638,22 @@
   "format": "pdf",
   "page_path": "cache/gov/工业和信息化部_国家标准化管理委员会关于.htm",
   "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202510/P020251009771355098297.pdf",
-  "text_path": "cache/gov/attachments/P020251009771355098297.txt"
+  "text_path": "cache/gov/attachments/P020251009771355098297.txt",
+  "date_source": "backfill-online",
+  "date_evidence": "<meta name=\"firstpublishedtime\" content=\"2025-10-09-21:25:00\">；成文日期： 2025年08月20日"
  },
  {
   "doc_number": "",
   "title": "网络安全审查办法",
   "issuer": "",
-  "date": "2021-12-28",
+  "date": "2022-01-04",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2022-01/04/content_5666430.htm",
   "tags": [],
   "searched_at": "2026-09-16",
   "summary": "",
   "local_path": "cache/gov/网络安全审查办法.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "backfill-original"
  },
  {
   "doc_number": "",
@@ -1546,7 +1668,8 @@
   "format": "pdf",
   "page_path": "cache/gov/文化和旅游部关于印发_文化和旅游发展_十.html",
   "attachment_url": "https://zwgk.mct.gov.cn/zfxxgkml/ghjh/202609/P020261006458771650339.pdf",
-  "text_path": "cache/gov/attachments/P020261006458771650339.txt"
+  "text_path": "cache/gov/attachments/P020261006458771650339.txt",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
@@ -1558,14 +1681,15 @@
   "searched_at": "2026-09-18",
   "summary": "",
   "local_path": "cache/gov/数字乡村高质量发展行动计划_2026_2.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "verified-original"
  },
  {
   "doc_number": "",
   "title": "工业和信息化部等五部门关于组织开展2026年度国家绿色算力设施推荐工作的通知",
   "issuer": "",
   "date": "2026-09-21",
-  "date_source": "candidate",
+  "date_source": "backfill-online",
   "source_url": "https://www.miit.gov.cn/jgsj/jns/nyjy/art/2026/art_28ea3a2e759a4e4981277d070ab6db04.html",
   "tags": [],
   "searched_at": "2026-09-22",
@@ -1574,7 +1698,9 @@
   "format": "doc",
   "page_path": "cache/gov/工业和信息化部等五部门关于组织开展202.html",
   "attachment_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/202311/92f75f8569264d20a5e10405323a2bd7.doc",
-  "text_path": "cache/gov/attachments/92f75f8569264d20a5e10405323a2bd7.txt"
+  "text_path": "cache/gov/attachments/92f75f8569264d20a5e10405323a2bd7.txt",
+  "issued_date": "2026-09-08",
+  "date_evidence": "发布日期： 2026-09-21；成文日期： 2026-09-08"
  },
  {
   "doc_number": "",
@@ -1593,8 +1719,8 @@
   "doc_number": "",
   "title": "四部门关于开展2026年度享受增值税加计抵减政策的集成电路企业清单制定工作的通知",
   "issuer": "",
-  "date": "2026-09-29",
-  "date_source": "candidate",
+  "date": "2026-09-30",
+  "date_source": "backfill-original",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_7d2e760b4be94217b8f55caec840b30d.html",
   "tags": [],
   "searched_at": "2026-10-08",
@@ -1619,8 +1745,8 @@
   "doc_number": "",
   "title": "中共中央办公厅 国务院办公厅印发《文化遗产保护传承“十五五”规划》",
   "issuer": "",
-  "date": "2026-10-14",
-  "date_source": "candidate",
+  "date": "2026-09-30",
+  "date_source": "backfill-original",
   "source_url": "https://www.mee.gov.cn/zcwj/zyygwj/202610/t20261014_1182964.shtml",
   "tags": [],
   "searched_at": "2026-10-15",
