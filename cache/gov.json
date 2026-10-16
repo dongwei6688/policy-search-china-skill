@@ -1215,7 +1215,7 @@
   "attachment_url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk03/202609/W020260903551498752549.pdf",
   "text_path": "cache/gov/attachments/W020260903551498752549.txt",
   "date_source": "manual-verified",
-  "date_evidence": "页面字段「生成日期 2026-09-02」+ 落款「2026年9月2日印发」"
+  "date_evidence": "页面字段「生成日期 2026-09-02」+ 落款 2026年9月2日印发"
  },
  {
   "doc_number": "",
@@ -1571,7 +1571,7 @@
   "doc_number": "工信部规〔2021〕180号",
   "title": "工业和信息化部关于印发“十四五”软件和信息技术服务业发展规划的通知",
   "issuer": "工业和信息化部",
-  "date": "2021-12-01",
+  "date": "2021-11-15",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-12/01/content_5655205.htm",
   "tags": [
    "软件产业",
@@ -1588,8 +1588,8 @@
   "text_path": "cache/gov/工业和信息化部_十四五软件和信息技术服务业发展规划.txt",
   "ocr": true,
   "date_source": "manual-verified",
-  "date_evidence": "gov.cn 页面「成文日期：2021年11月15日」+ 收录日 2021-12-01",
-  "issued_date": "2021-11-15"
+  "date_evidence": "用户确认 2021-11-15（gov.cn 页面「成文日期：2021年11月15日」）",
+  "published_date": "2021-12-01"
  },
  {
   "doc_number": "",

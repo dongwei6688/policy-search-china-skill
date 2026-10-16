@@ -84,7 +84,7 @@
   "local_path": "cache/cac/c_1690898327029107.htm",
   "format": "html",
   "date_source": "manual-verified",
-  "date_evidence": "网信办页首「2023年07月13日 15:00」"
+  "date_evidence": "网信办公布页首 2023年07月13日（公布日即令日期）"
  },
  {
   "doc_number": "国务院令第766号",
@@ -124,7 +124,7 @@
   "doc_number": "国务院令第790号",
   "title": "《网络数据安全管理条例》",
   "issuer": "国务院",
-  "date": "2024-09-30",
+  "date": "2024-09-24",
   "source_url": "https://www.cac.gov.cn/2024-09/30/c_1729384452307680.htm",
   "tags": [
    "网络数据安全",
@@ -136,7 +136,8 @@
   "local_path": "cache/cac/c_1729384452307680.htm",
   "format": "html",
   "date_source": "manual-verified",
-  "date_evidence": "页首「2024年09月30日 18:00」"
+  "date_evidence": "国务院令第790号签署日；网信办页首发布日 2024-09-30",
+  "published_date": "2024-09-30"
  },
  {
   "doc_number": "",
