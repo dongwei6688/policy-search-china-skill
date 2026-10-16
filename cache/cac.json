@@ -71,7 +71,7 @@
   "doc_number": "网信办令第15号",
   "title": "《生成式人工智能服务管理暂行办法》",
   "issuer": "国家互联网信息办公室 等七部门",
-  "date": "2023-07-10",
+  "date": "2023-07-13",
   "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
   "tags": [
    "生成式AI",
@@ -82,7 +82,9 @@
   "searched_at": "2026-07-22",
   "summary": "（生成式AI服务领域首部专门管理规定，明确生成式AI服务提供者的训练数据合规、内容标识、算法备案、安全评估等义务。）",
   "local_path": "cache/cac/c_1690898327029107.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "manual-verified",
+  "date_evidence": "网信办页首「2023年07月13日 15:00」"
  },
  {
   "doc_number": "国务院令第766号",
@@ -122,7 +124,7 @@
   "doc_number": "国务院令第790号",
   "title": "《网络数据安全管理条例》",
   "issuer": "国务院",
-  "date": "2024-09-24",
+  "date": "2024-09-30",
   "source_url": "https://www.cac.gov.cn/2024-09/30/c_1729384452307680.htm",
   "tags": [
    "网络数据安全",
@@ -132,7 +134,9 @@
   "searched_at": "2026-07-22",
   "summary": "（网络数据安全管理领域核心行政法规，共9章64条，自2025年1月1日起施行。规范网络数据处理活动，保障网络数据安全，促进网络数据依法合理有效利用，保护个人、组织的合法权益。）",
   "local_path": "cache/cac/c_1729384452307680.htm",
-  "format": "html"
+  "format": "html",
+  "date_source": "manual-verified",
+  "date_evidence": "页首「2024年09月30日 18:00」"
  },
  {
   "doc_number": "",
