@@ -1815,8 +1815,8 @@
   "doc_number": "",
   "title": "公安机关网络空间安全监督检查办法（公安部令第176号）",
   "issuer": "",
-  "date": "2026-10-10",
-  "date_source": "candidate",
+  "date": "2026-08-06",
+  "date_source": "page-metadata",
   "issued_date": "",
   "doc_type": "",
   "source_url": "https://www.gov.cn/gongbao/2026/issue_13026/202610/content_7082775.html",
@@ -1824,6 +1824,8 @@
   "searched_at": "2026-10-19",
   "summary": "",
   "local_path": "cache/gov/公安机关网络空间安全监督检查办法_公安部.html",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-10-10",
+  "date_evidence": "原文页载明：2026年7月1日公安部部务会议审议通过，2026年8月6日公安部令第176号公布，自2026年10月1日起施行；国务院公报2026-10-10 发布"
  }
 ]
