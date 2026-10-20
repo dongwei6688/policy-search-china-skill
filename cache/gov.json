@@ -1831,16 +1831,19 @@
  {
   "doc_number": "",
   "title": "商务部等9部门关于加快推进科技兴商的意见",
-  "issuer": "",
+  "issuer": "商务部 中央网信办 国家发展改革委 教育部 科技部 工业和信息化部 文化和旅游部 中国人民银行 市场监管总局",
   "date": "2026-10-13",
-  "date_source": "candidate",
+  "date_source": "manual-verified",
   "issued_date": "",
-  "doc_type": "",
+  "doc_type": "意见",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202610/content_7083721.htm",
   "tags": [],
   "searched_at": "2026-10-20",
   "summary": "",
   "local_path": "cache/gov/商务部等9部门关于加快推进科技兴商的意见.htm",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-10-19",
+  "pcode": "商建函〔2026〕551号",
+  "date_evidence": "文末落款「2026年10月13日」；gov.cn 政策文件库页面发布日 2026-10-19"
  }
 ]
