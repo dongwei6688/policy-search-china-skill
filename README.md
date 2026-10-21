@@ -34,8 +34,8 @@ npx skills add https://github.com/dongwei6688/policy-search-china-skill --skill 
 ### 手动安装（Hermes Agent）
 
 ```bash
-git clone git@github.com:dongwei6688/policy-search-china-skill.git ~/.hermes/skills/research/policy-search-china/
-python3 ~/.hermes/skills/research/policy-search-china/scripts/init.py
+git clone git@github.com:dongwei6688/policy-search-china-skill.git "${HERMES_HOME:-$HOME/.hermes}/skills/research/policy-search-china/"
+python3 "${HERMES_HOME:-$HOME/.hermes}/skills/research/policy-search-china/scripts/init.py"
 ```
 
 > 可通过环境变量 `POLICY_SEARCH_CHINA_DATA_DIR` 和 `POLICY_SEARCH_CHINA_OUTPUT_DIR` 自定义数据与输出目录。
