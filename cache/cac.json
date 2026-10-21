@@ -54,7 +54,7 @@
   "doc_number": "国务院令第745号",
   "title": "《关键信息基础设施安全保护条例》",
   "issuer": "国务院",
-  "date": "2021-08-17",
+  "date": "2021-07-30",
   "source_url": "https://www.gov.cn/zhengce/content/2021-08/17/content_5631671.htm",
   "tags": [
    "关键信息基础设施",
@@ -65,7 +65,10 @@
   "summary": "（关键信息基础设施安全保护领域行政法规，明确关基范围界定、运营者安全保护义务、产品和服务安全审查、监测预警与应急处置等制度。）",
   "local_path": "cache/cac/content_5631671.htm",
   "format": "html",
-  "date_source": "verified-original"
+  "date_source": "page-issued-field",
+  "published_date": "2021-08-17",
+  "issued_date": "2021-07-30",
+  "date_evidence": "页面结构化字段「成文日期/生成日期/制发日期」= 2021-07-30；原记录日期 2021-08-17 另存 published_date"
  },
  {
   "doc_number": "网信办令第15号",
@@ -90,7 +93,7 @@
   "doc_number": "国务院令第766号",
   "title": "《未成年人网络保护条例》",
   "issuer": "国务院",
-  "date": "2023-10-24",
+  "date": "2023-10-16",
   "source_url": "https://www.gov.cn/zhengce/content/202310/content_6911288.htm",
   "tags": [
    "未成年人",
@@ -101,7 +104,10 @@
   "summary": "《未成年人网络保护条例》已经2023年9月20日国务院第15次常务会议通过，自2024年1月1日起施行。未成年人网络保护领域首部专门行政法规。",
   "local_path": "cache/cac/content_6911288.htm",
   "format": "html",
-  "date_source": "verified-original"
+  "date_source": "page-issued-field",
+  "published_date": "2023-10-24",
+  "issued_date": "2023-10-16",
+  "date_evidence": "页面结构化字段「成文日期/生成日期/制发日期」= 2023-10-16；原记录日期 2023-10-24 另存 published_date"
  },
  {
   "doc_number": "网信办令（2024）",

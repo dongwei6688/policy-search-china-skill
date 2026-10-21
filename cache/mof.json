@@ -75,7 +75,7 @@
   "doc_number": "财政部 税务总局公告2026年第25号",
   "title": "财政部 税务总局关于明确非应税交易等增值税有关事项的公告",
   "issuer": "财政部 税务总局",
-  "date": "2026-08-28",
+  "date": "2026-08-27",
   "source_url": "https://fgk.chinatax.gov.cn/zcfgk/c102416/c5252024/content.html",
   "tags": [
    "增值税",
@@ -87,7 +87,10 @@
   "local_path": "cache/mof/财政部_税务总局关于明确非应税交易等增值税有关事.html",
   "format": "html",
   "searched_at": "2026-09-03",
-  "date_source": "backfill-original"
+  "date_source": "page-issued-field",
+  "published_date": "2026-08-28",
+  "issued_date": "2026-08-27",
+  "date_evidence": "页面结构化字段「成文日期/生成日期/制发日期」= 2026-08-27；原记录日期 2026-08-28 另存 published_date"
  },
  {
   "doc_number": "财教〔2026〕156号",

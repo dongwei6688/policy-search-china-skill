@@ -35,7 +35,7 @@
   "doc_number": "教基〔2026〕9号",
   "title": "教育部等七部门关于印发《特殊教育发展提升“十五五”行动计划》的通知",
   "issuer": "教育部等七部门",
-  "date": "2026-08-31",
+  "date": "2026-08-27",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202608/content_7079639.htm",
   "tags": [
    "特殊教育",
@@ -47,6 +47,9 @@
   "summary": "为推进特殊教育优质融合发展制定行动计划，坚持普惠发展、有教无类，坚持数字赋能、因材施教，加快建设高质量特殊教育体系。到2030年，适龄残疾儿童义务教育入学率巩固在97%以上，特殊教育保障机制不断完善，数字化、智能化水平逐步增强，基本形成特殊教育优质融合发展格局。",
   "local_path": "cache/moe/教育部等七部门关于印发_特殊教育发展提升.htm",
   "format": "html",
-  "date_source": "backfill-original"
+  "date_source": "page-issued-field",
+  "published_date": "2026-08-31",
+  "issued_date": "2026-08-27",
+  "date_evidence": "页面结构化字段「成文日期/生成日期/制发日期」= 2026-08-27；原记录日期 2026-08-31 另存 published_date"
  }
 ]

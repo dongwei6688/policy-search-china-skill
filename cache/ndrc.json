@@ -63,7 +63,7 @@
   "doc_number": "国数政策〔2026〕6号",
   "title": "《关于培育数据流通服务机构 加快推进数据要素市场化价值化的意见》",
   "issuer": "国家数据局 工业和信息化部 公安部 中国证监会",
-  "date": "2026-02-09",
+  "date": "2026-02-03",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202602/content_7057405.htm",
   "tags": [
    "数据流通",
@@ -74,7 +74,10 @@
   "summary": "国家数据局等部门关于培育数据流通服务机构 加快推进数据要素市场化价值化的意见。",
   "local_path": "cache/ndrc/content_7057405.htm",
   "format": "html",
-  "date_source": "backfill-original"
+  "date_source": "page-issued-field",
+  "published_date": "2026-02-09",
+  "issued_date": "2026-02-03",
+  "date_evidence": "页面结构化字段「成文日期/生成日期/制发日期」= 2026-02-03；原记录日期 2026-02-09 另存 published_date"
  },
  {
   "title": "《非化石能源电力消费核算指南（试行）》",

@@ -20,7 +20,7 @@
   "doc_number": "人社部发〔2026〕40号",
   "title": "关于加快推进「人工智能＋人社」应用发展的实施意见",
   "issuer": "人力资源社会保障部 国家发展改革委 工业和信息化部 国家数据局",
-  "date": "2026-07-08",
+  "date": "2026-06-22",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202607/content_7074732.htm",
   "tags": [
    "人工智能+",
@@ -31,7 +31,10 @@
   "summary": "人力资源社会保障部等四部门联合印发，推动人工智能与人力资源和社会保障领域深度融合应用。",
   "local_path": "cache/mohrss/关于加快推进_人工智能_人社_应用发展的.htm",
   "format": "html",
-  "date_source": "verified-original"
+  "date_source": "page-issued-field",
+  "published_date": "2026-07-08",
+  "issued_date": "2026-06-22",
+  "date_evidence": "页面结构化字段「成文日期/生成日期/制发日期」= 2026-06-22；原记录日期 2026-07-08 另存 published_date"
  },
  {
   "doc_number": "人社部发〔2026〕32号",
