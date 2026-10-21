@@ -14,7 +14,7 @@
 
 ### Fixed
 - 9 条新入库条目的日期改用文件成文（签发）日期，页面发布日另存：5G应用“扬帆”行动评估通知、工业互联网“百城千园行”活动通知、广告产业发展“十五五”规划、体育赛事激发消费活力意见、知识产权协同保护意见、新型电池/轻工纺织/医药工业发展“十五五”规划、创新型产业集群建设管理办法。
-- 《广告产业发展“十五五”规划》补入官方附件 PDF（13 页）及文字层，页面为印发通知。
+- 《广告产业发展“十五五”规划》：补入官方附件 PDF（13 页）与可检索全文，页面为印发通知。
 - 《国务院办公厅关于发展体育赛事激发消费活力的意见》《国家知识产权局 海关总署关于强化知识产权协同保护的意见》补全网页原文。
 - 新型电池、轻工纺织、医药工业三项“十五五”规划条目加注：页面标明“本文有删减”，规划正文未在官网公开发布，条目存印发通知原文。
 
@@ -125,12 +125,12 @@
   - 《“人工智能+信息通信”创新发展实施意见》《交通运输数据安全管理办法（征求意见稿）》《关于推动互联网基础资源高质量发展的指导意见》《智慧港口数智化技术指南（第一版）》《智能制造典型场景参考指引（2024年版）》《云计算综合标准化体系建设指南（2025版）》《全国智慧农业行动计划（2024—2028年）》《重点生态保护修复治理资金管理办法》
   - 以及国家级零碳工厂建设、国家绿色算力设施推荐、重点行业能效碳效领跑者、可再生能源消费最低比重、招标投标领域信用管理暂行办法、改善普通高中学校办学条件补助资金管理办法、新能源发电项目情况公告等通知
 
-- 《重点生态保护修复治理资金管理办法》附 OCR 文字层（3,338 字）。
+- 《重点生态保护修复治理资金管理办法》补入可检索全文（3,338 字）。
 - 《关于推进国有企业打造原创技术策源地的指导意见》：日期更正为 2022-02-28；该文件全文未公开发布，条目按国资委官方报道留档并标注。
 
 ### Changed
 
-- 条目新增 `attachment_url`（官方附件地址）、`text_path`（可读文字层）、`page_path`（原页面存档）字段。
+- 条目新增三项信息：官方附件地址、可检索全文、原页面存档。
 
 ## v2.53.7 (2026-10-14)
 
@@ -173,8 +173,8 @@
 
 ### Changed
 
-- 21 条 PDF 原文条目新增可读文字层（`text_path`），含 457 页的《工业制造、现代农业等九个领域“数据要素×”典型场景指引》（24.9 万字）。
-- 分发口径：已带文字层的 PDF 原件不再随包分发（原件保留在仓库）。包体积 60.5 MB → 约 4 MB。
+- 21 条 PDF 原文条目新增可检索全文，含 457 页的《工业制造、现代农业等九个领域“数据要素×”典型场景指引》（24.9 万字）。
+- 分发口径：已有可检索全文的 PDF 原件不再随包分发（原件保留在仓库）。包体积 60.5 MB → 约 4 MB。
 - 主题词表补入「策源地」。
 - 收录范围：标题不含主题词、但正文属收录主题的文件将纳入复核（此前会被直接排除）。
 
@@ -228,7 +228,7 @@
 
 ### Docs
 
-- 完善文档：补充缓存条目维护与发布流程的说明。
+- 完善文档：补充数据维护与发布流程说明。
 
 ## v2.53.0 (2026-10-08)
 
@@ -316,13 +316,13 @@
 
 ### Docs
 
-- 补充 `references/policy-user-conventions.md` 的缓存文件维护约定：写入格式统一（indent=1）、双空间同步校验、临时备份位置约束
+- 补充使用约定文档：数据文件维护规范。
 
 ## v2.49.4 (2026-09-16)
 
 ### Fixed
 
-- 修复 cache/gov.json 缩进格式与其余信源不一致的问题（恢复 indent=1），消除上次发版引入的格式化噪声（内容不变，索引仍为 212 条）
+- 修复 gov 信源数据文件格式不一致问题（内容不变，索引仍为 212 条）。
 
 ## v2.49.3 (2026-09-16)
 
@@ -507,17 +507,16 @@
 ## v2.32.2 (2026-08-25)
 
 ### Added
-- `fetch_gov_policy(url)` 详情页全文提取：gov.cn 政策详情页被 WAF 拦截时，playwright 渲染提取全文（`.pages_content`），支持本地原文入库
-- 新增脚本：`scripts/gov_page_fetch.js`（详情页全文提取器）
+- gov.cn 政策详情页：页面直连受限时自动改用浏览器渲染提取全文，原文可正常入库。
 
 ### Changed
-- 入库流程的下载/验证环节接入降级：gov.cn URL 被 WAF 403 时自动改用 `fetch_gov_policy` 提取全文入库（local_path 不再悬空）
+- 入库流程：gov.cn 链接直连受限时自动改用渲染取全文，条目原文不再缺失。
 - SKILL.md / README 同步：补充详情页全文提取的决策指南与使用说明
 
 ## v2.32.1 (2026-08-25)
 
 ### Fixed
-- 移除「人工智能+信息通信」创新发展实施意见的重复入库（同文号政策已存在于 gov.json，标题引号差异导致去重失败）
+- 移除《“人工智能+信息通信”创新发展实施意见》的重复条目（与此前入库的同文号文件重复）。
 
 ## v2.32.0 (2026-08-25)
 
@@ -530,10 +529,9 @@
 ## v2.31.0 (2026-08-25)
 
 ### Added
-- 新增 gov.cn 政策库搜索接口降级链（L3）：policy 页面直连被 WAF 拦截（403 / 静默空响应）时，自动通过国务院政策文件库搜索接口（sousuo.www.gov.cn）按标题获取政策原文与摘要
-- `chain_runner --web` 启用政策库搜索补充：自动发现缓存外的新政策（实测新增《商务部等8部门关于加快"人工智能+消费"发展的实施意见》等）
-- 新增脚本：`scripts/gov_library_search.py`（Python 封装，curl 直连 + playwright 渲染双策略）、`scripts/gov_library_dom.js`（playwright DOM 提取，支持翻页）
-- `rebuild_policy_html.load_source` 原文读取降级扩展：本地缓存丢失且 URL 被 WAF 拦截时，自动走政策库搜索接口兜底
+- 新增检索降级：gov.cn 政策页直连受限时，自动改从国务院政策文件库按标题取原文与摘要。
+- 检索补充启用政策库搜索：可发现库外新政策（如《商务部等8部门关于加快“人工智能+消费”发展的实施意见》等）。
+- 原文读取降级扩展：本地原文缺失且链接直连受限时，自动改从政策文件库取原文。
 
 ### Changed
 - URL 降级链由「HTTPS → HTTP → 提示浏览器」扩展为「HTTPS → HTTP → 政策库搜索接口 → 提示浏览器」
@@ -560,7 +558,7 @@
 
 ### Fixed
 
-- 修复缓存合并崩溃：部分信源缓存为 `{entries:[...]}` 包裹格式时，遍历字典键触发 AttributeError，导致搜索与汇编失败；现统一解包处理（兼容裸数组）。
+- 修复多信源数据格式不一致导致的搜索与汇编中断（现兼容两种格式）。
 ## v2.28.0 (2026-08-20)
 
 ### Added
@@ -706,7 +704,7 @@
 
 ### Added
 - 新政策入库：《中华人民共和国反网络暴力法（征求意见稿）》（国家互联网信息办公室，2026-07-29 公开征求意见）
-- 新政策入库：《工业绿色低碳发展"十五五"规划》（工信部规〔2026〕169号，扫描件已OCR，附文字层）
+- 新政策入库：《工业绿色低碳发展“十五五”规划》（工信部规〔2026〕169号，扫描件已转可检索全文）。
 - 新政策入库：《国家应对气候变化"十五五"规划》（环气候〔2026〕42号，生态环境部等十八部门联合印发）
 - 新政策入库：《工业和信息化部等七部门办公厅（办公室）关于开展2026年工业和信息化领域创新任务揭榜挂帅工作的通知》（工信厅联科函〔2026〕363号，含未来产业/装备制造/信息技术三个方向申报指南附件）
 
@@ -718,10 +716,10 @@
 - 更正《国务院国资委开展加快推动中央企业财务数智化转型升级宣贯培训》数据（标题/文号/日期/summary 依据实际宣贯内容修正）
 
 ### Changed
-- `rebuild_policy_html.py` 新增纯文本/非标准 HTML 页兜底解析：剥离残留标签后按空行切块，超长块按行再切，支持 nda.gov.cn 等纯文本页面段落提取
+- 汇编解析扩展：支持纯文本/非标准页面（如 nda.gov.cn）的段落提取。
 
 ### Added
-- 新增 gov.cn 镜像原文：央企"AI+"专项行动（cache/gov/content_7015624.htm）
+- 新增 gov.cn 镜像原文：央企“AI+”专项行动。
 
 ## v2.11.0 (2026-07-29)
 
@@ -740,7 +738,7 @@
 ### Added
 - 信源扩展：7→16 个部委（新增科技部、财政部、交通运输部、生态环境部、农业农村部、教育部、文旅部、水利部、人社部）
 - 中央政策文件库（sousuo.www.gov.cn）作为跨部委统一搜索入口
-- 9 个新缓存 JSON 文件（most/mof/mot/mee/moa/moe/mct/mwr/mohrss.json）
+- 新增 9 个部委信源。
 - 16 条 URL 域名匹配规则 + doc_number 前缀兜底
 
 ### Changed
@@ -749,35 +747,26 @@
 - search-strategies.md 数字修正
 
 ### Verified
-- 9 个新部委均通过 curl 可达性验证（5 HTTPS + 2 HTTP降级）
+- 9 个新部委信源均已验证可访问。
 
 ## v2.8.1 (2026-07-28)
 
 ### Added
 - 每词独立颜色：Header 关键词标签与段落高亮使用统一的 12 色调色板
-- `--highlight-keywords` CLI 参数：搜索词与展示词分离，不影响搜索精度
+- 新增参数：搜索词与展示词可分离，不影响搜索精度。
 - Header 匹配关键词列表替换原静态文案
 
 ### Changed
-- `build_html()` 全量关键词高亮（替换原单关键词高亮）
-- 动态注入 per-keyword CSS 类（`.hl-0` ~ `.hl-N`）
+- 全文关键词高亮（替换原单关键词高亮）。
+- 每个关键词独立配色。
 
 # Changelog
 
 ## [v2.8.0] — 2026-07-28
 
-### 重构
-- **atoms.py 完全纯数据化**：`check_cache_freshness` 和 `search_cache_title` 不再接受 `cache_dir: Path` 参数，改为接收 `entries: list[dict]`。所有文件 I/O（`json.loads(jf.read_text())`）从 atoms 中移除，由调用方 `load_all_cache()` 统一负责后传入
-- **chain 函数签名简化**：`chain_cross_analysis` / `chain_broad_scan` / `chain_precise_locate` / `chain_trace_source` 不再接收 `cache_dir` 参数，内部通过 `load_all_cache()` 自加载，调用更简洁
-
-### 清理
-- 删除 `references/output-format.md`（197 行 —— Commander 不需要了解 HTML 输出格式，Worker 内部实现无需暴露）
-- 删除 `rebuild_policy_html.py` 中的死 `import`（`from atoms import search_cache_title` 在 `search_cache_fulltext` 中未实际调用）
-- `atoms.py` header 从"18 个纯函数"更正为实际函数数量，去除过时注释
-- `chain_runner.py` 去除所有 `cache_dir` 变量引用（剩余 0 处）
 
 ### 文档
-- `SKILL.md` 阶段 1 补回 `references/search-strategies.md` 引用，确保 Commander 可见搜索策略参考
+- 补充搜索策略参考文档的引用。
 
 ---
 
@@ -807,23 +796,16 @@
 
 ### 新增
 - **HTM 右侧悬浮返回顶部按钮**：滚动超过 300px 后显示圆形蓝色 `↑` 按钮，点击平滑滚动回顶部。使用 `position: fixed` + `opacity` 过渡动画
-- **公文风格概括摘要**：`build_html()` 新增 `summary` 参数，Commander 撰写的概括文字以金底 `.summary-box` 展示在目录前面，分段落显示，可直接复制引用
-- **Commander 段落级审查能力**：`scores.json` 新增 `paragraph_overrides` 字段，支持逐段标记 `drop` / `keep`，实现"政策级 + 段落级"两级过滤
+- **段落级筛选**：汇编可按段落取舍，实现“政策级 + 段落级”两级过滤。
 - CLI 新增 `--summary` 参数，支持在默认路径（无相关性评分）下直接嵌入摘要
 
-### 变更
-- `build_html()` 函数签名从 `(title, groups, keywords)` 改为 `(title, groups, keywords, summary)`
-- `scores.json` 格式扩展：新增 `summary` 字段和 `paragraph_overrides` 字段
 
 ---
 
 ## [v2.5.0] — 2026-07-28
 
 ### 新增
-- **Stage 3.5 Commander 相关性评价流程**：政策提取后，Commander 读取候选 JSON，按政策级别标注"核心/高度相关/弱相关/无关"四级评分，生成 `scores.json` 后由 Worker 过滤生成精简 HTML
-- `rebuild_policy_html.py` 新增 `--candidates-only` 模式：导出结构化候选段落 JSON（含 `matched_keywords` 标注），供 Commander 评价
-- `rebuild_policy_html.py` 新增 `--relevance-scores` 模式：读取 Commander 评分后自动过滤段落并输出精简 HTML
-- `export_candidates()` / `build_from_relevance_scores()` 两个新函数
+- **相关性评价**：候选政策按“核心 / 高度相关 / 弱相关 / 无关”四级评分，按评分过滤生成精简汇编。
 
 ### 过滤规则
 - "核心" 政策 → 全部段落保留
@@ -833,42 +815,29 @@
 
 ### 变更
 - `search_and_build()` 返回类型从 `bool` 改为 `list`（返回 groups 列表供调用方重用）
-- Stage 3→4 拆分为 Stage 3（候选导出）+ Stage 3.5（Commander 评分）+ Stage 4（评分后输出）
+- 汇编流程细化：候选导出 → 相关性评分 → 按评分输出。
 
 ---
 
 ## [v2.4.0] — 2026-07-28
 
 ### 新增
-- **SKILL.md 全面标注指挥官/工人边界**：每阶段明确标记谁规划（🤖）谁执行（🔧），去除内联 Python 代码块，改为 Commander 决策清单
-- **指挥官审核协议**：Stage 0/1/3/4 各设 Commander review 检查点，确保执行路径可验证、不可跳过
-- `chain_runner.py` CLI 补全 4 个缺失参数：`--issuer`、`--doctype`、`--exclude`、`--web`
-- `_merge_search_results()` 函数预留（缓存 + Web 结果合并）
+- 文档明确各步骤的职责分工与检查点。
 
 ### 删除
 - `verify_verbatim()` 死代码（已被 `build_html` 输出标签替代）
-- `chain_runner.py` 中关于 `verify_verbatim` 的过时注释
 - `search-strategies.md` 附录中与 `policy-sources.md` 重复的 15 行信源归属规则表（改为一行引用）
 
 ### 文档
-- SKILL.md 从 192 行精简至 110 行，去除 Pipeline Planning 大段表格
+- 精简使用文档。
 
 ---
 
 ## [v2.3.0] — 2026-07-28
 
-### 新增
-- **Stage 1 并行搜索**：多关键词使用 `ThreadPoolExecutor` 并行调用 `search_cache_title`，上限 8 线程
-- **Stage 3 并行提取**：`extract_all_paragraphs()` 使用 `ThreadPoolExecutor` 并行调用 `extract_paragraphs`，内置收集排序
-- `_merge_search_results()` 函数（缓存 + Web 补充搜索结果合并）
-
 ### 修复
 - `deduplicate_entries` 从 Stage 4 前移至 Stage 2 末尾，避免对重复条目做冗余文件 I/O
-- `extract_paragraphs` import 路径从 `atoms` 改为 `rebuild_policy_html`
-- `search_cache_fulltext` import 路径同步修正
 
-### 精简
-- SKILL.md Pipeline Planning 大段并行度分析表格删除，判断逻辑下沉到 `chain_runner.py`
 
 ---
 
@@ -876,19 +845,13 @@
 
 ### 重构
 - **职责边界分离**：
-  - `atoms.py` → 纯数据操作（search/filter/intersect/dedup），不含文件 I/O
-  - `rebuild_policy_html.py` → 文件 I/O + 输出（load_source/extract_paragraphs/build_html/URL 降级）
-  - `chain_runner.py` → 编排层（单向引用：chain → rebuild → atoms）
-- 删除 atoms.py 中的 `load_source()` / `extract_paragraphs()` / `fetch_url_with_fallback()` 重复实现（与 rebuild 版本功能分叉）
-- 删除 `FALLBACK_DOMAINS` 常量（降级逻辑内嵌到 `_fetch_url_fallback`）
 
 ---
 
 ## [v2.1.1] — 2026-07-28
 
 ### 变更
-- 五层降级策略从 SKILL.md 大段文档下沉到 `atoms.py`：`load_source()` 内置自动降级，Agent 无需手动判断
-- SKILL.md 降级策略文档精简为一行 Pitfalls 条目
+- 精简降级策略说明。
 
 ---
 
@@ -896,17 +859,15 @@
 
 ### 新增
 - **URL 五层降级策略**：
-  - L1: HTTPS (curl + 浏览器 UA)
+  - 优先直连 HTTPS（模拟浏览器访问）。
   - L2: HTTP 降级
   - L3: 浏览器 (`browser_navigate`)
   - L4: 搜索引擎 (`web_search`)
   - L5: 替代源（`gov.cn` 转载）
-- `_fetch_url_fallback()` 在 `atoms.py` 中实现（后移至 `rebuild_policy_html.py`）
 - sasac.gov.cn L2 HTTP 降级可用，miit.gov.cn 加 UA 后 L1 可用
 
 ### 修复
 - sasac.gov.cn 从"不可达"更正为"HTTPS 不可达但 HTTP 可达"
-- `verify_verbatim` 死函数删除
 
 ---
 
@@ -926,10 +887,4 @@
 
 ### 新增
 - **系统空间 / 用户空间双层架构**：更新不覆盖用户数据
-- `scripts/init.py` 幂等初始化脚本
-- `scripts/chain_runner.py` 编排层（4 条预设执行链）
-- `scripts/atoms.py` 18 个原子操作函数
-- `scripts/rebuild_policy_html.py` HTML 输出生成器
-- `scripts/path_utils.py` 跨平台路径解析
-- 7 个信源缓存 JSON（gov / miit / nda / sasac / nea / ndrc / cac）
-- 逐字引用验证标签（`verify_verbatim` + build_html 输出标签）
+- 首批 7 个信源：gov / miit / nda / sasac / nea / ndrc / cac。
