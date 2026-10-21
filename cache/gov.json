@@ -1850,8 +1850,8 @@
   "doc_number": "",
   "title": "工业和信息化部办公厅关于开展2026年度5G应用“扬帆”行动重点城市总结评估工作的通知",
   "issuer": "",
-  "date": "2026-10-19",
-  "date_source": "candidate",
+  "date": "2026-10-16",
+  "date_source": "page-metadata",
   "issued_date": "",
   "doc_type": "",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_e30d69911f6f4e89afa578e836faade5.html",
@@ -1859,14 +1859,16 @@
   "searched_at": "2026-10-21",
   "summary": "",
   "local_path": "cache/gov/工业和信息化部办公厅关于开展2026年度.html",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-10-19",
+  "date_evidence": "文末落款 工业和信息化部办公厅 2026年10月16日"
  },
  {
   "doc_number": "",
   "title": "工业和信息化部办公厅关于组织开展工业互联网一体化进园区“百城千园行”活动的通知",
   "issuer": "",
-  "date": "2026-10-19",
-  "date_source": "candidate",
+  "date": "2026-10-08",
+  "date_source": "page-metadata",
   "issued_date": "",
   "doc_type": "",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_ef9c98c98d0a4d4ba8425f466b3585f2.html",
@@ -1874,14 +1876,16 @@
   "searched_at": "2026-10-21",
   "summary": "",
   "local_path": "cache/gov/工业和信息化部办公厅关于组织开展工业互联.html",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-10-19",
+  "date_evidence": "文末落款 工业和信息化部办公厅 2026年10月8日"
  },
  {
   "doc_number": "",
   "title": "市场监管总局等七部门关于印发《广告产业发展“十五五”规划》的通知",
   "issuer": "",
-  "date": "2026-10-20",
-  "date_source": "candidate",
+  "date": "2026-09-30",
+  "date_source": "page-metadata",
   "issued_date": "",
   "doc_type": "",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202610/content_7083838.htm",
@@ -1889,14 +1893,20 @@
   "searched_at": "2026-10-21",
   "summary": "",
   "local_path": "cache/gov/市场监管总局等七部门关于印发_广告产业发.htm",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-10-20",
+  "date_evidence": "文末落款 2026年09月30日",
+  "note": "正文在官方附件 PDF（13 页）；页面为印发通知。",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202610/P020261020719549784650.pdf",
+  "text_path": "cache/gov/广告产业发展十五五规划.txt",
+  "attachment_path": "cache/gov/广告产业发展十五五规划.pdf"
  },
  {
   "doc_number": "",
   "title": "国务院办公厅关于发展体育赛事激发消费活力的意见",
   "issuer": "",
-  "date": "2026-10-20",
-  "date_source": "candidate",
+  "date": "2026-09-25",
+  "date_source": "page-metadata",
   "issued_date": "",
   "doc_type": "",
   "source_url": "https://www.gov.cn/gongbao/2026/issue_13046/202610/content_7083673.html",
@@ -1904,14 +1914,16 @@
   "searched_at": "2026-10-21",
   "summary": "",
   "local_path": "cache/gov/国务院办公厅关于发展体育赛事激发消费活力.html",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-10-20",
+  "date_evidence": "文末落款 2026年9月25日"
  },
  {
   "doc_number": "",
   "title": "国家知识产权局 海关总署关于强化知识产权协同保护的意见",
   "issuer": "",
-  "date": "2026-10-21",
-  "date_source": "candidate",
+  "date": "2026-10-08",
+  "date_source": "page-metadata",
   "issued_date": "",
   "doc_type": "",
   "source_url": "https://www.gov.cn/zhengce/zhengceku/202610/content_7083901.htm",
@@ -1919,14 +1931,16 @@
   "searched_at": "2026-10-21",
   "summary": "",
   "local_path": "cache/gov/国家知识产权局_海关总署关于强化知识产权.htm",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-10-21",
+  "date_evidence": "文末落款 国家知识产权局 海关总署 2026年10月8日"
  },
  {
   "doc_number": "",
   "title": "工业和信息化部等七部门关于印发《新型电池产业发展“十五五”规划》的通知",
   "issuer": "",
-  "date": "2026-09-28",
-  "date_source": "candidate",
+  "date": "2026-09-14",
+  "date_source": "page-metadata",
   "issued_date": "",
   "doc_type": "",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_255ea93df118460fa105c46c2f546d9a.html",
@@ -1934,14 +1948,17 @@
   "searched_at": "2026-10-21",
   "summary": "",
   "local_path": "cache/gov/工业和信息化部等七部门关于印发_新型电池.html",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-09-28",
+  "date_evidence": "文末落款 2026年9月14日",
+  "note": "页面注明“本文有删减”，规划正文未在官网公开发布，库内存印发通知原文。"
  },
  {
   "doc_number": "",
   "title": "工业和信息化部关于印发《创新型产业集群建设管理办法》的通知",
   "issuer": "",
-  "date": "2026-09-23",
-  "date_source": "candidate",
+  "date": "2026-07-13",
+  "date_source": "page-metadata",
   "issued_date": "",
   "doc_type": "",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_c3b698fbaf0d42259de3e48d36a0d107.html",
@@ -1949,14 +1966,16 @@
   "searched_at": "2026-10-21",
   "summary": "",
   "local_path": "cache/gov/工业和信息化部关于印发_创新型产业集群建.html",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-09-23",
+  "date_evidence": "文末落款 工业和信息化部 2026年7月13日"
  },
  {
   "doc_number": "",
   "title": "三部门关于印发《轻工纺织产业发展“十五五”规划》的通知",
   "issuer": "",
-  "date": "2026-09-22",
-  "date_source": "candidate",
+  "date": "2026-09-07",
+  "date_source": "page-metadata",
   "issued_date": "",
   "doc_type": "",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_9fb9b35709f941d4805d064092032bd0.html",
@@ -1964,14 +1983,17 @@
   "searched_at": "2026-10-21",
   "summary": "",
   "local_path": "cache/gov/三部门关于印发_轻工纺织产业发展_十五五.html",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-09-22",
+  "date_evidence": "文末落款 2026年9月7日",
+  "note": "页面注明“本文有删减”，规划正文未在官网公开发布，库内存印发通知原文。"
  },
  {
   "doc_number": "",
   "title": "工业和信息化部等十部门关于印发《医药工业发展“十五五”规划》的通知",
   "issuer": "",
-  "date": "2026-09-18",
-  "date_source": "candidate",
+  "date": "2026-08-28",
+  "date_source": "page-metadata",
   "issued_date": "",
   "doc_type": "",
   "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_9463adac4db040159f6cbf482675eeea.html",
@@ -1979,6 +2001,9 @@
   "searched_at": "2026-10-21",
   "summary": "",
   "local_path": "cache/gov/工业和信息化部等十部门关于印发_医药工业.html",
-  "format": "html"
+  "format": "html",
+  "published_date": "2026-09-18",
+  "date_evidence": "文末落款 2026年8月28日",
+  "note": "页面注明“本文有删减”，规划正文未在官网公开发布，库内存印发通知原文。"
  }
 ]
