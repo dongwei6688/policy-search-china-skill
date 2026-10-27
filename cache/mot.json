@@ -156,5 +156,26 @@
   "summary": "",
   "local_path": "cache/mot/交通运输部等十二部门关于印发_推动多式联.html",
   "format": "html"
+ },
+ {
+  "title": "交通运输部办公厅关于印发《运输服务数智化升级指南（暂行）》的通知",
+  "doc_number": "交办运函〔2026〕2271号",
+  "date": "2026-10-16",
+  "published_date": "2026-10-23",
+  "issuer": "交通运输部办公厅",
+  "source_url": "https://xxgk.mot.gov.cn/jigou/ysfws/202610/t20261023_4226590.html",
+  "summary": "印发《运输服务数智化升级指南（暂行）》，围绕数据共享、智能应用与场景牵引，指导运输服务领域数智化升级，覆盖客运、货运、城市交通等典型场景。",
+  "format": "doc",
+  "tags": [
+   "运输服务数智化",
+   "人工智能+交通运输",
+   "数智化升级"
+  ],
+  "local_path": "cache/mot/attachments/yunshu_fuwu_zhineng_shengji_zhinan.doc",
+  "text_path": "cache/mot/attachments/yunshu_fuwu_zhineng_shengji_zhinan.txt",
+  "page_path": "cache/mot/t20261023_4226590.html",
+  "attachment_url": "https://xxgk.mot.gov.cn/jigou/ysfws/202610/P020261023611984530600.doc",
+  "date_source": "verified-original",
+  "date_evidence": "页面落款：交通运输部办公厅 2026年10月16日（此件公开发布）；公开日期 2026年10月23日"
  }
 ]
