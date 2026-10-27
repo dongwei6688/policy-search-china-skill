@@ -99,5 +99,25 @@
   "local_path": "cache/nda/_关于加快推进_人工智能_人社_应用发展.htm",
   "format": "html",
   "date_source": "backfill-original"
+ },
+ {
+  "doc_number": "",
+  "title": "关于发布《城市全域数字化转型标准体系研究报告》及《城市全域数字化转型 城市感知体系建设导则》等12项技术文件的通知",
+  "issuer": "全国数据标准化技术委员会",
+  "date": "2026-10-23",
+  "date_source": "doc-issued",
+  "published_date": "2026-10-26",
+  "issued_date": "2026-10-23",
+  "doc_type": "report",
+  "source_url": "https://www.nda.gov.cn/sjj/zwgk/tzgg/1026/20261026210239813554415_pc.html",
+  "tags": [],
+  "searched_at": "2026-10-27",
+  "summary": "",
+  "local_path": "cache/nda/attachments/city_digital_transformation_report.pdf",
+  "format": "pdf",
+  "page_path": "cache/nda/关于发布_城市全域数字化转型标准体系研究.html",
+  "text_path": "cache/nda/attachments/city_digital_transformation_report.txt",
+  "attachment_url": "https://www.nda.gov.cn/sjj/zwgk/tzgg/1026/ff808081-a0a4b153-01a1-784c0e18-03ae.pdf",
+  "note": "原文存档《城市全域数字化转型标准体系研究报告》全文；同批 12 项技术文件清单见页面存档。"
  }
 ]

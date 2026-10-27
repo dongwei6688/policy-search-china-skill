@@ -2152,5 +2152,39 @@
   "published_date": "2026-09-18",
   "date_evidence": "文末落款 2026年8月28日",
   "note": "页面注明“本文有删减”，规划正文未在官网公开发布，库内存印发通知原文。"
+ },
+ {
+  "doc_number": "",
+  "title": "中共中央办公厅 国务院办公厅关于推动科技创新和产业创新深度融合的意见",
+  "issuer": "中共中央办公厅 国务院办公厅",
+  "date": "2026-10-22",
+  "date_source": "candidate",
+  "published_date": "",
+  "issued_date": "",
+  "doc_type": "",
+  "source_url": "https://www.mee.gov.cn/zcwj/zyygwj/202610/t20261022_1184320.shtml",
+  "tags": [],
+  "searched_at": "2026-10-27",
+  "summary": "",
+  "local_path": "cache/gov/中共中央办公厅_国务院办公厅关于推动科技.html",
+  "format": "html",
+  "date_evidence": "原文页无文末落款日期；date 取页面发布时间 2026-10-22"
+ },
+ {
+  "doc_number": "国办发〔2026〕29号",
+  "title": "国务院办公厅关于适应人工智能技术发展助力构建就业友好型发展方式的意见",
+  "issuer": "国务院办公厅",
+  "date": "2026-10-16",
+  "date_source": "manual-verified",
+  "published_date": "2026-10-23",
+  "issued_date": "2026-10-16",
+  "doc_type": "",
+  "source_url": "https://www.mee.gov.cn/zcwj/gwywj/202610/t20261024_1184583.shtml",
+  "tags": [],
+  "searched_at": "2026-10-27",
+  "summary": "",
+  "local_path": "cache/gov/国务院办公厅关于适应人工智能技术发展助力.html",
+  "format": "html",
+  "date_evidence": "原文页文末落款：国务院办公厅 2026年10月16日；发布日 2026-10-23"
  }
 ]

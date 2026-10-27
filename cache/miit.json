@@ -454,5 +454,25 @@
   "published_date": "2026-09-04",
   "issued_date": "2026-08-26",
   "date_evidence": "页面结构化字段「成文日期/生成日期/制发日期」= 2026-08-26；原记录日期 2026-09-04 另存 published_date"
+ },
+ {
+  "doc_number": "工信部联规〔2026〕208号",
+  "title": "工业和信息化部等八部门关于印发《产业基础能力提升“十五五”规划》的通知",
+  "issuer": "工业和信息化部 国家发展和改革委员会 教育部 财政部 人力资源社会保障部 国务院国资委 市场监管总局 国家国防科技工业局",
+  "date": "2026-09-01",
+  "date_source": "doc-issued",
+  "published_date": "2026-10-22",
+  "issued_date": "2026-09-01",
+  "doc_type": "",
+  "source_url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_b111a48b309b49d08f9c65b7d0d7a490.html",
+  "tags": [],
+  "searched_at": "2026-10-27",
+  "summary": "",
+  "local_path": "cache/miit/attachments/chanye_jichu_nengli_15_plan.pdf",
+  "format": "pdf",
+  "page_path": "cache/miit/工业和信息化部等八部门关于印发_产业基础.html",
+  "text_path": "cache/miit/attachments/chanye_jichu_nengli_15_plan.txt",
+  "attachment_url": "https://www.gov.cn/zhengce/zhengceku/202610/P020261022545646318917.pdf",
+  "note": "正文为《产业基础能力提升“十五五”规划》全文（国务院政策文件库附件）；页面存档另存通知正文。"
  }
 ]

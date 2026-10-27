@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.58.2
+version: v2.58.3
 license: MIT
 ---
 
@@ -31,7 +31,9 @@ license: MIT
 
 ```
 ① python3 scripts/init.py              → 幂等创建工作区（首次运行）
-② atoms.check_cache_freshness(cache_dir) → {"latest_date", "needs_web_update"}
+② 新鲜度不单独调用：chain_runner.py 内部会对条目列表调
+   atoms.check_cache_freshness(entries) → {"latest_date", "needs_web_update"}
+   （注意签名是 entries: list[dict]，传目录会抛 AttributeError；指挥官不直接 import atoms）
 ```
 
 指挥官审核：若 `needs_web_update` 为 True，在阶段 1 的工人调用中追加 `--web` 参数。
@@ -40,7 +42,9 @@ license: MIT
 
 ```
 ③ chain_runner.py --chain {broad|cross} --keywords "..." --start YYYY-MM-DD [--web]
-   → {"count": N, "entries": [...], "freshness": {...}}
+   → 人读文本：先打印「结果数: N」，再逐条列标题/文号/发文机关/日期
+   （内部返回 dict {"count","entries","freshness"}，但 CLI 无 --json 开关，
+     指挥官直接读文本，不要按 JSON 解析）
 ```
 
 **调用前：** 指挥官将用户意图分解为关键词列表（cross 链：多关键词；broad 链：先规划子领域再搜索），根据用户的时间语境决定日期范围，缓存陈旧时追加 `--web`。
@@ -128,7 +132,7 @@ python3 scripts/init.py
 
 | 工人 | 输入 | 输出 | 职责 |
 |:-------|:------|:-----|:-----|
-| `chain_runner.py` | 链类型、关键词、日期范围、过滤条件 | `{"count": N, "entries": [...]}` | 搜索 + 过滤 + 去重 |
+| `chain_runner.py` | 链类型、关键词、日期范围、过滤条件 | 人读文本（`结果数: N` + 条目列表）；无 --json | 搜索 + 过滤 + 去重 |
 | `rebuild_policy_html.py` | 主题、模式、相关性评分 | candidates.json 或 HTML 文件 | 提取 + 评分 + 过滤 + 高亮 + 链接 |
 | `atoms.py` | 结构化数据 | 结构化数据 | 纯数据操作（被以上两个工人引用） |
 
