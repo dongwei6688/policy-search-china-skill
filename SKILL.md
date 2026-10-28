@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.58.4
+version: v2.58.5
 license: MIT
 ---
 
@@ -174,10 +174,16 @@ python3 scripts/init.py
 - **禁止在两个 clone 都手动提交**——会导致历史分叉（曾发生：发布仓库落后 30 个提交，v2.10.0 vs v2.25.0）。
 - 三方一致性判定：系统空间 HEAD == 发布仓库 HEAD == GitHub origin/main。
 - **改公开面之前先确认自己在发版源仓库**：`git -C <dir> describe --tags --abbrev=0` 的 tag 必须等于当前线上最新版本。镜像副本可能停在若干版之前（改下去等于白改，且要在镜像里 `git checkout --` 还原，避免污染其工作树）；发版源是脚本 `REPO` 常量指向的那一个，不是记忆里“发布仓库”这个名字对应的路径。
+- **skill 目录从 tar 包恢复后 `.git` 丢失 → 发版必挂**：`git rev-parse` 报 not a git repository，而 `release_skill.py` 需要 commit/tag/push。恢复顺序（全程不动工作树内容）：
+  1. 用 token 查回仓库名（`curl -H "Authorization: token $TOKEN" https://api.github.com/user/repos`），clone 到临时目录；
+  2. **先把远端独有的文件补回本地**再重挂历史，否则它们会在 `reset` 后被当成删除：`git -c core.quotepath=false ls-files -z` 逐条比对（中文文件名必须加 `-c core.quotepath=false`，否则拿到的是带引号的转义名，`[ -e ]` 一律假阴性）；
+  3. 本地目录 `git init` → `git remote add` → `git fetch <url> main` → **`git reset --mixed FETCH_HEAD`**（mixed 只动 index，工作树内容保留）；
+  4. 用 `git status` 验收：`cache/*.json` 应零差异（索引未漂移的判据），剩下的只应有你真实改过的文档；
+  5. `SKILL.md.bak-*` 之类的本地备份必须先移出仓库目录（`~/.hermes/backups/`）——发版脚本可能 `git add -A`，会把它们带进公开仓库。
 
 ### 路径架构（政策监控 cron 运行时）
 
-- cron（每日 12:00）**无 workdir**，运行 cwd = Agent 网关的 cwd。所有脚本**绝对路径**（基于 skill 目录推算），不依赖 cwd，不会跑偏到其他项目目录。
+- cron（每日 12:00）**无 workdir**，运行 cwd = Agent 网关的 cwd。所有脚本**绝对路径**（基于 skill 目录推算），不依赖 cwd，不会跑偏到其他项目目录。任务的建立与验收步骤（前置闸门、提示词必备约束、首次手工验收清单、无人值守凭据）见 `references/monitor-cron-setup.md`。
 - 缓存**双写**（设计如此，勿改）：
   - 系统空间 `cache/`（随包分发、发版时 git 提交）
   - 用户空间（`$HERMES_HOME/data/policy-search-china/cache/` 或 `POLICY_SEARCH_CHINA_DATA_DIR` 指定，运行读写区，local_path 不悬空）
@@ -221,6 +227,8 @@ python3 scripts/init.py
 | **验证新机制（新规则/新脚本/内容层校验）** | 用库内**真实条目**当样本（标题与 URL 都取 `cache/` 里的原值）；手写合成样本会因自编 URL 404 而把机制误判为“失效” |
 | **gov.cn 抓取只到页面头部（HTTP 200，正文截断）** | 不要只看 HTTP 状态码。抓完判截断：尾部 2000 字内**既无结尾短语**（特此通知/请遵照执行/附件…）**又无落款日期**且全文 <6000 字 → 判截断，改用 playwright 渲染重抓（`gov_library_search.fetch_gov_policy`）并打印前后字数。原“仅 403 才降级”的兜底对这种形态**完全不触发** |
 | **断言“原文链接失效／链接少字母”** | 先用**条目里存的 URL 原样**重试（不要用手打或搜索结果里显示的写法），再抽检同站同类 URL 建立基线——多数“链接坏了”其实是抓取只拿到页面头部，链接本身没错 |
+| **`.doc`（Word 97-2003）附件抽不出正文，条目被跳过** | 不要为此装 LibreOffice，也别在源里找 antiword/catdoc（RHEL 系常常没有）。用 `scripts/doc2txt_piece_table.py <file.doc>` 抽文字层（只依赖 `olefile`），抽完核字数与前 120 字再入库。附件正文常不带落款，`date` 取页面落款/成文日期 |
+| **剔除清单写了却不生效、名单/公示类照样入库** | `--skip-file` 只认 `[{"title": "...", "reason": "..."}]` 数组；写成 `{"标题": "理由"}` 的对象 map 会被**静默忽略**，于是被点名剔除的条目照常入库。入库前自检类型（`assert isinstance(json.load(open(f)), list)`）；一旦误入库，按「标题精确匹配删条目 + 双空间同步 + 当日发版」撤回 |
 | **用户只说“发版”“key”“这个”** | 多线并行时先消歧：一句话说明理解为哪条线（政策库发版 / 正在处理的文档 / 凭据），并**先查状态**（`git status`+`git log`+最新 tag+远端 Release）再动手；猜错一条线会白做一轮 |
 
 ## 交付检查清单

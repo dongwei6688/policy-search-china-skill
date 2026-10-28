@@ -32,7 +32,10 @@
 
 **定性与修法（一条条走，不要整批盲改）**：
 1. 抓页面，提取 `href` 里的附件直链（相对路径用 `urllib.parse.urljoin` 相对 `source_url` 解析），按 UA 下载到 `cache/<来源>/attachments/`
-2. 抽附件文字：`.pdf` → `pdftotext -enc UTF-8`；`.doc` → `antiword -m UTF-8`；`.docx` → `unzip -p <f> word/document.xml` 后去标签
+2. 抽附件文字：`.pdf` → `pdftotext -enc UTF-8`；`.docx` → `unzip -p <f> word/document.xml` 后去标签；`.doc`（Word 97-2003）→ **用本 skill 自带的 `scripts/doc2txt_piece_table.py <file.doc>`**（解析 FIB + CLX 分片表，按文档代码页解码，只需 `olefile`）。
+   - 不要指望 `antiword` / `catdoc`：RHEL 系（Alinux / CentOS 流）源里通常没有；装 LibreOffice 是几百 MB 的代价，不值得为一个附件动手。
+   - 抽完先自检：非空白字数、前 120 字是否为可读中文。字符数应与 `file` 报的 `Number of Characters` 同量级；出现成片替换符说明代码页取错（中文文档是 cp936/GBK）。
+   - **`.doc` 里常常只有指南/办法正文、没有落款**——落款属于同一页面上那封「关于印发…的通知」。此时 `date` 取页面落款/成文日期、`published_date` 记公开日期、`date_source` 记 `verified-original`，`date_evidence` 写明「页面落款：<机关> <日期>」。附件本身无日期**不构成**「缺日期」，不要因此把条目丢进待补清单。
 3. **算比值再决定**：附件文字 ≥ 2000 字 **且** 明显大于页面文本（经验线：> 2 倍）→ 附件才是正文，修；否则页面已含正文、附件只是附表/申报表/名单 → 保持原样并删掉刚下的附件，别留垃圾文件
 4. 修法（字段口径）：`local_path` 改指附件文件、`format` 改成附件后缀、`attachment_url` 记附件直链、`text_path` 记抽出的文字层、`page_path` 保留原页面存档（页面本身也是证据），`indent=1` 写回
 5. 附件是**扫描版**（`pdftotext` 0 字）：页数不多（≲ 8 页）时直接 OCR——`pdftoppm -r 200 -png` → `tesseract -l chi_sim` 逐页 → 拼成 `text_path`，条目加 `ocr: true`；页数多的大扫描件先找旁车文字层再决定是否重跑
