@@ -178,5 +178,27 @@
   "date_source": "verified-original",
   "date_evidence": "页面落款：交通运输部办公厅 2026年10月16日（此件公开发布）；公开日期 2026年10月23日",
   "superseded_url": "https://xxgk.mot.gov.cn/jigou/ysfws/202610/P020261023611984530600.doc"
+ },
+ {
+  "title": "交通运输部关于发布《交通运输分级分类运行监测通用要求》等6项交通运输行业标准的公告",
+  "doc_number": "交通运输部公告2026年第86号",
+  "date": "2026-10-21",
+  "published_date": "2026-10-27",
+  "issuer": "交通运输部",
+  "source_url": "https://xxgk.mot.gov.cn/jigou/kjs/202610/t20261027_4226753.html",
+  "summary": "发布《交通运输分级分类运行监测通用要求》（JT/T 1605—2026）等 6 项推荐性交通运输行业标准（2026 年第 10 批），含标准编号、名称、主要内容与实施日期一览表。",
+  "doc_type": "standard",
+  "format": "doc",
+  "tags": [
+   "交通运输行业标准",
+   "运行监测",
+   "分级分类"
+  ],
+  "local_path": "cache/mot/attachments/mot_std_6items_2026_86.doc",
+  "text_path": "cache/mot/attachments/mot_std_6items_2026_86.txt",
+  "page_path": "cache/mot/t20261027_4226753.html",
+  "attachment_url": "https://xxgk.mot.gov.cn/jigou/kjs/202610/P020261027397924926285.doc",
+  "date_source": "verified-original",
+  "date_evidence": "页面落款：交通运输部 2026年10月21日；公开日期 2026年10月27日"
  }
 ]

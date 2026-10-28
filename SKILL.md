@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.58.5
+version: v2.58.6
 license: MIT
 ---
 
@@ -228,6 +228,7 @@ python3 scripts/init.py
 | **gov.cn 抓取只到页面头部（HTTP 200，正文截断）** | 不要只看 HTTP 状态码。抓完判截断：尾部 2000 字内**既无结尾短语**（特此通知/请遵照执行/附件…）**又无落款日期**且全文 <6000 字 → 判截断，改用 playwright 渲染重抓（`gov_library_search.fetch_gov_policy`）并打印前后字数。原“仅 403 才降级”的兜底对这种形态**完全不触发** |
 | **断言“原文链接失效／链接少字母”** | 先用**条目里存的 URL 原样**重试（不要用手打或搜索结果里显示的写法），再抽检同站同类 URL 建立基线——多数“链接坏了”其实是抓取只拿到页面头部，链接本身没错 |
 | **`.doc`（Word 97-2003）附件抽不出正文，条目被跳过** | 不要为此装 LibreOffice，也别在源里找 antiword/catdoc（RHEL 系常常没有）。用 `scripts/doc2txt_piece_table.py <file.doc>` 抽文字层（只依赖 `olefile`），抽完核字数与前 120 字再入库。附件正文常不带落款，`date` 取页面落款/成文日期 |
+| **附件直链 404，但 `source_url` 页面还 200** | 先看页面里的 `href`：机关修订后重新上传会换文件名（带新上传时间戳），旧直链随即失效——不是原文丢失。重下新件、**比对文字层而不是比体积**（重新导出的同一份文件体积可差数倍），确认只是勘误后替换 `local_path`、`attachment_url` 记新链并另记 `superseded_url`，按数据更正当日发版；差异涉及实体内容就停手交用户裁定。详见 `references/original-content-integrity.md` §2b |
 | **剔除清单写了却不生效、名单/公示类照样入库** | `--skip-file` 只认 `[{"title": "...", "reason": "..."}]` 数组；写成 `{"标题": "理由"}` 的对象 map 会被**静默忽略**，于是被点名剔除的条目照常入库。入库前自检类型（`assert isinstance(json.load(open(f)), list)`）；一旦误入库，按「标题精确匹配删条目 + 双空间同步 + 当日发版」撤回 |
 | **用户只说“发版”“key”“这个”** | 多线并行时先消歧：一句话说明理解为哪条线（政策库发版 / 正在处理的文档 / 凭据），并**先查状态**（`git status`+`git log`+最新 tag+远端 Release）再动手；猜错一条线会白做一轮 |
 
