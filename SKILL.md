@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.60.0
+version: v2.61.0
 license: MIT
 ---
 
@@ -231,6 +231,9 @@ python3 scripts/init.py
 | **附件直链 404，但 `source_url` 页面还 200** | 先看页面里的 `href`：机关修订后重新上传会换文件名（带新上传时间戳），旧直链随即失效——不是原文丢失。重下新件、**比对文字层而不是比体积**（重新导出的同一份文件体积可差数倍），确认只是勘误后替换 `local_path`、`attachment_url` 记新链并另记 `superseded_url`，按数据更正当日发版；差异涉及实体内容就停手交用户裁定。详见 `references/original-content-integrity.md` §2b |
 | **剔除清单写了却不生效、名单/公示类照样入库** | `--skip-file` 只认 `[{"title": "...", "reason": "..."}]` 数组；写成 `{"标题": "理由"}` 的对象 map 会被**静默忽略**，于是被点名剔除的条目照常入库。入库前自检类型（`assert isinstance(json.load(open(f)), list)`）；一旦误入库，按「标题精确匹配删条目 + 双空间同步 + 当日发版」撤回 |
 | **用户只说“发版”“key”“这个”** | 多线并行时先消歧：一句话说明理解为哪条线（政策库发版 / 正在处理的文档 / 凭据），并**先查状态**（`git status`+`git log`+最新 tag+远端 Release）再动手；猜错一条线会白做一轮 |
+| **用户说“帮我加入政策库”** | 先按标题（含简称、无引号版）grep `cache/*.json` 判断是否已在库——中央/网信核心文件常已被前一轮监控收入。在库则只报「原文实体性 + 发版状态」（三份文件存在、双空间 md5 一致、CHANGELOG 有该条、`/releases/tags/<v>` 返 200、全库计数），**不要重复入库**；确认未入库再走入库流程 |
+| **体检/核验时全库一次性报“原文悬空”** | `local_path` 形如 `cache/<部委>/<文件名>`，基准目录是**数据根**（`$HERMES_HOME/data/policy-search-china`），**不是** `cache/` 本身；在 `cache/` 后又拼一次 `cache/` 会 100% 假阴性。先拿一条已知正常的条目打印 `数据根/local_path` 的存在性自检，再跑全量 |
+| **怀疑摘要里的数字是编的** | 先排除抽取错位再下结论：`pdftotext -layout` 会把表格打散，百分比常是不带 `%` 的裸数（`12.5`）、列头与数值分行，`grep "12.5%"` 必然为空。改用 `sed -n 'a,bp'` 读表格行区或 `grep -oE "[0-9]+[.．][0-9]+"` 再比对 |
 
 ## 交付检查清单
 
