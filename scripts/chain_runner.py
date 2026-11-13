@@ -1,6 +1,6 @@
 """
 
- policy-search-china 编排器 v2.64.1
+ policy-search-china 编排器 v2.64.2
 
  将原子操作按用户意图编排成执行链。
  - Stage 1 (多关键词搜索) 和 Stage 3 (条目段落提取) 支持多线程并行
@@ -155,18 +155,27 @@ def chain_precise_locate(
     精准定位链：找到具体政策的具体段落
 
     场景: "数据二十条里关于确权的条款"
+    检索分支只有两个：文号（doc_number）与标题关键词（title_keyword）。
+    keyword 仅用于命中后的段落提取，不参与检索。
     """
+    all_entries = load_all_cache()
+
     # 优先文号搜索
     hits = []
+    match_mode = None
     if doc_number:
         for jf in (SKILL_DIR / "cache").glob("*.json"):
             for e in json.loads(jf.read_text()):
                 if doc_number in e.get("doc_number", "") or doc_number in e.get("title", ""):
                     hits.append(e)
+        if hits:
+            match_mode = "doc_number"
 
     # 次选标题关键词
     if not hits and title_keyword:
         hits = search_cache_title(all_entries, title_keyword)
+        if hits:
+            match_mode = "title_keyword"
 
     # Stage 3: 段落提取
     for e in hits:
@@ -176,6 +185,7 @@ def chain_precise_locate(
     return {
         "entries": hits,
         "count": len(hits),
+        "match_mode": match_mode,
     }
 
 
@@ -285,6 +295,10 @@ if __name__ == "__main__":
     p.add_argument("--exclude", nargs="+", help="排除关键词")
     p.add_argument("--web", action="store_true", help="启用 Web 补充搜索（含政策库搜索接口）")
     p.add_argument("--pages", type=int, default=1, help="政策库搜索页数（--web 时生效）")
+    p.add_argument("--doc-number", dest="doc_number",
+                   help="locate 链：按文号检索（如 国发〔2021〕29号）")
+    p.add_argument("--title-keyword", dest="title_keyword",
+                   help="locate 链：按标题关键词检索（缺省取 --keywords 首个词）")
     args = p.parse_args()
 
     r = None
@@ -296,16 +310,38 @@ if __name__ == "__main__":
         r = chain_broad_scan(args.keywords[0],
                              args.start, args.end)
     elif args.chain == "locate":
-        r = chain_precise_locate(args.keywords[0])
+        r = chain_precise_locate(
+            args.keywords[0],
+            doc_number=args.doc_number,
+            title_keyword=args.title_keyword or args.keywords[0],
+        )
     elif args.chain == "trace":
         r = chain_trace_source(args.keywords[0])
 
     assert r is not None, "未知的 chain 类型"
+
+    # ═══ 统一过滤：时间 / 机关 / 类型 / 排除 ═══
+    # 此前 --exclude 全链未接线、locate 与 trace 忽略时间与机关过滤，参数给了不生效等同静默失效。
+    if args.start or args.end:
+        r["entries"] = filter_date_range(r["entries"], args.start, args.end)
+    if args.issuer:
+        r["entries"] = filter_issuer(r["entries"], args.issuer)
+    if args.doctype:
+        r["entries"] = filter_doctype(r["entries"], args.doctype)
+    if args.exclude:
+        r["entries"] = exclude_entries(r["entries"], args.exclude)
+    r["count"] = len(r["entries"])
+
     print(f"结果数: {r['count']}")
+    if r.get("match_mode"):
+        _mode = "文号" if r["match_mode"] == "doc_number" else "标题关键词"
+        print(f"定位方式: {_mode}")
     for e in r["entries"][:20]:
         meta = extract_metadata(e)
         print(f"  {meta['title'][:70]}")
         print(f"    {meta['doc_number']} | {meta['issuer'][:30]} | {meta['date']}")
+    if r["count"] == 0 and args.chain == "locate":
+        print("提示: 定位链只按「文号 / 标题关键词」检索；未命中可改用 --chain broad 做全文检索，或核对关键词。")
 
     # ═══ --web：政策库搜索接口补充（降级链 L3）═══
     if args.web:

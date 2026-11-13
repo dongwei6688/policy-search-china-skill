@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.64.1
+version: v2.64.2
 license: MIT
 ---
 
@@ -17,7 +17,7 @@ license: MIT
 |----------|------|------|
 | 全面扫描（"近两年AI政策"） | `chain_runner.py --chain broad` | 单关键词广撒网，指挥官可先拆子领域 |
 | 交叉分析（"AI和能源结合"） | `chain_runner.py --chain cross` | 多关键词 AND 交集，内置并行搜索 |
-| 精准定位（"数据二十条确权"） | `chain_runner.py --chain locate` | 文号/段落精确查找 |
+| 精准定位（"数据二十条确权"） | `chain_runner.py --chain locate --keywords "确权" [--doc-number "国发〔2021〕29号"] [--title-keyword "数据基础制度"]` | 按**文号**或**标题关键词**（匹配范围含标题、摘要、标签）定位到具体政策，再抽取命中段落；未给 `--doc-number`/`--title-keyword` 时用 `--keywords` 首个词作标题检索 |
 | 溯源引用（"这句话出自哪"） | `chain_runner.py --chain trace` | 原文句子反查出处 |
 | **gov.cn 被 WAF 拦截 / 查缓存外新政策** | `gov_library_search.py --keywords ...` | 国务院政策文件库搜索接口（浏览器渲染） |
 | **gov.cn 政策详情页 403（下载原文）** | `gov_library_search.py` 的 `fetch_gov_policy(url)` | playwright 渲染详情页提取全文（`.pages_content`） |
@@ -132,7 +132,7 @@ python3 scripts/init.py
 
 | 工人 | 输入 | 输出 | 职责 |
 |:-------|:------|:-----|:-----|
-| `chain_runner.py` | 链类型、关键词、日期范围、过滤条件 | 人读文本（`结果数: N` + 条目列表）；无 --json | 搜索 + 过滤 + 去重 |
+| `chain_runner.py` | 链类型、关键词、日期范围、过滤条件（`--exclude` / `--start` / `--end` / `--issuer` / `--doctype` 对四条链统一生效；locate 另支持 `--doc-number` / `--title-keyword`） | 人读文本（`结果数: N` + 条目列表；locate 命中时多一行 `定位方式:`）；无 --json | 搜索 + 过滤 + 去重 |
 | `rebuild_policy_html.py` | 主题、模式、相关性评分 | candidates.json 或 HTML 文件 | 提取 + 评分 + 过滤 + 高亮 + 链接 |
 | `atoms.py` | 结构化数据 | 结构化数据 | 纯数据操作（被以上两个工人引用） |
 
@@ -220,6 +220,7 @@ python3 scripts/init.py
 |------|------|
 | 搜索结果过多 | 指挥官追加 `--end` / `--issuer` 过滤后重调 |
 | 搜索结果为零 | 指挥官放宽关键词或移除时间限制后重调 |
+| **locate 链返回 0 条** | locate 只按「文号 / 标题关键词」检索，不做全文匹配；确认 `--doc-number` 或 `--title-keyword` 是文号片段或标题里的词，或改用 `--chain broad` 做全文检索 |
 | URL 不可达 | 工人自动降级（HTTPS→HTTP→政策库搜索接口），指挥官无需处理 |
 | **gov.cn 政策页 403 / 静默空响应** | 走政策库搜索接口（`gov_library_search.py` / `--web`），无需换 IP |
 | 覆盖率不够 | 指挥官在交付前审核阶段回阶段 1 补搜 |
