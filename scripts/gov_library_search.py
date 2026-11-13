@@ -81,6 +81,8 @@ def _search_via_curl(keyword: str, page: int = 1) -> list[dict]:
             "source_url": x.get("url", ""),
             "summary": re.sub(r"<[^>]+>", "", str(x.get("pubtimeStr", x.get("title", "")))),
             "category": x.get("puborg", "") or "",
+            # issuer 与库内条目同名字段，才能被 --issuer 过滤命中
+            "issuer": x.get("puborg", "") or "",
             "date": str(x.get("pubTime", "") or ""),
             "_raw": x,
         } for x in rows]
@@ -132,14 +134,20 @@ def _extract_docno(text: str) -> str:
     return m.group(1).strip() if m else ""
 
 def _pass_date(entry: dict, start: str | None, end: str | None) -> bool:
-    if not entry.get("date"):
+    """日期过滤（与 chain_runner 共用同一套区间重叠口径，兼容年/月精度）"""
+    try:
+        from atoms import filter_date_range
+    except Exception:
+        # atoms 不可用时退化为简单比较（不静默改变语义则抛错更安全，这里保持可用优先）
+        if not entry.get("date"):
+            return True
+        d = entry["date"][:10]
+        if start and d < start:
+            return False
+        if end and d > end:
+            return False
         return True
-    d = entry["date"][:10]
-    if start and d < start:
-        return False
-    if end and d > end:
-        return False
-    return True
+    return bool(filter_date_range([entry], start, end))
 
 def _pass_and(entry: dict, extra_kws: list[str]) -> bool:
     blob = (entry.get("title", "") + entry.get("summary", "")).lower()
@@ -165,6 +173,11 @@ def search_gov_library(keywords: list[str], start: str = None, end: str = None,
             if url:
                 seen.add(url)
             r["doc_number"] = _extract_docno(r.get("summary", "") or r.get("title", ""))
+            # 两种抓取策略的字段名统一：issuer 供 --issuer 过滤，category 保留兼容
+            if not r.get("issuer"):
+                r["issuer"] = r.get("category", "") or ""
+            if not r.get("category"):
+                r["category"] = r.get("issuer", "") or ""
             r["source"] = "gov-library"
             entries.append(r)
         if len(rows) < 10:  # 不足一页，无更多

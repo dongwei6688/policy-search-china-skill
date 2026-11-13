@@ -1,7 +1,7 @@
 ---
 name: policy-search-china
 description: "Search Chinese government policy documents from 16 ministries. Extract verbatim paragraphs with source links."
-version: v2.64.2
+version: v2.64.3
 license: MIT
 ---
 
@@ -17,7 +17,7 @@ license: MIT
 |----------|------|------|
 | 全面扫描（"近两年AI政策"） | `chain_runner.py --chain broad` | 单关键词广撒网，指挥官可先拆子领域 |
 | 交叉分析（"AI和能源结合"） | `chain_runner.py --chain cross` | 多关键词 AND 交集，内置并行搜索 |
-| 精准定位（"数据二十条确权"） | `chain_runner.py --chain locate --keywords "确权" [--doc-number "国发〔2021〕29号"] [--title-keyword "数据基础制度"]` | 按**文号**或**标题关键词**（匹配范围含标题、摘要、标签）定位到具体政策，再抽取命中段落；未给 `--doc-number`/`--title-keyword` 时用 `--keywords` 首个词作标题检索 |
+| 精准定位（"数据二十条确权"） | `chain_runner.py --chain locate --keywords "确权" [--doc-number "网信办令第15号"] [--title-keyword "数据基础制度"]` | 按**文号**或**标题关键词**（匹配范围含标题、摘要、标签）定位到具体政策，再抽取命中段落；文号支持全半角括号、可省略「第」；**给了 `--doc-number` 却查不到时不会自动降级**为标题检索（需要降级请显式加 `--title-keyword`）；未给两者时用 `--keywords` 首个词作标题检索 |
 | 溯源引用（"这句话出自哪"） | `chain_runner.py --chain trace` | 原文句子反查出处 |
 | **gov.cn 被 WAF 拦截 / 查缓存外新政策** | `gov_library_search.py --keywords ...` | 国务院政策文件库搜索接口（浏览器渲染） |
 | **gov.cn 政策详情页 403（下载原文）** | `gov_library_search.py` 的 `fetch_gov_policy(url)` | playwright 渲染详情页提取全文（`.pages_content`） |
@@ -61,11 +61,12 @@ license: MIT
 
 | 过滤条件 | 指挥官如何启用 |
 |----------|---------------|
-| 时间范围 | `--start YYYY-MM-DD --end YYYY-MM-DD` |
-| 发文机关 | `--issuer 国家能源局` |
-| 文件类型 | `--doctype 意见` |
+| 时间范围 | `--start 2025-01-01 --end 2025-12-31`；也可只写 `2025` 或 `2025-06`（按整年/整月区间处理，起止两侧对称）；条目日期只到年/月的不会被误剔；没有 date 的条目不受时间过滤影响 |
+| 发文机关 | `--issuer 国家能源局`（子串匹配，写全称更准） |
+| 文件类型 | `--doctype 意见`（按标题匹配） |
+| 关键词排除 | `--exclude 名单 公示`（按标题匹配） |
 | AND 交集 | `--keywords "A" "B"` 自动触发交集 |
-| 去重 | 工人自动执行 |
+| 去重 | 工人自动执行：同一政策即使书名号/引号写法不同（`《…》` 与 `「…」`）也视为一件；`--web` 补充结果按「归一化标题 + 年份 + 文号/机关」判重，逐年重发与同年度修订版都保留 |
 
 指挥官审核：数量是否合理？标题中是否有明显的误匹配？如有，追加 `--exclude` 重跑。
 
@@ -132,7 +133,7 @@ python3 scripts/init.py
 
 | 工人 | 输入 | 输出 | 职责 |
 |:-------|:------|:-----|:-----|
-| `chain_runner.py` | 链类型、关键词、日期范围、过滤条件（`--exclude` / `--start` / `--end` / `--issuer` / `--doctype` 对四条链统一生效；locate 另支持 `--doc-number` / `--title-keyword`） | 人读文本（`结果数: N` + 条目列表；locate 命中时多一行 `定位方式:`）；无 --json | 搜索 + 过滤 + 去重 |
+| `chain_runner.py` | 链类型、关键词、日期范围、过滤条件（`--exclude` / `--start` / `--end` / `--issuer` / `--doctype` 四条链统一生效；`--issuer` 为子串匹配、`--exclude` 按标题匹配、日期支持 `YYYY-MM-DD`/`YYYY-MM`/`YYYY`；locate 另支持 `--doc-number` / `--title-keyword`） | 人读文本（`结果数: N` + 条目列表；locate 命中时多一行 `定位方式:`）；结果为 0 时区分「没搜到」与「被过滤条件全部排除」；无 --json | 搜索 + 过滤 + 去重 |
 | `rebuild_policy_html.py` | 主题、模式、相关性评分 | candidates.json 或 HTML 文件 | 提取 + 评分 + 过滤 + 高亮 + 链接 |
 | `atoms.py` | 结构化数据 | 结构化数据 | 纯数据操作（被以上两个工人引用） |
 
@@ -220,7 +221,9 @@ python3 scripts/init.py
 |------|------|
 | 搜索结果过多 | 指挥官追加 `--end` / `--issuer` 过滤后重调 |
 | 搜索结果为零 | 指挥官放宽关键词或移除时间限制后重调 |
-| **locate 链返回 0 条** | locate 只按「文号 / 标题关键词」检索，不做全文匹配；确认 `--doc-number` 或 `--title-keyword` 是文号片段或标题里的词，或改用 `--chain broad` 做全文检索 |
+| **locate 链返回 0 条** | 先看输出提示区分成因：①「文号未命中」→ 核对文号（全半角括号、可省「第」），或显式加 `--title-keyword`，或改用 `--chain broad` 全文检索；②「检索命中 N 条，但被过滤条件全部排除」→ 放宽 `--start/--end/--issuer/--doctype/--exclude`；③ 其他 → 关键词不在标题/摘要/标签里，换词 |
+| **改过 `scripts/` 后要验证** | 跑 `python3 tests/test_chain_runner.py`（stdlib unittest，22 项）：覆盖 locate 去重/文号变体与短文号边界/未命中降级开关、年月精度与非 ISO 日期、`--exclude` 与空串、四种链的 0 条归因、`--web` 合并口径、日期与文号参数校验 |
+| **locate / trace 想用 `--web` 补缓存外政策** | `--web` 只在 broad/cross 上并入结果；locate 要按文号命中、trace 要在原文里命中短语，接口返回的条目没经过这两道核验，只会单列为「缓存外候选（未核验）」，不计入结果数——引用前须人工核对原文 |
 | URL 不可达 | 工人自动降级（HTTPS→HTTP→政策库搜索接口），指挥官无需处理 |
 | **gov.cn 政策页 403 / 静默空响应** | 走政策库搜索接口（`gov_library_search.py` / `--web`），无需换 IP |
 | 覆盖率不够 | 指挥官在交付前审核阶段回阶段 1 补搜 |

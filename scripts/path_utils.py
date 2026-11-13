@@ -24,8 +24,10 @@ SKILL_DIR = Path(__file__).resolve().parent.parent
 
 
 # ── 系统空间（只读，随 skill 分发） ──────────────────
+# 环境变量 POLICY_SEARCH_CHINA_SYSTEM_CACHE 可指向别处（测试隔离用）
 SYSTEM_DIR = SKILL_DIR
-SYSTEM_CACHE = SYSTEM_DIR / 'cache'
+_SYS_ENV = os.environ.get('POLICY_SEARCH_CHINA_SYSTEM_CACHE')
+SYSTEM_CACHE = Path(_SYS_ENV).resolve() if _SYS_ENV else SYSTEM_DIR / 'cache'
 
 
 # ── 用户空间（读写，用户自己的数据和配置） ────────────
